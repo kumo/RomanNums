@@ -71,7 +71,7 @@
         }
     }*/
     
-    NSString *greeting = [[NSString alloc] initWithFormat:@"The year is %@ [%d chars]! (%@)", nameString, length, result];
+    NSString *greeting = [[NSString alloc] initWithFormat:@"The year is %@ [%d chars]! (%d)", nameString, length, result];
     label.text = greeting;
     [greeting release];
 }
