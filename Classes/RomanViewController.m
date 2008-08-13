@@ -49,9 +49,9 @@
 		NSString *arabicValue = [arabicValues objectAtIndex:i];
 		
 		while ([editableString rangeOfString:romanValue
-									 options:(NSCaseInsensitiveSearch)].length > 0) {
+									 options:(NSAnchoredSearch | NSCaseInsensitiveSearch)].length > 0) {
 		NSRange suffixRange = [editableString rangeOfString:romanValue
-										   options:(NSCaseInsensitiveSearch)];
+										   options:(NSAnchoredSearch | NSCaseInsensitiveSearch)];
 		
 		if (suffixRange.length > 0) {
 			result = result + [arabicValue intValue];
