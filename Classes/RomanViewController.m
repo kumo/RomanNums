@@ -25,6 +25,7 @@
 - (IBAction)convertYear:(id)sender {
 	
     self.string = textField.text;
+	
     NSString *nameString = string;
     if ([nameString length] == 0) {
         nameString = @"2008";
@@ -33,26 +34,26 @@
 	
     int i, deflate = 2008;
     NSString *romanValue = @"";
-    NSDictionary *pairs = [NSDictionary dictionaryWithObjectsAndKeys:
-						   @"i", @"1",
-						   @"x", @"10",
-						   @"c", @"100",
-						   @"m", @"1000",
-						   @"iv", @"4",
-						   @"xl", @"40",
-						   @"cd", @"400",
-						   @"v", @"5",
-						   @"l", @"50",
-						   @"d", @"500",
-						   @"ix", @"9",
-						   @"xc", @"90",
-						   @"cm", @"900",
-						   nil];
+	NSArray *arabicValues = [NSArray arrayWithObjects:
+					  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+	NSArray *romanValues = [NSArray arrayWithObjects:
+					   @"m", @"cm", @"d", @"cd", @"c", @"xc", @"l", @"xl", @"x", @"ix", @"v", @"iv", @"i", nil];
 	
-    NSArray *values = [NSArray arrayWithObjects:@"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
-    int itemCount = [values count], itemValue;
+	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", nameString];
+	
+	int result = 0;
+	NSString *key;
+	for (romanValue in romanValues)
+	{
+		NSString *arabicValue = [arabicValues valueForKey:key];
+		
+		NSRange suffixRange = [key rangeOfString:editableString
+										   options:(NSCaseInsensitiveSearch)];
+		
+		result = result + [arabicValue intValue];
+	}
     
-    for (i = 0; i < itemCount; i++)
+   /* for (i = 0; i < itemCount; i++)
     {
         itemValue = [[values objectAtIndex:i] intValue];
         
@@ -61,9 +62,9 @@
             romanValue = [romanValue stringByAppendingString:[pairs objectForKey:[values objectAtIndex:i]]];
             deflate -= itemValue;
         }
-    }
+    }*/
     
-    NSString *greeting = [[NSString alloc] initWithFormat:@"The year is %@ [%d chars]! (%@)", nameString, length, romanValue];
+    NSString *greeting = [[NSString alloc] initWithFormat:@"The year is %@ [%d chars]! (%@)", nameString, length, result];
     label.text = greeting;
     [greeting release];
 }
