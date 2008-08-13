@@ -17,5 +17,5 @@
 @property (nonatomic, retain) UITextField *textField;
 @property (nonatomic, retain) UILabel *label;
 @property (nonatomic, copy) NSString *string;
-- (IBAction)changeGreeting:(id)sender;
+- (IBAction)convertYear:(id)sender;
 @end

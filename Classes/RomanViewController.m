@@ -22,15 +22,15 @@
 	return self;
 }
 
-- (IBAction)changeGreeting:(id)sender {
+- (IBAction)convertYear:(id)sender {
 	
     self.string = textField.text;
 	
     NSString *nameString = string;
     if ([nameString length] == 0) {
-        nameString = @"World";
+        nameString = @"2008";
     }
-    NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
+    NSString *greeting = [[NSString alloc] initWithFormat:@"The year is %@!", nameString];
     label.text = greeting;
     [greeting release];
 }
