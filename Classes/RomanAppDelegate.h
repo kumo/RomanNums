@@ -12,9 +12,11 @@
 
 @interface RomanAppDelegate : NSObject <UIApplicationDelegate> {
 	IBOutlet UIWindow *window;
+	RomanViewController *romanViewController;
 }
 
 @property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) RomanViewController *romanViewController;
 
 @end
 
