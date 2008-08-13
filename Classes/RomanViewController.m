@@ -32,7 +32,6 @@
     }
 	int length = [nameString length];
 	
-    int i, deflate = 2008;
     NSString *romanValue = @"";
 	NSArray *arabicValues = [NSArray arrayWithObjects:
 					  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
@@ -42,15 +41,23 @@
 	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", nameString];
 	
 	int result = 0;
-	NSString *key;
-	for (romanValue in romanValues)
+	int arrayCount = [romanValues count];
+    int i = 0;
+	for (i = 0; i < arrayCount; i++)
 	{
-		NSString *arabicValue = [arabicValues valueForKey:key];
+		romanValue = [romanValues objectAtIndex:i];
+		NSString *arabicValue = [arabicValues objectAtIndex:i];
 		
-		NSRange suffixRange = [key rangeOfString:editableString
+		while ([editableString rangeOfString:romanValue
+									 options:(NSCaseInsensitiveSearch)].length > 0) {
+		NSRange suffixRange = [editableString rangeOfString:romanValue
 										   options:(NSCaseInsensitiveSearch)];
 		
-		result = result + [arabicValue intValue];
+		if (suffixRange.length > 0) {
+			result = result + [arabicValue intValue];
+			[editableString replaceCharactersInRange:suffixRange withString: @""];
+		}
+		}
 	}
     
    /* for (i = 0; i < itemCount; i++)
