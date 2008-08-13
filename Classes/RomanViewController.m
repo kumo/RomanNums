@@ -18,6 +18,9 @@
 	return self;
 }
 
+- (IBAction)changeGreeting:(id)sender {
+}
+
 /*
  Implement loadView if you want to create a view hierarchy programmatically
 - (void)loadView {
