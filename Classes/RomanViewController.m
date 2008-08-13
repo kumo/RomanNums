@@ -11,6 +11,10 @@
 
 @implementation RomanViewController
 
+@synthesize textField;
+@synthesize label;
+@synthesize string;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		// Initialization code
@@ -19,6 +23,23 @@
 }
 
 - (IBAction)changeGreeting:(id)sender {
+	
+    self.string = textField.text;
+	
+    NSString *nameString = string;
+    if ([nameString length] == 0) {
+        nameString = @"World";
+    }
+    NSString *greeting = [[NSString alloc] initWithFormat:@"Hello, %@!", nameString];
+    label.text = greeting;
+    [greeting release];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == textField) {
+        [textField resignFirstResponder];
+    }
+    return YES;
 }
 
 /*
@@ -47,6 +68,9 @@
 
 
 - (void)dealloc {
+    [textField release];
+    [label release];
+    [string release];
 	[super dealloc];
 }
 
