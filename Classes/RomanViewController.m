@@ -89,11 +89,9 @@
 }
  */
 
-/*
- If you need to do additional setup after loading the view, override viewDidLoad.
 - (void)viewDidLoad {
+	textField.clearButtonMode = UITextFieldViewModeWhileEditing;
 }
- */
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
