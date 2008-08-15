@@ -30,9 +30,7 @@
     if ([nameString length] == 0) {
         nameString = @"2008";
     }
-	int length = [nameString length];
-	
-    NSString *romanValue = @"";
+
 	NSArray *arabicValues = [NSArray arrayWithObjects:
 					  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 	NSArray *romanValues = [NSArray arrayWithObjects:
@@ -41,37 +39,34 @@
 	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", nameString];
 	
 	int result = 0;
+    NSString *romanValue = @"";
+	
 	int arrayCount = [romanValues count];
     int i = 0;
+	// We need to iterate through all of the roman values
 	for (i = 0; i < arrayCount; i++)
 	{
+		// Get the roman value at position i
 		romanValue = [romanValues objectAtIndex:i];
+		// along with the corresponding arabic value
 		NSString *arabicValue = [arabicValues objectAtIndex:i];
 		
-		while ([editableString rangeOfString:romanValue
-									 options:(NSAnchoredSearch | NSCaseInsensitiveSearch)].length > 0) {
+		// Search for the roman value from the start of the string
 		NSRange suffixRange = [editableString rangeOfString:romanValue
-										   options:(NSAnchoredSearch | NSCaseInsensitiveSearch)];
-		
-		if (suffixRange.length > 0) {
+								options:(NSAnchoredSearch | NSCaseInsensitiveSearch)];
+		// if the length is above 0 then it has been found
+		while (suffixRange.length > 0) {
+			// so add the corresponding arabic value,
 			result = result + [arabicValue intValue];
+			// remove the range found from the string
 			[editableString replaceCharactersInRange:suffixRange withString: @""];
-		}
+			// and search again
+			suffixRange = [editableString rangeOfString:romanValue
+							options:(NSAnchoredSearch | NSCaseInsensitiveSearch)];
 		}
 	}
     
-   /* for (i = 0; i < itemCount; i++)
-    {
-        itemValue = [[values objectAtIndex:i] intValue];
-        
-        while (deflate >= itemValue)
-        {
-            romanValue = [romanValue stringByAppendingString:[pairs objectForKey:[values objectAtIndex:i]]];
-            deflate -= itemValue;
-        }
-    }*/
-    
-    NSString *greeting = [[NSString alloc] initWithFormat:@"The year is %@ [%d chars]! (%d)", nameString, length, result];
+    NSString *greeting = [[NSString alloc] initWithFormat:@"%@ is %d.", nameString, result];
     label.text = greeting;
     [greeting release];
 }
