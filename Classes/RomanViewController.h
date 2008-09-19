@@ -11,11 +11,14 @@
 
 @interface RomanViewController : UIViewController <UITextFieldDelegate> {
 	IBOutlet UITextField *textField;
-	IBOutlet UILabel *label;
+	IBOutlet UILabel *romanLabel;
+	IBOutlet UILabel *arabicLabel;
 	NSString *string;
 }
 @property (nonatomic, retain) UITextField *textField;
-@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain) UILabel *romanLabel;
+@property (nonatomic, retain) UILabel *arabicLabel;
 @property (nonatomic, copy) NSString *string;
-- (IBAction)convertYear:(id)sender;
+- (void)convertYear;
+- (IBAction)buttonPressed:(id)sender;
 @end

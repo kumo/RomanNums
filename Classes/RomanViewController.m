@@ -12,7 +12,8 @@
 @implementation RomanViewController
 
 @synthesize textField;
-@synthesize label;
+@synthesize romanLabel;
+@synthesize arabicLabel;
 @synthesize string;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -22,9 +23,9 @@
 	return self;
 }
 
-- (IBAction)convertYear:(id)sender {
+- (void)convertYear {
 	
-    self.string = textField.text;
+    self.string = romanLabel.text;
 	
     NSString *nameString = string;
     if ([nameString length] == 0) {
@@ -66,9 +67,30 @@
 		}
 	}
     
-    NSString *greeting = [[NSString alloc] initWithFormat:@"%@ is %d.", nameString, result];
-    label.text = greeting;
+    NSString *greeting = [[NSString alloc] initWithFormat:@"%d", result];
+    arabicLabel.text = greeting;
     [greeting release];
+}
+
+- (IBAction)buttonPressed:(id)sender {
+    self.string = romanLabel.text;
+	
+    NSString *romanLabelString = string;
+
+	if ([[sender currentTitle] isEqualToString: @"delete"]) {
+		if ([romanLabelString length] > 0) {
+			NSString *newLabelString = [[NSString alloc] initWithString:[romanLabelString substringToIndex: [romanLabelString length] - 1]];
+			romanLabel.text = newLabelString;
+			[newLabelString release];
+			[self convertYear];
+		}
+	}	
+	else if ([romanLabelString length] < 14) {
+		NSString *newLabelString = [[NSString alloc] initWithFormat:@"%@%@", romanLabelString, [sender currentTitle]];
+		romanLabel.text = newLabelString;
+		[newLabelString release];
+		[self convertYear];
+    }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -103,7 +125,8 @@
 
 - (void)dealloc {
     [textField release];
-    [label release];
+    [romanLabel release];
+    [arabicLabel release];
     [string release];
 	[super dealloc];
 }
