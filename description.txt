@@ -1,0 +1,19 @@
+Application name: Roman Numerals
+Application description:
+Roman Numerals provides an easy way of converting Roman numerals into more understandable numbers. Use it when you cannot quite work out the age of a building or to resolve deputes about the year in which a TV programme was made.
+
+To use it just type in the roman numerals and the year in numbers will appear below.
+Device type: all
+SKU: 1
+Primary category: utility
+Secondary category: <none>
+Game rating: <none>
+Unique version 1.0
+Application copyright holder: Rob Clarke
+Support URL for the company: http://kumo.it
+Support Email address (for apple) robclarke@kumo.it
+EULA: <none>
+Territories: all
+Application availability date: now
+Application price: free
+Localization: all?
