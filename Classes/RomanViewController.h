@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface RomanViewController : UIViewController <UITextFieldDelegate> {
-	IBOutlet UITextField *textField;
+@interface RomanViewController : UIViewController {
 	IBOutlet UILabel *romanLabel;
 	IBOutlet UILabel *arabicLabel;
 	NSString *string;
 }
-@property (nonatomic, retain) UITextField *textField;
 @property (nonatomic, retain) UILabel *romanLabel;
 @property (nonatomic, retain) UILabel *arabicLabel;
 @property (nonatomic, copy) NSString *string;

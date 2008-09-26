@@ -11,7 +11,6 @@
 
 @implementation RomanViewController
 
-@synthesize textField;
 @synthesize romanLabel;
 @synthesize arabicLabel;
 @synthesize string;
@@ -93,22 +92,11 @@
     }
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
-    if (theTextField == textField) {
-        [textField resignFirstResponder];
-    }
-    return YES;
-}
-
 /*
  Implement loadView if you want to create a view hierarchy programmatically
 - (void)loadView {
 }
  */
-
-- (void)viewDidLoad {
-	textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -124,7 +112,6 @@
 
 
 - (void)dealloc {
-    [textField release];
     [romanLabel release];
     [arabicLabel release];
     [string release];
