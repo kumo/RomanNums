@@ -35,9 +35,9 @@
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<object class="NSCustomResource" key="IBUIImage" id="338432292">
+						<object class="NSCustomResource" key="IBUIImage" id="58519915">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">light.png</string>
+							<string key="NSResourceName">panel.png</string>
 						</object>
 					</object>
 					<object class="IBUILabel" id="184628964">
@@ -115,8 +115,11 @@
 							<string key="NSResourceName">dark_delete.png</string>
 						</object>
 						<reference key="IBUISelectedImage" ref="876583232"/>
-						<reference key="IBUINormalImage" ref="338432292"/>
-						<reference key="IBUIDisabledBackgroundImage" ref="338432292"/>
+						<object class="NSCustomResource" key="IBUINormalImage" id="962699178">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">light.png</string>
+						</object>
+						<reference key="IBUIDisabledBackgroundImage" ref="58519915"/>
 					</object>
 					<object class="IBUIButton" id="53356323">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -135,12 +138,12 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<object class="NSCustomResource" key="IBUIDisabledBackgroundImage" id="58679120">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">dark.png</string>
 						</object>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="255814358">
@@ -163,9 +166,9 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">keyboard.png</string>
 						</object>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="283492866">
@@ -184,9 +187,9 @@
 						<string key="IBUINormalTitle">2</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58679120"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="709182691">
@@ -206,9 +209,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="375403204">
@@ -228,9 +231,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="1031675594">
@@ -250,9 +253,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58679120"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="268159322">
@@ -272,9 +275,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="561912464">
@@ -294,9 +297,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="555481864">
@@ -316,9 +319,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="239360641">
@@ -337,9 +340,9 @@
 						<string key="IBUINormalTitle">5</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="338432292"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58679120"/>
-						<reference key="IBUISelectedBackgroundImage" ref="338432292"/>
+						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="101020998">
