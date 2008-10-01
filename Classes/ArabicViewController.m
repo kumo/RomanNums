@@ -28,20 +28,20 @@
 	
     self.string = arabicLabel.text;
 	
-    NSString *arabicString = string;
-    if ([arabicString length] == 0) {
-        arabicString = @"2008";
-    }
+    int arabicLabelValue = [string intValue];
 
 	NSArray *arabicValues = [NSArray arrayWithObjects:
 					  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 	NSArray *romanValues = [NSArray arrayWithObjects:
-					   @"m", @"cm", @"d", @"cd", @"c", @"xc", @"l", @"xl", @"x", @"ix", @"v", @"iv", @"i", nil];
+					   @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	
-	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", arabicString];
-	
-	int result = 0;
     NSString *romanValue = @"";
+
+	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
+
+	NSMutableString *str = [NSMutableString stringWithCapacity:128];
+	[str appendString: @" made longer"];
+	NSLog(@"String is now: %@", str);
 	
 	int arrayCount = [romanValues count];
     int i = 0;
@@ -51,24 +51,30 @@
 		// Get the roman value at position i
 		romanValue = [romanValues objectAtIndex:i];
 		// along with the corresponding arabic value
-		NSString *arabicValue = [arabicValues objectAtIndex:i];
+		int arabicValue = [[arabicValues objectAtIndex:i] intValue];
 		
-		// Search for the roman value from the start of the string
-		NSRange suffixRange = [editableString rangeOfString:romanValue
-								options:(NSAnchoredSearch | NSCaseInsensitiveSearch)];
-		// if the length is above 0 then it has been found
-		while (suffixRange.length > 0) {
-			// so add the corresponding arabic value,
-			result = result + [arabicValue intValue];
-			// remove the range found from the string
-			[editableString replaceCharactersInRange:suffixRange withString: @""];
-			// and search again
-			suffixRange = [editableString rangeOfString:romanValue
-							options:(NSAnchoredSearch | NSCaseInsensitiveSearch)];
+		// Let's div and mod the arabic string
+		int div = arabicLabelValue / arabicValue;
+		int mod = arabicLabelValue % arabicValue;
+		
+		NSLog(@"Checking: %i", arabicValue);
+		NSLog(@"div: %i", div);
+		NSLog(@"mod: %i", mod);
+		
+		if (div > 0)
+		{
+			int j = 0;
+			for (j = 0; j < div; j++)
+			{
+				NSLog(@"Should add: %@ to string", romanValue);
+				[resultString appendFormat: romanValue];
+				arabicLabelValue = arabicLabelValue - arabicValue;
+			}
+			NSLog(@"String is now: %@", resultString);
 		}
 	}
     
-    NSString *romanResult = [[NSString alloc] initWithFormat:@"%d", result];
+    NSString *romanResult = [[NSString alloc] initWithFormat:@"%@", resultString];
     romanLabel.text = romanResult;
     [romanResult release];
 }
