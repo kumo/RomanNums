@@ -1,15 +1,15 @@
 //
-//  RomanViewController.m
+//  ArabicViewController.m
 //  Roman
 //
 //  Created by Rob on 13/08/2008.
 //  Copyright 2008 [kumo.it]. All rights reserved.
 //
 
-#import "RomanViewController.h"
+#import "ArabicViewController.h"
 
 
-@implementation RomanViewController
+@implementation ArabicViewController
 
 @synthesize romanLabel;
 @synthesize arabicLabel;
@@ -26,11 +26,11 @@
 
 - (void)convertYear {
 	
-    self.string = romanLabel.text;
+    self.string = arabicLabel.text;
 	
-    NSString *nameString = string;
-    if ([nameString length] == 0) {
-        nameString = @"2008";
+    NSString *arabicString = string;
+    if ([arabicString length] == 0) {
+        arabicString = @"2008";
     }
 
 	NSArray *arabicValues = [NSArray arrayWithObjects:
@@ -38,7 +38,7 @@
 	NSArray *romanValues = [NSArray arrayWithObjects:
 					   @"m", @"cm", @"d", @"cd", @"c", @"xc", @"l", @"xl", @"x", @"ix", @"v", @"iv", @"i", nil];
 	
-	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", nameString];
+	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", arabicString];
 	
 	int result = 0;
     NSString *romanValue = @"";
@@ -68,27 +68,27 @@
 		}
 	}
     
-    NSString *greeting = [[NSString alloc] initWithFormat:@"%d", result];
-    arabicLabel.text = greeting;
-    [greeting release];
+    NSString *romanResult = [[NSString alloc] initWithFormat:@"%d", result];
+    romanLabel.text = romanResult;
+    [romanResult release];
 }
 
 - (IBAction)buttonPressed:(id)sender {
-    self.string = romanLabel.text;
+    self.string = arabicLabel.text;
 	
-    NSString *romanLabelString = string;
+    NSString *arabicLabelString = string;
 
 	if ([[sender currentTitle] isEqualToString: @"delete"]) {
-		if ([romanLabelString length] > 0) {
-			NSString *newLabelString = [[NSString alloc] initWithString:[romanLabelString substringToIndex: [romanLabelString length] - 1]];
-			romanLabel.text = newLabelString;
+		if ([arabicLabelString length] > 0) {
+			NSString *newLabelString = [[NSString alloc] initWithString:[arabicLabelString substringToIndex: [arabicLabelString length] - 1]];
+			arabicLabel.text = newLabelString;
 			[newLabelString release];
 			[self convertYear];
 		}
 	}	
-	else if ([romanLabelString length] < 14) {
-		NSString *newLabelString = [[NSString alloc] initWithFormat:@"%@%@", romanLabelString, [sender currentTitle]];
-		romanLabel.text = newLabelString;
+	else if ([arabicLabelString length] < 4) {
+		NSString *newLabelString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, [sender currentTitle]];
+		arabicLabel.text = newLabelString;
 		[newLabelString release];
 		[self convertYear];
     }

@@ -8,15 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@class RomanViewController;
-
-@interface RomanAppDelegate : NSObject <UIApplicationDelegate> {
-	IBOutlet UIWindow *window;
-	RomanViewController *romanViewController;
+@interface RomanAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
+    UIWindow *window;
+    UITabBarController *tabBarController;
 }
 
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) RomanViewController *romanViewController;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
 
 @end
 

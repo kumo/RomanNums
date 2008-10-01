@@ -12,24 +12,17 @@
 @implementation RomanAppDelegate
 
 @synthesize window;
-@synthesize romanViewController;
+@synthesize tabBarController;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {	
-	RomanViewController *aViewController = [[RomanViewController alloc]
-										 initWithNibName:@"ControllerView" bundle:[NSBundle mainBundle]];
-	self.romanViewController = aViewController;
-	[aViewController release];
-
-	UIView *controllersView = [romanViewController view];
-	[window addSubview:controllersView];
-	
-	// Override point for customization after app launch	
-    [window makeKeyAndVisible];
+    
+    // Add the tab bar controller's current view as a subview of the window
+    [window addSubview:tabBarController.view];
 }
 
 
 - (void)dealloc {
-	[romanViewController release];
+    [tabBarController release];
 	[window release];
 	[super dealloc];
 }
