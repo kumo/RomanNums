@@ -55,22 +55,22 @@
 		
 		// Let's div and mod the arabic string
 		int div = arabicLabelValue / arabicValue;
-		int mod = arabicLabelValue % arabicValue;
+		//int mod = arabicLabelValue % arabicValue;
 		
-		NSLog(@"Checking: %i", arabicValue);
-		NSLog(@"div: %i", div);
-		NSLog(@"mod: %i", mod);
+		//NSLog(@"Checking: %i", arabicValue);
+		//NSLog(@"div: %i", div);
+		//NSLog(@"mod: %i", mod);
 		
 		if (div > 0)
 		{
 			int j = 0;
 			for (j = 0; j < div; j++)
 			{
-				NSLog(@"Should add: %@ to string", romanValue);
+				//NSLog(@"Should add: %@ to string", romanValue);
 				[resultString appendFormat: romanValue];
 				arabicLabelValue = arabicLabelValue - arabicValue;
 			}
-			NSLog(@"String is now: %@", resultString);
+			//NSLog(@"String is now: %@", resultString);
 		}
 	}
     
