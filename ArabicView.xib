@@ -8,7 +8,7 @@
 		<string key="IBDocument.HIToolboxVersion">352.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="1"/>
+			<integer value="48"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -115,10 +115,6 @@
 							<string key="NSResourceName">dark_delete.png</string>
 						</object>
 						<reference key="IBUISelectedImage" ref="876583232"/>
-						<object class="NSCustomResource" key="IBUINormalImage" id="962699178">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">light.png</string>
-						</object>
 						<reference key="IBUIDisabledBackgroundImage" ref="58519915"/>
 					</object>
 					<object class="IBUIButton" id="53356323">
@@ -138,12 +134,15 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="947915312">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">light.png</string>
+						</object>
 						<object class="NSCustomResource" key="IBUIDisabledBackgroundImage" id="58679120">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">dark.png</string>
 						</object>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="255814358">
@@ -166,9 +165,9 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">keyboard.png</string>
 						</object>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="283492866">
@@ -187,9 +186,9 @@
 						<string key="IBUINormalTitle">2</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58679120"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="709182691">
@@ -209,9 +208,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="375403204">
@@ -231,9 +230,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="1031675594">
@@ -253,9 +252,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58679120"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="268159322">
@@ -275,9 +274,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="561912464">
@@ -297,9 +296,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="555481864">
@@ -319,9 +318,9 @@
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIDisabledImage" ref="950119426"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="950119426"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="239360641">
@@ -340,9 +339,9 @@
 						<string key="IBUINormalTitle">5</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
-						<reference key="IBUIHighlightedBackgroundImage" ref="962699178"/>
+						<reference key="IBUIHighlightedBackgroundImage" ref="947915312"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58679120"/>
-						<reference key="IBUISelectedBackgroundImage" ref="962699178"/>
+						<reference key="IBUISelectedBackgroundImage" ref="947915312"/>
 						<reference key="IBUINormalBackgroundImage" ref="58679120"/>
 					</object>
 					<object class="IBUIButton" id="101020998">
