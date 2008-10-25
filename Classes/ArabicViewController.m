@@ -14,6 +14,7 @@
 @synthesize romanLabel;
 @synthesize arabicLabel;
 @synthesize string;
+@synthesize converter;
 
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -24,10 +25,17 @@
 }
 */
 
+- (void)viewDidLoad {
+	converter = [[Converter alloc] init];
+}
+
 - (void)convertYear {
-	NSString *result =[Converter convertToRoman:arabicLabel.text] ;
-	romanLabel.text = result;
-	[result release];
+	[converter convertToRoman:arabicLabel.text];
+	if (converter.inputLooksCorrect) {
+		NSString *result = converter.romanResult;
+		romanLabel.text = result;
+		[result release];
+	}
 }
 
 - (IBAction)buttonPressed:(id)sender {
@@ -74,6 +82,7 @@
     [romanLabel release];
     [arabicLabel release];
     [string release];
+	[converter release];
 	[super dealloc];
 }
 

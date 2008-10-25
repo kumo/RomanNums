@@ -11,25 +11,56 @@
 
 @implementation Converter
 
-+ (NSString *)convertToArabic:(NSString *) roman {
-	NSArray *arabicValues = [NSArray arrayWithObjects:
-							 @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
-	NSArray *romanValues = [NSArray arrayWithObjects:
-							@"m", @"cm", @"d", @"cd", @"c", @"xc", @"l", @"xl", @"x", @"ix", @"v", @"iv", @"i", nil];
+@synthesize inputLooksCorrect, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues;
+
+
+- (void) dealloc {
+	[romanCalculationValues release];
+	[arabicCalculationValues release];
+	[super dealloc];
+}
+
+- (id)init
+{
+	self = [super init];
+	self.romanCalculationValues = [NSArray arrayWithObjects:
+								   @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+	 self.arabicCalculationValues = [NSArray arrayWithObjects:
+									  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+	return self;
+}
+
+- (void)convertToArabic:(NSString *) roman {
+	arabicResult = [self performConversionToArabic:roman];
+	calculatedRomanValue = [self performConversionToRoman:arabicResult];
+	
+	NSLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
+	self.inputLooksCorrect = YES;
+}
+
+- (void)convertToRoman:(NSString *) arabic {
+	romanResult = [self performConversionToRoman:arabic];
+	calculatedArabicValue = [self performConversionToArabic:romanResult];
+	
+	NSLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
+	self.inputLooksCorrect = YES;
+}
+
+- (NSString *)performConversionToArabic:(NSString *) roman {
 	
 	NSMutableString *editableString = [NSMutableString stringWithFormat: @"%@", roman];
 	
 	int result = 0;
     NSString *romanValue = nil;
 	
-	int arrayCount = [romanValues count];
+	int arrayCount = [romanCalculationValues count];
 	// We need to iterate through all of the roman values
 	for (int i = 0; i < arrayCount; i++)
 	{
 		// Get the roman value at position i
-		romanValue = [romanValues objectAtIndex:i];
+		romanValue = [romanCalculationValues objectAtIndex:i];
 		// along with the corresponding arabic value
-		NSString *arabicValue = [arabicValues objectAtIndex:i];
+		NSString *arabicValue = [arabicCalculationValues objectAtIndex:i];
 		
 		// Search for the roman value from the start of the string
 		NSRange suffixRange = [editableString rangeOfString:romanValue
@@ -50,26 +81,21 @@
 	return greeting;
 }
 
-+ (NSString *)convertToRoman:(NSString *) arabic {
+- (NSString *)performConversionToRoman:(NSString *) arabic {
     int arabicLabelValue = [arabic intValue];
-	
-	NSArray *arabicValues = [NSArray arrayWithObjects:
-							 @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
-	NSArray *romanValues = [NSArray arrayWithObjects:
-							@"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	
     NSString *romanValue = nil;
 	
 	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
 	
-	int arrayCount = [romanValues count];
+	int arrayCount = [romanCalculationValues count];
 	// We need to iterate through all of the roman values
 	for (int i = 0; i < arrayCount; i++)
 	{
 		// Get the roman value at position i
-		romanValue = [romanValues objectAtIndex:i];
+		romanValue = [romanCalculationValues objectAtIndex:i];
 		// along with the corresponding arabic value
-		int arabicValue = [[arabicValues objectAtIndex:i] intValue];
+		int arabicValue = [[arabicCalculationValues objectAtIndex:i] intValue];
 		
 		// Let's div and mod the arabic string
 		int div = arabicLabelValue / arabicValue;
@@ -92,9 +118,9 @@
 		}
 	}
     
-    NSString *romanResult = [[NSString alloc] initWithFormat:@"%@", resultString];
+    NSString *result = [[NSString alloc] initWithFormat:@"%@", resultString];
 	
-    return romanResult;
+    return result;
 }
 
 @end
