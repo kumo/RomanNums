@@ -25,6 +25,7 @@
 		BF7E68BE0E844DE500099191 /* dark_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7E68BC0E844DE500099191 /* dark_delete.png */; };
 		BF89BECD0E5622A8006F4F39 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF89BECC0E5622A8006F4F39 /* Icon.png */; };
 		BFA126D90E94125E000342F9 /* ArabicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA126D80E94125E000342F9 /* ArabicView.xib */; };
+		BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAC78A50EB3C2940018DAA6 /* Converter.m */; };
 		BFFC7B780E7ADEC1009ACA39 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFC7B770E7ADEC1009ACA39 /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,8 @@
 		BF7E68BC0E844DE500099191 /* dark_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_delete.png; sourceTree = "<group>"; };
 		BF89BECC0E5622A8006F4F39 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BFA126D80E94125E000342F9 /* ArabicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArabicView.xib; sourceTree = "<group>"; };
+		BFAC78A40EB3C2940018DAA6 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
+		BFAC78A50EB3C2940018DAA6 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
 		BFFC7B770E7ADEC1009ACA39 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +81,8 @@
 				BF0F528E0E52D836005F00CE /* RomanViewController.m */,
 				1D3623240D0F684500981E51 /* RomanAppDelegate.h */,
 				1D3623250D0F684500981E51 /* RomanAppDelegate.m */,
+				BFAC78A40EB3C2940018DAA6 /* Converter.h */,
+				BFAC78A50EB3C2940018DAA6 /* Converter.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 				1D3623260D0F684500981E51 /* RomanAppDelegate.m in Sources */,
 				BF0F528F0E52D836005F00CE /* RomanViewController.m in Sources */,
 				BF4CFA030E94145A00818911 /* ArabicViewController.m in Sources */,
+				BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
