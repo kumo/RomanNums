@@ -11,8 +11,8 @@
 
 @implementation RomanViewController
 
-@synthesize romanLabel;
-@synthesize arabicLabel;
+@synthesize romanLabel, arabicLabel;
+@synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven;
 @synthesize string;
 @synthesize converter;
 
@@ -25,8 +25,37 @@
 }
 */
 
+- (void)setButtonTitles:(NSArray *)titles {
+	NSArray *buttons = [NSArray arrayWithObjects:buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, nil];
+	
+	for (int i=0; i<7; i++) {
+		UIButton *button = [buttons objectAtIndex:i];
+		NSString *title = [titles objectAtIndex:i];
+		
+		[button setTitle:title forState:UIControlStateNormal];
+		[button setTitle:title forState:UIControlStateHighlighted];
+	}
+		
+}
+
 - (void)viewDidLoad {
 	converter = [[Converter alloc] init];
+	
+	// set the keyboard order
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSString *keyboardType = [defaults stringForKey:@"keyboard_type"];
+	
+	if ([keyboardType isEqualToString:@"alphabetical"])
+	{
+		[self setButtonTitles:[NSArray arrayWithObjects:
+							   @"C", @"D", @"I", @"L", @"M", @"V", @"X", nil]];
+	} else if ([keyboardType isEqualToString:@"numeric_largest"]) {
+		[self setButtonTitles:[NSArray arrayWithObjects:
+							   @"M", @"D", @"C", @"L", @"X", @"V", @"I", nil]];
+	} else {
+		[self setButtonTitles:[NSArray arrayWithObjects:
+							   @"I", @"V", @"X", @"L", @"C", @"D", @"M", nil]];
+	}
 }
 
 - (void)convertYear {
