@@ -26,6 +26,7 @@
 		BF89BECD0E5622A8006F4F39 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF89BECC0E5622A8006F4F39 /* Icon.png */; };
 		BFA126D90E94125E000342F9 /* ArabicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA126D80E94125E000342F9 /* ArabicView.xib */; };
 		BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAC78A50EB3C2940018DAA6 /* Converter.m */; };
+		BFAC7A880EB4566D0018DAA6 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFAC7A870EB4566D0018DAA6 /* Settings.bundle */; };
 		BFFC7B780E7ADEC1009ACA39 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFC7B770E7ADEC1009ACA39 /* Entitlements.plist */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		BFA126D80E94125E000342F9 /* ArabicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArabicView.xib; sourceTree = "<group>"; };
 		BFAC78A40EB3C2940018DAA6 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		BFAC78A50EB3C2940018DAA6 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
+		BFAC7A870EB4566D0018DAA6 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = SOURCE_ROOT; };
 		BFFC7B770E7ADEC1009ACA39 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BFAC7A870EB4566D0018DAA6 /* Settings.bundle */,
 				BF4CFA020E94145A00818911 /* ArabicViewController.h */,
 				BF4CFA010E94145A00818911 /* ArabicViewController.m */,
 				BF0F528D0E52D836005F00CE /* RomanViewController.h */,
@@ -201,6 +204,7 @@
 				BF4CFA500E9421BC00818911 /* arabic.png in Resources */,
 				BF2BB6E20E94372F00CB1C7A /* panel.png in Resources */,
 				BF1405810E94B15000BFCDBA /* Default.png in Resources */,
+				BFAC7A880EB4566D0018DAA6 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
