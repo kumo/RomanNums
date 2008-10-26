@@ -35,7 +35,13 @@
 	calculatedRomanValue = [self performConversionToRoman:arabicResult];
 	
 	NSLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
-	self.inputLooksCorrect = YES;
+
+	if ([roman isEqualToString:calculatedRomanValue])
+	{
+		self.inputLooksCorrect = YES;
+	} else {
+		self.inputLooksCorrect = NO;
+	}
 }
 
 - (void)convertToRoman:(NSString *) arabic {
@@ -43,7 +49,13 @@
 	calculatedArabicValue = [self performConversionToArabic:romanResult];
 	
 	NSLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
-	self.inputLooksCorrect = YES;
+
+	if ([arabic isEqualToString:calculatedArabicValue])
+	{
+		self.inputLooksCorrect = YES;
+	} else {
+		self.inputLooksCorrect = NO;
+	}
 }
 
 - (NSString *)performConversionToArabic:(NSString *) roman {

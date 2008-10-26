@@ -31,10 +31,14 @@
 
 - (void)convertYear {
 	[converter convertToArabic:romanLabel.text];
-	if (converter.inputLooksCorrect) {
-		NSString *result = converter.arabicResult;
-		arabicLabel.text = result;
-		[result release];
+	NSString *result = converter.arabicResult;
+	arabicLabel.text = result;
+	[result release];
+
+	if (!converter.inputLooksCorrect) {
+		NSString *romanResult = converter.calculatedRomanValue;
+		romanLabel.text = romanResult;
+		[romanResult release];
 	}
 }
 
