@@ -10,6 +10,8 @@
 
 
 @interface Converter : NSObject {
+	BOOL		performConversionCheck;
+	
 	BOOL		inputLooksCorrect;
 	NSString	*romanResult;
 	NSString	*arabicResult;
@@ -26,6 +28,7 @@
 - (NSString *)performConversionToArabic:(NSString *) roman;
 - (NSString *)performConversionToRoman:(NSString *) arabic;
 
+@property (nonatomic) BOOL performConversionCheck;
 @property (nonatomic) BOOL inputLooksCorrect;
 @property (nonatomic, retain) NSString *romanResult;
 @property (nonatomic, retain) NSString *arabicResult;

@@ -39,23 +39,27 @@
 }
 
 - (void)viewDidLoad {
-	converter = [[Converter alloc] init];
-	
 	// set the keyboard order
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *keyboardType = [defaults stringForKey:@"keyboard_type"];
+	NSLog(@"keyboard type is %@", keyboardType);
 	
-	if ([keyboardType isEqualToString:@"alphabetical"])
+	if ([keyboardType isEqualToString:@"numeric_smallest"])
 	{
 		[self setButtonTitles:[NSArray arrayWithObjects:
-							   @"C", @"D", @"I", @"L", @"M", @"V", @"X", nil]];
+							   @"I", @"V", @"X", @"L", @"C", @"D", @"M", nil]];
 	} else if ([keyboardType isEqualToString:@"numeric_largest"]) {
 		[self setButtonTitles:[NSArray arrayWithObjects:
 							   @"M", @"D", @"C", @"L", @"X", @"V", @"I", nil]];
 	} else {
 		[self setButtonTitles:[NSArray arrayWithObjects:
-							   @"I", @"V", @"X", @"L", @"C", @"D", @"M", nil]];
+							   @"C", @"D", @"I", @"L", @"M", @"V", @"X", nil]];
 	}
+	
+	// setup converter
+	converter = [[Converter alloc] init];
+	BOOL autocorrection = [defaults boolForKey:@"correction"];
+	converter.performConversionCheck = autocorrection;
 }
 
 - (void)convertYear {
@@ -64,10 +68,23 @@
 	arabicLabel.text = result;
 	[result release];
 
-	if (!converter.inputLooksCorrect) {
+	if (!converter.inputLooksCorrect && converter.performConversionCheck) {
+		[UIView beginAnimations:@"movement" context:nil];
+		[UIView setAnimationDuration:0.1f];
+		[UIView setAnimationRepeatCount:3];
+		CGPoint center = romanLabel.center;
+		
+		center.x += 10;
+		romanLabel.center = center;
+		
+		center.x -= 10;
+		romanLabel.center = center;
+		
 		NSString *romanResult = converter.calculatedRomanValue;
 		romanLabel.text = romanResult;
 		[romanResult release];
+
+		[UIView commitAnimations];
 	}
 }
 

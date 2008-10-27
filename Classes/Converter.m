@@ -11,7 +11,7 @@
 
 @implementation Converter
 
-@synthesize inputLooksCorrect, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues;
+@synthesize performConversionCheck, inputLooksCorrect, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues;
 
 
 - (void) dealloc {
@@ -27,34 +27,30 @@
 								   @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	 self.arabicCalculationValues = [NSArray arrayWithObjects:
 									  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+	self.performConversionCheck = NO;
+	self.inputLooksCorrect = YES;
 	return self;
 }
 
 - (void)convertToArabic:(NSString *) roman {
 	arabicResult = [self performConversionToArabic:roman];
-	calculatedRomanValue = [self performConversionToRoman:arabicResult];
+ 	if (performConversionCheck) {
+		calculatedRomanValue = [self performConversionToRoman:arabicResult];
 	
-	NSLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
+		NSLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
 
-	if ([roman isEqualToString:calculatedRomanValue])
-	{
-		self.inputLooksCorrect = YES;
-	} else {
-		self.inputLooksCorrect = NO;
+		self.inputLooksCorrect = [roman isEqualToString:calculatedRomanValue] ? YES : NO;
 	}
 }
 
 - (void)convertToRoman:(NSString *) arabic {
 	romanResult = [self performConversionToRoman:arabic];
-	calculatedArabicValue = [self performConversionToArabic:romanResult];
-	
-	NSLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
+	if (performConversionCheck) {
+		calculatedArabicValue = [self performConversionToArabic:romanResult];
+		
+		NSLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
 
-	if ([arabic isEqualToString:calculatedArabicValue])
-	{
-		self.inputLooksCorrect = YES;
-	} else {
-		self.inputLooksCorrect = NO;
+		self.inputLooksCorrect = [arabic isEqualToString:calculatedArabicValue] ? YES : NO;
 	}
 }
 

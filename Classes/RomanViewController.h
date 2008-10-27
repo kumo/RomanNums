@@ -11,10 +11,11 @@
 @class Converter;
 
 @interface RomanViewController : UIViewController {
-	IBOutlet UILabel *romanLabel;
-	IBOutlet UILabel *arabicLabel;
 	NSString *string;
 	Converter *converter;
+
+	IBOutlet UILabel *romanLabel;
+	IBOutlet UILabel *arabicLabel;
 	
 	IBOutlet UIButton *buttonOne;
 	IBOutlet UIButton *buttonTwo;

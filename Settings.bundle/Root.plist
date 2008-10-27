@@ -38,25 +38,17 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSMultiValueSpecifier</string>
+			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
 			<string>CorrectionSetting</string>
 			<key>Key</key>
 			<string>correction</string>
 			<key>DefaultValue</key>
-			<string>automatic</string>
-			<key>Titles</key>
-			<array>
-				<string>CorrectionDisabled</string>
-				<string>SuggestedCorrection</string>
-				<string>AutomaticCorrection</string>
-			</array>
-			<key>Values</key>
-			<array>
-				<string>off</string>
-				<string>suggestion</string>
-				<string>automatic</string>
-			</array>
+			<true/>
+			<key>FalseValue</key>
+			<integer>0</integer>
+			<key>TrueValue</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 </dict>
