@@ -42,7 +42,6 @@
 	// set the keyboard order
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSString *keyboardType = [defaults stringForKey:@"keyboard_type"];
-	NSLog(@"keyboard type is %@", keyboardType);
 	
 	if ([keyboardType isEqualToString:@"numeric_smallest"])
 	{
