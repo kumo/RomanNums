@@ -29,17 +29,30 @@
 	converter = [[Converter alloc] init];
 }
 
-- (void)convertYear {
-	[converter convertToRoman:arabicLabel.text];
-
-	NSString *result = converter.romanResult;
-	romanLabel.text = result;
-	[result release];
+- (void)convertYear:(NSString *)input {
+	[converter convertToRoman:input];
 	
-	if (!converter.inputLooksCorrect) {
-		NSString *arabicResult = converter.calculatedArabicValue;
-		arabicLabel.text = arabicResult;
-		[arabicResult release];
+	if (!converter.inputLooksCorrect)
+	{
+		[UIView beginAnimations:@"movement" context:nil];
+		[UIView setAnimationDuration:0.1f];
+		[UIView setAnimationRepeatCount:3];
+		CGPoint center = arabicLabel.center;
+		
+		center.x += 10;
+		arabicLabel.center = center;
+		
+		center.x -= 10;
+		arabicLabel.center = center;
+		
+		[UIView commitAnimations];
+	} else {
+		NSString *result = converter.romanResult;
+		romanLabel.text = result;
+		[result release];
+		
+		arabicLabel.text = input;
+		[input release];
 	}
 }
 
@@ -50,17 +63,13 @@
 
 	if ([[sender currentTitle] isEqualToString: @"delete"]) {
 		if ([arabicLabelString length] > 0) {
-			NSString *newLabelString = [[NSString alloc] initWithString:[arabicLabelString substringToIndex: [arabicLabelString length] - 1]];
-			arabicLabel.text = newLabelString;
-			[newLabelString release];
-			[self convertYear];
+			NSString *newInputString = [[NSString alloc] initWithString:[arabicLabelString substringToIndex: [arabicLabelString length] - 1]];
+			[self convertYear:newInputString];
 		}
 	}	
 	else if ([arabicLabelString length] < 4) {
-		NSString *newLabelString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, [sender currentTitle]];
-		arabicLabel.text = newLabelString;
-		[newLabelString release];
-		[self convertYear];
+		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, [sender currentTitle]];
+		[self convertYear:newInputString];
     }
 }
 
