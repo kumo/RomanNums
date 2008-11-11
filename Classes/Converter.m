@@ -28,6 +28,7 @@
 	 self.arabicCalculationValues = [NSArray arrayWithObjects:
 									  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 	self.performConversionCheck = NO;
+	self.conversionResult = Valid; // used if no conversion check
 	return self;
 }
 
