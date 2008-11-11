@@ -32,7 +32,7 @@
 - (void)convertYear:(NSString *)input {
 	[converter convertToRoman:input];
 	
-	if (!converter.inputLooksCorrect)
+	if (converter.conversionResult == Ignored)
 	{
 		[UIView beginAnimations:@"movement" context:nil];
 		[UIView setAnimationDuration:0.1f];

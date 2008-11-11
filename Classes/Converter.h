@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+	Valid = 0,
+	Ignored,
+	Converted
+} ConversionResult;
 
 @interface Converter : NSObject {
 	BOOL		performConversionCheck;
 	
-	BOOL		inputLooksCorrect;
+	ConversionResult		conversionResult;
+	
 	NSString	*romanResult;
 	NSString	*arabicResult;
 	
@@ -29,7 +35,7 @@
 - (NSString *)performConversionToRoman:(NSString *) arabic;
 
 @property (nonatomic) BOOL performConversionCheck;
-@property (nonatomic) BOOL inputLooksCorrect;
+@property (nonatomic) ConversionResult conversionResult;
 @property (nonatomic, retain) NSString *romanResult;
 @property (nonatomic, retain) NSString *arabicResult;
 @property (nonatomic, retain) NSString *calculatedRomanValue;

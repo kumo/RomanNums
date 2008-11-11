@@ -64,7 +64,8 @@
 - (void)convertYear:(NSString *)input {
 	[converter convertToArabic:input];
 	
-	if (!converter.inputLooksCorrect)
+	NSLog(@"conversion result is %d", converter.conversionResult);
+	if (converter.conversionResult == Ignored)
 	{
 		[UIView beginAnimations:@"movement" context:nil];
 		[UIView setAnimationDuration:0.1f];
@@ -77,6 +78,20 @@
 		center.x -= 10;
 		romanLabel.center = center;
 		
+		[UIView commitAnimations];
+	} else if (converter.conversionResult == Converted) {
+		NSString *result = converter.arabicResult;
+		arabicLabel.text = result;
+		[result release];
+		
+		[UIView beginAnimations:@"switch" context:nil];
+		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:romanLabel cache:YES];
+		[UIView setAnimationDuration:0.3f];
+		result = converter.calculatedRomanValue;
+		romanLabel.text = result;
+		[result release];
+		
+		[input release];
 		[UIView commitAnimations];
 	} else {
 		NSString *result = converter.arabicResult;

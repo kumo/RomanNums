@@ -11,7 +11,7 @@
 
 @implementation Converter
 
-@synthesize performConversionCheck, inputLooksCorrect, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues;
+@synthesize performConversionCheck, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues, conversionResult;
 
 
 - (void) dealloc {
@@ -28,7 +28,6 @@
 	 self.arabicCalculationValues = [NSArray arrayWithObjects:
 									  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 	self.performConversionCheck = NO;
-	self.inputLooksCorrect = YES;
 	return self;
 }
 
@@ -39,7 +38,21 @@
 	
 		//NSLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
 
-		self.inputLooksCorrect = [roman isEqualToString:calculatedRomanValue] ? YES : NO;
+		NSString *choppedString = @"";
+		
+		if ([roman length] > 1) {
+			choppedString = [[NSString alloc] initWithString:[roman substringToIndex: [roman length] - 1]];
+		}
+
+		if ([roman isEqualToString:calculatedRomanValue]) {
+			self.conversionResult = Valid;
+		} else if ([calculatedRomanValue isEqualToString:choppedString]) {
+			self.conversionResult = Ignored;
+		} else {
+			self.conversionResult = Converted;	
+		}
+		
+		[choppedString release];
 	}
 }
 
@@ -50,7 +63,11 @@
 		
 		//NSLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
 
-		self.inputLooksCorrect = [arabic isEqualToString:calculatedArabicValue] ? YES : NO;
+		if ([arabic isEqualToString:calculatedArabicValue]) {
+			self.conversionResult = Valid;
+		} else {
+			self.conversionResult = Ignored;	
+		}
 	}
 }
 
