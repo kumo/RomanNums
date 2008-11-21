@@ -17,3 +17,13 @@ Territories: all
 Application availability date: now
 Application price: free
 Localization: all?
+
+Update 1.1:
+Added Arabic to Roman numerals converter.
+
+Update 1.2:
+- inputted roman numerals can be automatically corrected and invalid combinations ignored
+- roman numerals keyboard can be shown in alphabetical or numerical order
+
+These 2 options are available in the iPhone/iPod Settings.
+
