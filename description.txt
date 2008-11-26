@@ -2,11 +2,9 @@ Application name: Roman Numerals
 Application description:
 Roman Numerals provides an easy way of converting Roman numerals into more understandable year numbers and vice versa. Use it when you cannot quite work out the age of a building or to resolve disputes about the year in which a TV programme was made.
 
-To use it just choose whether you want to convert from Roman numerals or from Arabic numerals and then type in the year and the corresponding value will appear.
+To use it just choose whether you want to convert from Roman numerals or from Arabic numerals and then type in the year and the corresponding value will appear. There are preferences for enabling autocorrection and for choosing which order the roman numerals appear in on the keyboard.
 
-Thank you to everyone for your suggestions about the arabic to roman conversion.
-
-I have submitted a new version which will correct roman numerals and also allows the keyboard to appear in numerical order.
+Thank you to everyone for your suggestions about the arabic to roman conversion, and for the roman numerals correction.
 
 If you would like to show your appreciation of this application or would like a quiz for the roman numerals then please consider buying my quiz version.
 Device type: all
