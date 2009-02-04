@@ -2,7 +2,7 @@
 
 "KeyboardSetting" = "Orden de los botones";
 "AlphabetOrder" = "Alfabético";
-"LargestNumberOrder" = "De mayor a menor";
-"SmallestNumberOrder" = "De menor a mayor";
+"LargestNumberOrder" = "Del más grande al más pequeño";
+"SmallestNumberOrder" = "Del más pequeño al más grande";
 
 "CorrectionSetting" = "Autocorrección";
