@@ -11,7 +11,7 @@
 
 @implementation RomanViewController
 
-@synthesize romanLabel, arabicLabel;
+@synthesize romanLabel, arabicLabel, webView;
 @synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven;
 @synthesize string;
 @synthesize converter;
@@ -89,6 +89,10 @@
 		[UIView setAnimationDuration:0.3f];
 		result = converter.calculatedRomanValue;
 		romanLabel.text = result;
+
+		NSString *htmlString = [NSString stringWithFormat:@"<html><head><style type='text/css'>body, html {font-weight: bold; font-family: helvetica; font-size: 55pt;} div {line-height: 38px; position: absolute; top: 0px;}</style></head><body style='background-color: transparent'><font size='130px'><span style='text-decoration: none; border-top: 5px solid black;'>%@</span></font></body></html>", result];
+		[webView loadHTMLString:htmlString baseURL:nil];
+		
 		[result release];
 		
 		[input release];
@@ -99,6 +103,10 @@
 		[result release];
 		
 		romanLabel.text = input;
+
+		NSString *htmlString = [NSString stringWithFormat:@"<html><head><style type='text/css'>body, html {font-weight: bold; font-family: helvetica; font-size: 55pt;} div {line-height: 38px; position: absolute; top: 0px;}</style></head><body style='background-color: transparent'><font size='130px'><span style='text-decoration: none; border-top: 5px solid black;'>%@</span></font></body></html>", input];
+		[webView loadHTMLString:htmlString baseURL:nil];
+		
 		[input release];
 	}
 }
@@ -107,7 +115,7 @@
     self.string = romanLabel.text;
 	
     NSString *romanLabelString = string;
-
+	
 	if ([[sender currentTitle] isEqualToString: @"delete"]) {
 		if ([romanLabelString length] > 0) {
 			NSString *newInputString = [[NSString alloc] initWithString:[romanLabelString substringToIndex: [romanLabelString length] - 1]];

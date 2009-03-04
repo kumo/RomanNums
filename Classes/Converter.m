@@ -24,9 +24,9 @@
 {
 	self = [super init];
 	self.romanCalculationValues = [NSArray arrayWithObjects:
-								   @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+								   @"m", @"d", @"c", @"l", @"x", @"vi", @"v", @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	 self.arabicCalculationValues = [NSArray arrayWithObjects:
-									  @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+									  @"1000000", @"500000", @"100000", @"50000", @"10000", @"6000", @"5000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 	self.performConversionCheck = NO;
 	self.conversionResult = Valid; // used if no conversion check
 	return self;
