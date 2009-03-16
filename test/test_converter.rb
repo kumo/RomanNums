@@ -72,7 +72,7 @@ class TestConverter < Test::Unit::TestCase
     
     assert_equal("(I) (I)", converter.performOldConversionToRoman("2000"))
 
-    assert_equal("IↃↃↃ CCIↃↃ IↃↃ CD XXXII", converter.performOldConversionToRoman("65332"))
+    assert_equal("I))) ((I)) I)) CDXXXII", converter.performOldConversionToRoman("65432"))
   end
   
   def test_descartes
