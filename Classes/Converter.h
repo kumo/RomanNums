@@ -33,6 +33,8 @@ typedef enum {
 - (void)convertToRoman:(NSString *) arabic;
 - (NSString *)performConversionToArabic:(NSString *) roman;
 - (NSString *)performConversionToRoman:(NSString *) arabic;
+- (NSString *)performOldConversionToRoman:(NSString *) arabic;
+- (NSString *)performOldConversionToArabic:(NSString *) roman;
 
 @property (nonatomic) BOOL performConversionCheck;
 @property (nonatomic) ConversionResult conversionResult;

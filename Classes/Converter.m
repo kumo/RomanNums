@@ -151,6 +151,71 @@
     return result;
 }
 
+- (NSString *)performOldConversionToRoman:(NSString *) arabic {
+	NSArray *largeRomanCalculationValues = [NSArray arrayWithObjects:
+								   @"((I)) ", @"(I) (I) ((I)) ", @"I)) ", @"(I) I)) ", @"(I) ", @"(I) ((I)) ", @"I) ", @"C I) ", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+	NSArray *largeArabicCalculationValues = [NSArray arrayWithObjects:
+									@"10000", @"8000", @"5000", @"4000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+
+    int arabicLabelValue = [arabic intValue];
+	
+    NSString *romanValue = nil;
+	
+	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
+	
+	int arrayCount = [romanCalculationValues count];
+	// We need to iterate through all of the roman values
+	int i;
+	for (i = 0; i < arrayCount; i++)
+	{
+		// Get the roman value at position i
+		romanValue = [largeRomanCalculationValues objectAtIndex:i];
+		// along with the corresponding arabic value
+		int arabicValue = [[largeArabicCalculationValues objectAtIndex:i] intValue];
+		
+		// Let's div and mod the arabic string
+		int div = arabicLabelValue / arabicValue;
+		//int mod = arabicLabelValue % arabicValue;
+		
+		//NSLog(@"Checking: %i", arabicValue);
+		//NSLog(@"div: %i", div);
+		//NSLog(@"mod: %i", mod);
+		
+		if (div > 0)
+		{
+			int j = 0;
+			for (j = 0; j < div; j++)
+			{
+				//NSLog(@"Should add: %@ to string", romanValue);
+				[resultString appendFormat: romanValue];
+				arabicLabelValue = arabicLabelValue - arabicValue;
+			}
+			//NSLog(@"String is now: %@", resultString);
+		}
+	}
+    
+	NSString *result;
+	
+	// strip any final spaces from the result string
+	if ([[resultString substringFromIndex: [resultString length] - 1] isEqualToString:@" "]) {
+		result = @"";
+	
+		if ([resultString length] > 1) {
+			result = [[NSString alloc] initWithString:[resultString substringToIndex: [resultString length] - 1]];
+		}
+	} else {
+		result = [[NSString alloc] initWithFormat:@"%@", resultString];
+	}
+	
+	return result;
+}
+
+
+- (NSString *)performOldConversionToArabic:(NSString *) roman {
+	return @"";
+}
+
+
 @end
 
 // This initialization function gets called when we import the Ruby module.
