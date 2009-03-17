@@ -103,8 +103,9 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">1</int>
-						<float key="IBUIMinimumFontSize">1.800000e+01</float>
+						<float key="IBUIMinimumFontSize">7.000000e+00</float>
 						<int key="IBUITextAlignment">1</int>
+						<int key="IBUILineBreakMode">5</int>
 					</object>
 					<object class="IBUILabel" id="90300499">
 						<reference key="NSNextResponder" ref="191373211"/>

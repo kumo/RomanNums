@@ -164,9 +164,21 @@
 
 - (NSString *)performOldConversionToRoman:(NSString *) arabic {
 	NSArray *largeRomanCalculationValues = [NSArray arrayWithObjects:
-									@"CCCCIↃↃↃↃ ", @"CCCIↃↃↃ ", @"CCIↃↃ CCCIↃↃↃ ", @"IↃↃↃ ", @"CCIↃↃ IↃↃↃ ", @"CCIↃↃ ", @"CIↃ CCIↃↃ ", @"CIↃ CIↃ CCIↃↃ ", @"IↃↃ ", @"CIↃ IↃↃ ", @"CIↃ ", @"C CIↃ ", @"IↃ ", @"C IↃ ", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+									@"CCCCCIↃↃↃↃↃ CCCCCCIↃↃↃↃↃↃↃ ", @"IↃↃↃↃↃↃ ", @"CCCCCIↃↃↃↃↃ IↃↃↃↃↃↃ ", @"CCCCCIↃↃↃↃↃ ",
+									@"CCCCIↃↃↃↃ CCCCCIↃↃↃↃↃ ", @"IↃↃↃↃↃ ", @"CCCCIↃↃↃↃ IↃↃↃↃↃ ", @"CCCCIↃↃↃↃ ",
+									@"CCCIↃↃↃ CCCCIↃↃↃↃ ", @"IↃↃↃↃ ", @"CCCIↃↃↃ IↃↃↃↃ ", @"CCCIↃↃↃ ",
+									@"CCIↃↃ CCCIↃↃↃ ", @"IↃↃↃ ", @"CCIↃↃ IↃↃↃ ", @"CCIↃↃ ",
+									@"CIↃ CCIↃↃ ", @"CIↃ CIↃ CCIↃↃ ", @"IↃↃ ", @"CIↃ IↃↃ ", @"CIↃ ",
+									@"C CIↃ ", @"IↃ ", @"C IↃ ", @"C",
+									@"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	NSArray *largeArabicCalculationValues = [NSArray arrayWithObjects:
-									@"1000000", @"100000", @"90000", @"50000", @"40000", @"10000", @"9000", @"8000", @"5000", @"4000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+									@"90000000", @"50000000", @"40000000", @"10000000",
+									@"9000000", @"5000000", @"4000000", @"1000000",
+									@"900000", @"500000", @"400000", @"100000",
+									@"90000", @"50000", @"40000", @"10000",
+									@"9000", @"8000", @"5000", @"4000", @"1000",
+									@"900", @"500", @"400", @"100",
+									@"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 
     int arabicLabelValue = [arabic intValue];
 	
