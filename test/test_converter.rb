@@ -28,7 +28,7 @@ class TestConverter < Test::Unit::TestCase
   def test_old_conversion
     converter = Converter.alloc.init
     
-    assert_equal("(I) I) CCCCXXV", converter.performOldConversionToRoman("1925"))
+    assert_equal("CIↃ IↃ CCCCXXV", converter.performOldConversionToRoman("1925"))
   end
   
   def test_largest_simple_number
@@ -42,43 +42,43 @@ class TestConverter < Test::Unit::TestCase
   def test_large_numbers # http://home.att.net/~numericana/answer/roman.htm
     converter = Converter.alloc.init
     
-    assert_equal("((I)) I)) MMMXXXIV", converter.performOldConversionToRoman("18034"))
+    assert_equal("CCIↃↃ IↃↃ MMMXXXIV", converter.performOldConversionToRoman("18034"))
   end
   
   def test_pietro_bongo # http://www2.inetdirect.net/~charta/Roman_numerals.html
     converter = Converter.alloc.init
 
-    assert_equal("(I) (I) (I)", converter.performOldConversionToRoman("3000"))
+    assert_equal("CIↃ CIↃ CIↃ", converter.performOldConversionToRoman("3000"))
 
-    assert_equal("(I) I))", converter.performOldConversionToRoman("4000"))
+    assert_equal("CIↃ IↃↃ", converter.performOldConversionToRoman("4000"))
 
-    assert_equal("I))", converter.performOldConversionToRoman("5000"))
+    assert_equal("IↃↃ", converter.performOldConversionToRoman("5000"))
 
-    assert_equal("I)) (I)", converter.performOldConversionToRoman("6000"))
+    assert_equal("IↃↃ CIↃ", converter.performOldConversionToRoman("6000"))
     
-    assert_equal("I)) (I) (I)", converter.performOldConversionToRoman("7000"))
+    assert_equal("IↃↃ CIↃ CIↃ", converter.performOldConversionToRoman("7000"))
     
-    assert_equal("(I) (I) ((I))", converter.performOldConversionToRoman("8000"))
+    assert_equal("CIↃ CIↃ CCIↃↃ", converter.performOldConversionToRoman("8000"))
   end
   
   def test_german_wikipedia
     converter = Converter.alloc.init
     
-    assert_equal("(I)", converter.performOldConversionToRoman("1000"))
+    assert_equal("CIↃ", converter.performOldConversionToRoman("1000"))
 
-    assert_equal("(I) I) CXXXII", converter.performOldConversionToRoman("1632"))
+    assert_equal("CIↃ IↃ CXXXII", converter.performOldConversionToRoman("1632"))
 
-    assert_equal("(I) C (I) LXXXIV", converter.performOldConversionToRoman("1984"))
+    assert_equal("CIↃ C CIↃ LXXXIV", converter.performOldConversionToRoman("1984"))
     
-    assert_equal("(I) (I)", converter.performOldConversionToRoman("2000"))
+    assert_equal("CIↃ CIↃ", converter.performOldConversionToRoman("2000"))
 
-    assert_equal("I))) ((I)) I)) CDXXXII", converter.performOldConversionToRoman("65432"))
+    assert_equal("IↃↃↃ CCIↃↃ IↃↃ CDXXXII", converter.performOldConversionToRoman("65432"))
   end
   
   def test_descartes
     converter = Converter.alloc.init
     
-    assert_equal("(I) I) CLXI", converter.performOldConversionToRoman("1661"))
+    assert_equal("CIↃ IↃ CLXI", converter.performOldConversionToRoman("1661"))
   end
   
   def test_unicode
