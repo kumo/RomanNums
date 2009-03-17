@@ -68,7 +68,7 @@
 			[self convertYear:newInputString];
 		}
 	}	
-	else if ([arabicLabelString length] < 8) {
+	else if ([arabicLabelString length] < 6) {
 		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, [sender currentTitle]];
 		[self convertYear:newInputString];
     }
