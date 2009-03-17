@@ -15,6 +15,7 @@
 @synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven;
 @synthesize string;
 @synthesize converter;
+@synthesize lastAcceleration;
 
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -59,6 +60,8 @@
 	converter = [[Converter alloc] init];
 	BOOL autocorrection = [defaults boolForKey:@"correction"];
 	converter.performConversionCheck = autocorrection;
+
+	[UIAccelerometer sharedAccelerometer].delegate = self;
 }
 
 - (void)convertYear:(NSString *)input {
@@ -147,5 +150,37 @@
 	[super dealloc];
 }
 
+// Ensures the shake is strong enough on at least two axes before declaring it a shake.
+// "Strong enough" means "greater than a client-supplied threshold" in G's.
+static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* current, double threshold) {
+	double
+	deltaX = fabs(last.x - current.x),
+	deltaY = fabs(last.y - current.y),
+	deltaZ = fabs(last.z - current.z);
+	
+	return
+	(deltaX > threshold && deltaY > threshold) ||
+	(deltaX > threshold && deltaZ > threshold) ||
+	(deltaY > threshold && deltaZ > threshold);
+}
+
+- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+	
+	if (self.lastAcceleration) {
+		if (!histeresisExcited && L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.9)) {
+			histeresisExcited = YES;
+			
+			/* SHAKE DETECTED. DO HERE WHAT YOU WANT. */
+			NSString *newInputString = @"";
+			[self convertYear:newInputString];
+			
+			
+		} else if (histeresisExcited && !L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.2)) {
+			histeresisExcited = NO;
+		}
+	}
+	
+	self.lastAcceleration = acceleration;
+}
 
 @end
