@@ -13,6 +13,7 @@
 
 @synthesize romanLabel;
 @synthesize arabicLabel;
+@synthesize archaicButton;
 @synthesize string;
 @synthesize converter;
 
@@ -30,7 +31,7 @@
 }
 
 - (void)convertYear:(NSString *)input {
-	[converter convertToRoman:input];
+	[converter convertToRoman:input archaic:archaicMode];
 	
 	if (converter.conversionResult == Ignored)
 	{
@@ -67,10 +68,19 @@
 			[self convertYear:newInputString];
 		}
 	}	
-	else if ([arabicLabelString length] < 4) {
+	else if ([arabicLabelString length] < 8) {
 		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, [sender currentTitle]];
 		[self convertYear:newInputString];
     }
+}
+
+- (IBAction)archaicButtonPressed:(id)sender {
+	archaicMode = !archaicMode;
+	
+	archaicButton.selected = archaicMode;
+	
+	NSString *arabicLabelCopy = [[NSString alloc] initWithString:arabicLabel.text];
+	[self convertYear: arabicLabelCopy];
 }
 
 /*

@@ -13,14 +13,19 @@
 @interface ArabicViewController : UIViewController {
 	IBOutlet UILabel *romanLabel;
 	IBOutlet UILabel *arabicLabel;
+	IBOutlet UIButton *archaicButton;
 	NSString *string;
 	Converter *converter;
+	
+	bool archaicMode;
 }
 @property (nonatomic, retain) UILabel *romanLabel;
 @property (nonatomic, retain) UILabel *arabicLabel;
+@property (nonatomic, retain) UIButton *archaicButton;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) Converter *converter;
 
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;
+- (IBAction)archaicButtonPressed:(id)sender;
 @end

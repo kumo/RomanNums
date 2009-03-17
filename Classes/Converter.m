@@ -57,8 +57,13 @@
 	}
 }
 
-- (void)convertToRoman:(NSString *) arabic {
-	romanResult = [self performConversionToRoman:arabic];
+- (void)convertToRoman:(NSString *) arabic archaic:(bool) archaic {
+	if (archaic == YES) {
+		romanResult = [self performOldConversionToRoman:arabic];
+	} else {
+		romanResult = [self performConversionToRoman:arabic];
+	}
+	
 	if (performConversionCheck) {
 		calculatedArabicValue = [self performConversionToArabic:romanResult];
 		
@@ -159,9 +164,9 @@
 
 - (NSString *)performOldConversionToRoman:(NSString *) arabic {
 	NSArray *largeRomanCalculationValues = [NSArray arrayWithObjects:
-								   @"(((I)))", @"I))) ", @"I))) ((I)) ", @"((I)) ", @"(I) ((I)) ", @"(I) (I) ((I)) ", @"I)) ", @"(I) I)) ", @"(I) ", @"C (I) ", @"I) ", @"C I) ", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+									@"CCCCIↃↃↃↃ ", @"CCCIↃↃↃ ", @"CCIↃↃ CCCIↃↃↃ ", @"IↃↃↃ ", @"CCIↃↃ IↃↃↃ ", @"CCIↃↃ ", @"CIↃ CCIↃↃ ", @"CIↃ CIↃ CCIↃↃ ", @"IↃↃ ", @"CIↃ IↃↃ ", @"CIↃ ", @"C CIↃ ", @"IↃ ", @"C IↃ ", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	NSArray *largeArabicCalculationValues = [NSArray arrayWithObjects:
-									@"100000", @"50000", @"40000", @"10000", @"9000", @"8000", @"5000", @"4000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+									@"1000000", @"100000", @"90000", @"50000", @"40000", @"10000", @"9000", @"8000", @"5000", @"4000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 
     int arabicLabelValue = [arabic intValue];
 	
@@ -203,14 +208,18 @@
 	NSString *result;
 	
 	// strip any final spaces from the result string
-	if ([[resultString substringFromIndex: [resultString length] - 1] isEqualToString:@" "]) {
-		result = @"";
-	
-		if ([resultString length] > 1) {
-			result = [[NSString alloc] initWithString:[resultString substringToIndex: [resultString length] - 1]];
+	if ([resultString length] > 0) {
+		if ([[resultString substringFromIndex: [resultString length] - 1] isEqualToString:@" "]) {
+			result = @"";
+
+			if ([resultString length] > 1) {
+				result = [[NSString alloc] initWithString:[resultString substringToIndex: [resultString length] - 1]];
+			}
+		} else {
+			result = [[NSString alloc] initWithFormat:@"%@", resultString];
 		}
 	} else {
-		result = [[NSString alloc] initWithFormat:@"%@", resultString];
+		result = @"";
 	}
 	
 	return result;
