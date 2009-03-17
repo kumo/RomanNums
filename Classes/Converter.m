@@ -104,7 +104,13 @@
 		}
 	}
     
-    NSString *greeting = [[NSString alloc] initWithFormat:@"%d", result];
+	NSString *greeting;
+	if (result == 0) {
+		greeting = @"";
+	} else {
+		greeting = [[NSString alloc] initWithFormat:@"%d", result];
+	}
+	
 	return greeting;
 }
 
@@ -153,9 +159,9 @@
 
 - (NSString *)performOldConversionToRoman:(NSString *) arabic {
 	NSArray *largeRomanCalculationValues = [NSArray arrayWithObjects:
-								   @"I))) ", @"I))) ((I)) ", @"((I)) ", @"(I) ((I)) ", @"I)) ", @"(I) I)) ", @"(I) ", @"C (I) ", @"I) ", @"C I) ", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+								   @"(((I)))", @"I))) ", @"I))) ((I)) ", @"((I)) ", @"(I) ((I)) ", @"(I) (I) ((I)) ", @"I)) ", @"(I) I)) ", @"(I) ", @"C (I) ", @"I) ", @"C I) ", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
 	NSArray *largeArabicCalculationValues = [NSArray arrayWithObjects:
-									@"50000", @"40000", @"10000", @"9000", @"5000", @"4000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
+									@"100000", @"50000", @"40000", @"10000", @"9000", @"8000", @"5000", @"4000", @"1000", @"900", @"500", @"400", @"100", @"90", @"50", @"40", @"10", @"9", @"5", @"4", @"1", nil];
 
     int arabicLabelValue = [arabic intValue];
 	

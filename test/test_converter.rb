@@ -12,7 +12,7 @@ class TestConverter < Test::Unit::TestCase
   def test_can_accept_empty_strings
     converter = Converter.alloc.init
     
-    assert_equal("0", converter.performConversionToArabic(""))
+    assert_equal("", converter.performConversionToArabic(""))
 
     assert_equal("", converter.performConversionToRoman(""))
   end
@@ -39,7 +39,7 @@ class TestConverter < Test::Unit::TestCase
     assert_equal("4999", converter.performConversionToArabic("MMMMCMXCIX"))
   end
   
-  def test_large_numbers
+  def test_large_numbers # http://home.att.net/~numericana/answer/roman.htm
     converter = Converter.alloc.init
     
     assert_equal("((I)) I)) MMMXXXIV", converter.performOldConversionToRoman("18034"))
