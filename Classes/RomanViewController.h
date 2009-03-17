@@ -14,6 +14,8 @@
 	NSString *string;
 	Converter *converter;
 
+	IBOutlet UIImageView *iPhoneImage;
+
 	IBOutlet UILabel *romanLabel;
 	IBOutlet UILabel *arabicLabel;
 	
@@ -31,6 +33,7 @@
 
 @property (nonatomic, retain) UILabel *romanLabel;
 @property (nonatomic, retain) UILabel *arabicLabel;
+@property (nonatomic, retain) UIImageView *iPhoneImage;
 @property (nonatomic, retain) UIButton *buttonOne;
 @property (nonatomic, retain) UIButton *buttonTwo;
 @property (nonatomic, retain) UIButton *buttonThree;

@@ -8,6 +8,7 @@
 
 #import "RomanViewController.h"
 #import "Converter.h"
+#import "QuartzCore/QuartzCore.h"
 
 @implementation RomanViewController
 
@@ -16,6 +17,7 @@
 @synthesize string;
 @synthesize converter;
 @synthesize lastAcceleration;
+@synthesize iPhoneImage;
 
 /*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -171,12 +173,35 @@ static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* curren
 			histeresisExcited = YES;
 			
 			/* SHAKE DETECTED. DO HERE WHAT YOU WANT. */
+			NSLog(@"shaking detected");
 			NSString *newInputString = @"";
 			[self convertYear:newInputString];
 			
+			CABasicAnimation* bloom = [CABasicAnimation animationWithKeyPath:@"opacity"];
+			bloom.fromValue = [NSNumber numberWithFloat:0.0];
+			bloom.toValue = [NSNumber numberWithFloat:1.0];
+			bloom.duration = 0.2;
+			bloom.autoreverses = NO;
+			//bloom.repeatCount = 1e100;
+			bloom.delegate = self;
+			bloom.fillMode = kCAFillModeForwards;
+			bloom.removedOnCompletion = NO;
+			[iPhoneImage.layer addAnimation:bloom forKey:@"bloom"];			
 			
 		} else if (histeresisExcited && !L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.2)) {
 			histeresisExcited = NO;
+
+			CABasicAnimation* bloom = [CABasicAnimation animationWithKeyPath:@"opacity"];
+			bloom.fromValue = [NSNumber numberWithFloat:1.0];
+			bloom.toValue = [NSNumber numberWithFloat:0.0];
+			bloom.duration = 0.8;
+			bloom.autoreverses = NO;
+			//bloom.repeatCount = 1e100;
+			bloom.delegate = self;
+			bloom.fillMode = kCAFillModeForwards;
+			bloom.removedOnCompletion = NO;
+			[iPhoneImage.layer addAnimation:bloom forKey:@"bloom"];			
+			
 		}
 	}
 	

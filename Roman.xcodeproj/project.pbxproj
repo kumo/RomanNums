@@ -15,6 +15,8 @@
 		BF0F528F0E52D836005F00CE /* RomanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0F528E0E52D836005F00CE /* RomanViewController.m */; };
 		BF1405810E94B15000BFCDBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1405800E94B15000BFCDBA /* Default.png */; };
 		BF2BB6E20E94372F00CB1C7A /* panel.png in Resources */ = {isa = PBXBuildFile; fileRef = BF2BB6E10E94372F00CB1C7A /* panel.png */; };
+		BF3AC5930F6FB57900441C90 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF3AC5920F6FB57900441C90 /* QuartzCore.framework */; };
+		BF3AC6240F6FBB1D00441C90 /* iPhone-shaking.png in Resources */ = {isa = PBXBuildFile; fileRef = BF3AC6230F6FBB1D00441C90 /* iPhone-shaking.png */; };
 		BF4CFA030E94145A00818911 /* ArabicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4CFA010E94145A00818911 /* ArabicViewController.m */; };
 		BF4CFA4E0E9421B600818911 /* roman.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4CFA4D0E9421B600818911 /* roman.png */; };
 		BF4CFA500E9421BC00818911 /* arabic.png in Resources */ = {isa = PBXBuildFile; fileRef = BF4CFA4F0E9421BC00818911 /* arabic.png */; };
@@ -44,6 +46,8 @@
 		BF0F528E0E52D836005F00CE /* RomanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanViewController.m; sourceTree = "<group>"; };
 		BF1405800E94B15000BFCDBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BF2BB6E10E94372F00CB1C7A /* panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = panel.png; sourceTree = "<group>"; };
+		BF3AC5920F6FB57900441C90 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BF3AC6230F6FBB1D00441C90 /* iPhone-shaking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPhone-shaking.png"; sourceTree = "<group>"; };
 		BF4CFA010E94145A00818911 /* ArabicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArabicViewController.m; sourceTree = "<group>"; };
 		BF4CFA020E94145A00818911 /* ArabicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArabicViewController.h; sourceTree = "<group>"; };
 		BF4CFA4D0E9421B600818911 /* roman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roman.png; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			files = (
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				BF3AC5930F6FB57900441C90 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,7 @@
 				BF7E68BC0E844DE500099191 /* dark_delete.png */,
 				BF7E68760E84421C00099191 /* light.png */,
 				BF7E68700E8440FC00099191 /* dark.png */,
+				BF3AC6230F6FBB1D00441C90 /* iPhone-shaking.png */,
 				BFA126D80E94125E000342F9 /* ArabicView.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				BF5E8CDD0E52DACE00485C7A /* RomanView.xib */,
@@ -143,6 +149,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF3AC5920F6FB57900441C90 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 			);
@@ -205,6 +212,7 @@
 				BF2BB6E20E94372F00CB1C7A /* panel.png in Resources */,
 				BF1405810E94B15000BFCDBA /* Default.png in Resources */,
 				BFAC7A880EB4566D0018DAA6 /* Settings.bundle in Resources */,
+				BF3AC6240F6FBB1D00441C90 /* iPhone-shaking.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
