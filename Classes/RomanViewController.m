@@ -62,8 +62,6 @@
 	converter = [[Converter alloc] init];
 	BOOL autocorrection = [defaults boolForKey:@"correction"];
 	converter.performConversionCheck = autocorrection;
-
-	[UIAccelerometer sharedAccelerometer].delegate = self;
 }
 
 - (void)convertYear:(NSString *)input {
@@ -205,7 +203,7 @@ static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* curren
 
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished {
 	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:NO];
+	[UIView setAnimationTransition:UIViewAnimationTransitionCurlUp forView:self.view cache:YES];
 	[UIView setAnimationDuration:0.8f];
 	
 	NSString *newInputString = @"";

@@ -10,7 +10,9 @@
 
 @class Converter;
 
-@interface ArabicViewController : UIViewController {
+@interface ArabicViewController : UIViewController <UIAccelerometerDelegate> {
+	IBOutlet UIImageView *iPhoneImage;
+	
 	IBOutlet UILabel *romanLabel;
 	IBOutlet UILabel *arabicLabel;
 	IBOutlet UIButton *archaicButton;
@@ -18,12 +20,20 @@
 	Converter *converter;
 	
 	bool archaicMode;
+
+	BOOL histeresisExcited;
+	UIAcceleration* lastAcceleration;
 }
+
 @property (nonatomic, retain) UILabel *romanLabel;
 @property (nonatomic, retain) UILabel *arabicLabel;
 @property (nonatomic, retain) UIButton *archaicButton;
+@property (nonatomic, retain) UIImageView *iPhoneImage;
+
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) Converter *converter;
+
+@property(retain) UIAcceleration* lastAcceleration;
 
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;
