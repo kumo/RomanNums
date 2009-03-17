@@ -16,7 +16,6 @@
 
 	IBOutlet UILabel *romanLabel;
 	IBOutlet UILabel *arabicLabel;
-	IBOutlet UIWebView *webView;
 	
 	IBOutlet UIButton *buttonOne;
 	IBOutlet UIButton *buttonTwo;
@@ -29,7 +28,6 @@
 
 @property (nonatomic, retain) UILabel *romanLabel;
 @property (nonatomic, retain) UILabel *arabicLabel;
-@property (nonatomic, retain) UIWebView *webView;
 @property (nonatomic, retain) UIButton *buttonOne;
 @property (nonatomic, retain) UIButton *buttonTwo;
 @property (nonatomic, retain) UIButton *buttonThree;
