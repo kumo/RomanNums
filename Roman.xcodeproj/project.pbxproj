@@ -287,6 +287,7 @@
 				GCC_PREFIX_HEADER = Roman_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = Roman;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "00837D6C-1477-4C05-82F8-811FE8B4E57C";
 			};
 			name = Distribution;
 		};
