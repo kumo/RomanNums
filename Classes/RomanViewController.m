@@ -67,7 +67,7 @@
 - (void)convertYear:(NSString *)input {
 	[converter convertToArabic:input];
 	
-	NSLog(@"conversion result is %d", converter.conversionResult);
+	//NSLog(@"conversion result is %d", converter.conversionResult);
 	if (converter.conversionResult == Ignored)
 	{
 		[UIView beginAnimations:@"movement" context:nil];

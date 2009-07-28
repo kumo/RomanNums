@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">512</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -59,7 +59,7 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText"/>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica-Bold</string>
+							<string key="NSName">Helvetica</string>
 							<double key="NSSize">5.500000e+01</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -96,6 +96,10 @@
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="482777453">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
+						</object>
 						<object class="NSCustomResource" key="IBUIHighlightedImage" id="898042856">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">dark_delete.png</string>
@@ -142,6 +146,7 @@
 						<string key="IBUINormalTitle">X</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="144741022">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">light.png</string>
@@ -169,6 +174,7 @@
 						<string key="IBUINormalTitle">V</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="144741022"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="193899205"/>
 						<reference key="IBUISelectedBackgroundImage" ref="144741022"/>
@@ -191,6 +197,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="144741022"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="193899205"/>
 						<reference key="IBUISelectedBackgroundImage" ref="144741022"/>
@@ -212,6 +219,7 @@
 						<string key="IBUINormalTitle">M</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="144741022"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="193899205"/>
 						<reference key="IBUISelectedBackgroundImage" ref="144741022"/>
@@ -233,6 +241,7 @@
 						<string key="IBUINormalTitle">L</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="144741022"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="193899205"/>
 						<reference key="IBUISelectedBackgroundImage" ref="144741022"/>
@@ -254,6 +263,7 @@
 						<string key="IBUINormalTitle">I</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="144741022"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="193899205"/>
 						<reference key="IBUISelectedBackgroundImage" ref="144741022"/>
@@ -275,6 +285,7 @@
 						<string key="IBUINormalTitle">D</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="144741022"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="193899205"/>
 						<reference key="IBUISelectedBackgroundImage" ref="144741022"/>
@@ -296,6 +307,7 @@
 						<string key="IBUINormalTitle">delete</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="482777453"/>
 						<reference key="IBUIHighlightedImage" ref="898042856"/>
 						<reference key="IBUIDisabledImage" ref="898042856"/>
 						<reference key="IBUISelectedImage" ref="898042856"/>
@@ -718,5 +730,6 @@
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.LastKnownRelativeProjectPath">Roman.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">3.0</string>
 	</data>
 </archive>

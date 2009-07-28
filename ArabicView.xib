@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="7.03">
 	<data>
 		<int key="IBDocument.SystemTarget">512</int>
-		<string key="IBDocument.SystemVersion">9G55</string>
+		<string key="IBDocument.SystemVersion">9J61</string>
 		<string key="IBDocument.InterfaceBuilderVersion">677</string>
-		<string key="IBDocument.AppKitVersion">949.43</string>
+		<string key="IBDocument.AppKitVersion">949.46</string>
 		<string key="IBDocument.HIToolboxVersion">353.00</string>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -59,6 +59,10 @@
 							<bytes key="NSRGB">MSAxIDEAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<object class="NSColor" key="IBUINormalTitleShadowColor" id="308719214">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MAA</bytes>
+						</object>
 						<object class="NSCustomResource" key="IBUIHighlightedBackgroundImage" id="642114015">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">light.png</string>
@@ -86,14 +90,14 @@
 					<object class="IBUILabel" id="184628964">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{19, 114}, {280, 75}}</string>
+						<string key="NSFrame">{{19, 114}, {280, 73}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="IBUIText"/>
 						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica-Bold</string>
+							<string key="NSName">Helvetica</string>
 							<double key="NSSize">5.500000e+01</double>
 							<int key="NSfFlags">16</int>
 						</object>
@@ -105,7 +109,7 @@
 						<int key="IBUIBaselineAdjustment">1</int>
 						<float key="IBUIMinimumFontSize">7.000000e+00</float>
 						<int key="IBUITextAlignment">1</int>
-						<int key="IBUILineBreakMode">5</int>
+						<int key="IBUILineBreakMode">1</int>
 					</object>
 					<object class="IBUILabel" id="90300499">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -146,6 +150,7 @@
 						<string type="base64-UTF8" key="IBUINormalTitle">4oaC4oaBA</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="58519915"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -168,6 +173,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -189,6 +195,7 @@
 						<string key="IBUINormalTitle">3</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -210,6 +217,7 @@
 						<string key="IBUINormalTitle">2</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -231,6 +239,7 @@
 						<string key="IBUINormalTitle">0</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -252,6 +261,7 @@
 						<string key="IBUINormalTitle">9</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -274,6 +284,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="332347724"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
 						<reference key="IBUIHighlightedTitleShadowColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -295,6 +306,7 @@
 						<string key="IBUINormalTitle">7</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -316,6 +328,7 @@
 						<string key="IBUINormalTitle">6</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -337,6 +350,7 @@
 						<string key="IBUINormalTitle">delete</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<object class="NSCustomResource" key="IBUIHighlightedImage" id="728424717">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">dark_delete.png</string>
@@ -364,6 +378,7 @@
 						<string key="IBUINormalTitle">5</string>
 						<reference key="IBUIHighlightedTitleColor" ref="86772130"/>
 						<reference key="IBUINormalTitleColor" ref="86772130"/>
+						<reference key="IBUINormalTitleShadowColor" ref="308719214"/>
 						<reference key="IBUIHighlightedBackgroundImage" ref="642114015"/>
 						<reference key="IBUIDisabledBackgroundImage" ref="863759598"/>
 						<reference key="IBUISelectedBackgroundImage" ref="642114015"/>
@@ -574,11 +589,11 @@
 							<reference ref="255814358"/>
 							<reference ref="283492866"/>
 							<reference ref="90300499"/>
-							<reference ref="184628964"/>
 							<reference ref="851055571"/>
 							<reference ref="709461337"/>
 							<reference ref="709182691"/>
 							<reference ref="885692028"/>
+							<reference ref="184628964"/>
 						</object>
 						<reference key="parent" ref="360949347"/>
 					</object>
@@ -639,11 +654,6 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">5</int>
-						<reference key="object" ref="184628964"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">42</int>
 						<reference key="object" ref="53356323"/>
 						<reference key="parent" ref="191373211"/>
@@ -671,6 +681,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">51</int>
 						<reference key="object" ref="885692028"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">5</int>
+						<reference key="object" ref="184628964"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</object>
@@ -704,7 +719,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>ArabicViewController</string>
 					<string>UIResponder</string>
-					<string>{{186, 308}, {320, 480}}</string>
+					<string>{{456, 200}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -792,5 +807,6 @@
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.LastKnownRelativeProjectPath">Roman.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<string key="IBCocoaTouchPluginVersion">3.0</string>
 	</data>
 </archive>
