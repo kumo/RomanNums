@@ -26,6 +26,8 @@
 	IBOutlet UIButton *buttonFive;
 	IBOutlet UIButton *buttonSix;
 	IBOutlet UIButton *buttonSeven;
+
+	IBOutlet UITextField * textField_;
 }
 
 @property (nonatomic, retain) UILabel *romanLabel;

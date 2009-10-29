@@ -132,6 +132,30 @@
     }
 }
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSUInteger numTaps = [[touches anyObject] tapCount];
+
+	NSLog(@"number of touches = %d", numTaps);
+	
+	if (numTaps > 1) {
+		NSLog(@"should show copy/paste menu");
+		UIMenuController *menu = [UIMenuController sharedMenuController];
+		[menu setTargetRect:[arabicLabel bounds] inView:[self view]];
+		[menu setMenuVisible:YES];
+		
+		NSLog(@"menu width %f, visible %d", menu.menuFrame.size.width, menu.menuVisible);
+	}
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+	NSLog(@"menu sender %d", sender);
+	return YES;
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
 /*
  Implement loadView if you want to create a view hierarchy programmatically
 - (void)loadView {
