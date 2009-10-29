@@ -5,3 +5,8 @@
 - rotated support
 - better info about large roman numerals
 - nicer graphics
+- proper undo support
+- a hint to start typing
+- help about changing keyboard order
+- convert window into keyboard view and screen view (to respond to taps)
+- buyable roman numerals quiz
