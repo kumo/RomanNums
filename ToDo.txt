@@ -1,0 +1,7 @@
+- copy and paste support (3.0)
+  - copying should take result of current selected tab
+  - pasting should switch to appropriate tab (numbers or letters)
+- help/info tab
+- rotated support
+- better info about large roman numerals
+- nicer graphics
