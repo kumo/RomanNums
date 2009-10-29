@@ -140,20 +140,22 @@
 	if (numTaps > 1) {
 		NSLog(@"should show copy/paste menu");
 		UIMenuController *menu = [UIMenuController sharedMenuController];
-		[menu setTargetRect:[arabicLabel bounds] inView:[self view]];
-		[menu setMenuVisible:YES];
+		[menu setTargetRect:CGRectMake(0,0,100,100) inView:self.view];
+		[menu setMenuVisible:YES animated:YES];
 		
 		NSLog(@"menu width %f, visible %d", menu.menuFrame.size.width, menu.menuVisible);
+		if ([self isFirstResponder]) {
+			NSLog(@"first");
+		} else {
+			NSLog(@"not first");
+			
+		}
 	}
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
 	NSLog(@"menu sender %d", sender);
 	return YES;
-}
-
-- (BOOL)canBecomeFirstResponder {
-    return YES;
 }
 
 /*
