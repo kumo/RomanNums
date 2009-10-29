@@ -64,6 +64,15 @@
 	converter.performConversionCheck = autocorrection;
 }
 
+- (BOOL)canBecomeFirstResponder {
+	return YES;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
 - (void)convertYear:(NSString *)input {
 	[converter convertToArabic:input];
 	
@@ -164,14 +173,9 @@ static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* curren
 	(deltaY > threshold && deltaZ > threshold);
 }
 
-- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
-	
-	if (self.lastAcceleration) {
-		if (!histeresisExcited && L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.9)) {
-			histeresisExcited = YES;
-			
+- (void) clearDisplay {
 			/* SHAKE DETECTED. DO HERE WHAT YOU WANT. */
-			CABasicAnimation* bloom = [CABasicAnimation animationWithKeyPath:@"opacity"];
+			  CABasicAnimation* bloom = [CABasicAnimation animationWithKeyPath:@"opacity"];
 			bloom.fromValue = [NSNumber numberWithFloat:0.0];
 			bloom.toValue = [NSNumber numberWithFloat:1.0];
 			//bloom.repeatCount = 1e100;
@@ -184,7 +188,17 @@ static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* curren
 				bloom.duration = 0.3;
 			}
 			bloom.removedOnCompletion = YES;
-			[iPhoneImage.layer addAnimation:bloom forKey:@"bloom"];	
+			[iPhoneImage.layer addAnimation:bloom forKey:@"bloom"];
+
+}
+- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+	
+	if (self.lastAcceleration) {
+		if (!histeresisExcited && L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.9)) {
+			histeresisExcited = YES;
+			
+			[self clearDisplay];
+	
 		} else if (histeresisExcited && !L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.2)) {
 			histeresisExcited = NO;
 		}
@@ -204,4 +218,8 @@ static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* curren
 	[UIView commitAnimations];
 }
 
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+	NSLog(@"shook?");
+	[self clearDisplay];
+}
 @end
