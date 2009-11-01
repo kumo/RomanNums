@@ -115,21 +115,31 @@
 	}
 }
 
-- (IBAction)buttonPressed:(id)sender {
-    self.string = romanLabel.text;
+- (void) updateRomanString: (NSString *) text  {
+	self.string = romanLabel.text;
 	
     NSString *romanLabelString = string;
 
-	if ([[sender currentTitle] isEqualToString: @"delete"]) {
+	if ([text isEqualToString: @"delete"]) {
 		if ([romanLabelString length] > 0) {
 			NSString *newInputString = [[NSString alloc] initWithString:[romanLabelString substringToIndex: [romanLabelString length] - 1]];
 			[self convertYear:newInputString];
 		}
 	}	
 	else if ([romanLabelString length] < 14) {
-		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", romanLabelString, [sender currentTitle]];
+		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", romanLabelString, text];
 		[self convertYear:newInputString];
     }
+}
+
+- (void) replaceRomanString: (NSString *) text  {
+	self.string = romanLabel.text;
+	
+	[self convertYear:text];
+}
+
+- (IBAction)buttonPressed:(id)sender {
+    [self updateRomanString: [sender currentTitle]];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -140,7 +150,7 @@
 	if (numTaps > 1) {
 		NSLog(@"should show copy/paste menu");
 		UIMenuController *menu = [UIMenuController sharedMenuController];
-		[menu setTargetRect:CGRectMake(0,0,100,100) inView:self.view];
+		[menu setTargetRect:romanLabel.frame inView:self.view];
 		[menu setMenuVisible:YES animated:YES];
 		
 		NSLog(@"menu width %f, visible %d", menu.menuFrame.size.width, menu.menuVisible);
@@ -159,6 +169,22 @@
 	}
 	NSLog(@"menu sender %d", sender);
 	return NO;
+}
+
+- (void)paste:(id)sender {
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	
+	if (pasteboard.numberOfItems > 0) {
+		NSLog(@"there are %d items in pasteboard", pasteboard.numberOfItems);
+
+		[self replaceRomanString:[pasteboard.string copy]];
+	}
+}
+
+- (void)copy:(id)sender {
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	
+	pasteboard.string = arabicLabel.text;
 }
 
 /*
