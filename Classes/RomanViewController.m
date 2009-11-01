@@ -154,8 +154,11 @@
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+	if ((action == @selector(paste:)) || (action == @selector(copy:))) {
+		return YES;
+	}
 	NSLog(@"menu sender %d", sender);
-	return YES;
+	return NO;
 }
 
 /*
