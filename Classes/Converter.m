@@ -37,7 +37,7 @@
  	if (performConversionCheck) {
 		calculatedRomanValue = [self performConversionToRoman:arabicResult];
 	
-		//NSLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
+		//debugLog(@"Roman given is %@ and roman calculated is %@", roman, calculatedRomanValue);
 
 		NSString *choppedString = @"";
 		
@@ -67,7 +67,7 @@
 	if (performConversionCheck) {
 		calculatedArabicValue = [self performConversionToArabic:romanResult];
 		
-		//NSLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
+		//debugLog(@"Arabic given is %@ and arabic calculated is %@", arabic, calculatedArabicValue);
 
 		if ([arabic isEqualToString:calculatedArabicValue]) {
 			self.conversionResult = Valid;
@@ -140,20 +140,20 @@
 		int div = arabicLabelValue / arabicValue;
 		//int mod = arabicLabelValue % arabicValue;
 		
-		//NSLog(@"Checking: %i", arabicValue);
-		//NSLog(@"div: %i", div);
-		//NSLog(@"mod: %i", mod);
+		//debugLog(@"Checking: %i", arabicValue);
+		//debugLog(@"div: %i", div);
+		//debugLog(@"mod: %i", mod);
 		
 		if (div > 0)
 		{
 			int j = 0;
 			for (j = 0; j < div; j++)
 			{
-				//NSLog(@"Should add: %@ to string", romanValue);
+				//debugLog(@"Should add: %@ to string", romanValue);
 				[resultString appendFormat: romanValue];
 				arabicLabelValue = arabicLabelValue - arabicValue;
 			}
-			//NSLog(@"String is now: %@", resultString);
+			//debugLog(@"String is now: %@", resultString);
 		}
 	}
     
@@ -200,20 +200,20 @@
 		int div = arabicLabelValue / arabicValue;
 		//int mod = arabicLabelValue % arabicValue;
 		
-		//NSLog(@"Checking: %i", arabicValue);
-		//NSLog(@"div: %i", div);
-		//NSLog(@"mod: %i", mod);
+		//debugLog(@"Checking: %i", arabicValue);
+		//debugLog(@"div: %i", div);
+		//debugLog(@"mod: %i", mod);
 		
 		if (div > 0)
 		{
 			int j = 0;
 			for (j = 0; j < div; j++)
 			{
-				//NSLog(@"Should add: %@ to string", romanValue);
+				//debugLog(@"Should add: %@ to string", romanValue);
 				[resultString appendFormat: romanValue];
 				arabicLabelValue = arabicLabelValue - arabicValue;
 			}
-			//NSLog(@"String is now: %@", resultString);
+			//debugLog(@"String is now: %@", resultString);
 		}
 	}
     

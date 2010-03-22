@@ -27,7 +27,9 @@
 	IBOutlet UIButton *buttonSix;
 	IBOutlet UIButton *buttonSeven;
 
-	IBOutlet UITextField * textField_;
+	IBOutlet UITextField *textField_;
+	
+	BOOL isTouchingRoman;
 }
 
 @property (nonatomic, retain) UILabel *romanLabel;

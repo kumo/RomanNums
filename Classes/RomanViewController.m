@@ -76,7 +76,7 @@
 - (void)convertYear:(NSString *)input {
 	[converter convertToArabic:input];
 	
-	//NSLog(@"conversion result is %d", converter.conversionResult);
+	//debugLog(@"conversion result is %d", converter.conversionResult);
 	if (converter.conversionResult == Ignored)
 	{
 		[UIView beginAnimations:@"movement" context:nil];
@@ -132,61 +132,9 @@
     }
 }
 
-- (void) replaceRomanString: (NSString *) text  {
-	self.string = romanLabel.text;
-	
-	[self convertYear:text];
-}
-
 - (IBAction)buttonPressed:(id)sender {
     [self updateRomanString: [sender currentTitle]];
 }
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-	NSUInteger numTaps = [[touches anyObject] tapCount];
-
-	NSLog(@"number of touches = %d", numTaps);
-	
-	if (numTaps > 1) {
-		NSLog(@"should show copy/paste menu");
-		UIMenuController *menu = [UIMenuController sharedMenuController];
-		[menu setTargetRect:romanLabel.frame inView:self.view];
-		[menu setMenuVisible:YES animated:YES];
-		
-		NSLog(@"menu width %f, visible %d", menu.menuFrame.size.width, menu.menuVisible);
-		if ([self isFirstResponder]) {
-			NSLog(@"first");
-		} else {
-			NSLog(@"not first");
-			
-		}
-	}
-}
-
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
-	if ((action == @selector(paste:)) || (action == @selector(copy:))) {
-		return YES;
-	}
-	NSLog(@"menu sender %d", sender);
-	return NO;
-}
-
-- (void)paste:(id)sender {
-	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-	
-	if (pasteboard.numberOfItems > 0) {
-		NSLog(@"there are %d items in pasteboard", pasteboard.numberOfItems);
-
-		[self replaceRomanString:[pasteboard.string copy]];
-	}
-}
-
-- (void)copy:(id)sender {
-	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-	
-	pasteboard.string = arabicLabel.text;
-}
-
 /*
  Implement loadView if you want to create a view hierarchy programmatically
 - (void)loadView {
@@ -246,16 +194,85 @@
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
 
-    NSLog(@"{roman: motion ended event ");
+    debugLog(@"{roman: motion ended event ");
 	
     if (motion == UIEventSubtypeMotionShake) {
-        NSLog(@"{shaken state ");
-		NSLog(@"shook?");
+        debugLog(@"{shaken state ");
+		debugLog(@"shook?");
 		[self clearDisplay];
     }
     else {
-        NSLog(@"{not shaken state ");           
+        debugLog(@"{not shaken state ");           
     }
+}
+
+// --- copy and paste
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	NSUInteger numTaps = [[touches anyObject] tapCount];
+	
+	debugLog(@"number of touches = %d", numTaps);
+	
+	if (numTaps > 1) {
+		UITouch *touch = [touches anyObject];
+		
+		if ([touch view] == romanLabel) {
+			debugLog(@"touched the roman label");
+			isTouchingRoman = YES;
+		} else if ([touch view] == arabicLabel) {
+			debugLog(@"touched the arabic label");
+			isTouchingRoman = NO;
+		} else {
+			debugLog(@"touched something ... but what?");
+			return;
+		}
+		
+		debugLog(@"should show copy/paste menu");
+		UIMenuController *menu = [UIMenuController sharedMenuController];
+		[menu setTargetRect:[touch view].frame inView:self.view];
+		[menu setMenuVisible:YES animated:YES];
+		
+		debugLog(@"menu width %f, visible %d", menu.menuFrame.size.width, menu.menuVisible);
+		if ([self isFirstResponder]) {
+			debugLog(@"first");
+		} else {
+			debugLog(@"not first");
+			
+		}
+	}
+}
+
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+	if ((action == @selector(paste:)) && (isTouchingRoman == YES)) {
+		return YES;
+	} else if ((action == @selector(copy:)) && (isTouchingRoman == NO)) {
+		return YES;
+	}
+	debugLog(@"menu sender %d", sender);
+	return NO;
+}
+
+- (void)paste:(id)sender {
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	
+	if (pasteboard.numberOfItems > 0) {
+		debugLog(@"there are %d items in pasteboard", pasteboard.numberOfItems);
+		
+		[self replaceRomanString:[pasteboard.string copy]];
+	}
+}
+
+- (void)copy:(id)sender {
+	UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+	
+	pasteboard.string = arabicLabel.text;
+	debugLog(@"copying %@ to clipboard", arabicLabel.text);
+}
+
+- (void) replaceRomanString: (NSString *) text  {
+	self.string = romanLabel.text;
+	
+	[self convertYear:text];
 }
 
 @end

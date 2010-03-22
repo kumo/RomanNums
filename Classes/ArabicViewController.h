@@ -20,6 +20,7 @@
 	Converter *converter;
 	
 	bool archaicMode;
+	BOOL isTouchingRoman;
 }
 
 @property (nonatomic, retain) UILabel *romanLabel;

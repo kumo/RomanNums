@@ -245,6 +245,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Roman_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
+				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Roman;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
