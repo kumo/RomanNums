@@ -248,6 +248,7 @@
 				OTHER_CFLAGS = "-DDEBUG";
 				PRODUCT_NAME = Roman;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -260,6 +261,7 @@
 				GCC_PREFIX_HEADER = Roman_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = Roman;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
@@ -291,6 +293,7 @@
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = Roman;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Distribution;
 		};
