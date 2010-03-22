@@ -50,4 +50,6 @@
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;
 - (void)setButtonTitles:(NSArray *)titles;
+- (void)replaceRomanString:(NSString *)text;
+
 @end

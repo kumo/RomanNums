@@ -269,7 +269,7 @@
 	debugLog(@"copying %@ to clipboard", arabicLabel.text);
 }
 
-- (void) replaceRomanString: (NSString *) text  {
+- (void)replaceRomanString:(NSString *)text {
 	self.string = romanLabel.text;
 	
 	[self convertYear:text];

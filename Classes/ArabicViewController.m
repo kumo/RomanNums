@@ -200,7 +200,7 @@
 	}
 }
 
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
 	if ((action == @selector(paste:)) && (isTouchingRoman == NO)) {
 		return YES;
 	} else if ((action == @selector(copy:)) && (isTouchingRoman == YES)) {
@@ -228,7 +228,7 @@
 }
 
 
-- (void) replaceArabicString: (NSString *) text  {
+- (void)replaceArabicString:(NSString *)text {
 	self.string = arabicLabel.text;
 	
 	[self convertYear:text];

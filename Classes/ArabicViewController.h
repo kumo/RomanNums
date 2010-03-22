@@ -34,4 +34,6 @@
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;
 - (IBAction)archaicButtonPressed:(id)sender;
+- (void)replaceArabicString:(NSString *)text;
+
 @end
