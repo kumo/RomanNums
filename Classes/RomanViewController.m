@@ -16,7 +16,6 @@
 @synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven;
 @synthesize string;
 @synthesize converter;
-@synthesize lastAcceleration;
 @synthesize iPhoneImage;
 
 /*
@@ -65,6 +64,7 @@
 }
 
 - (BOOL)canBecomeFirstResponder {
+	// needed for shaking detection
 	return YES;
 }
 
@@ -159,52 +159,23 @@
 	[super dealloc];
 }
 
-// Ensures the shake is strong enough on at least two axes before declaring it a shake.
-// "Strong enough" means "greater than a client-supplied threshold" in G's.
-static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* current, double threshold) {
-	double
-	deltaX = fabs(last.x - current.x),
-	deltaY = fabs(last.y - current.y),
-	deltaZ = fabs(last.z - current.z);
-	
-	return
-	(deltaX > threshold && deltaY > threshold) ||
-	(deltaX > threshold && deltaZ > threshold) ||
-	(deltaY > threshold && deltaZ > threshold);
-}
-
 - (void) clearDisplay {
-			/* SHAKE DETECTED. DO HERE WHAT YOU WANT. */
-			  CABasicAnimation* bloom = [CABasicAnimation animationWithKeyPath:@"opacity"];
-			bloom.fromValue = [NSNumber numberWithFloat:0.0];
-			bloom.toValue = [NSNumber numberWithFloat:1.0];
-			//bloom.repeatCount = 1e100;
-			bloom.fillMode = kCAFillModeForwards;
-			bloom.autoreverses = YES;
-			if ([romanLabel.text isEqualToString:@""]) {
-				bloom.duration = 0.8;
-			} else {
-				bloom.delegate = self; // keep the delegate so that we can flip after
-				bloom.duration = 0.3;
-			}
-			bloom.removedOnCompletion = YES;
-			[iPhoneImage.layer addAnimation:bloom forKey:@"bloom"];
-
-}
-- (void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+	/* SHAKE DETECTED. DO HERE WHAT YOU WANT. */
+	CABasicAnimation* bloom = [CABasicAnimation animationWithKeyPath:@"opacity"];
+	bloom.fromValue = [NSNumber numberWithFloat:0.0];
+	bloom.toValue = [NSNumber numberWithFloat:1.0];
+	//bloom.repeatCount = 1e100;
+	bloom.fillMode = kCAFillModeForwards;
+	bloom.autoreverses = YES;
 	
-	if (self.lastAcceleration) {
-		if (!histeresisExcited && L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.9)) {
-			histeresisExcited = YES;
-			
-			[self clearDisplay];
-	
-		} else if (histeresisExcited && !L0AccelerationIsShaking(self.lastAcceleration, acceleration, 0.2)) {
-			histeresisExcited = NO;
-		}
+	if ([romanLabel.text isEqualToString:@""]) {
+		bloom.duration = 0.8;
+	} else {
+		bloom.delegate = self; // keep the delegate so that we can flip after
+		bloom.duration = 0.3;
 	}
-	
-	self.lastAcceleration = acceleration;
+	bloom.removedOnCompletion = YES;
+	[iPhoneImage.layer addAnimation:bloom forKey:@"bloom"];
 }
 
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)finished {
@@ -218,8 +189,18 @@ static BOOL L0AccelerationIsShaking(UIAcceleration* last, UIAcceleration* curren
 	[UIView commitAnimations];
 }
 
-- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-	NSLog(@"shook?");
-	[self clearDisplay];
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+
+    NSLog(@"{roman: motion ended event ");
+	
+    if (motion == UIEventSubtypeMotionShake) {
+        NSLog(@"{shaken state ");
+		NSLog(@"shook?");
+		[self clearDisplay];
+    }
+    else {
+        NSLog(@"{not shaken state ");           
+    }
 }
+
 @end

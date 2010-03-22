@@ -10,7 +10,7 @@
 
 @class Converter;
 
-@interface RomanViewController : UIViewController <UIAccelerometerDelegate> {
+@interface RomanViewController : UIViewController {
 	NSString *string;
 	Converter *converter;
 
@@ -26,9 +26,6 @@
 	IBOutlet UIButton *buttonFive;
 	IBOutlet UIButton *buttonSix;
 	IBOutlet UIButton *buttonSeven;
-
-	BOOL histeresisExcited;
-	UIAcceleration* lastAcceleration;
 }
 
 @property (nonatomic, retain) UILabel *romanLabel;
@@ -45,8 +42,6 @@
 
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) Converter *converter;
-
-@property(retain) UIAcceleration* lastAcceleration;
 
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;

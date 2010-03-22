@@ -63,8 +63,8 @@
 	[super dealloc];
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+/*- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
 	[UIAccelerometer sharedAccelerometer].delegate = viewController;
-}
+}*/
 
 @end
