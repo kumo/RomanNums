@@ -26,10 +26,14 @@
 	IBOutlet UIButton *buttonFive;
 	IBOutlet UIButton *buttonSix;
 	IBOutlet UIButton *buttonSeven;
+	IBOutlet UIButton *buttonDelete;
 
 	IBOutlet UITextField *textField_;
 	
 	BOOL isTouchingRoman;
+
+	BOOL isTouchingDelete;
+	NSTimer *deleteTimer;
 }
 
 @property (nonatomic, retain) UILabel *romanLabel;
@@ -42,6 +46,7 @@
 @property (nonatomic, retain) UIButton *buttonFive;
 @property (nonatomic, retain) UIButton *buttonSix;
 @property (nonatomic, retain) UIButton *buttonSeven;
+@property (nonatomic, retain) UIButton *buttonDelete;
 
 
 @property (nonatomic, copy) NSString *string;
@@ -49,7 +54,9 @@
 
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;
+- (IBAction)deleteButtonStartPressed:(id)sender;
 - (void)setButtonTitles:(NSArray *)titles;
 - (void)replaceRomanString:(NSString *)text;
+- (void)triggerDelete:(NSTimer *) timer;
 
 @end

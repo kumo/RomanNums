@@ -13,7 +13,7 @@
 @implementation RomanViewController
 
 @synthesize romanLabel, arabicLabel;
-@synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven;
+@synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonDelete;
 @synthesize string;
 @synthesize converter;
 @synthesize iPhoneImage;
@@ -115,7 +115,7 @@
 	}
 }
 
-- (void) updateRomanString: (NSString *) text  {
+- (void)updateRomanString:(NSString *) text  {
 	self.string = romanLabel.text;
 	
     NSString *romanLabelString = string;
@@ -133,6 +133,14 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
+	if (isTouchingDelete == YES) {
+		debugLog(@"invalidating delete timer");
+		if (deleteTimer != nil) {
+			[deleteTimer invalidate];
+			deleteTimer = nil;
+		}
+	}
+		
     [self updateRomanString: [sender currentTitle]];
 }
 /*
@@ -273,6 +281,25 @@
 	self.string = romanLabel.text;
 	
 	[self convertYear:text];
+}
+
+// --- delete repeat
+
+- (IBAction)deleteButtonStartPressed:(id)sender {
+	isTouchingDelete = YES;
+	deleteTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(startDeleteTrigger:) userInfo:nil repeats:NO];
+	debugLog(@"starting delete timer");
+}
+
+- (void)startDeleteTrigger:(NSTimer *) timer {
+	[deleteTimer invalidate];
+	
+	deleteTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(triggerDelete:) userInfo:nil repeats:YES];
+}
+
+- (void)triggerDelete:(NSTimer *) timer {
+	debugLog(@"deleting char");
+	[self updateRomanString:@"delete"];
 }
 
 @end

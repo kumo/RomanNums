@@ -12,7 +12,7 @@
 
 @implementation ArabicViewController
 
-@synthesize romanLabel, arabicLabel, archaicButton, iPhoneImage;
+@synthesize romanLabel, arabicLabel, archaicButton, buttonDelete, iPhoneImage;
 @synthesize string;
 @synthesize converter;
 
@@ -68,18 +68,30 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
-    self.string = arabicLabel.text;
+	if (isTouchingDelete == YES) {
+		debugLog(@"invalidating delete timer");
+		if (deleteTimer != nil) {
+			[deleteTimer invalidate];
+			deleteTimer = nil;
+		}
+	}
+	
+    [self updateArabicString:[sender currentTitle]];
+}
+
+- (void) updateArabicString:(NSString *) text  {
+	self.string = arabicLabel.text;
 	
     NSString *arabicLabelString = string;
-
-	if ([[sender currentTitle] isEqualToString: @"delete"]) {
+	
+	if ([text isEqualToString: @"delete"]) {
 		if ([arabicLabelString length] > 0) {
 			NSString *newInputString = [[NSString alloc] initWithString:[arabicLabelString substringToIndex: [arabicLabelString length] - 1]];
 			[self convertYear:newInputString];
 		}
 	}	
 	else if ([arabicLabelString length] < 6) {
-		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, [sender currentTitle]];
+		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, text];
 		[self convertYear:newInputString];
     }
 }
@@ -232,6 +244,25 @@
 	self.string = arabicLabel.text;
 	
 	[self convertYear:text];
+}
+
+// --- delete repeat
+
+- (IBAction)deleteButtonStartPressed:(id)sender {
+	isTouchingDelete = YES;
+	deleteTimer = [NSTimer scheduledTimerWithTimeInterval:0.5f target:self selector:@selector(startDeleteTrigger:) userInfo:nil repeats:NO];
+	debugLog(@"starting delete timer");
+}
+
+- (void)startDeleteTrigger:(NSTimer *) timer {
+	[deleteTimer invalidate];
+	
+	deleteTimer = [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(triggerDelete:) userInfo:nil repeats:YES];
+}
+
+- (void)triggerDelete:(NSTimer *) timer {
+	debugLog(@"deleting char");
+	[self updateArabicString:@"delete"];
 }
 
 @end
