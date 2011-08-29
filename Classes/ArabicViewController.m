@@ -9,6 +9,7 @@
 #import "ArabicViewController.h"
 #import "Converter.h"
 #import "QuartzCore/QuartzCore.h"
+#import "ContactMenu_iPhone.h"
 
 @implementation ArabicViewController
 
@@ -38,6 +39,13 @@
 - (BOOL)canBecomeFirstResponder {
 	// needed for shaking detection
 	return YES;
+}
+
+- (IBAction)showInfo:(id)sender {
+    ContactMenu_iPhone *myViewController = [[ContactMenu_iPhone alloc] initWithNibName:@"ContactMenu_iPhone" bundle:nil];
+    
+    [self presentModalViewController:myViewController animated:YES];
+    [myViewController release];
 }
 
 - (void)convertYear:(NSString *)input {

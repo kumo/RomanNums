@@ -31,6 +31,8 @@
 		BF7E68770E84421C00099191 /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7E68760E84421C00099191 /* light.png */; };
 		BF7E68BD0E844DE500099191 /* light_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7E68BB0E844DE500099191 /* light_delete.png */; };
 		BF7E68BE0E844DE500099191 /* dark_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7E68BC0E844DE500099191 /* dark_delete.png */; };
+		BF7E9457140C3D570000784C /* ContactMenu_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E9455140C3D570000784C /* ContactMenu_iPhone.m */; };
+		BF7E9458140C3D570000784C /* ContactMenu_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E9456140C3D570000784C /* ContactMenu_iPhone.xib */; };
 		BF89BECD0E5622A8006F4F39 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF89BECC0E5622A8006F4F39 /* Icon.png */; };
 		BFA126D90E94125E000342F9 /* ArabicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA126D80E94125E000342F9 /* ArabicView.xib */; };
 		BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAC78A50EB3C2940018DAA6 /* Converter.m */; };
@@ -70,6 +72,9 @@
 		BF7E68760E84421C00099191 /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
 		BF7E68BB0E844DE500099191 /* light_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light_delete.png; sourceTree = "<group>"; };
 		BF7E68BC0E844DE500099191 /* dark_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark_delete.png; sourceTree = "<group>"; };
+		BF7E9454140C3D570000784C /* ContactMenu_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMenu_iPhone.h; sourceTree = "<group>"; };
+		BF7E9455140C3D570000784C /* ContactMenu_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMenu_iPhone.m; sourceTree = "<group>"; };
+		BF7E9456140C3D570000784C /* ContactMenu_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactMenu_iPhone.xib; sourceTree = "<group>"; };
 		BF89BECC0E5622A8006F4F39 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BFA126D80E94125E000342F9 /* ArabicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArabicView.xib; sourceTree = "<group>"; };
 		BFAC78A40EB3C2940018DAA6 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
@@ -99,6 +104,9 @@
 				BF4CFA010E94145A00818911 /* ArabicViewController.m */,
 				BF0F528D0E52D836005F00CE /* RomanViewController.h */,
 				BF0F528E0E52D836005F00CE /* RomanViewController.m */,
+				BF7E9454140C3D570000784C /* ContactMenu_iPhone.h */,
+				BF7E9455140C3D570000784C /* ContactMenu_iPhone.m */,
+				BF7E9456140C3D570000784C /* ContactMenu_iPhone.xib */,
 				1D3623240D0F684500981E51 /* RomanAppDelegate.h */,
 				1D3623250D0F684500981E51 /* RomanAppDelegate.m */,
 				BFAC78A40EB3C2940018DAA6 /* Converter.h */,
@@ -246,6 +254,7 @@
 				BF5B38AE11D40B9200115DE6 /* Icon@2x.png in Resources */,
 				BF5B38C611D40D4100115DE6 /* roman@2x.png in Resources */,
 				BF5B38CE11D40E5B00115DE6 /* arabic@2x.png in Resources */,
+				BF7E9458140C3D570000784C /* ContactMenu_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +270,7 @@
 				BF0F528F0E52D836005F00CE /* RomanViewController.m in Sources */,
 				BF4CFA030E94145A00818911 /* ArabicViewController.m in Sources */,
 				BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */,
+				BF7E9457140C3D570000784C /* ContactMenu_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

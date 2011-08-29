@@ -9,6 +9,8 @@
 #import "RomanViewController.h"
 #import "Converter.h"
 #import "QuartzCore/QuartzCore.h"
+#import "ContactMenu_iPhone.h"
+
 
 @implementation RomanViewController
 
@@ -40,6 +42,8 @@
 		
 }
 
+#pragma mark - View lifecycle
+
 - (void)viewDidLoad {
 	// set the keyboard order
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -61,6 +65,10 @@
 	converter = [[Converter alloc] init];
 	BOOL autocorrection = [defaults boolForKey:@"correction"];
 	converter.performConversionCheck = autocorrection;
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
 }
 
 - (BOOL)canBecomeFirstResponder {
@@ -300,6 +308,13 @@
 - (void)triggerDelete:(NSTimer *) timer {
 	debugLog(@"deleting char");
 	[self updateRomanString:@"delete"];
+}
+
+- (IBAction)showInfo:(id)sender {
+    ContactMenu_iPhone *myViewController = [[ContactMenu_iPhone alloc] initWithNibName:@"ContactMenu_iPhone" bundle:nil];
+    
+    [self presentModalViewController:myViewController animated:YES];
+    [myViewController release];
 }
 
 @end

@@ -36,6 +36,7 @@
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) Converter *converter;
 
+- (IBAction)showInfo:(id)sender;
 - (void)convertYear:(NSString *)input;
 - (IBAction)buttonPressed:(id)sender;
 - (IBAction)archaicButtonPressed:(id)sender;

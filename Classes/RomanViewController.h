@@ -48,6 +48,7 @@
 @property (nonatomic, retain) UIButton *buttonSeven;
 @property (nonatomic, retain) UIButton *buttonDelete;
 
+- (IBAction)showInfo:(id)sender;
 
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) Converter *converter;
