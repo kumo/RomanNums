@@ -3,6 +3,10 @@ build/*
 *.pbxuser
 *.mode1v3
 
+# ignore by xcode 4
+xcuserdata
+project.xcworkspace
+
 # old skool
 .svn
 
