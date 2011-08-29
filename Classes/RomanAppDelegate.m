@@ -8,6 +8,7 @@
 
 #import "RomanViewController.h"
 #import "RomanAppDelegate.h"
+#import "Appirater.h"
 
 @implementation RomanAppDelegate
 
@@ -54,6 +55,12 @@
 		[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
+    
+    [Appirater appLaunched:YES];
+}
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    [Appirater appEnteredForeground:YES];
 }
 
 

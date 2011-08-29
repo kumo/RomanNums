@@ -33,6 +33,9 @@
 		BF7E68BE0E844DE500099191 /* dark_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = BF7E68BC0E844DE500099191 /* dark_delete.png */; };
 		BF7E9457140C3D570000784C /* ContactMenu_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E9455140C3D570000784C /* ContactMenu_iPhone.m */; };
 		BF7E9458140C3D570000784C /* ContactMenu_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7E9456140C3D570000784C /* ContactMenu_iPhone.xib */; };
+		BF7E945B140C429D0000784C /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7E945A140C429D0000784C /* Appirater.m */; };
+		BF7E945D140C43170000784C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E945C140C43170000784C /* CFNetwork.framework */; };
+		BF7E945F140C43240000784C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF7E945E140C43240000784C /* SystemConfiguration.framework */; };
 		BF89BECD0E5622A8006F4F39 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BF89BECC0E5622A8006F4F39 /* Icon.png */; };
 		BFA126D90E94125E000342F9 /* ArabicView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA126D80E94125E000342F9 /* ArabicView.xib */; };
 		BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAC78A50EB3C2940018DAA6 /* Converter.m */; };
@@ -75,6 +78,10 @@
 		BF7E9454140C3D570000784C /* ContactMenu_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactMenu_iPhone.h; sourceTree = "<group>"; };
 		BF7E9455140C3D570000784C /* ContactMenu_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactMenu_iPhone.m; sourceTree = "<group>"; };
 		BF7E9456140C3D570000784C /* ContactMenu_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactMenu_iPhone.xib; sourceTree = "<group>"; };
+		BF7E9459140C429D0000784C /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		BF7E945A140C429D0000784C /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		BF7E945C140C43170000784C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BF7E945E140C43240000784C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BF89BECC0E5622A8006F4F39 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		BFA126D80E94125E000342F9 /* ArabicView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArabicView.xib; sourceTree = "<group>"; };
 		BFAC78A40EB3C2940018DAA6 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
@@ -88,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7E945F140C43240000784C /* SystemConfiguration.framework in Frameworks */,
+				BF7E945D140C43170000784C /* CFNetwork.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				BF3AC5930F6FB57900441C90 /* QuartzCore.framework in Frameworks */,
@@ -127,6 +136,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BF7E945E140C43240000784C /* SystemConfiguration.framework */,
+				BF7E945C140C43170000784C /* CFNetwork.framework */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -140,6 +151,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BF7E9459140C429D0000784C /* Appirater.h */,
+				BF7E945A140C429D0000784C /* Appirater.m */,
 				32CA4F630368D1EE00C91783 /* Roman_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -271,6 +284,7 @@
 				BF4CFA030E94145A00818911 /* ArabicViewController.m in Sources */,
 				BFAC78A60EB3C2940018DAA6 /* Converter.m in Sources */,
 				BF7E9457140C3D570000784C /* ContactMenu_iPhone.m in Sources */,
+				BF7E945B140C429D0000784C /* Appirater.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
