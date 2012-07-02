@@ -72,6 +72,12 @@
 		
 		arabicLabel.text = input;
 		[input release];
+        
+        NSMutableString *str = [NSMutableString stringWithString:romanLabel.text];
+        for (NSInteger i=1; i<[str length]; i+=3)
+            [str insertString:@". " atIndex:i];
+        [romanLabel setAccessibilityValue:str];
+
 	}
 }
 
@@ -226,7 +232,7 @@
 	} else if ((action == @selector(copy:)) && (isTouchingRoman == YES)) {
 		return YES;
 	}
-	debugLog(@"menu sender %d", sender);
+	//debugLog(@"menu sender %d", sender);
 	return NO;
 }
 

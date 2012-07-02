@@ -83,7 +83,7 @@
 
 - (void)convertYear:(NSString *)input {
 	[converter convertToArabic:input];
-	
+
 	//debugLog(@"conversion result is %d", converter.conversionResult);
 	if (converter.conversionResult == Ignored)
 	{
@@ -113,6 +113,8 @@
 		
 		[input release];
 		[UIView commitAnimations];
+        
+        [arabicLabel setAccessibilityValue:arabicLabel.text];
 	} else {
 		NSString *result = converter.arabicResult;
 		arabicLabel.text = result;
@@ -120,6 +122,7 @@
 		
 		romanLabel.text = input;
 		[input release];
+        [arabicLabel setAccessibilityValue:arabicLabel.text];
 	}
 }
 
@@ -264,7 +267,7 @@
 	} else if ((action == @selector(copy:)) && (isTouchingRoman == NO)) {
 		return YES;
 	}
-	debugLog(@"menu sender %d", sender);
+    //debugLog(@"menu sender %d", sender);
 	return NO;
 }
 
@@ -311,6 +314,7 @@
 }
 
 - (IBAction)showInfo:(id)sender {
+    UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
     ContactMenu_iPhone *myViewController = [[ContactMenu_iPhone alloc] initWithNibName:@"ContactMenu_iPhone" bundle:nil];
     
     [self presentModalViewController:myViewController animated:YES];
