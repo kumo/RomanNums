@@ -29,8 +29,6 @@
 
 - (void)convertYear:(NSString *)input;
 - (IBAction)archaicButtonPressed:(id)sender;
-- (void)replaceArabicString:(NSString *)text;
-- (void)triggerDelete:(NSTimer *) timer;
 - (void) updateArabicString:(NSString *) text;
 
 @end

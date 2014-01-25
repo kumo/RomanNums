@@ -26,6 +26,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.converter = [[Converter alloc] init];
+	self.converter.performConversionCheck = NO;
+
+    // Prepare gestures
     for (UIButton *button in self.buttons) {
         UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
         
@@ -34,15 +38,13 @@
     
     UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
-    
-    self.converter = [[Converter alloc] init];
-	self.converter.performConversionCheck = NO;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {

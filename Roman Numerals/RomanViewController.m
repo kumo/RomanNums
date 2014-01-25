@@ -16,7 +16,6 @@
 @implementation RomanViewController
 
 // @synthesize romanLabel, arabicLabel;
-// @synthesize buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix, buttonSeven, buttonDelete;
 
 @synthesize converter, string;
 @synthesize buttons;
@@ -26,6 +25,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+    self.converter = [[Converter alloc] init];
+	self.converter.performConversionCheck = YES;
+
+    // Prepare gestures
     for (UIButton *button in self.buttons) {
         UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
         
@@ -34,9 +37,6 @@
     
     UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
-    
-    self.converter = [[Converter alloc] init];
-	self.converter.performConversionCheck = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,18 +48,16 @@
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
-    NSLog(@"tapped %@", [button currentTitle]);
-    
-    NSLog(@"Before conversion, roman: %@, arabic: %@", self.romanLabel.text, self.arabicLabel.text);
     [self updateRomanString: [button currentTitle]];
 }
 
 - (IBAction)handleLongPressGesture:(id)sender {
-    NSLog(@"long pressing delete");
     self.string = @"";
     self.romanLabel.text = @"";
     self.arabicLabel.text = @"";
 }
+
+#pragma mark - Conversion methods
 
 - (void)convertYear:(NSString *)input {
 	[self.converter convertToArabic:input];
