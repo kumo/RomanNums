@@ -1,8 +1,0 @@
-﻿/* A single strings file, whose title is specified in your preferences schema. The strings files provide the localized content to display to the user for each of your preferences. */
-
-"KeyboardSetting" = "Orden de los botones";
-"AlphabetOrder" = "Alfabético";
-"LargestNumberOrder" = "Del más grande al más pequeño";
-"SmallestNumberOrder" = "Del más pequeño al más grande";
-
-"CorrectionSetting" = "Autocorrección";
