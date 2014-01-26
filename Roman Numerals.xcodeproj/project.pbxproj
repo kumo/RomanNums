@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF5EF1C51895732200DA753A /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1C41895732200DA753A /* CalculatorViewController.m */; };
+		BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1C71895748200DA753A /* IAPHelper.m */; };
+		BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */; };
+		BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CD1895781600DA753A /* MainMenuViewController.m */; };
 		BFBD6CF61893F3510097D8B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBD6CF51893F3510097D8B5 /* Foundation.framework */; };
 		BFBD6CF81893F3510097D8B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBD6CF71893F3510097D8B5 /* CoreGraphics.framework */; };
 		BFBD6CFA1893F3510097D8B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBD6CF91893F3510097D8B5 /* UIKit.framework */; };
@@ -39,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF5EF1C31895732200DA753A /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
+		BF5EF1C41895732200DA753A /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		BF5EF1C61895748200DA753A /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		BF5EF1C71895748200DA753A /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAPHelper.m; sourceTree = "<group>"; };
+		BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanIAPHelper.h; sourceTree = "<group>"; };
+		BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanIAPHelper.m; sourceTree = "<group>"; };
+		BF5EF1CC1895781600DA753A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		BF5EF1CD1895781600DA753A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		BFBD6CF21893F3510097D8B5 /* Roman Numerals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roman Numerals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD6CF51893F3510097D8B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFBD6CF71893F3510097D8B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,10 +146,18 @@
 				BFBD6D071893F3510097D8B5 /* Main.storyboard */,
 				BFBD6D341893F9430097D8B5 /* TabBarViewController.h */,
 				BFBD6D351893F9430097D8B5 /* TabBarViewController.m */,
+				BF5EF1CC1895781600DA753A /* MainMenuViewController.h */,
+				BF5EF1CD1895781600DA753A /* MainMenuViewController.m */,
 				BFBD6D0A1893F3510097D8B5 /* RomanViewController.h */,
 				BFBD6D0B1893F3510097D8B5 /* RomanViewController.m */,
 				BFBD6D0D1893F3510097D8B5 /* ArabicViewController.h */,
 				BFBD6D0E1893F3510097D8B5 /* ArabicViewController.m */,
+				BF5EF1C61895748200DA753A /* IAPHelper.h */,
+				BF5EF1C71895748200DA753A /* IAPHelper.m */,
+				BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */,
+				BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */,
+				BF5EF1C31895732200DA753A /* CalculatorViewController.h */,
+				BF5EF1C41895732200DA753A /* CalculatorViewController.m */,
 				BFBD6D101893F3510097D8B5 /* Images.xcassets */,
 				BFBD6CFC1893F3510097D8B5 /* Supporting Files */,
 				BFBD6D371893FF7F0097D8B5 /* Converter.h */,
@@ -291,10 +311,14 @@
 			files = (
 				BFBD6D0F1893F3510097D8B5 /* ArabicViewController.m in Sources */,
 				BFBD6D061893F3510097D8B5 /* AppDelegate.m in Sources */,
+				BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */,
 				BFBD6D331893F7660097D8B5 /* SWRevealViewController.m in Sources */,
 				BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */,
 				BFBD6D0C1893F3510097D8B5 /* RomanViewController.m in Sources */,
+				BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */,
 				BFBD6D361893F9430097D8B5 /* TabBarViewController.m in Sources */,
+				BF5EF1C51895732200DA753A /* CalculatorViewController.m in Sources */,
+				BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */,
 				BFBD6D021893F3510097D8B5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class CalculatorViewController;
+
 @interface TabBarViewController : UITabBarController
 
 @end

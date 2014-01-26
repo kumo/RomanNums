@@ -7,6 +7,7 @@
 //
 
 #import "TabBarViewController.h"
+#import "RomanIAPHelper.h"
 
 @interface TabBarViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
@@ -32,6 +33,12 @@
     [self.revealButtonItem setTarget: self.revealViewController];
     [self.revealButtonItem setAction: @selector( revealToggle: )];
     [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    
+    if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == NO) {
+        NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+        [views removeLastObject];
+        [self setViewControllers:views animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning

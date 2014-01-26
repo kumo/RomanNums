@@ -255,6 +255,319 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
+        <!--Calculator View Controller - First-->
+        <scene sceneID="R3a-nx-OGE">
+            <objects>
+                <viewController title="First" id="EMO-Ya-zrm" customClass="CalculatorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fRM-hk-cvJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pme-Bs-vsK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7w3-Wr-pGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFJ-sY-iiF">
+                                <rect key="frame" x="20" y="88" width="280" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="44"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrT-Mw-y8R">
+                                <rect key="frame" x="20" y="142" width="280" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="66"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aJh-mN-dkh">
+                                <rect key="frame" x="0.0" y="267" width="320" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="UtG-Ib-sgy"/>
+                                    <constraint firstAttribute="width" constant="320" id="eVE-pK-rEy"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU6-aw-5nZ">
+                                <rect key="frame" x="0.0" y="267" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="CRV-sa-DCV"/>
+                                    <constraint firstAttribute="height" constant="54" id="Mb1-w8-3i2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmg-0P-JOn">
+                                <rect key="frame" x="0.0" y="322" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="A65-Cr-VCy"/>
+                                    <constraint firstAttribute="height" constant="54" id="Gru-uh-qLE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="L">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rs-NZ-xeS">
+                                <rect key="frame" x="244" y="252" width="77" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="1by-Yp-KUU"/>
+                                    <constraint firstAttribute="width" constant="77" id="3BP-UZ-ot2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="EMO-Ya-zrm" eventType="touchUpInside" id="KFA-cm-qDA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABx-yj-1u8">
+                                <rect key="frame" x="244" y="297" width="77" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="R9a-Te-rvl"/>
+                                    <constraint firstAttribute="height" constant="54" id="pky-Ug-t95"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="EMO-Ya-zrm" eventType="touchUpInside" id="VYx-bU-JAm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouT-TD-8SY">
+                                <rect key="frame" x="244" y="342" width="77" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="A6M-bY-5od"/>
+                                    <constraint firstAttribute="width" constant="77" id="Wry-ix-H0P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="*">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="EMO-Ya-zrm" eventType="touchUpInside" id="zOc-Hl-qGY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6v-8Q-XkY">
+                                <rect key="frame" x="244" y="387" width="77" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="ST1-e0-cJj"/>
+                                    <constraint firstAttribute="height" constant="54" id="pBD-6C-zIS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="/">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="EMO-Ya-zrm" eventType="touchUpInside" id="snf-Pg-Vwq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IP1-rS-bUS">
+                                <rect key="frame" x="164" y="387" width="77" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="9Du-BB-6JR"/>
+                                    <constraint firstAttribute="width" constant="77" id="QrP-gt-Ucx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="=">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="EMO-Ya-zrm" eventType="touchUpInside" id="xFr-57-Z4Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y81-Kk-2cK">
+                                <rect key="frame" x="81" y="322" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="RCC-kS-OlG"/>
+                                    <constraint firstAttribute="width" constant="80" id="udW-au-XyY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="M">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muN-OR-Wcp">
+                                <rect key="frame" x="0.0" y="377" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="5gY-tl-CN2"/>
+                                    <constraint firstAttribute="width" constant="80" id="f9r-el-PEy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8F-v0-7dZ">
+                                <rect key="frame" x="162" y="322" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="E7T-5z-TYz"/>
+                                    <constraint firstAttribute="width" constant="80" id="rmh-tM-vT9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="V">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-ZF-BZA">
+                                <rect key="frame" x="81" y="267" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="0u6-Tm-4jo"/>
+                                    <constraint firstAttribute="width" constant="80" id="AK2-ad-S8G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="D">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-rY-6XN">
+                                <rect key="frame" x="162" y="267" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3Oc-2U-bwh"/>
+                                    <constraint firstAttribute="height" constant="54" id="R72-tY-wkr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="I">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="wZb-ZF-BZA" firstAttribute="leading" secondItem="oU6-aw-5nZ" secondAttribute="trailing" constant="1" id="1Zd-f1-S9B"/>
+                            <constraint firstItem="Vmg-0P-JOn" firstAttribute="leading" secondItem="7w3-Wr-pGZ" secondAttribute="leading" id="3Sr-A5-FWH"/>
+                            <constraint firstAttribute="trailing" secondItem="0rs-NZ-xeS" secondAttribute="trailing" id="9Wg-MF-JT8"/>
+                            <constraint firstItem="aJh-mN-dkh" firstAttribute="leading" secondItem="7w3-Wr-pGZ" secondAttribute="leading" id="DYw-ML-bON"/>
+                            <constraint firstAttribute="bottom" secondItem="aJh-mN-dkh" secondAttribute="bottom" id="Gap-rR-aYz"/>
+                            <constraint firstItem="oU6-aw-5nZ" firstAttribute="leading" secondItem="7w3-Wr-pGZ" secondAttribute="leading" id="Hql-G4-bhK"/>
+                            <constraint firstAttribute="trailing" secondItem="aJh-mN-dkh" secondAttribute="trailing" id="RH0-ek-dF4"/>
+                            <constraint firstItem="Pme-Bs-vsK" firstAttribute="top" secondItem="muN-OR-Wcp" secondAttribute="bottom" constant="49" id="UqW-OC-y2y"/>
+                            <constraint firstItem="Z8F-v0-7dZ" firstAttribute="leading" secondItem="y81-Kk-2cK" secondAttribute="trailing" constant="1" id="nBV-VP-yPn"/>
+                            <constraint firstItem="muN-OR-Wcp" firstAttribute="leading" secondItem="7w3-Wr-pGZ" secondAttribute="leading" id="nfR-1D-pGL"/>
+                            <constraint firstItem="tm3-rY-6XN" firstAttribute="leading" secondItem="wZb-ZF-BZA" secondAttribute="trailing" constant="1" id="s0z-Nj-qdG"/>
+                            <constraint firstItem="y81-Kk-2cK" firstAttribute="leading" secondItem="Vmg-0P-JOn" secondAttribute="trailing" constant="1" id="sMJ-m5-Rys"/>
+                            <constraint firstItem="0rs-NZ-xeS" firstAttribute="leading" secondItem="tm3-rY-6XN" secondAttribute="trailing" constant="1" id="shO-DI-PSc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Roman Converter" id="9h1-Fb-8pe"/>
+                    <connections>
+                        <outlet property="arabicLabel" destination="FrT-Mw-y8R" id="dcG-0u-La1"/>
+                        <outlet property="buttonDelete" destination="0rs-NZ-xeS" id="fAO-eh-Lh9"/>
+                        <outlet property="romanLabel" destination="OFJ-sY-iiF" id="bLI-rs-BSe"/>
+                        <outletCollection property="buttons" destination="muN-OR-Wcp" id="En8-tE-6hW"/>
+                        <outletCollection property="buttons" destination="oU6-aw-5nZ" id="dR1-yc-bUe"/>
+                        <outletCollection property="buttons" destination="wZb-ZF-BZA" id="mlI-Hi-gQN"/>
+                        <outletCollection property="buttons" destination="tm3-rY-6XN" id="6vb-PZ-bBq"/>
+                        <outletCollection property="buttons" destination="Vmg-0P-JOn" id="2Rm-eh-Cwd"/>
+                        <outletCollection property="buttons" destination="y81-Kk-2cK" id="9Ab-qP-BGi"/>
+                        <outletCollection property="buttons" destination="Z8F-v0-7dZ" id="JRZ-Fh-4Ln"/>
+                        <outletCollection property="buttons" destination="0rs-NZ-xeS" id="9vu-KG-gJk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9V-Is-7wu" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="-762"/>
+        </scene>
         <!--Arabic View Controller - Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
@@ -805,6 +1118,7 @@
                         <outlet property="revealButtonItem" destination="uXO-Qz-V23" id="S6F-Bc-ktt"/>
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
+                        <segue destination="EMO-Ya-zrm" kind="relationship" relationship="viewControllers" id="1up-SL-72J"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>

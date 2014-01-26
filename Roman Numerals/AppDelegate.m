@@ -7,11 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "RomanIAPHelper.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [RomanIAPHelper sharedInstance];
+
     // Override point for customization after application launch.
     return YES;
 }
