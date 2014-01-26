@@ -21,6 +21,20 @@
 @synthesize converter, string;
 @synthesize buttons;
 
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,15 +43,22 @@
     self.converter = [[Converter alloc] init];
 	self.converter.performConversionCheck = NO;
 
+    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
+    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
+
     // Prepare gestures
     for (UIButton *button in self.buttons) {
         UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
         
         [button addGestureRecognizer:touchGesture];
+
+        [button setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
     }
     
     UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
+
+    [self.buttonDelete setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning

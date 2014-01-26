@@ -28,10 +28,14 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="66"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGF-sA-DhD">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGF-sA-DhD">
                                 <rect key="frame" x="0.0" y="267" width="320" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74901962280273438" green="0.7568628191947937" blue="0.78039222955703735" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="fpt-h1-kCK"/>
+                                    <constraint firstAttribute="height" constant="213" id="zCy-cG-evq"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mga-TC-qES">
                                 <rect key="frame" x="0.0" y="267" width="106" height="54"/>
@@ -45,20 +49,19 @@
                                     <constraint firstAttribute="height" constant="54" id="vaG-fP-qNg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="C">
+                                <state key="normal" title="C" backgroundImage="Light">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
+                                <state key="selected" backgroundImage="Dark"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VmY-bS-gud">
                                 <rect key="frame" x="0.0" y="322" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.96862751245498657" green="0.96862751245498657" blue="0.97254908084869385" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.96862751250000001" blue="0.97254908080000002" alpha="1" colorSpace="deviceRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
                                 </accessibility>
@@ -71,16 +74,14 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-xE-JmQ">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8V-xE-JmQ">
                                 <rect key="frame" x="0.0" y="377" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74901962280000001" green="0.75686281919999998" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
                                 </accessibility>
@@ -89,13 +90,14 @@
                                     <constraint firstAttribute="width" constant="106" id="gPa-NH-Tx8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="selected" title="C" backgroundImage="light.png"/>
-                                <state key="highlighted" title="C" backgroundImage="light.png"/>
+                                <connections>
+                                    <action selector="archaicButtonPressed:" destination="Qh2-T1-AhA" eventType="touchUpInside" id="fik-QG-pSp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9J-q7-yZG">
                                 <rect key="frame" x="214" y="377" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74117648601531982" green="0.7568628191947937" blue="0.78431379795074463" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
                                 </accessibility>
@@ -105,14 +107,13 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <inset key="contentEdgeInsets" minX="35" minY="15" maxX="35" maxY="15"/>
-                                <state key="normal" title="delete" image="Untitled 3.png">
+                                <state key="normal" title="delete" image="Delete Icon">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <state key="disabled" backgroundImage="dark_delete.png"/>
                                 <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="CZ4-MO-1fc" eventType="touchUpInside" id="Xxg-GD-iOi"/>
@@ -137,7 +138,6 @@
                                 <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89U-b2-INm">
@@ -155,11 +155,8 @@
                                 <state key="normal" title="X">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xam-5Y-zqY">
@@ -181,7 +178,6 @@
                                 <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7n-FE-1OM">
@@ -203,7 +199,6 @@
                                 <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdq-7Q-uaM">
@@ -225,16 +220,16 @@
                                 <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725496530532837" green="0.93333339691162109" blue="0.95294123888015747" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.93725496530532837" green="0.93725496530532837" blue="0.95686280727386475" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="89U-b2-INm" firstAttribute="leading" secondItem="D8V-xE-JmQ" secondAttribute="trailing" constant="1" id="0at-6n-3mC"/>
                             <constraint firstItem="xam-5Y-zqY" firstAttribute="top" secondItem="bdq-7Q-uaM" secondAttribute="bottom" constant="1" id="3De-Rb-lN7"/>
                             <constraint firstAttribute="trailing" secondItem="xam-5Y-zqY" secondAttribute="trailing" id="3mq-nt-brF"/>
                             <constraint firstItem="VmY-bS-gud" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="9ht-me-96Z"/>
+                            <constraint firstItem="aGF-sA-DhD" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="Cs8-JJ-95m"/>
                             <constraint firstAttribute="bottom" secondItem="D8V-xE-JmQ" secondAttribute="bottom" constant="49" id="L5G-dv-UxQ"/>
                             <constraint firstItem="I9J-q7-yZG" firstAttribute="leading" secondItem="89U-b2-INm" secondAttribute="trailing" constant="1" id="PIV-04-aZe"/>
                             <constraint firstItem="b2s-42-PRN" firstAttribute="top" secondItem="O7n-FE-1OM" secondAttribute="bottom" constant="1" id="Qwy-dJ-loO"/>
@@ -246,6 +241,8 @@
                             <constraint firstItem="89U-b2-INm" firstAttribute="top" secondItem="b2s-42-PRN" secondAttribute="bottom" constant="1" id="etd-Bl-SPK"/>
                             <constraint firstItem="b2s-42-PRN" firstAttribute="leading" secondItem="VmY-bS-gud" secondAttribute="trailing" constant="1" id="ggl-Xc-I3h"/>
                             <constraint firstItem="I9J-q7-yZG" firstAttribute="top" secondItem="xam-5Y-zqY" secondAttribute="bottom" constant="1" id="kUR-M4-69Z"/>
+                            <constraint firstAttribute="trailing" secondItem="aGF-sA-DhD" secondAttribute="trailing" id="rky-dL-Lww"/>
+                            <constraint firstAttribute="bottom" secondItem="aGF-sA-DhD" secondAttribute="bottom" id="sLx-Yv-Yx6"/>
                             <constraint firstAttribute="trailing" secondItem="I9J-q7-yZG" secondAttribute="trailing" id="srd-6Z-8yy"/>
                             <constraint firstItem="O7n-FE-1OM" firstAttribute="leading" secondItem="mga-TC-qES" secondAttribute="trailing" constant="1" id="tRf-31-Wdl"/>
                             <constraint firstItem="mga-TC-qES" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" id="tpt-IE-EbR"/>
@@ -256,13 +253,6 @@
                     <connections>
                         <outlet property="arabicLabel" destination="PAU-c1-3pR" id="7kK-tX-SS3"/>
                         <outlet property="buttonDelete" destination="I9J-q7-yZG" id="fA0-Tb-PSx"/>
-                        <outlet property="buttonFive" destination="b2s-42-PRN" id="sv5-0a-YOI"/>
-                        <outlet property="buttonFour" destination="VmY-bS-gud" id="oX8-UU-Tff"/>
-                        <outlet property="buttonOne" destination="mga-TC-qES" id="gSE-Sr-k9E"/>
-                        <outlet property="buttonSeven" destination="89U-b2-INm" id="6kN-4b-b09"/>
-                        <outlet property="buttonSix" destination="xam-5Y-zqY" id="A4L-0i-zkV"/>
-                        <outlet property="buttonThree" destination="bdq-7Q-uaM" id="8kG-ZE-nVJ"/>
-                        <outlet property="buttonTwo" destination="O7n-FE-1OM" id="cbZ-wv-7Md"/>
                         <outlet property="romanLabel" destination="f18-qH-o4R" id="rUG-Uh-rPi"/>
                         <outletCollection property="buttons" destination="89U-b2-INm" id="Ap3-rR-Mhk"/>
                         <outletCollection property="buttons" destination="mga-TC-qES" id="YKL-Aa-TCE"/>
@@ -290,10 +280,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSf-ct-6O4">
+                                <rect key="frame" x="0.0" y="211" width="320" height="269"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Z9j-lq-yNL"/>
+                                    <constraint firstAttribute="height" constant="269" id="v30-hw-UmL"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fT1-Ii-eoD">
                                 <rect key="frame" x="0.0" y="376" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74901962280000001" green="0.75686281919999998" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Switches roman numeral style" label="Style">
                                     <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
                                 </accessibility>
@@ -304,22 +303,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="ↂↁ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="ↂↁ" backgroundImage="panel.png"/>
                                 <state key="selected" title="ↂↁ" backgroundImage="light.png"/>
                                 <state key="highlighted" title="ↂↁ" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="archaicButtonPressed:" destination="QUy-BD-bpt" eventType="touchUpInside" id="EPu-Tx-g6z"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cSf-ct-6O4">
-                                <rect key="frame" x="0.0" y="211" width="320" height="274"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74901962280000001" green="0.75686281919999998" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
-                            </view>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYl-yp-t7e">
                                 <rect key="frame" x="0.0" y="211" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -334,13 +327,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="1" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="1" backgroundImage="light.png"/>
                                 <state key="highlighted" title="1" backgroundImage="light.png">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9P2-nD-bT9">
@@ -357,12 +348,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="3" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="3" backgroundImage="light.png"/>
                                 <state key="highlighted" title="3" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MlJ-2N-EE5">
@@ -380,12 +370,11 @@
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="2" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="2" backgroundImage="light.png"/>
                                 <state key="highlighted" title="2" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HAt-Ow-Mmo">
@@ -402,12 +391,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="0" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="0" backgroundImage="light.png"/>
                                 <state key="highlighted" title="0" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H6-fJ-GFM">
@@ -424,12 +412,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="9" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="9" backgroundImage="light.png"/>
                                 <state key="highlighted" title="9" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKR-PO-uav">
@@ -446,13 +433,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="4" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="4" backgroundImage="light.png"/>
                                 <state key="highlighted" title="4" backgroundImage="light.png">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceQ-51-x0B">
@@ -469,12 +454,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="8" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="8" backgroundImage="light.png"/>
                                 <state key="highlighted" title="8" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmX-s1-DWk">
@@ -491,12 +475,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="7" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="7" backgroundImage="light.png"/>
                                 <state key="highlighted" title="7" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuk-l3-iNF">
@@ -513,18 +496,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="6" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="6" backgroundImage="light.png"/>
                                 <state key="highlighted" title="6" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-0I-ihR">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-0I-ihR">
                                 <rect key="frame" x="214" y="376" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.74901962280000001" green="0.75686281919999998" blue="0.78039222959999999" alpha="1" colorSpace="deviceRGB"/>
+                                <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" hint="Hold down to delete quickly" label="Delete">
                                     <accessibilityTraits key="traits" none="YES" button="YES" keyboardKey="YES"/>
                                 </accessibility>
@@ -533,14 +515,14 @@
                                     <constraint firstAttribute="width" constant="106" id="Mzg-ww-6xy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="delete">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="contentEdgeInsets" minX="35" minY="15" maxX="35" maxY="15"/>
+                                <state key="normal" title="delete" image="Delete Icon">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <state key="disabled" title="delete" image="dark_delete.png"/>
                                 <state key="selected" title="delete" image="dark_delete.png"/>
                                 <state key="highlighted" title="delete" image="dark_delete.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csu-Aa-tTV">
@@ -557,12 +539,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="disabled" title="5" backgroundImage="dark_delete.png"/>
                                 <state key="selected" title="5" backgroundImage="light.png"/>
                                 <state key="highlighted" title="5" backgroundImage="light.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKi-Go-WeG">
@@ -578,7 +559,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92549026012420654" green="0.90980398654937744" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="HmX-s1-DWk" firstAttribute="leading" secondItem="gMD-aP-Fq6" secondAttribute="leading" id="2d7-wZ-Uee"/>
                             <constraint firstItem="jKR-PO-uav" firstAttribute="top" secondItem="yYl-yp-t7e" secondAttribute="bottom" constant="1" id="6QM-a2-U8m"/>
@@ -589,6 +570,7 @@
                             <constraint firstItem="fT1-Ii-eoD" firstAttribute="leading" secondItem="gMD-aP-Fq6" secondAttribute="leading" id="JGc-fe-oYA"/>
                             <constraint firstItem="xnf-0I-ihR" firstAttribute="top" secondItem="9H6-fJ-GFM" secondAttribute="bottom" constant="1" id="MPa-EQ-1no"/>
                             <constraint firstItem="fT1-Ii-eoD" firstAttribute="top" secondItem="HmX-s1-DWk" secondAttribute="bottom" constant="1" id="N62-qd-oqX"/>
+                            <constraint firstAttribute="bottom" secondItem="cSf-ct-6O4" secondAttribute="bottom" id="ONC-up-bRj"/>
                             <constraint firstItem="ceQ-51-x0B" firstAttribute="leading" secondItem="HmX-s1-DWk" secondAttribute="trailing" constant="1" id="QyF-ge-oaN"/>
                             <constraint firstItem="MlJ-2N-EE5" firstAttribute="leading" secondItem="yYl-yp-t7e" secondAttribute="trailing" constant="1" id="StL-qD-eGL"/>
                             <constraint firstAttribute="bottom" secondItem="HAt-Ow-Mmo" secondAttribute="bottom" constant="50" id="VXl-UO-VNF"/>
@@ -600,6 +582,8 @@
                             <constraint firstItem="HAt-Ow-Mmo" firstAttribute="leading" secondItem="fT1-Ii-eoD" secondAttribute="trailing" constant="1" id="bA3-t8-hgd"/>
                             <constraint firstItem="9H6-fJ-GFM" firstAttribute="top" secondItem="zuk-l3-iNF" secondAttribute="bottom" constant="1" id="dc2-IA-uBl"/>
                             <constraint firstItem="HmX-s1-DWk" firstAttribute="top" secondItem="jKR-PO-uav" secondAttribute="bottom" constant="1" id="dyL-76-jON"/>
+                            <constraint firstAttribute="trailing" secondItem="cSf-ct-6O4" secondAttribute="trailing" id="jDp-9P-B0c"/>
+                            <constraint firstItem="cSf-ct-6O4" firstAttribute="leading" secondItem="gMD-aP-Fq6" secondAttribute="leading" id="jEL-ss-Y6e"/>
                             <constraint firstItem="csu-Aa-tTV" firstAttribute="top" secondItem="MlJ-2N-EE5" secondAttribute="bottom" constant="1" id="kCt-mF-55w"/>
                             <constraint firstItem="xnf-0I-ihR" firstAttribute="leading" secondItem="HAt-Ow-Mmo" secondAttribute="trailing" constant="1" id="kgI-qH-Pqq"/>
                             <constraint firstItem="zuk-l3-iNF" firstAttribute="top" secondItem="9P2-nD-bT9" secondAttribute="bottom" constant="1" id="qRu-wJ-Taj"/>
@@ -843,9 +827,11 @@
     </scenes>
     <resources>
         <image name="Arabic Converter" width="44" height="30"/>
+        <image name="Dark" width="25" height="25"/>
+        <image name="Delete Icon" width="47" height="38"/>
+        <image name="Light" width="25" height="25"/>
         <image name="Reveal Icon" width="22" height="17"/>
         <image name="Roman Converter" width="44" height="30"/>
-        <image name="Untitled 3.png" width="1" height="54"/>
         <image name="dark_delete.png" width="106" height="53"/>
         <image name="light.png" width="1" height="54"/>
         <image name="panel.png" width="106" height="53"/>
