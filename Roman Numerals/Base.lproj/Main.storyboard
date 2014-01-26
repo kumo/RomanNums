@@ -49,11 +49,9 @@
                                     <constraint firstAttribute="height" constant="54" id="vaG-fP-qNg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="C" backgroundImage="Light">
+                                <state key="normal" title="C">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="Dark"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -73,7 +71,6 @@
                                 <state key="normal" title="L">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -110,8 +107,6 @@
                                 <state key="normal" title="delete" image="Delete Icon">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -134,8 +129,6 @@
                                 <state key="normal" title="M">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -174,8 +167,6 @@
                                 <state key="normal" title="V">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -195,8 +186,6 @@
                                 <state key="normal" title="D">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -216,8 +205,6 @@
                                 <state key="normal" title="I">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" backgroundImage="dark_delete.png"/>
-                                <state key="selected" backgroundImage="light.png"/>
                                 <state key="highlighted">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -304,9 +291,9 @@
                                 <state key="normal" title="ↂↁ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="ↂↁ" backgroundImage="panel.png"/>
-                                <state key="selected" title="ↂↁ" backgroundImage="light.png"/>
-                                <state key="highlighted" title="ↂↁ" backgroundImage="light.png">
+                                <state key="disabled" title="ↂↁ"/>
+                                <state key="selected" title="ↂↁ"/>
+                                <state key="highlighted" title="ↂↁ">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
@@ -328,9 +315,9 @@
                                 <state key="normal" title="1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="1" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="1" backgroundImage="light.png"/>
-                                <state key="highlighted" title="1" backgroundImage="light.png">
+                                <state key="disabled" title="1"/>
+                                <state key="selected" title="1"/>
+                                <state key="highlighted" title="1">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -349,9 +336,9 @@
                                 <state key="normal" title="3">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="3" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="3" backgroundImage="light.png"/>
-                                <state key="highlighted" title="3" backgroundImage="light.png">
+                                <state key="disabled" title="3"/>
+                                <state key="selected" title="3"/>
+                                <state key="highlighted" title="3">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -371,9 +358,9 @@
                                 <state key="normal" title="2">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="2" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="2" backgroundImage="light.png"/>
-                                <state key="highlighted" title="2" backgroundImage="light.png">
+                                <state key="disabled" title="2"/>
+                                <state key="selected" title="2"/>
+                                <state key="highlighted" title="2">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -392,9 +379,9 @@
                                 <state key="normal" title="0">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="0" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="0" backgroundImage="light.png"/>
-                                <state key="highlighted" title="0" backgroundImage="light.png">
+                                <state key="disabled" title="0"/>
+                                <state key="selected" title="0"/>
+                                <state key="highlighted" title="0">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -413,9 +400,9 @@
                                 <state key="normal" title="9">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="9" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="9" backgroundImage="light.png"/>
-                                <state key="highlighted" title="9" backgroundImage="light.png">
+                                <state key="disabled" title="9"/>
+                                <state key="selected" title="9"/>
+                                <state key="highlighted" title="9">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -434,9 +421,9 @@
                                 <state key="normal" title="4">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="4" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="4" backgroundImage="light.png"/>
-                                <state key="highlighted" title="4" backgroundImage="light.png">
+                                <state key="disabled" title="4"/>
+                                <state key="selected" title="4"/>
+                                <state key="highlighted" title="4">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -455,9 +442,9 @@
                                 <state key="normal" title="8">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="8" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="8" backgroundImage="light.png"/>
-                                <state key="highlighted" title="8" backgroundImage="light.png">
+                                <state key="disabled" title="8"/>
+                                <state key="selected" title="8"/>
+                                <state key="highlighted" title="8">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -476,9 +463,9 @@
                                 <state key="normal" title="7">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="7" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="7" backgroundImage="light.png"/>
-                                <state key="highlighted" title="7" backgroundImage="light.png">
+                                <state key="disabled" title="7"/>
+                                <state key="selected" title="7"/>
+                                <state key="highlighted" title="7">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -497,9 +484,9 @@
                                 <state key="normal" title="6">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="6" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="6" backgroundImage="light.png"/>
-                                <state key="highlighted" title="6" backgroundImage="light.png">
+                                <state key="disabled" title="6"/>
+                                <state key="selected" title="6"/>
+                                <state key="highlighted" title="6">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -540,9 +527,9 @@
                                 <state key="normal" title="5">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
-                                <state key="disabled" title="5" backgroundImage="dark_delete.png"/>
-                                <state key="selected" title="5" backgroundImage="light.png"/>
-                                <state key="highlighted" title="5" backgroundImage="light.png">
+                                <state key="disabled" title="5"/>
+                                <state key="selected" title="5"/>
+                                <state key="highlighted" title="5">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
@@ -827,14 +814,10 @@
     </scenes>
     <resources>
         <image name="Arabic Converter" width="44" height="30"/>
-        <image name="Dark" width="25" height="25"/>
         <image name="Delete Icon" width="47" height="38"/>
-        <image name="Light" width="25" height="25"/>
         <image name="Reveal Icon" width="22" height="17"/>
         <image name="Roman Converter" width="44" height="30"/>
         <image name="dark_delete.png" width="106" height="53"/>
-        <image name="light.png" width="1" height="54"/>
-        <image name="panel.png" width="106" height="53"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
