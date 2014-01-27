@@ -436,7 +436,7 @@
         <!--Calculator View Controller - First-->
         <scene sceneID="R3a-nx-OGE">
             <objects>
-                <viewController title="First" id="EMO-Ya-zrm" customClass="CalculatorViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculatorView" title="First" id="EMO-Ya-zrm" customClass="CalculatorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fRM-hk-cvJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Pme-Bs-vsK"/>
@@ -1256,6 +1256,7 @@
     </scenes>
     <resources>
         <image name="Arabic Converter" width="44" height="30"/>
+        <image name="Calculator" width="44" height="30"/>
         <image name="Delete Icon" width="47" height="38"/>
         <image name="Reveal Icon" width="22" height="17"/>
         <image name="Roman Converter" width="44" height="30"/>
