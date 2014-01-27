@@ -8,6 +8,7 @@
 
 #import "TabBarViewController.h"
 #import "RomanIAPHelper.h"
+#import "CalculatorViewController.h"
 
 @interface TabBarViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
@@ -43,6 +44,13 @@
         //[self.toolbarItems.lastObject setHidden:NO];
         //[self.tabBar.items.lastObject setHidden:YES];
     }
+    
+    CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
+    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    [views addObject:myController];
+
+    [self setViewControllers:views animated:NO];
+
 }
 
 - (void)didReceiveMemoryWarning

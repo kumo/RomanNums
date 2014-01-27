@@ -742,7 +742,7 @@
                             <constraint firstItem="aJh-mN-dkh" firstAttribute="top" secondItem="ouT-TD-8SY" secondAttribute="bottom" constant="1" id="w2B-Fx-djF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calculator" image="Roman Converter" id="9h1-Fb-8pe"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Calculator" id="9h1-Fb-8pe"/>
                     <connections>
                         <outlet property="arabicLabel" destination="FrT-Mw-y8R" id="dcG-0u-La1"/>
                         <outlet property="buttonDelete" destination="0rs-NZ-xeS" id="fAO-eh-Lh9"/>
