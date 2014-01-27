@@ -7,9 +7,13 @@
 //
 
 #import "MainMenuViewController.h"
+#import "RomanIAPHelper.h"
+#import <StoreKit/StoreKit.h>
 
-@interface MainMenuViewController ()
-
+@interface MainMenuViewController () {
+    NSArray *_products;
+    NSNumberFormatter * _priceFormatter;
+}
 @end
 
 @implementation MainMenuViewController
@@ -32,6 +36,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self reload];
+    
+    _priceFormatter = [[NSNumberFormatter alloc] init];
+    [_priceFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+    [_priceFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,81 +49,162 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+
+}
+
+- (void)viewWillLayoutSubviews {
+    CGRect frame = self.view.frame;
+    frame.origin.x = 0;
+    if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        frame.size.width = [UIScreen mainScreen].bounds.size.height - 60;
+    } else if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        frame.size.width = [UIScreen mainScreen].bounds.size.width - 60;
+    }
+    self.view.frame = frame;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    
+    NSString * productIdentifier = notification.object;
+    [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
+        if ([product.productIdentifier isEqualToString:productIdentifier]) {
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+            *stop = YES;
+        }
+    }];
+    
+}
+
+- (void)reload {
+    _products = nil;
+    [self.tableView reloadData];
+    [[RomanIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+        if (success) {
+            _products = products;
+            [self.tableView reloadData];
+        }
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+
+#pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (section == 0) {
+        return 3;
+    } else if (section == 1){
+        return _products.count;
+    } else {
+        return 1;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return @"Version 2.0";
+    }
+    
+    return @"";
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 1)
+    {
+        return @"Extend Roman Numerals";
+    }
+    
+    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            [cell.textLabel setText:@"Contact support"];
+        } else if (indexPath.row == 1) {
+            [cell.textLabel setText:@"Visit website"];
+        } else {
+            [cell.textLabel setText:@"Follow on Twitter"];
+        }
+    } else if (indexPath.section == 1) {
+        SKProduct * product = (SKProduct *) _products[indexPath.row];
+        cell.textLabel.text = product.localizedTitle;
+        [_priceFormatter setLocale:product.priceLocale];
+        cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
+        
+        if ([[RomanIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            cell.accessoryView = nil;
+        } else {
+            UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            buyButton.frame = CGRectMake(0, 0, 72, 37);
+            [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+            buyButton.tag = indexPath.row;
+            [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.accessoryView = buyButton;
+        }
+    } else if (indexPath.section == 2) {
+        // restore purchases
+        [cell.textLabel setText:@"Restore purchases"];
+    }
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)buyButtonTapped:(id)sender {
+    
+    UIButton *buyButton = (UIButton *)sender;
+    SKProduct *product = _products[buyButton.tag];
+    
+    NSLog(@"Buying %@...", product.productIdentifier);
+    [[RomanIAPHelper sharedInstance] buyProduct:product];
+    
 }
 
- */
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0)  {
+            NSURL *url = [[NSURL alloc] initWithString:@"mailto:support+roman@cloudpebbles.com?subject=RomanNumerals"];
+            [[UIApplication sharedApplication] openURL:url];
+        } else if (indexPath.row == 1) {
+            NSURL *url = [[NSURL alloc] initWithString:@"http://www.cloudpebbles.com/apps/roman-numerals/"];
+            [[UIApplication sharedApplication] openURL:url];
+        } else {
+            NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            // buy it
+        } else {
+        }
+    } else {
+        [[RomanIAPHelper sharedInstance] restoreCompletedTransactions];
+    }
+}
 
 @end
