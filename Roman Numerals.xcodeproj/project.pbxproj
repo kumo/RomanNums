@@ -30,6 +30,7 @@
 		BFBD6D331893F7660097D8B5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D321893F7660097D8B5 /* SWRevealViewController.m */; };
 		BFBD6D361893F9430097D8B5 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D351893F9430097D8B5 /* TabBarViewController.m */; };
 		BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D381893FF7F0097D8B5 /* Converter.m */; };
+		BFE95D3018964D3B005B77AD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE95D2F18964D3B005B77AD /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		BFBD6D351893F9430097D8B5 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		BFBD6D371893FF7F0097D8B5 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		BFBD6D381893FF7F0097D8B5 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
+		BFE95D2E18964D3B005B77AD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		BFE95D2F18964D3B005B77AD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				BFBD6D041893F3510097D8B5 /* AppDelegate.h */,
 				BFBD6D051893F3510097D8B5 /* AppDelegate.m */,
 				BFBD6D071893F3510097D8B5 /* Main.storyboard */,
+				BFE95D2E18964D3B005B77AD /* SettingsViewController.h */,
+				BFE95D2F18964D3B005B77AD /* SettingsViewController.m */,
 				BFBD6D341893F9430097D8B5 /* TabBarViewController.h */,
 				BFBD6D351893F9430097D8B5 /* TabBarViewController.m */,
 				BF5EF1CC1895781600DA753A /* MainMenuViewController.h */,
@@ -312,6 +317,7 @@
 				BFBD6D0F1893F3510097D8B5 /* ArabicViewController.m in Sources */,
 				BFBD6D061893F3510097D8B5 /* AppDelegate.m in Sources */,
 				BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */,
+				BFE95D3018964D3B005B77AD /* SettingsViewController.m in Sources */,
 				BFBD6D331893F7660097D8B5 /* SWRevealViewController.m in Sources */,
 				BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */,
 				BFBD6D0C1893F3510097D8B5 /* RomanViewController.m in Sources */,

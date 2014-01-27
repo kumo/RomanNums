@@ -16,3 +16,7 @@
 
     #import "SWRevealViewController.h"
 #endif
+
+#define kAutoCorrectKey                 @"correction"
+#define kKeyboardPresentationKey        @"keyboard_type"
+#define kLargeNumberPresentationKey     @"large_number"

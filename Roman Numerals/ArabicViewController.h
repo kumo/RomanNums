@@ -14,6 +14,7 @@
     Converter *converter;
 
 	bool archaicMode;
+    int largeNumberMode;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *romanLabel;

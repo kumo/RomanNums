@@ -38,10 +38,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
-    self.converter = [[Converter alloc] init];
-	self.converter.performConversionCheck = YES;
     
+    self.converter = [[Converter alloc] init];
+
     UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
     UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
 
@@ -64,6 +63,23 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // set the keyboard order
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    int keyboardType = [[defaults valueForKey:kKeyboardPresentationKey] intValue];
+    
+    if (keyboardType == 0) {
+        [self setButtonTitles:@[@"C", @"D", @"I", @"L", @"M", @"V", @"X"]];
+    } else if (keyboardType == 1) {
+        [self setButtonTitles:@[@"M", @"D", @"C", @"L", @"X", @"V", @"I"]];
+    } else {
+        [self setButtonTitles:@[@"I", @"V", @"X", @"L", @"C", @"D", @"M"]];
+    }
+    
+	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
@@ -140,5 +156,16 @@
 		[self convertYear:newInputString];
     }
 }
+
+- (void)setButtonTitles:(NSArray *)titles {
+    for (int i=0; i<7; i++) {
+        UIButton *button = (UIButton *)[self.view viewWithTag:5001 + i];
+        NSString *title = [titles objectAtIndex:i];
+        
+        [button setTitle:title forState:UIControlStateNormal];
+        [button setTitle:title forState:UIControlStateHighlighted];
+    }
+}
+
 
 @end

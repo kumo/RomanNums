@@ -41,7 +41,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.converter = [[Converter alloc] init];
-	self.converter.performConversionCheck = NO;
 
     UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
     UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
@@ -59,6 +58,24 @@
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
 
     [self.buttonDelete setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // set the keyboard order
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
+    
+    if (largeNumberMode == 0) {
+        [self.buttonArchaic setTitle:@"MMMMM" forState:UIControlStateSelected];
+    } else if (largeNumberMode == 1) {
+        [self.buttonArchaic setTitle:@"ↁ" forState:UIControlStateSelected];
+    } else {
+        [self.buttonArchaic setTitle:@"Ⅴ̅" forState:UIControlStateSelected];
+    }
+
+	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -139,6 +156,17 @@
 	
 	NSString *arabicLabelCopy = [[NSString alloc] initWithString:_arabicLabel.text];
 	[self convertYear: arabicLabelCopy];
+    
+    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
+    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
+    
+    if (archaicMode) {
+        [_buttonArchaic setBackgroundColor:darkHighlightColour];
+        [_buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    } else {
+        [_buttonArchaic setBackgroundColor:lightHighlightColour];
+        [_buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
+    }
 }
 
 @end

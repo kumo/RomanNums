@@ -14,6 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [RomanIAPHelper sharedInstance];
+    [self loadSettings];
 
     // Override point for customization after application launch.
     return YES;
@@ -44,6 +45,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Settings
+
+- (void)loadSettings {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:YES], kAutoCorrectKey,
+                                 [NSNumber numberWithInt:0], kKeyboardPresentationKey,
+                                 [NSNumber numberWithInt:2], kLargeNumberPresentationKey,
+                                 nil];
+    
+    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
 
 @end

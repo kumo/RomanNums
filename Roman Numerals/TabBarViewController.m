@@ -34,10 +34,14 @@
     [self.revealButtonItem setAction: @selector( revealToggle: )];
     [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
     
+    // TODO: *add* the view controller if it has been bought
     if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == NO) {
         NSMutableArray *views = (NSMutableArray *)self.viewControllers;
         [views removeLastObject];
         [self setViewControllers:views animated:NO];
+
+        //[self.toolbarItems.lastObject setHidden:NO];
+        //[self.tabBar.items.lastObject setHidden:YES];
     }
 }
 

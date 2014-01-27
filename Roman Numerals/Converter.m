@@ -50,7 +50,7 @@
 
 - (void)convertToRoman:(NSString *) arabic archaic:(bool) archaic {
 	if (archaic == YES) {
-		romanResult = [self performOldConversionToRoman:arabic];
+		romanResult = [self performOverlineConversionToRoman:arabic];
 	} else {
 		romanResult = [self performConversionToRoman:arabic];
 	}
@@ -151,6 +151,14 @@
     NSString *result = [[NSString alloc] initWithFormat:@"%@", resultString];
 	
     return result;
+}
+
+- (NSString *)performOverlineConversionToRoman:(NSString *) arabic {
+    // Steps:
+    //   - is the number over 999? If so get the thousands and add bars on top
+    //   - calculate less than 1000
+    //   - combine the two together
+    return @"Ⅷ̅ ⅩⅣ";
 }
 
 - (NSString *)performOldConversionToRoman:(NSString *) arabic {
