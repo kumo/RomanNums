@@ -58,9 +58,22 @@
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
 
     [self.buttonDelete setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    
+    archaicMode = YES;
+    [self prepareLargeNumbersKey];
 }
 
 - (void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.converter.performConversionCheck = NO;
+    
+    [self prepareLargeNumbersKey];
+    
+    [self convertYear:_arabicLabel.text];
+}
+
+- (void)prepareLargeNumbersKey
 {
     // set the keyboard order
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -68,14 +81,16 @@
     largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
     
     if (largeNumberMode == 0) {
-        [self.buttonArchaic setTitle:@"MMMMM" forState:UIControlStateSelected];
+        [self.buttonArchaic setTitle:@"MM" forState:UIControlStateSelected];
     } else if (largeNumberMode == 1) {
-        [self.buttonArchaic setTitle:@"ↁ" forState:UIControlStateSelected];
+        [self.buttonArchaic setTitle:@"ↀↀ" forState:UIControlStateNormal];
+        [self.buttonArchaic setTitle:@"ↀↀ" forState:UIControlStateSelected];
     } else {
-        [self.buttonArchaic setTitle:@"Ⅴ̅" forState:UIControlStateSelected];
+        [self.buttonArchaic setTitle:@"Ⅱ̅" forState:UIControlStateNormal];
+        [self.buttonArchaic setTitle:@"Ⅱ̅" forState:UIControlStateSelected];
     }
 
-	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
+    self.buttonArchaic.selected = archaicMode;
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,6 +182,8 @@
         [_buttonArchaic setBackgroundColor:lightHighlightColour];
         [_buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
     }
+    
+    [self prepareLargeNumbersKey];
 }
 
 @end

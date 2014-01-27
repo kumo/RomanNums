@@ -50,7 +50,15 @@
 
 - (void)convertToRoman:(NSString *) arabic archaic:(bool) archaic {
 	if (archaic == YES) {
-		romanResult = [self performOverlineConversionToRoman:arabic];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        int largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
+
+        if (largeNumberMode == 2) {
+            romanResult = [self performOverlineConversionToRoman:arabic];
+        } else {
+            romanResult = [self performOldConversionToRoman:arabic];
+        }
 	} else {
 		romanResult = [self performConversionToRoman:arabic];
 	}
@@ -113,6 +121,9 @@
 - (NSString *)performConversionToRoman:(NSString *) arabic {
     int arabicLabelValue = [arabic intValue];
 	
+    NSArray *romanCharacterCalculationValues = [NSArray arrayWithObjects:
+                                            @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"ⅠX", @"V", @"ⅠV", @"Ⅰ", nil];
+
     NSString *romanValue = nil;
 	
 	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
@@ -123,7 +134,7 @@
 	for (i = 0; i < arrayCount; i++)
 	{
 		// Get the roman value at position i
-		romanValue = [romanCalculationValues objectAtIndex:i];
+		romanValue = [romanCharacterCalculationValues objectAtIndex:i];
 		// along with the corresponding arabic value
 		int arabicValue = [[arabicCalculationValues objectAtIndex:i] intValue];
 		
@@ -158,7 +169,32 @@
     //   - is the number over 999? If so get the thousands and add bars on top
     //   - calculate less than 1000
     //   - combine the two together
-    return @"Ⅷ̅ ⅩⅣ";
+    
+    int arabicLabelValue = [arabic intValue];
+    NSString *overlineRoman = nil;
+    NSString *normalRoman = nil;
+    
+    if (arabicLabelValue < 1000) {
+        normalRoman = [self performConversionToRoman:arabic];
+        return normalRoman;
+    } else {
+        int normalArabic = arabicLabelValue % 1000;
+        normalRoman = [self performConversionToRoman:[NSString stringWithFormat:@"%d", normalArabic]];
+
+        int overlineArabic = (arabicLabelValue - normalArabic) / 1000;
+        overlineRoman = [self performConversionToRoman:[NSString stringWithFormat:@"%d", overlineArabic]];
+        
+        // FIXME: implement a faster method or that also draws a single line
+        NSString *convertedOverline = @"";
+        for (int i=0; i<[overlineRoman length]; i++) {
+            unichar character = [overlineRoman characterAtIndex:i];
+            
+            convertedOverline = [NSString stringWithFormat:@"%@%@%@", convertedOverline, [NSString stringWithCharacters:&character length:1], @"\u0304"];
+            
+        }
+        
+        return [NSString stringWithFormat:@"%@  %@", convertedOverline, normalRoman];
+    }
 }
 
 - (NSString *)performOldConversionToRoman:(NSString *) arabic {
