@@ -72,11 +72,11 @@
     int keyboardType = [[defaults valueForKey:kKeyboardPresentationKey] intValue];
     
     if (keyboardType == 0) {
-        [self setButtonTitles:@[@"C", @"D", @"I", @"L", @"M", @"V", @"X"]];
+        [self setButtonTitles:@[@"C", @"D", @"Ⅰ", @"L", @"M", @"V", @"X"]];
     } else if (keyboardType == 1) {
-        [self setButtonTitles:@[@"M", @"D", @"C", @"L", @"X", @"V", @"I"]];
+        [self setButtonTitles:@[@"M", @"D", @"C", @"L", @"X", @"V", @"Ⅰ"]];
     } else {
-        [self setButtonTitles:@[@"I", @"V", @"X", @"L", @"C", @"D", @"M"]];
+        [self setButtonTitles:@[@"Ⅰ", @"V", @"X", @"L", @"C", @"D", @"M"]];
     }
     
 	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
@@ -156,6 +156,8 @@
 		[self convertYear:newInputString];
     }
 }
+
+#pragma mark - UI methods
 
 - (void)setButtonTitles:(NSArray *)titles {
     for (int i=0; i<7; i++) {

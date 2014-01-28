@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalculatorViewController : UIViewController
+@class Converter;
+
+@interface CalculatorViewController : UIViewController {
+    NSString *string;
+}
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+@property (weak, nonatomic) IBOutlet UIButton *buttonDelete;
+
+@property (weak, nonatomic) IBOutlet UILabel *romanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *arabicLabel;
+
+@property (nonatomic, copy) NSString *string;
+@property (nonatomic, retain) Converter *converter;
+
+- (IBAction)operatorAction:(id)sender;
+- (IBAction)equalsAction:(id)sender;
 
 @end
