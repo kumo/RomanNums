@@ -135,15 +135,30 @@
     
     NSLog(@"formula is now %@", formula);
 
-    NSExpression *expression = [NSExpression expressionWithFormat:formula];
     
-    int result = [[expression expressionValueWithObject:nil context:nil] intValue];
+    int result;
+    NSString *resultStr;
+    
+    @try {
+        // the code that potentially raises an NSInvalidArgumentException
+        NSExpression *expression = [NSExpression expressionWithFormat:formula];
+
+        result = [[expression expressionValueWithObject:nil context:nil] intValue];
+        resultStr = [[expression expressionValueWithObject:nil context:nil] stringValue];
+    } @catch (NSException *exception) {
+        if ([[exception name] isEqualToString:NSInvalidArgumentException]) {
+            // your error handling
+            result = 0;
+            resultStr = @"";
+        }
+    }
+    
     NSLog(@"%d", result);
 
     /*float floatResult = [[expression expressionValueWithObject:nil context:nil] floatValue];
     NSLog(@"%.2f", floatResult);*/
 
-    [_arabicLabel setText:[[expression expressionValueWithObject:nil context:nil] stringValue]];
+    [_arabicLabel setText:resultStr];
     [_converter convertToRoman:_arabicLabel.text archaic:archaicMode];
     [_romanLabel setText:_converter.romanResult];
     

@@ -35,21 +35,23 @@
     [self.revealButtonItem setAction: @selector( revealToggle: )];
     [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
     
-    // TODO: *add* the view controller if it has been bought
     if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == NO) {
         NSMutableArray *views = (NSMutableArray *)self.viewControllers;
         [views removeLastObject];
         [self setViewControllers:views animated:NO];
-
-        //[self.toolbarItems.lastObject setHidden:NO];
-        //[self.tabBar.items.lastObject setHidden:YES];
     }
     
-    CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(productPurchased:)
+                                                 name:@"ProductPurchased" object:nil];
+
+    
+    // FIXME: this must be done when it is purchased
+    /*CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
     NSMutableArray *views = (NSMutableArray *)self.viewControllers;
     [views addObject:myController];
 
-    [self setViewControllers:views animated:NO];
+    [self setViewControllers:views animated:NO];*/
 
 }
 
@@ -57,6 +59,18 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    NSString *productIdentifier = (NSString *)[notification.userInfo objectForKey:@"productIdentifier"];
+    
+    if ([productIdentifier isEqualToString:@"it.kumo.roman.calculator"]) {
+        CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
+         NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+         [views addObject:myController];
+         
+         [self setViewControllers:views animated:NO];
+    }
 }
 
 @end
