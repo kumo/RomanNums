@@ -15,6 +15,8 @@
 
 @implementation CalculatorViewController
 
+@synthesize string, formula, shouldClearDisplay;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,31 +31,19 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSString *formula = @"10-3*3+10/2";
+    /*NSString *formula = @"10-3*3+10/2";
     
     NSExpression *expression = [NSExpression expressionWithFormat:formula];
     
     int result = [[expression expressionValueWithObject:nil context:nil] intValue];
-    NSLog(@"%d", result);
+    NSLog(@"%d", result);*/
     
     self.converter = [[Converter alloc] init];
     
-    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
-    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
-    
-    // Prepare gestures
-    for (UIButton *button in self.buttons) {
-        UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-        
-        [button addGestureRecognizer:touchGesture];
-        
-        [button setBackgroundImage:[CalculatorViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
-    }
-    
-    UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
-    [self.buttonDelete addGestureRecognizer:longTouchGesture];
-    
-    [self.buttonDelete setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    [self prepareGestures];
+
+    self.formula = @"";
+    self.shouldClearDisplay = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -71,6 +61,14 @@
     }
     
 	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
+
+    int largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
+    
+    if (largeNumberMode > 0)
+        archaicMode = YES;
+    else
+        archaicMode = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,34 +89,70 @@
     self.arabicLabel.text = @"";
 }
 
-- (void)setButtonTitles:(NSArray *)titles {
-    for (int i=0; i<7; i++) {
-        UIButton *button = (UIButton *)[self.view viewWithTag:5001 + i];
-        NSString *title = [titles objectAtIndex:i];
-        
-        [button setTitle:title forState:UIControlStateNormal];
-        [button setTitle:title forState:UIControlStateHighlighted];
-    }
-}
-
 - (IBAction)operatorAction:(id)sender {
+    int nextOperator = ((UIButton *)sender).tag - 9000;
+    
+    if (currentOperator == 1)
+        formula = [NSString stringWithFormat:@"%@+",formula];
+    else if (currentOperator == 2)
+        formula = [NSString stringWithFormat:@"%@-",formula];
+    else if (currentOperator == 3)
+        formula = [NSString stringWithFormat:@"%@*",formula];
+    else if (currentOperator == 4)
+        formula = [NSString stringWithFormat:@"%@/",formula];
+    else
+        formula = @"";
+    
+    UIButton *currentButton = (UIButton *)[self.view viewWithTag:9000+currentOperator];
+    currentButton.selected = NO;
+    
+    formula = [NSString stringWithFormat:@"%@%@",formula, _arabicLabel.text];
+    
+    NSLog(@"formula is now %@", formula);
+    
+    currentOperator = nextOperator;
+    shouldClearDisplay = YES;
+    
+    UIButton *nextButton = (UIButton *)[self.view viewWithTag:9000+nextOperator];
+    nextButton.selected = YES;
 }
 
 - (IBAction)equalsAction:(id)sender {
-}
+    if (currentOperator == 1)
+        formula = [NSString stringWithFormat:@"%@+",formula];
+    else if (currentOperator == 2)
+        formula = [NSString stringWithFormat:@"%@-",formula];
+    else if (currentOperator == 3)
+        formula = [NSString stringWithFormat:@"%@*",formula];
+    else if (currentOperator == 4)
+        formula = [NSString stringWithFormat:@"%@/",formula];
+    else
+        formula = @"";
+    
+    
+    //formula = [NSString stringWithFormat:@"%@%@.0",formula, _arabicLabel.text];
+    formula = [NSString stringWithFormat:@"%@%@",formula, _arabicLabel.text];
+    
+    NSLog(@"formula is now %@", formula);
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    NSExpression *expression = [NSExpression expressionWithFormat:formula];
     
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
+    int result = [[expression expressionValueWithObject:nil context:nil] intValue];
+    NSLog(@"%d", result);
+
+    /*float floatResult = [[expression expressionValueWithObject:nil context:nil] floatValue];
+    NSLog(@"%.2f", floatResult);*/
+
+    [_arabicLabel setText:[[expression expressionValueWithObject:nil context:nil] stringValue]];
+    [_converter convertToRoman:_arabicLabel.text archaic:archaicMode];
+    [_romanLabel setText:_converter.romanResult];
     
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
+    UIButton *currentButton = (UIButton *)[self.view viewWithTag:9000+currentOperator];
+    currentButton.selected = NO;
+
+    formula = @"";
+    shouldClearDisplay = YES;
+    currentOperator = 0;
 }
 
 #pragma mark - Conversion methods
@@ -168,20 +202,78 @@
 	
     NSString *romanLabelString = self.string;
     
-    if (romanLabelString == Nil) {
+    if ((romanLabelString == Nil) || (shouldClearDisplay == YES)) {
         romanLabelString = @"";
+        shouldClearDisplay = NO;
+        [self.romanLabel setText:@""];
+        [self.arabicLabel setText:@""];
     }
     
 	if ([text isEqualToString: @"delete"]) {
 		if ([romanLabelString length] > 0) {
 			NSString *newInputString = [[NSString alloc] initWithString:[romanLabelString substringToIndex: [romanLabelString length] - 1]];
 			[self convertYear:newInputString];
-		}
+		} else {
+            shouldClearDisplay = YES;
+            formula = @"";
+            currentOperator = 0;
+        }
 	}
 	else if ([romanLabelString length] < 14) {
 		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", romanLabelString, text];
 		[self convertYear:newInputString];
     }
+}
+
+#pragma mark - UI methods
+
+- (void)setButtonTitles:(NSArray *)titles {
+    for (int i=0; i<7; i++) {
+        UIButton *button = (UIButton *)[self.view viewWithTag:5001 + i];
+        NSString *title = [titles objectAtIndex:i];
+        
+        [button setTitle:title forState:UIControlStateNormal];
+        [button setTitle:title forState:UIControlStateHighlighted];
+    }
+}
+
+- (void)prepareGestures
+{
+    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
+    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
+    
+    // Prepare gestures
+    for (UIButton *button in self.buttons) {
+        UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+        
+        [button addGestureRecognizer:touchGesture];
+        
+        [button setBackgroundImage:[CalculatorViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
+    }
+    
+    UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
+    [self.buttonDelete addGestureRecognizer:longTouchGesture];
+    
+    [self.buttonDelete setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    
+    for (UIButton *button in self.operatorButtons) {
+        [button setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateSelected];
+    }
+}
+
++ (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
 }
 
 @end

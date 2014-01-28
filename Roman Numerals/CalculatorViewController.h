@@ -12,16 +12,24 @@
 
 @interface CalculatorViewController : UIViewController {
     NSString *string;
+    int currentOperator;
+    NSString *formula;
+    BOOL shouldClearDisplay;
+	bool archaicMode;
 }
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *operatorButtons;
 @property (weak, nonatomic) IBOutlet UIButton *buttonDelete;
 
 @property (weak, nonatomic) IBOutlet UILabel *romanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *arabicLabel;
 
 @property (nonatomic, copy) NSString *string;
+@property (nonatomic, copy) NSString *formula;
 @property (nonatomic, retain) Converter *converter;
+
+@property (nonatomic) BOOL shouldClearDisplay;
 
 - (IBAction)operatorAction:(id)sender;
 - (IBAction)equalsAction:(id)sender;
