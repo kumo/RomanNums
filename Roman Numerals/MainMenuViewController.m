@@ -78,7 +78,7 @@
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
             [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:1]] withRowAnimation:UITableViewRowAnimationFade];
             
-            NSLog(@"item has been purchased");
+            //NSLog(@"item has been purchased");
 
             NSDictionary *dictionary =
             [[NSDictionary alloc] initWithObjectsAndKeys:productIdentifier, @"productIdentifier", nil];
@@ -185,7 +185,7 @@
     UIButton *buyButton = (UIButton *)sender;
     SKProduct *product = _products[buyButton.tag];
     
-    NSLog(@"Buying %@...", product.productIdentifier);
+    //NSLog(@"Buying %@...", product.productIdentifier);
     [[RomanIAPHelper sharedInstance] buyProduct:product];
     
 }

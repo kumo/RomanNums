@@ -65,7 +65,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     self.converter.performConversionCheck = NO;
     
     [self prepareLargeNumbersKey];
@@ -103,14 +102,14 @@
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
-    NSLog(@"tapped %@", [button currentTitle]);
+    //NSLog(@"tapped %@", [button currentTitle]);
     
-    NSLog(@"Before conversion, roman: %@, arabic: %@", _romanLabel.text, _arabicLabel.text);
+    //NSLog(@"Before conversion, roman: %@, arabic: %@", _romanLabel.text, _arabicLabel.text);
     [self updateArabicString: [button currentTitle]];
 }
 
 - (IBAction)handleLongPressGesture:(id)sender {
-    NSLog(@"long pressing delete");
+    //NSLog(@"long pressing delete");
     self.string = @"";
     _romanLabel.text = @"";
     _arabicLabel.text = @"";

@@ -108,7 +108,7 @@
     
     formula = [NSString stringWithFormat:@"%@%@",formula, _arabicLabel.text];
     
-    NSLog(@"formula is now %@", formula);
+    //NSLog(@"formula is now %@", formula);
     
     currentOperator = nextOperator;
     shouldClearDisplay = YES;
@@ -133,7 +133,7 @@
     //formula = [NSString stringWithFormat:@"%@%@.0",formula, _arabicLabel.text];
     formula = [NSString stringWithFormat:@"%@%@",formula, _arabicLabel.text];
     
-    NSLog(@"formula is now %@", formula);
+    //NSLog(@"formula is now %@", formula);
 
     
     int result;
@@ -153,7 +153,7 @@
         }
     }
     
-    NSLog(@"%d", result);
+    //NSLog(@"%d", result);
 
     /*float floatResult = [[expression expressionValueWithObject:nil context:nil] floatValue];
     NSLog(@"%.2f", floatResult);*/

@@ -50,8 +50,6 @@
 #pragma mark - Settings
 
 - (void)loadSettings {
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    
     NSDictionary *appDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithBool:YES], kAutoCorrectKey,
                                  [NSNumber numberWithInt:0], kKeyboardPresentationKey,
