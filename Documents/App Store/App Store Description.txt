@@ -1,24 +1,14 @@
 Roman Numerals provides an easy way of converting Roman numerals into more understandable year numbers and vice versa. Use it when you cannot quite work out the age of a building or to resolve disputes about the year in which a TV programme was made.
 
-To use it just choose whether you want to convert from Roman numerals or from Arabic numerals and then type in the year and the corresponding value will appear. There are preferences for enabling autocorrection and for choosing which order the roman numerals appear in on the keyboard.
+To use it just choose whether you want to convert from Roman numerals or from Arabic numerals and then type in the year and the corresponding value will appear. There are preferences for choosing how large numbers appear, enabling autocorrection and for choosing which order the roman numerals appear in on the keyboard.
 
-Features:
-- Roman <-> Arabic converter.
-- easy to use Roman keyboard.
-- automatically converts Roman Numerals (e.g. IIII -> IV) and ignores invalid ones.
+FEATURES:
+- Roman and Arabic converter;
+- support for large numbers
+- easy to use Roman keyboard;
+- automatically converts Roman Numerals (e.g. IIII -> IV) and ignores invalid ones;
 - Roman Numerals can be shown in numerical or alphabetical order.
+- an optional Calculator to calculate MMII-XV*L
 
-Thank you to everyone for your suggestions about the arabic to roman conversion, and for the roman numerals correction.
-
-If you would like to show your appreciation of this application or would like a quiz for the roman numerals then please consider buying my quiz version.
-
-Translations:
-This new version of Roman Numerals uses the iPhone/iPod settings to manage they keyboard and auto-correction options. If you would like to help translate these into your language then please send me an email at kumo@kumo.it.
-
-Large numbers:
-Historically there have been multiple ways of writing numbers larger than 4000. The number 5000 can be written as V with a bar above it, as IↃↃ, or even V M. In the latest version of Roman Numerals large numbers can be written as IↃↃ if you choose to enable them.
-
-
-(what's new
-- new larger conversion mode for arabic numerals to roman numerals, 50000 can be written as IↃↃↃ. Type in the arabic numeral and press the bottom left button to switch modes.
-- added shake-to-delete to easily clear the inputted numbers)
+LARGE NUMBERS:
+Historically there have been multiple ways of writing numbers larger than 4000. The number 5000 can be written as V with a bar above it, as IↃↃ, or even V M. In this version of Roman Numerals, large numbers will automatically appear with a bar over them, but can also can be written as IↃↃ if you choose to enable them in the settings.
