@@ -199,7 +199,7 @@
             NSURL *url = [[NSURL alloc] initWithString:@"mailto:support+roman@cloudpebbles.com?subject=RomanNumerals"];
             [[UIApplication sharedApplication] openURL:url];
         } else if (indexPath.row == 1) {
-            NSURL *url = [[NSURL alloc] initWithString:@"http://www.cloudpebbles.com/apps/roman-numerals/"];
+            NSURL *url = [[NSURL alloc] initWithString:@"http://www.cloudpebbles.com/support/roman-numerals/"];
             [[UIApplication sharedApplication] openURL:url];
         } else {
             NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
