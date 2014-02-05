@@ -62,13 +62,13 @@
     
 	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
 
-    int largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
+    archaicMode = NO;
+    /*int largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
     
     if (largeNumberMode > 0)
         archaicMode = YES;
     else
-        archaicMode = NO;
-    
+        archaicMode = NO;*/
 }
 
 - (void)didReceiveMemoryWarning
@@ -159,6 +159,16 @@
     NSLog(@"%.2f", floatResult);*/
 
     [_arabicLabel setText:resultStr];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL autoSwitch = [defaults boolForKey:kAutoSwitchKey];
+
+    if ((result > 3999) && (autoSwitch)) {
+        archaicMode = YES;
+    } else {
+        archaicMode = NO;
+    }
+    
     [_converter convertToRoman:_arabicLabel.text archaic:archaicMode];
     [_romanLabel setText:_converter.romanResult];
     
