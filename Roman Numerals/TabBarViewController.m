@@ -46,7 +46,7 @@
                                                  name:@"ProductPurchased" object:nil];
 
     
-    // FIXME: this must be done when it is purchased
+    // NOTE: uncomment this to show the calculator
     /*CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
     NSMutableArray *views = (NSMutableArray *)self.viewControllers;
     [views addObject:myController];
