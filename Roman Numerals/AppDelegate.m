@@ -54,6 +54,7 @@
                                  [NSNumber numberWithBool:YES], kAutoCorrectKey,
                                  [NSNumber numberWithInt:0], kKeyboardPresentationKey,
                                  [NSNumber numberWithInt:2], kLargeNumberPresentationKey,
+                                 [NSNumber numberWithBool:YES], kAutoSwitchKey,
                                  nil];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];

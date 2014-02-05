@@ -316,27 +316,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Large numbers" footerTitle="How should large numbers appear?" id="c0G-3f-l8E">
+                            <tableViewSection headerTitle="Large numbers" footerTitle="Which system do you want to use for large numbers and should they automatically appear for numbers larger than 3999?" id="c0G-3f-l8E">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="98d-Ic-IKJ" style="IBUITableViewCellStyleDefault" id="iIJ-kC-D4C">
-                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIJ-kC-D4C" id="Ijb-jM-uDk">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="MM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="98d-Ic-IKJ">
-                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Z0f-mL-KHk" style="IBUITableViewCellStyleDefault" id="QxT-p4-Kjb">
-                                        <rect key="frame" x="0.0" y="387" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QxT-p4-Kjb" id="MT5-ic-dOw">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -353,7 +336,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Mcj-3X-wEu" style="IBUITableViewCellStyleDefault" id="oeA-8q-06r">
-                                        <rect key="frame" x="0.0" y="431" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="387" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oeA-8q-06r" id="Ojk-6v-jhe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -369,12 +352,29 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="e5B-im-dBM" style="IBUITableViewCellStyleDefault" id="urE-bD-86u">
+                                        <rect key="frame" x="0.0" y="431" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="urE-bD-86u" id="geB-b0-iSu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Automatically enable" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e5B-im-dBM">
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection footerTitle="Should Roman Numeral such as VIIII automatically be corrected to IX?" id="Qa5-ho-0be">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="LAO-zE-6nx" style="IBUITableViewCellStyleDefault" id="ZOb-bg-bEy">
-                                        <rect key="frame" x="0.0" y="515" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="548" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZOb-bg-bEy" id="Ley-TP-uDB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -405,7 +405,7 @@
                         <outlet property="alphabeticalKeyboardCell" destination="dc8-am-qJk" id="LyH-B1-Ey3"/>
                         <outlet property="archaicNumbersCell" destination="QxT-p4-Kjb" id="E4d-7E-HfV"/>
                         <outlet property="autoCorrectCell" destination="ZOb-bg-bEy" id="uoM-TP-fp3"/>
-                        <outlet property="largeNumbersCell" destination="iIJ-kC-D4C" id="HAC-Wt-0BT"/>
+                        <outlet property="autoSwitchCell" destination="urE-bD-86u" id="i99-NO-Dbh"/>
                         <outlet property="largestFirstKeyboardCell" destination="rm6-it-wFu" id="hc7-hC-nBm"/>
                         <outlet property="overlineNumberCell" destination="oeA-8q-06r" id="Jw2-Z4-gYr"/>
                         <outlet property="smallestFirstKeyboardCell" destination="hPp-Eo-aIe" id="Mgn-bE-qzL"/>

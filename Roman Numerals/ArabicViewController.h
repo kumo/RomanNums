@@ -14,6 +14,7 @@
     Converter *converter;
 
 	bool archaicMode;
+    bool lockedMode;
     int largeNumberMode;
 }
 

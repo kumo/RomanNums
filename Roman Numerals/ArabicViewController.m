@@ -59,8 +59,14 @@
 
     [self.buttonDelete setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
     
-    archaicMode = YES;
+    archaicMode = NO;
+    lockedMode = NO;
     [self prepareLargeNumbersKey];
+    [self.buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
+    [self.buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateSelected];
+    [self.buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateNormal];
+
+    [self.buttonArchaic setHighlighted:archaicMode];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -80,13 +86,17 @@
     largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
     
     if (largeNumberMode == 0) {
+        [self.buttonArchaic setTitle:@"MM" forState:UIControlStateNormal];
         [self.buttonArchaic setTitle:@"MM" forState:UIControlStateSelected];
+        [self.buttonArchaic setTitle:@"MM" forState:UIControlStateHighlighted];
     } else if (largeNumberMode == 1) {
         [self.buttonArchaic setTitle:@"ↀↀ" forState:UIControlStateNormal];
         [self.buttonArchaic setTitle:@"ↀↀ" forState:UIControlStateSelected];
+        [self.buttonArchaic setTitle:@"ↀↀ" forState:UIControlStateHighlighted];
     } else {
         [self.buttonArchaic setTitle:@"Ⅱ̅" forState:UIControlStateNormal];
         [self.buttonArchaic setTitle:@"Ⅱ̅" forState:UIControlStateSelected];
+        [self.buttonArchaic setTitle:@"Ⅱ̅" forState:UIControlStateHighlighted];
     }
 
     self.buttonArchaic.selected = archaicMode;
@@ -143,6 +153,12 @@
             [str insertString:@". " atIndex:i];
         [_romanLabel setAccessibilityValue:str];
         
+        if ([str isEqualToString:@""]) {
+            lockedMode = NO;
+            //NSLog(@"unblocking locked mode");
+            _buttonArchaic.selected = NO;
+        }
+        
 	}
 }
 
@@ -151,20 +167,75 @@
 	
     NSString *arabicLabelString = string;
 	
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL autoSwitch = [defaults boolForKey:kAutoSwitchKey];
+
 	if ([text isEqualToString: @"delete"]) {
 		if ([arabicLabelString length] > 0) {
 			NSString *newInputString = [[NSString alloc] initWithString:[arabicLabelString substringToIndex: [arabicLabelString length] - 1]];
+            
+            if ((autoSwitch == YES) && (lockedMode == NO)) {
+                int arabicLabelValue = [newInputString intValue];
+            
+                if (arabicLabelValue > 3999) {
+                    archaicMode = YES;
+                } else {
+                    archaicMode = NO;
+                }
+            
+                _buttonArchaic.selected = archaicMode;
+            }
+            
+
 			[self convertYear:newInputString];
 		}
 	}
 	else if ([arabicLabelString length] < 6) {
 		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", arabicLabelString, text];
+        
+        if ((autoSwitch == YES) && (lockedMode == NO)) {
+            int arabicLabelValue = [newInputString intValue];
+            
+            if (arabicLabelValue > 3999) {
+                archaicMode = YES;
+            } else {
+                archaicMode = NO;
+            }
+            
+            _buttonArchaic.selected = archaicMode;
+        }
+        
 		[self convertYear:newInputString];
     }
 }
 
 - (IBAction)archaicButtonPressed:(id)sender {
 	archaicMode = !archaicMode;
+    
+    // if the button is what we expect it to be then it is not locked
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL autoSwitch = [defaults boolForKey:kAutoSwitchKey];
+    BOOL potentialArchaicMode = NO;
+    
+    if (autoSwitch == YES) {
+        int arabicLabelValue = [_arabicLabel.text intValue];
+        
+        if (arabicLabelValue > 3999) {
+            potentialArchaicMode = YES;
+        } else {
+            potentialArchaicMode = NO;
+        }
+        
+        if (potentialArchaicMode == archaicMode) {
+            lockedMode = NO;
+            //NSLog(@"archaid mode is NOT locked");
+        } else {
+            lockedMode = YES;
+            //NSLog(@"archaid mode IS locked");
+        }
+    } else {
+        lockedMode = YES;
+    }
 	
 	_buttonArchaic.selected = archaicMode;
 	

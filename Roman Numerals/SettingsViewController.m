@@ -39,7 +39,12 @@
     self.autoCorrectCell.accessoryView = switchView;
     [switchView setOn:[preferences boolForKey:kAutoCorrectKey] animated:NO];
     [switchView addTarget:self action:@selector(autoCorrectSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-    
+
+    UISwitch *autoSwitchSwitchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+    self.autoSwitchCell.accessoryView = autoSwitchSwitchView;
+    [autoSwitchSwitchView setOn:[preferences boolForKey:kAutoSwitchKey] animated:NO];
+    [autoSwitchSwitchView addTarget:self action:@selector(autoSwitchSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+
     [self adjustKeyboardRows:[preferences integerForKey:kKeyboardPresentationKey]];
 
     [self adjustLargeNumberRows:[preferences integerForKey:kLargeNumberPresentationKey]];
@@ -122,15 +127,12 @@
 
 - (void)adjustLargeNumberRows:(int)largeNumberType {
     if (largeNumberType == 0) {
-        self.largeNumbersCell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryNone;
         self.overlineNumberCell.accessoryType = UITableViewCellAccessoryNone;
     } else if (largeNumberType == 1) {
-        self.largeNumbersCell.accessoryType = UITableViewCellAccessoryNone;
         self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.overlineNumberCell.accessoryType = UITableViewCellAccessoryNone;
     } else {
-        self.largeNumbersCell.accessoryType = UITableViewCellAccessoryNone;
         self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryNone;
         self.overlineNumberCell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
@@ -142,6 +144,16 @@
     
     NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
     [preferences setBool:switchControl.on forKey:kAutoCorrectKey];
+    
+    [preferences synchronize];
+}
+
+- (void)autoSwitchSwitchChanged:(id)sender {
+    UISwitch* switchControl = sender;
+    //NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
+    
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    [preferences setBool:switchControl.on forKey:kAutoSwitchKey];
     
     [preferences synchronize];
 }
@@ -161,9 +173,9 @@
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
     } else {
-        [self adjustLargeNumberRows:indexPath.row];
+        [self adjustLargeNumberRows:indexPath.row+1];
         
-        [preferences setObject:[NSNumber numberWithInt:indexPath.row] forKey:kLargeNumberPresentationKey];
+        [preferences setObject:[NSNumber numberWithInt:indexPath.row+1] forKey:kLargeNumberPresentationKey];
         [preferences synchronize];
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];

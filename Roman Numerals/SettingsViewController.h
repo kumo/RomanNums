@@ -13,9 +13,9 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *largestFirstKeyboardCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *smallestFirstKeyboardCell;
 
-@property (weak, nonatomic) IBOutlet UITableViewCell *largeNumbersCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *archaicNumbersCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *overlineNumberCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *autoSwitchCell;
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *autoCorrectCell;
 
