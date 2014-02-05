@@ -458,7 +458,7 @@
 				GCC_PREFIX_HEADER = "Roman Numerals/Roman Numerals-Prefix.pch";
 				INFOPLIST_FILE = "Roman Numerals/Roman Numerals-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "84552328-E3F7-44B8-98E4-3F933D18BC00";
+				PROVISIONING_PROFILE = "CC1CF151-C23D-4584-B9B3-BD0C5093BAB3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -474,7 +474,7 @@
 				GCC_PREFIX_HEADER = "Roman Numerals/Roman Numerals-Prefix.pch";
 				INFOPLIST_FILE = "Roman Numerals/Roman Numerals-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "84552328-E3F7-44B8-98E4-3F933D18BC00";
+				PROVISIONING_PROFILE = "CC1CF151-C23D-4584-B9B3-BD0C5093BAB3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

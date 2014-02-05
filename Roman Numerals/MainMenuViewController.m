@@ -126,7 +126,7 @@
 {
     if (section == 0)
     {
-        return @"Version 2.0";
+        return @"Version 2.0.1";
     }
     
     return @"";
