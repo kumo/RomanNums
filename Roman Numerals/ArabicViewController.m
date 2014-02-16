@@ -262,7 +262,7 @@
 
 - (IBAction)shareButton:(id)sender {
     // TODO: show the share composer
-    NSString *textToShare = self.romanLabel.text;
+    NSString *textToShare = [NSString stringWithFormat:@"%@=%@", self.arabicLabel.text, self.romanLabel.text];
     NSArray *itemsToShare = @[textToShare];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
