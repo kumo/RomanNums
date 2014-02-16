@@ -116,7 +116,7 @@
     if (section == 0) {
         return 3;
     } else if (section == 1){
-        return _products.count;
+        return 1; //_products.count;
     } else {
         return 1;
     }
@@ -146,9 +146,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell; // = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         if (indexPath.row == 0) {
             [cell.textLabel setText:@"Contact support"];
         } else if (indexPath.row == 1) {
@@ -157,8 +158,12 @@
             [cell.textLabel setText:@"Follow on Twitter"];
         }
     } else if (indexPath.section == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"PriceCell" forIndexPath:indexPath];
+        
+        cell.textLabel.text = @"Calculator";
+        
         SKProduct * product = (SKProduct *) _products[indexPath.row];
-        cell.textLabel.text = product.localizedTitle;
+        //cell.textLabel.text = product.localizedTitle;
         [_priceFormatter setLocale:product.priceLocale];
         cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
         
@@ -175,6 +180,8 @@
             cell.accessoryView = buyButton;
         }
     } else if (indexPath.section == 2) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+
         // restore purchases
         [cell.textLabel setText:@"Restore purchases"];
     }
