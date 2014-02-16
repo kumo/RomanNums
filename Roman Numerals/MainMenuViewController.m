@@ -124,12 +124,14 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return @"Version 2.0.1";
+    if (section == 0) {
+        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+        NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+        NSString *label = [NSString stringWithFormat:@"Version %@", version];
+        return label;
+    } else {
+        return @"";
     }
-    
-    return @"";
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
