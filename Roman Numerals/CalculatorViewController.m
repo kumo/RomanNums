@@ -91,7 +91,7 @@
 }
 
 - (IBAction)operatorAction:(id)sender {
-    int nextOperator = ((UIButton *)sender).tag - 9000;
+    NSUInteger nextOperator = ((UIButton *)sender).tag - 9000;
     
     if (currentOperator == 1)
         formula = [NSString stringWithFormat:@"%@+",formula];

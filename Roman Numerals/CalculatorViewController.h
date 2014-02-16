@@ -12,7 +12,7 @@
 
 @interface CalculatorViewController : UIViewController {
     NSString *string;
-    int currentOperator;
+    NSUInteger currentOperator;
     NSString *formula;
     BOOL shouldClearDisplay;
 	bool archaicMode;
