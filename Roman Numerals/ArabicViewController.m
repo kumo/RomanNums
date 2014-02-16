@@ -8,6 +8,7 @@
 
 #import "ArabicViewController.h"
 #import "Converter.h"
+#import "UIImage+Colours.h"
 
 @interface ArabicViewController ()
 
@@ -21,20 +22,6 @@
 @synthesize converter, string;
 @synthesize buttons;
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,29 +29,26 @@
     
     self.converter = [[Converter alloc] init];
 
-    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
-    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
-
     // Prepare gestures
     for (UIButton *button in self.buttons) {
         UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
         
         [button addGestureRecognizer:touchGesture];
 
-        [button setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageWithDarkHighlight] forState:UIControlStateHighlighted];
     }
     
     UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
 
-    [self.buttonDelete setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    [self.buttonDelete setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
     
     archaicMode = NO;
     lockedMode = NO;
     [self prepareLargeNumbersKey];
-    [self.buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
-    [self.buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateSelected];
-    [self.buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateNormal];
+    [self.buttonArchaic setBackgroundImage:[UIImage imageWithDarkHighlight] forState:UIControlStateHighlighted];
+    [self.buttonArchaic setBackgroundImage:[UIImage imageWithDarkHighlight] forState:UIControlStateSelected];
+    [self.buttonArchaic setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateNormal];
 
     [self.buttonArchaic setHighlighted:archaicMode];
 }
@@ -242,15 +226,10 @@
 	NSString *arabicLabelCopy = [[NSString alloc] initWithString:_arabicLabel.text];
 	[self convertYear: arabicLabelCopy];
     
-    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
-    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
-    
     if (archaicMode) {
-        [_buttonArchaic setBackgroundColor:darkHighlightColour];
-        [_buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+        [_buttonArchaic setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
     } else {
-        [_buttonArchaic setBackgroundColor:lightHighlightColour];
-        [_buttonArchaic setBackgroundImage:[ArabicViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
+        [_buttonArchaic setBackgroundImage:[UIImage imageWithDarkHighlight] forState:UIControlStateHighlighted];
     }
     
     [self prepareLargeNumbersKey];
