@@ -57,6 +57,10 @@
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
 
     [self.buttonDelete setBackgroundImage:[RomanViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
+    
+    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -169,5 +173,13 @@
     }
 }
 
+- (IBAction)shareButton:(id)sender {
+    // TODO: show the share composer
+    NSString *textToShare = self.arabicLabel.text;
+    NSArray *itemsToShare = @[textToShare];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
 
 @end
