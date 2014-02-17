@@ -110,19 +110,48 @@
 {
     if (indexPath.section == 0) {
         if (indexPath.row == 0)  {
-            NSURL *url = [[NSURL alloc] initWithString:@"mailto:support+roman@cloudpebbles.com?subject=RomanNumerals"];
-            [[UIApplication sharedApplication] openURL:url];
+            
+            if ([MFMailComposeViewController canSendMail])
+            {
+                NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+                NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+                NSString *label = [NSString stringWithFormat:@"Roman Numerals, v%@", version];
+
+                MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+                mailer.mailComposeDelegate = self;
+                [mailer setSubject:@"Roman Numerals"];
+                NSArray *toRecipients = [NSArray arrayWithObjects:@"support+roman@cloudpebbles.com", nil];
+                [mailer setToRecipients:toRecipients];
+                NSString *emailBody = [NSString stringWithFormat:@"\n\n%@", label];
+                [mailer setMessageBody:emailBody isHTML:NO];
+                [self presentViewController:mailer animated:YES completion:nil];
+            }
+            else
+            {
+                NSURL *url = [[NSURL alloc] initWithString:@"mailto:support+roman@cloudpebbles.com?subject=RomanNumerals"];
+                [[UIApplication sharedApplication] openURL:url];
+            }
         } else if (indexPath.row == 1) {
             NSURL *url = [[NSURL alloc] initWithString:@"http://www.cloudpebbles.com/support/roman-numerals/"];
             [[UIApplication sharedApplication] openURL:url];
         } else {
-            NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
-            [[UIApplication sharedApplication] openURL:url];
+            NSURL *twitterURL = [NSURL URLWithString:@"twitter://user?screen_name=cloudpebbles"];
+            if ([[UIApplication sharedApplication] canOpenURL:twitterURL]) {
+                [[UIApplication sharedApplication] openURL:twitterURL];
+            } else {
+                NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
+                [[UIApplication sharedApplication] openURL:url];
+            }
         }
     } else if (indexPath.section == 1) {
         ExtendAppViewController *myController = (ExtendAppViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExtendAppViewController"];
         [self presentViewController:myController animated:YES completion:NULL];
     }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    [controller dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
