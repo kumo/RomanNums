@@ -9,6 +9,7 @@
 #import "CalculatorViewController.h"
 #import "Converter.h"
 #import "UIImage+Colours.h"
+#import "RomanNumsActivityItemProvider.h"
 
 @interface CalculatorViewController ()
 
@@ -70,6 +71,13 @@
         archaicMode = YES;
     else
         archaicMode = NO;*/
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
+    
+    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
+
+    [self.tabBarController.navigationItem setTitle:@"Calculator"];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -283,6 +291,16 @@
         [button setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
         [button setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateSelected];
     }
+}
+
+- (IBAction)shareButton:(id)sender {
+    // Show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
+    RomanNumsActivityItemProvider *activityItemProvider = [[RomanNumsActivityItemProvider alloc] initWithRomanText:self.romanLabel.text arabicText:self.arabicLabel.text romanToArabic:YES];
+    
+    NSArray *itemsToShare = @[activityItemProvider];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end
