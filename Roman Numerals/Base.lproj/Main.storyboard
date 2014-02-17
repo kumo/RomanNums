@@ -449,13 +449,13 @@
         <scene sceneID="HxH-GK-8hV">
             <objects>
                 <tableViewController id="1eC-3h-6hr" customClass="ExtendAppViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5LQ-Y3-R5m">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="5LQ-Y3-R5m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceCell" textLabel="E8e-TQ-64G" detailTextLabel="0fN-EF-aHV" style="IBUITableViewCellStyleValue1" id="jdP-gL-zQs">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdP-gL-zQs" id="kcD-wA-ftS">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -479,7 +479,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="LmJ-dA-fPB" style="IBUITableViewCellStyleDefault" id="x2D-Cu-Xeh">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x2D-Cu-Xeh" id="2gV-06-fSK">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -503,7 +503,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Extend Roman Numerals" id="Aed-b1-QVR">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="s6F-YT-n4p"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="s6F-YT-n4p">
+                            <connections>
+                                <action selector="doneAction:" destination="1eC-3h-6hr" id="qKf-Ud-QsS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y64-83-tR8" userLabel="First Responder" sceneMemberID="firstResponder"/>

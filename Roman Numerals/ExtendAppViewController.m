@@ -163,4 +163,7 @@
     }
 }
 
+- (IBAction)doneAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
