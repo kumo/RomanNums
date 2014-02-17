@@ -9,6 +9,7 @@
 #import "RomanViewController.h"
 #import "Converter.h"
 #import "UIImage+Colours.h"
+#import "RomanNumsActivityItemProvider.h"
 
 @interface RomanViewController ()
 
@@ -41,6 +42,10 @@
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
 
     [self.buttonDelete setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
+    
+    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,5 +158,14 @@
     }
 }
 
+- (IBAction)shareButton:(id)sender {
+    // Show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
+    RomanNumsActivityItemProvider *activityItemProvider = [[RomanNumsActivityItemProvider alloc] initWithRomanText:self.romanLabel.text arabicText:self.arabicLabel.text romanToArabic:YES];
+    
+    NSArray *itemsToShare = @[activityItemProvider];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
 
 @end
