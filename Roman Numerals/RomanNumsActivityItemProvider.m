@@ -15,9 +15,9 @@
     NSString *placeHolder = @"";
     
     if (romanToArabic) {
-        placeHolder = [NSString stringWithFormat:@"%@=%@", romanText, arabicText];
+        placeHolder = [NSString stringWithFormat:@"%@ = %@", romanText, arabicText];
     } else {
-        placeHolder = [NSString stringWithFormat:@"%@=%@", arabicText, romanText];
+        placeHolder = [NSString stringWithFormat:@"%@ = %@", arabicText, romanText];
     }
     
     self = [super initWithPlaceholderItem:placeHolder];
