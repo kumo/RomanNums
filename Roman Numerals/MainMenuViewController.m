@@ -135,8 +135,13 @@
             NSURL *url = [[NSURL alloc] initWithString:@"http://www.cloudpebbles.com/support/roman-numerals/"];
             [[UIApplication sharedApplication] openURL:url];
         } else {
-            NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
-            [[UIApplication sharedApplication] openURL:url];
+            NSURL *twitterURL = [NSURL URLWithString:@"twitter://user?screen_name=cloudpebbles"];
+            if ([[UIApplication sharedApplication] canOpenURL:twitterURL]) {
+                [[UIApplication sharedApplication] openURL:twitterURL];
+            } else {
+                NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
+                [[UIApplication sharedApplication] openURL:url];
+            }
         }
     } else if (indexPath.section == 1) {
         ExtendAppViewController *myController = (ExtendAppViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExtendAppViewController"];
