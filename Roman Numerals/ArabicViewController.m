@@ -52,10 +52,6 @@
     [self.buttonArchaic setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateNormal];
 
     [self.buttonArchaic setHighlighted:archaicMode];
-
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
-    
-    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,6 +61,10 @@
     [self prepareLargeNumbersKey];
     
     [self convertYear:_arabicLabel.text];
+
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
+    
+    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 }
 
 - (void)prepareLargeNumbersKey

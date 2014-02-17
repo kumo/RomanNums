@@ -42,10 +42,6 @@
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
 
     [self.buttonDelete setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
-    
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
-    
-    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,6 +65,10 @@
     }
     
 	self.converter.performConversionCheck = [defaults boolForKey:kAutoCorrectKey];
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
+    
+    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
