@@ -8,6 +8,7 @@
 
 #import "RomanViewController.h"
 #import "Converter.h"
+#import "RomanNumsActivityItemProvider.h"
 
 @interface RomanViewController ()
 
@@ -174,14 +175,13 @@
 }
 
 - (IBAction)shareButton:(id)sender {
-    // TODO: show the share composer
-    NSString *textToShare = [NSString stringWithFormat:@"%@=%@", self.romanLabel.text, self.arabicLabel.text];
-    NSArray *itemsToShare = @[textToShare];
+    // Show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
+    RomanNumsActivityItemProvider *activityItemProvider = [[RomanNumsActivityItemProvider alloc] initWithRomanText:self.romanLabel.text arabicText:self.arabicLabel.text romanToArabic:YES];
+    
+    NSArray *itemsToShare = @[activityItemProvider];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
     [self presentViewController:activityVC animated:YES completion:nil];
-    
-    // TODO: show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
 }
 
 @end
