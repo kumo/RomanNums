@@ -100,7 +100,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return _products.count;
+        return _products.count; // TODO: possibly make this work offline with the actual products hard-coded
     } else {
         return 1;
     }
@@ -153,6 +153,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             // buy it
