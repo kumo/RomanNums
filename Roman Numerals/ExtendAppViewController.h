@@ -11,4 +11,6 @@
 @interface ExtendAppViewController : UITableViewController
 - (IBAction)doneAction:(id)sender;
 
+@property (nonatomic) NSArray *knownProducts;
+
 @end

@@ -37,6 +37,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    _knownProducts = @[@"Calculator"];
+
     [self reload];
     
     _priceFormatter = [[NSNumberFormatter alloc] init];
@@ -100,7 +103,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return _products.count; // TODO: possibly make this work offline with the actual products hard-coded
+        return _knownProducts.count;
     } else {
         return 1;
     }
@@ -113,22 +116,27 @@
     if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"PriceCell" forIndexPath:indexPath];
         
-        SKProduct * product = (SKProduct *) _products[indexPath.row];
-        cell.textLabel.text = product.localizedTitle;
-        [_priceFormatter setLocale:product.priceLocale];
-        cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
+        cell.textLabel.text = _knownProducts[indexPath.row];
         
-        if ([[RomanIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            cell.accessoryView = nil;
-        } else {
-            UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            buyButton.frame = CGRectMake(0, 0, 72, 37);
-            [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
-            buyButton.tag = indexPath.row;
-            [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-            cell.accessoryType = UITableViewCellAccessoryNone;
-            cell.accessoryView = buyButton;
+        SKProduct * product = (SKProduct *) _products[indexPath.row];
+        
+        if (product != nil) {
+            cell.textLabel.text = product.localizedTitle;
+            [_priceFormatter setLocale:product.priceLocale];
+            cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
+        
+            if ([[RomanIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                cell.accessoryView = nil;
+            } else {
+                UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                buyButton.frame = CGRectMake(0, 0, 72, 37);
+                [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+                buyButton.tag = indexPath.row;
+                [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside   ];
+                cell.accessoryType = UITableViewCellAccessoryNone;
+                cell.accessoryView = buyButton;
+            }
         }
     } else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
@@ -156,10 +164,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 0) {
-        if (indexPath.row == 0) {
-            // buy it
-        } else {
-        }
+        // possibly buy the product?
     } else {
         [[RomanIAPHelper sharedInstance] restoreCompletedTransactions];
     }
