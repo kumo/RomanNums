@@ -98,7 +98,7 @@
         }
     } else if (indexPath.section == 1) {
         // restore purchases
-        [cell.textLabel setText:@"Extend app"];
+        [cell.textLabel setText:@"Add extra features"];
     }
     
     return cell;
