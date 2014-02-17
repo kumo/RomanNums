@@ -109,7 +109,7 @@
 
  */
 
-- (void)adjustKeyboardRows:(int)keyboardType {
+- (void)adjustKeyboardRows:(NSUInteger)keyboardType {
     if (keyboardType == 0) {
         self.alphabeticalKeyboardCell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.largestFirstKeyboardCell.accessoryType = UITableViewCellAccessoryNone;
@@ -125,7 +125,7 @@
     }
 }
 
-- (void)adjustLargeNumberRows:(int)largeNumberType {
+- (void)adjustLargeNumberRows:(NSUInteger)largeNumberType {
     if (largeNumberType == 0) {
         self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryNone;
         self.overlineNumberCell.accessoryType = UITableViewCellAccessoryNone;
@@ -168,14 +168,14 @@
     if (indexPath.section == 0) {
         [self adjustKeyboardRows:indexPath.row];
         
-        [preferences setObject:[NSNumber numberWithInt:indexPath.row] forKey:kKeyboardPresentationKey];
+        [preferences setObject:[NSNumber numberWithInteger:indexPath.row] forKey:kKeyboardPresentationKey];
         [preferences synchronize];
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
     } else {
         [self adjustLargeNumberRows:indexPath.row+1];
         
-        [preferences setObject:[NSNumber numberWithInt:indexPath.row+1] forKey:kLargeNumberPresentationKey];
+        [preferences setObject:[NSNumber numberWithInteger:indexPath.row+1] forKey:kLargeNumberPresentationKey];
         [preferences synchronize];
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];

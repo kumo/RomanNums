@@ -83,7 +83,7 @@
 	int result = 0;
     NSString *romanValue = nil;
 	
-	int arrayCount = [romanCalculationValues count];
+	NSUInteger arrayCount = [romanCalculationValues count];
 	// We need to iterate through all of the roman values
 	int i;
 	for (i = 0; i < arrayCount; i++)
@@ -128,7 +128,7 @@
 	
 	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
 	
-	int arrayCount = [romanCalculationValues count];
+	NSUInteger arrayCount = [romanCalculationValues count];
 	// We need to iterate through all of the roman values
 	int i;
 	for (i = 0; i < arrayCount; i++)
@@ -152,7 +152,7 @@
 			for (j = 0; j < div; j++)
 			{
 				//debugLog(@"Should add: %@ to string", romanValue);
-				[resultString appendFormat: romanValue];
+				[resultString appendString: romanValue];
 				arabicLabelValue = arabicLabelValue - arabicValue;
 			}
 			//debugLog(@"String is now: %@", resultString);
@@ -221,7 +221,7 @@
 	
 	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
 	
-	int arrayCount = [largeRomanCalculationValues count];
+	NSUInteger arrayCount = [largeRomanCalculationValues count];
 	// We need to iterate through all of the roman values
 	int i;
 	for (i = 0; i < arrayCount; i++)
@@ -245,7 +245,7 @@
 			for (j = 0; j < div; j++)
 			{
 				//debugLog(@"Should add: %@ to string", romanValue);
-				[resultString appendFormat: romanValue];
+				[resultString appendString:romanValue];
 				arabicLabelValue = arabicLabelValue - arabicValue;
 			}
 			//debugLog(@"String is now: %@", resultString);

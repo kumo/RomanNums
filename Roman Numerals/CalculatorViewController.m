@@ -8,6 +8,8 @@
 
 #import "CalculatorViewController.h"
 #import "Converter.h"
+#import "UIImage+Colours.h"
+#import "RomanNumsActivityItemProvider.h"
 
 @interface CalculatorViewController ()
 
@@ -69,6 +71,13 @@
         archaicMode = YES;
     else
         archaicMode = NO;*/
+    
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
+    
+    [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
+
+    [self.tabBarController.navigationItem setTitle:@"Calculator"];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -90,7 +99,7 @@
 }
 
 - (IBAction)operatorAction:(id)sender {
-    int nextOperator = ((UIButton *)sender).tag - 9000;
+    NSUInteger nextOperator = ((UIButton *)sender).tag - 9000;
     
     if (currentOperator == 1)
         formula = [NSString stringWithFormat:@"%@+",formula];
@@ -264,41 +273,34 @@
 
 - (void)prepareGestures
 {
-    UIColor *darkHighlightColour = [UIColor colorWithRed:0.754 green:0.759 blue:0.799 alpha:1.000];
-    UIColor *lightHighlightColour = [UIColor colorWithRed:0.969 green:0.969 blue:0.973 alpha:1.000];
-    
     // Prepare gestures
     for (UIButton *button in self.buttons) {
         UIGestureRecognizer *touchGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
         
         [button addGestureRecognizer:touchGesture];
         
-        [button setBackgroundImage:[CalculatorViewController imageWithColor:darkHighlightColour] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageWithDarkHighlight] forState:UIControlStateHighlighted];
     }
     
     UIGestureRecognizer *longTouchGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
     [self.buttonDelete addGestureRecognizer:longTouchGesture];
     
-    [self.buttonDelete setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
+    [self.buttonDelete setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
     
     for (UIButton *button in self.operatorButtons) {
-        [button setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateHighlighted];
-        [button setBackgroundImage:[CalculatorViewController imageWithColor:lightHighlightColour] forState:UIControlStateSelected];
+        [button setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateSelected];
     }
 }
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+- (IBAction)shareButton:(id)sender {
+    // Show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
+    RomanNumsActivityItemProvider *activityItemProvider = [[RomanNumsActivityItemProvider alloc] initWithRomanText:self.romanLabel.text arabicText:self.arabicLabel.text romanToArabic:YES];
     
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return image;
+    NSArray *itemsToShare = @[activityItemProvider];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end
