@@ -69,6 +69,8 @@
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
+    
+    [self.tabBarController.navigationItem setTitle:@"Roman to Arabic"];
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
