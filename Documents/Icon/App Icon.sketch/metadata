@@ -18,9 +18,11 @@
 		<string>HelveticaNeue-Medium</string>
 		<string>HelveticaNeue-Thin</string>
 		<string>HelveticaNeue-Medium</string>
+		<string>HelveticaNeue-Thin</string>
+		<string>HelveticaNeue-Medium</string>
 	</array>
 	<key>length</key>
-	<integer>580154</integer>
+	<integer>689043</integer>
 	<key>version</key>
 	<integer>18</integer>
 </dict>
