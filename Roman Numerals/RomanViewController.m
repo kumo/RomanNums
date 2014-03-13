@@ -70,7 +70,7 @@
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
     
-    [self.tabBarController.navigationItem setTitle:@"Roman to Arabic"];
+    [self.tabBarController.navigationItem setTitle:@"Roman Numerals"];
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
