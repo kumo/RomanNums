@@ -40,6 +40,8 @@
     
     _knownProducts = @[@"Calculator"];
 
+    _knownDescriptions = @[@"Useful for calculating XI*IV or MM-CXV"];
+
     [self reload];
     
     _priceFormatter = [[NSNumberFormatter alloc] init];
@@ -117,13 +119,13 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"PriceCell" forIndexPath:indexPath];
         
         cell.textLabel.text = _knownProducts[indexPath.row];
+        cell.detailTextLabel.text = _knownDescriptions[indexPath.row];
         
         SKProduct * product = (SKProduct *) _products[indexPath.row];
         
         if (product != nil) {
             cell.textLabel.text = product.localizedTitle;
             [_priceFormatter setLocale:product.priceLocale];
-            cell.detailTextLabel.text = [_priceFormatter stringFromNumber:product.price];
         
             if ([[RomanIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -131,7 +133,7 @@
             } else {
                 UIButton *buyButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
                 buyButton.frame = CGRectMake(0, 0, 72, 37);
-                [buyButton setTitle:@"Buy" forState:UIControlStateNormal];
+                [buyButton setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
                 buyButton.tag = indexPath.row;
                 [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside   ];
                 cell.accessoryType = UITableViewCellAccessoryNone;
@@ -164,7 +166,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 0) {
-        // possibly buy the product?
+        if (_products != nil) {
+            SKProduct *product = _products[indexPath.row];
+        
+            [[RomanIAPHelper sharedInstance] buyProduct:product];
+        }
     } else {
         [[RomanIAPHelper sharedInstance] restoreCompletedTransactions];
     }

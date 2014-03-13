@@ -12,5 +12,6 @@
 - (IBAction)doneAction:(id)sender;
 
 @property (nonatomic) NSArray *knownProducts;
+@property (nonatomic) NSArray *knownDescriptions;
 
 @end
