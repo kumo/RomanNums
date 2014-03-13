@@ -65,6 +65,8 @@
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
+
+    [self.tabBarController.navigationItem setTitle:@"Roman Numerals"];
 }
 
 - (void)prepareLargeNumbersKey
