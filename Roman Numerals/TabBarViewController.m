@@ -9,6 +9,7 @@
 #import "TabBarViewController.h"
 #import "RomanIAPHelper.h"
 #import "CalculatorViewController.h"
+#import "CalendarViewController.h"
 
 @interface TabBarViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
@@ -35,12 +36,22 @@
     [self.revealButtonItem setAction: @selector( revealToggle: )];
     [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
     
-    if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == NO) {
-        NSMutableArray *views = (NSMutableArray *)self.viewControllers;
-        [views removeLastObject];
-        [self setViewControllers:views animated:NO];
-    }
+    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    [views removeLastObject];
+    [self setViewControllers:views animated:NO];
+
+    views = (NSMutableArray *)self.viewControllers;
+    [views removeLastObject];
+    [self setViewControllers:views animated:NO];
     
+    if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == YES) {
+        [self addCalculatorTab];
+    }
+
+    if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calendar"] == YES) {
+        [self addCalendarTab];
+    }
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(productPurchased:)
                                                  name:@"ProductPurchased" object:nil];
@@ -61,16 +72,31 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)addCalculatorTab {
+    CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
+    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    [views addObject:myController];
+    
+    [self setViewControllers:views animated:NO];
+}
+
+- (void)addCalendarTab {
+    CalendarViewController *myController = (CalendarViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DateView"];
+    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    [views addObject:myController];
+    
+    [self setViewControllers:views animated:NO];
+}
+
 - (void)productPurchased:(NSNotification *)notification {
     NSString *productIdentifier = (NSString *)[notification.userInfo objectForKey:@"productIdentifier"];
     
     if ([productIdentifier isEqualToString:@"it.kumo.roman.calculator"]) {
-        CalculatorViewController *myController = (CalculatorViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CalculatorView"];
-         NSMutableArray *views = (NSMutableArray *)self.viewControllers;
-         [views addObject:myController];
-         
-         [self setViewControllers:views animated:NO];
+        [self addCalculatorTab];
+    } else if ([productIdentifier isEqualToString:@"it.kumo.roman.calendar"]) {
+        [self addCalendarTab];
     }
+
 }
 
 @end
