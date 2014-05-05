@@ -38,9 +38,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _knownProducts = @[@"Calculator"];
-
-    _knownDescriptions = @[@"Useful for calculating XI*IV or MM-CXV"];
+    _knownProducts = @[@"Calculator", @"Calendar"];
+    _knownDescriptions = @[@"Useful for calculating XI*IV or MM-CXV", @"Convert any date into Roman Numerals"];
+    _knownImages = @[[UIImage imageNamed:@"thin-165_calculator"], [UIImage imageNamed:@"thin-021_calendar_date"]];
 
     [self reload];
     
@@ -120,6 +120,8 @@
         
         cell.textLabel.text = _knownProducts[indexPath.row];
         cell.detailTextLabel.text = _knownDescriptions[indexPath.row];
+        
+        cell.imageView.image = _knownImages[indexPath.row];
         
         SKProduct * product = (SKProduct *) _products[indexPath.row];
         

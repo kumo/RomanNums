@@ -13,5 +13,6 @@
 
 @property (nonatomic) NSArray *knownProducts;
 @property (nonatomic) NSArray *knownDescriptions;
+@property (nonatomic) NSArray *knownImages;
 
 @end
