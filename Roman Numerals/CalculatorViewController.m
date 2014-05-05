@@ -77,7 +77,6 @@
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 
     [self.tabBarController.navigationItem setTitle:@"Calculator"];
-
 }
 
 - (void)didReceiveMemoryWarning

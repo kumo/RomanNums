@@ -38,9 +38,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _knownProducts = @[@"Calculator"];
-
-    _knownDescriptions = @[@"Useful for calculating XI*IV or MM-CXV"];
+    _knownProducts = @[@"Calculator", @"Calendar"];
+    _knownDescriptions = @[@"Calculate XI*IV or MM-CXV", @"Any date in Roman Numerals"];
+    _knownImages = @[[UIImage imageNamed:@"thin-165_calculator"], [UIImage imageNamed:@"thin-021_calendar_date"]];
 
     [self reload];
     
@@ -67,7 +67,7 @@
     NSString * productIdentifier = notification.object;
     [_products enumerateObjectsUsingBlock:^(SKProduct * product, NSUInteger idx, BOOL *stop) {
         if ([product.productIdentifier isEqualToString:productIdentifier]) {
-            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:1]] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
             
             //NSLog(@"item has been purchased");
             
@@ -120,6 +120,8 @@
         
         cell.textLabel.text = _knownProducts[indexPath.row];
         cell.detailTextLabel.text = _knownDescriptions[indexPath.row];
+        
+        cell.imageView.image = _knownImages[indexPath.row];
         
         SKProduct * product = (SKProduct *) _products[indexPath.row];
         

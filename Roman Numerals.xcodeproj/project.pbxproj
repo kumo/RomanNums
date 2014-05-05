@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BF0114A118B0CC0300EC909D /* UIImage+Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0114A018B0CC0300EC909D /* UIImage+Colours.m */; };
 		BF0A65DD18B296830036CEB1 /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */; };
+		BF10C30218D23F39007224D3 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10C30118D23F39007224D3 /* CalendarViewController.m */; };
 		BF5EF1C51895732200DA753A /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1C41895732200DA753A /* CalculatorViewController.m */; };
 		BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1C71895748200DA753A /* IAPHelper.m */; };
 		BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */; };
@@ -33,6 +34,10 @@
 		BFBD6D331893F7660097D8B5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D321893F7660097D8B5 /* SWRevealViewController.m */; };
 		BFBD6D361893F9430097D8B5 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D351893F9430097D8B5 /* TabBarViewController.m */; };
 		BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D381893FF7F0097D8B5 /* Converter.m */; };
+		BFD2269D19128D9D0071D675 /* thin-021_calendar_date.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD2269C19128D9D0071D675 /* thin-021_calendar_date.png */; };
+		BFD2269F19128DFA0071D675 /* thin-165_calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD2269E19128DFA0071D675 /* thin-165_calculator.png */; };
+		BFD226A119128E9E0071D675 /* thin-021_calendar_date@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */; };
+		BFD226A319128EB60071D675 /* thin-165_calculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */; };
 		BFE95D3018964D3B005B77AD /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE95D2F18964D3B005B77AD /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +56,8 @@
 		BF0114A018B0CC0300EC909D /* UIImage+Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Colours.m"; sourceTree = "<group>"; };
 		BF0A65DB18B296830036CEB1 /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
 		BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
+		BF10C30018D23F39007224D3 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		BF10C30118D23F39007224D3 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		BF5EF1C31895732200DA753A /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		BF5EF1C41895732200DA753A /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		BF5EF1C61895748200DA753A /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
@@ -89,6 +96,10 @@
 		BFBD6D351893F9430097D8B5 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		BFBD6D371893FF7F0097D8B5 /* Converter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		BFBD6D381893FF7F0097D8B5 /* Converter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Converter.m; sourceTree = "<group>"; };
+		BFD2269C19128D9D0071D675 /* thin-021_calendar_date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-021_calendar_date.png"; sourceTree = "<group>"; };
+		BFD2269E19128DFA0071D675 /* thin-165_calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-165_calculator.png"; sourceTree = "<group>"; };
+		BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-021_calendar_date@2x.png"; sourceTree = "<group>"; };
+		BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-165_calculator@2x.png"; sourceTree = "<group>"; };
 		BFE95D2E18964D3B005B77AD /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		BFE95D2F18964D3B005B77AD /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +164,7 @@
 		BFBD6CFB1893F3510097D8B5 /* Roman Numerals */ = {
 			isa = PBXGroup;
 			children = (
+				BFD2269B19128B990071D675 /* IAP */,
 				BFBD6D041893F3510097D8B5 /* AppDelegate.h */,
 				BFBD6D051893F3510097D8B5 /* AppDelegate.m */,
 				BFBD6D071893F3510097D8B5 /* Main.storyboard */,
@@ -164,24 +176,14 @@
 				BF5EF1CD1895781600DA753A /* MainMenuViewController.m */,
 				BFBD6D0A1893F3510097D8B5 /* RomanViewController.h */,
 				BFBD6D0B1893F3510097D8B5 /* RomanViewController.m */,
-				BF01149F18B0CC0300EC909D /* UIImage+Colours.h */,
-				BF0114A018B0CC0300EC909D /* UIImage+Colours.m */,
 				BFBD6D0D1893F3510097D8B5 /* ArabicViewController.h */,
 				BFBD6D0E1893F3510097D8B5 /* ArabicViewController.m */,
-				BF5EF1C61895748200DA753A /* IAPHelper.h */,
-				BF5EF1C71895748200DA753A /* IAPHelper.m */,
-				BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */,
-				BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */,
-				BF5EF1C31895732200DA753A /* CalculatorViewController.h */,
-				BF5EF1C41895732200DA753A /* CalculatorViewController.m */,
 				BF0A65DB18B296830036CEB1 /* RomanNumsActivityItemProvider.h */,
 				BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */,
-				BF69682018B2992C00B2006C /* ExtendAppViewController.h */,
-				BF69682118B2992C00B2006C /* ExtendAppViewController.m */,
-				BFBD6D101893F3510097D8B5 /* Images.xcassets */,
-				BFBD6CFC1893F3510097D8B5 /* Supporting Files */,
 				BFBD6D371893FF7F0097D8B5 /* Converter.h */,
 				BFBD6D381893FF7F0097D8B5 /* Converter.m */,
+				BFBD6D101893F3510097D8B5 /* Images.xcassets */,
+				BFBD6CFC1893F3510097D8B5 /* Supporting Files */,
 			);
 			path = "Roman Numerals";
 			sourceTree = "<group>";
@@ -189,6 +191,8 @@
 		BFBD6CFC1893F3510097D8B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF01149F18B0CC0300EC909D /* UIImage+Colours.h */,
+				BF0114A018B0CC0300EC909D /* UIImage+Colours.m */,
 				BFBD6CFD1893F3510097D8B5 /* Roman Numerals-Info.plist */,
 				BFBD6CFE1893F3510097D8B5 /* InfoPlist.strings */,
 				BFBD6D011893F3510097D8B5 /* main.m */,
@@ -222,6 +226,27 @@
 				BFBD6D321893F7660097D8B5 /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		BFD2269B19128B990071D675 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				BFD2269C19128D9D0071D675 /* thin-021_calendar_date.png */,
+				BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */,
+				BFD2269E19128DFA0071D675 /* thin-165_calculator.png */,
+				BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */,
+				BF5EF1C61895748200DA753A /* IAPHelper.h */,
+				BF5EF1C71895748200DA753A /* IAPHelper.m */,
+				BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */,
+				BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */,
+				BF69682018B2992C00B2006C /* ExtendAppViewController.h */,
+				BF69682118B2992C00B2006C /* ExtendAppViewController.m */,
+				BF5EF1C31895732200DA753A /* CalculatorViewController.h */,
+				BF5EF1C41895732200DA753A /* CalculatorViewController.m */,
+				BF10C30018D23F39007224D3 /* CalendarViewController.h */,
+				BF10C30118D23F39007224D3 /* CalendarViewController.m */,
+			);
+			name = IAP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +335,10 @@
 			files = (
 				BFBD6D111893F3510097D8B5 /* Images.xcassets in Resources */,
 				BFBD6D001893F3510097D8B5 /* InfoPlist.strings in Resources */,
+				BFD2269F19128DFA0071D675 /* thin-165_calculator.png in Resources */,
+				BFD226A319128EB60071D675 /* thin-165_calculator@2x.png in Resources */,
+				BFD226A119128E9E0071D675 /* thin-021_calendar_date@2x.png in Resources */,
+				BFD2269D19128D9D0071D675 /* thin-021_calendar_date.png in Resources */,
 				BFBD6D091893F3510097D8B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +370,7 @@
 				BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */,
 				BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */,
 				BFBD6D361893F9430097D8B5 /* TabBarViewController.m in Sources */,
+				BF10C30218D23F39007224D3 /* CalendarViewController.m in Sources */,
 				BF5EF1C51895732200DA753A /* CalculatorViewController.m in Sources */,
 				BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */,
 				BFBD6D021893F3510097D8B5 /* main.m in Sources */,

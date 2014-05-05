@@ -16,6 +16,7 @@
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
                                       @"it.kumo.roman.calculator",
+                                      @"it.kumo.roman.calendar",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });
