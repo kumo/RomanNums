@@ -83,17 +83,14 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     
     [self.tabBarController.navigationItem setTitle:@"Calendar"];
     
+    [self convertDateToRoman];
 }
 
 #pragma mark - Locale
 
 #pragma mark - Actions
 
-/*! User chose to change the date by changing the values inside the UIDatePicker.
- 
- @param sender The sender for this action: UIDatePicker.
- */
-- (IBAction)dateAction:(id)sender
+- (void)convertDateToRoman
 {
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
     
@@ -102,9 +99,9 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     NSString *day = [NSString stringWithFormat:@"%d", [components day]];
     NSString *month = [NSString stringWithFormat:@"%d", [components month]];
     NSString *year = [NSString stringWithFormat:@"%d", [components year]];
-
+    
     Converter *converter = [[Converter alloc] init];
-
+    
     NSString *romanDay = [converter performConversionToRoman:day];
     NSString *romanMonth = [converter performConversionToRoman:month];
     NSString *romanYear = [converter performConversionToRoman:year];
@@ -114,6 +111,15 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     } else {
         [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanDay, romanMonth, romanYear]];
     }
+}
+
+/*! User chose to change the date by changing the values inside the UIDatePicker.
+ 
+ @param sender The sender for this action: UIDatePicker.
+ */
+- (IBAction)dateAction:(id)sender
+{
+    [self convertDateToRoman];
 }
 
 - (IBAction)shareButton:(id)sender {
