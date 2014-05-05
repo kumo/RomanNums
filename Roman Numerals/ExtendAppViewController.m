@@ -39,7 +39,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     _knownProducts = @[@"Calculator", @"Calendar"];
-    _knownDescriptions = @[@"Useful for calculating XI*IV or MM-CXV", @"Convert any date into Roman Numerals"];
+    _knownDescriptions = @[@"Calculate XI*IV or MM-CXV", @"Any date in Roman Numerals"];
     _knownImages = @[[UIImage imageNamed:@"thin-165_calculator"], [UIImage imageNamed:@"thin-021_calendar_date"]];
 
     [self reload];
