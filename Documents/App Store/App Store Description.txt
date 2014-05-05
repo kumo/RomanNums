@@ -4,11 +4,15 @@ To use it just choose whether you want to convert from Roman numerals or from Ar
 
 FEATURES:
 - Roman and Arabic converter;
-- support for large numbers
+- support for large numbers;
 - easy to use Roman keyboard;
 - automatically converts Roman Numerals (e.g. IIII -> IV) and ignores invalid ones;
-- Roman Numerals can be shown in numerical or alphabetical order.
-- an optional Calculator to calculate MMII-XV*L
+- Roman Numerals can be shown in numerical or alphabetical order;
+- an optional Calculator to calculate MMII-XV*L;
+- an optional Calendar to convert a date into Roman Numerals.
 
 LARGE NUMBERS:
 Historically there have been multiple ways of writing numbers larger than 4000. The number 5000 can be written as V with a bar above it, as IↃↃ, or even V M. In this version of Roman Numerals, large numbers will automatically appear with a bar over them, but can also can be written as IↃↃ if you choose to enable them in the settings.
+
+IN-APP PURCHASES:
+This application is free, but there is also available a Calculator that works with Roman Numerals and a Calendar that converts a date into Roman Numerals.
