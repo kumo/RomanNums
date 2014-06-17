@@ -1,42 +1,24 @@
-Application name: Roman Numerals
-Application description:
-Roman Numerals provides an easy way of converting Roman numerals into more understandable year numbers and vice versa. Use it when you cannot quite work out the age of a building or to resolve disputes about the year in which a TV programme was made.
+This app provides an easy way of converting Roman numerals into more understandable numbers and vice versa. Use it when you cannot quite work out the age of a building or to resolve disputes about the year in which a TV programme was made.
 
-To use it just choose whether you want to convert from Roman numerals or from Arabic numerals and then type in the year and the corresponding value will appear. There are preferences for enabling autocorrection and for choosing which order the roman numerals appear in on the keyboard.
+To begin just choose whether you want to convert from Roman numerals or from Arabic numerals and then type in your year and the corresponding value will appear. There are preferences for choosing how large numbers appear, enabling autocorrection and for choosing which order the roman numerals appear in on the keyboard.
 
-Features:
-- Roman <-> Arabic converter.
-- easy to use Roman keyboard.
-- automatically converts Roman Numerals (e.g. IIII -> IV) and ignores invalid ones.
-- Roman Numerals can be shown in numerical or alphabetical order.
+FEATURES:
+- Roman and Arabic converter;
+- support for large numbers;
+- easy to use Roman keyboard;
+- automatically converts Roman Numerals (e.g. VV -> X) and ignores invalid ones;
+- Roman Numerals can be shown in numerical or alphabetical order;
+- an optional Calculator to calculate MMII-XV*L;
+- an optional Calendar to convert a date into Roman Numerals.
 
-Thank you to everyone for your suggestions about the arabic to roman conversion, and for the roman numerals correction.
+LARGE NUMBERS:
+Historically there have been multiple ways of writing numbers larger than 4000. The number 5000 can be written as V with a bar above it, as IↃↃ, or even V M. In this version of Roman Numerals, large numbers will automatically appear with a bar over them, but can also can be written as IↃↃ if you choose to enable them in the settings.
 
-If you would like to show your appreciation of this application or would like a quiz for the roman numerals then please consider buying my quiz version.
+IN-APP PURCHASES:
+This application is free, but there is also available a Calculator that works with Roman Numerals and a Calendar that converts a date into Roman Numerals.
 
-Translations:
-This new version of Roman Numerals uses the iPhone/iPod settings to manage they keyboard and auto-correction options. If you would like to help translate these into your language then please send me an email at kumo@kumo.it.
-Device type: all
-SKU: 1
-Primary category: utility
-Secondary category: <none>
-Game rating: <none>
-Unique version 1.0
-Application copyright holder: Rob Clarke
-Support URL for the company: http://kumo.it
-Support Email address (for apple) robclarke@kumo.it
-EULA: <none>
-Territories: all
-Application availability date: now
-Application price: free
-Localization: all?
+AND FINALLY:
+If you have any problems or you want to chat please get in touch at support@cloudpebbles.com and if you like this app please leave a review.
 
-Update 1.1:
-Added Arabic to Roman numerals converter.
 
-Update 1.2:
-- inputted roman numerals can be automatically corrected and invalid combinations ignored
-- roman numerals keyboard can be shown in alphabetical or numerical order
-
-These 2 options are available in the iPhone/iPod Settings.
-
+tags: roman numerals, numeri romani, roman numerals calculator, roman numerals dates, mmxiv
