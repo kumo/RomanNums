@@ -66,7 +66,7 @@
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 
-    [self.tabBarController.navigationItem setTitle:@"Roman Numerals"];
+    [self.tabBarController.navigationItem setTitle:@"Roman Nums"];
 }
 
 - (void)prepareLargeNumbersKey
