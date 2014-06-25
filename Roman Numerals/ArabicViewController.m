@@ -66,7 +66,7 @@
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 
-    [self.tabBarController.navigationItem setTitle:@"Roman Numerals"];
+    [self.tabBarController.navigationItem setTitle:@"Roman Nums"];
 }
 
 - (void)prepareLargeNumbersKey
@@ -106,7 +106,11 @@
     //NSLog(@"tapped %@", [button currentTitle]);
     
     //NSLog(@"Before conversion, roman: %@, arabic: %@", _romanLabel.text, _arabicLabel.text);
-    [self updateArabicString: [button currentTitle]];
+    if (button.tag == -99) {
+        [self updateArabicString: @"delete"];
+    } else {
+        [self updateArabicString: [button currentTitle]];
+    }
 }
 
 - (IBAction)handleLongPressGesture:(id)sender {

@@ -70,13 +70,17 @@
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
     
-    [self.tabBarController.navigationItem setTitle:@"Roman Numerals"];
+    [self.tabBarController.navigationItem setTitle:@"Roman Nums"];
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
-    [self updateRomanString: [button currentTitle]];
+    if (button.tag == -99) {
+        [self updateRomanString: @"delete"];
+    } else {
+        [self updateRomanString: [button currentTitle]];
+    }
 }
 
 - (IBAction)handleLongPressGesture:(UIGestureRecognizer *) sender {
