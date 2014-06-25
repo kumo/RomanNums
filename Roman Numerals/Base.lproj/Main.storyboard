@@ -91,7 +91,7 @@
                                     <action selector="archaicButtonPressed:" destination="Qh2-T1-AhA" eventType="touchUpInside" id="fik-QG-pSp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9J-q7-yZG">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" tag="-99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9J-q7-yZG">
                                 <rect key="frame" x="214" y="377" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -103,7 +103,6 @@
                                     <constraint firstAttribute="height" constant="54" id="Idz-Lq-aIZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <inset key="contentEdgeInsets" minX="35" minY="15" maxX="35" maxY="15"/>
                                 <state key="normal" image="DEL">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -553,6 +552,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n8e-6Y-pTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2073" y="-2810"/>
+        </scene>
+        <!--Tutorial Controller-->
+        <scene sceneID="H1B-zx-v5P">
+            <objects>
+                <viewController storyboardIdentifier="ICETutorialController" id="rg4-38-rkx" customClass="ICETutorialController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a6Q-N4-hGz"/>
+                        <viewControllerLayoutGuide type="bottom" id="pbg-8Y-x47"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZY-ko-vLN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3X-2R-xuT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2502" y="-2879"/>
         </scene>
         <!--About Table View Controller - About-->
         <scene sceneID="9ug-Op-apk">
@@ -1845,7 +1862,7 @@ First version</string>
                                     <action selector="equalsAction:" destination="EMO-Ya-zrm" eventType="touchUpInside" id="P3x-C5-yfy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-ve-WoS">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" tag="-99" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4z-ve-WoS">
                                 <rect key="frame" x="214" y="377" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1857,7 +1874,6 @@ First version</string>
                                     <constraint firstAttribute="height" constant="54" id="LAf-sY-v34"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <inset key="contentEdgeInsets" minX="35" minY="15" maxX="35" maxY="15"/>
                                 <state key="normal" image="DEL">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -2358,7 +2374,7 @@ First version</string>
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-0I-ihR">
+                            <button opaque="NO" clearsContextBeforeDrawing="NO" tag="-99" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-0I-ihR">
                                 <rect key="frame" x="214" y="377" width="106" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7540356064" green="0.75923655769999998" blue="0.79945943809999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -2370,7 +2386,6 @@ First version</string>
                                     <constraint firstAttribute="width" constant="106" id="Mzg-ww-6xy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <inset key="contentEdgeInsets" minX="35" minY="15" maxX="35" maxY="15"/>
                                 <state key="normal" image="DEL">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
