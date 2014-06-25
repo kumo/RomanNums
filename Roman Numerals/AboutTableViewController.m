@@ -70,7 +70,7 @@
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0)  {
-            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/roman-nums/support/"];
+            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
             [[UIApplication sharedApplication] openURL:url];
         } else if (indexPath.row == 1) {
             NSURL *twitterURL = [NSURL URLWithString:@"twitter://user?screen_name=RomanNumsApp"];

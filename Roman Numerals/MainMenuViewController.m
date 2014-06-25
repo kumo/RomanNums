@@ -116,7 +116,7 @@
         if (indexPath.row == 0)  {
             // tutorial
         } else if (indexPath.row == 1) {
-            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/roman-nums/support/"];
+            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
             [[UIApplication sharedApplication] openURL:url];
         }
     } else if (indexPath.section == 1) {
@@ -136,7 +136,7 @@
 {
     NSMutableArray *sharingItems = [NSMutableArray new];
     
-    NSString *text = @"Check out Roman Nums - a Roman Numerals converter for iPhone http://romannumsapp.com #romannumsapp";
+    NSString *text = @"Check out Roman Nums - a Roman Numerals converter for iPhone http://cadigatt.com/romannums/ #romannumsapp";
     if (text) {
         [sharingItems addObject:text];
     }
