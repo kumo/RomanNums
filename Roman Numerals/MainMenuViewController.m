@@ -9,6 +9,7 @@
 #import "MainMenuViewController.h"
 #import "ExtendAppViewController.h"
 #import "AboutTableViewController.h"
+#import "TutorialViewController.h"
 
 @interface MainMenuViewController () {
 }
@@ -115,6 +116,8 @@
     } else if (indexPath.section == 0) {
         if (indexPath.row == 0)  {
             // tutorial
+            TutorialViewController *myController = (TutorialViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+            [self presentViewController:myController animated:YES completion:NULL];
         } else if (indexPath.row == 1) {
             NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
             [[UIApplication sharedApplication] openURL:url];
