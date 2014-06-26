@@ -2710,14 +2710,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Tutorial" id="hmy-T6-L8t">
-                        <barButtonItem key="leftBarButtonItem" title="Done" systemItem="done" id="Xwa-zX-Ax9">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="Xwa-zX-Ax9">
                             <connections>
                                 <action selector="doneAction:" destination="cSB-io-wOB" id="B6B-Y3-0Lq"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="BhM-r8-0fa">
-                            <connections>
-                                <action selector="nextAction:" destination="cSB-io-wOB" id="XR3-2T-0re"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
