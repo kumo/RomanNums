@@ -43,7 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillLayoutSubviews {
+/*- (void)viewWillLayoutSubviews {
     CGRect frame = self.view.frame;
     frame.origin.x = 0;
     if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
@@ -52,7 +52,7 @@
         frame.size.width = [UIScreen mainScreen].bounds.size.width - 60;
     }
     self.view.frame = frame;
-}
+}*/
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -60,12 +60,12 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 3;
-}
+}*/
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
         return 2;
@@ -74,9 +74,9 @@
     } else {
         return 1;
     }
-}
+}*/
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
@@ -100,7 +100,7 @@
     }
     
     return cell;
-}
+}*/
 
 #pragma mark - Table view delegate
 
@@ -109,11 +109,21 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
     if (indexPath.section == 2) {
+        if (indexPath.row == 1) {
+            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else if (indexPath.section == 3) {
+        if (indexPath.row == 1) {
+            [self tellAFriend];
+        }
+    }
+    /*if (indexPath.section == 3) {
         if (indexPath.row == 0)  {
             ExtendAppViewController *myController = (ExtendAppViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExtendAppViewController"];
             [self presentViewController:myController animated:YES completion:NULL];
         }
-    } else if (indexPath.section == 0) {
+    } else if (indexPath.section == 1) {
         if (indexPath.row == 0)  {
             // tutorial
             TutorialViewController *myController = (TutorialViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
@@ -122,7 +132,7 @@
             NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
             [[UIApplication sharedApplication] openURL:url];
         }
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
         if (indexPath.row == 0) {
             UIViewController *myController = (UIViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WhatsNewViewController"];
             [self presentViewController:myController animated:YES completion:NULL];
@@ -132,7 +142,7 @@
             AboutTableViewController *myController = (AboutTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AboutTableViewController"];
             [self presentViewController:myController animated:YES completion:NULL];
         }
-    }
+    }*/
 }
 
 - (void)tellAFriend
@@ -160,4 +170,7 @@
     [self presentViewController:activityController animated:YES completion:nil];
 }
 
+- (IBAction)doneAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
