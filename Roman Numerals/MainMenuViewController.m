@@ -8,6 +8,8 @@
 
 #import "MainMenuViewController.h"
 #import "ExtendAppViewController.h"
+#import "AboutTableViewController.h"
+#import "TutorialViewController.h"
 
 @interface MainMenuViewController () {
 }
@@ -41,7 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillLayoutSubviews {
+/*- (void)viewWillLayoutSubviews {
     CGRect frame = self.view.frame;
     frame.origin.x = 0;
     if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
@@ -50,7 +52,7 @@
         frame.size.width = [UIScreen mainScreen].bounds.size.width - 60;
     }
     self.view.frame = frame;
-}
+}*/
 
 - (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -58,100 +60,117 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+/*- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
-}
+    return 3;
+}*/
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
+        return 2;
+    } else if (section == 1) {
         return 3;
     } else {
         return 1;
     }
-}
+}*/
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
-{
-    if (section == 0) {
-        NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-        NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-        NSString *label = [NSString stringWithFormat:@"Version %@", version];
-        return label;
-    } else {
-        return @"";
-    }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
-            [cell.textLabel setText:@"Contact support"];
+            [cell.textLabel setText:@"Tutorial"];
         } else if (indexPath.row == 1) {
-            [cell.textLabel setText:@"Visit website"];
-        } else {
-            [cell.textLabel setText:@"Follow on Twitter"];
+            [cell.textLabel setText:@"Support"];
         }
-    } else if (indexPath.section == 1) {
+    } else if (indexPath.section == 2) {
         // restore purchases
-        [cell.textLabel setText:@"Pro features"];
+        [cell.textLabel setText:@"Extra Features"];
+    } else if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+            [cell.textLabel setText:@"What's New"];
+        } else if (indexPath.row == 1) {
+            [cell.textLabel setText:@"Tell a Friend"];
+        } else {
+            [cell.textLabel setText:@"About"];
+        }
     }
     
     return cell;
-}
+}*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        if (indexPath.row == 0)  {
-            
-            if ([MFMailComposeViewController canSendMail])
-            {
-                NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-                NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-                NSString *label = [NSString stringWithFormat:@"Roman Numerals, v%@", version];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-                MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
-                mailer.mailComposeDelegate = self;
-                [mailer setSubject:@"Roman Numerals"];
-                NSArray *toRecipients = [NSArray arrayWithObjects:@"support+roman@cloudpebbles.com", nil];
-                [mailer setToRecipients:toRecipients];
-                NSString *emailBody = [NSString stringWithFormat:@"\n\n%@", label];
-                [mailer setMessageBody:emailBody isHTML:NO];
-                [self presentViewController:mailer animated:YES completion:nil];
-            }
-            else
-            {
-                NSURL *url = [[NSURL alloc] initWithString:@"mailto:support+roman@cloudpebbles.com?subject=RomanNumerals"];
-                [[UIApplication sharedApplication] openURL:url];
-            }
-        } else if (indexPath.row == 1) {
-            NSURL *url = [[NSURL alloc] initWithString:@"http://www.cloudpebbles.com/support/roman-numerals/"];
+    if (indexPath.section == 2) {
+        if (indexPath.row == 1) {
+            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
             [[UIApplication sharedApplication] openURL:url];
-        } else {
-            NSURL *twitterURL = [NSURL URLWithString:@"twitter://user?screen_name=cloudpebbles"];
-            if ([[UIApplication sharedApplication] canOpenURL:twitterURL]) {
-                [[UIApplication sharedApplication] openURL:twitterURL];
-            } else {
-                NSURL *url = [[NSURL alloc] initWithString:@"http://www.twitter.com/cloudpebbles"];
-                [[UIApplication sharedApplication] openURL:url];
-            }
+        }
+    } else if (indexPath.section == 3) {
+        if (indexPath.row == 1) {
+            [self tellAFriend];
+        }
+    }
+    /*if (indexPath.section == 3) {
+        if (indexPath.row == 0)  {
+            ExtendAppViewController *myController = (ExtendAppViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExtendAppViewController"];
+            [self presentViewController:myController animated:YES completion:NULL];
         }
     } else if (indexPath.section == 1) {
-        ExtendAppViewController *myController = (ExtendAppViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ExtendAppViewController"];
-        [self presentViewController:myController animated:YES completion:NULL];
-    }
+        if (indexPath.row == 0)  {
+            // tutorial
+            TutorialViewController *myController = (TutorialViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"TutorialViewController"];
+            [self presentViewController:myController animated:YES completion:NULL];
+        } else if (indexPath.row == 1) {
+            NSURL *url = [[NSURL alloc] initWithString:@"http://cadigatt.com/romannums/support/"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+            UIViewController *myController = (UIViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"WhatsNewViewController"];
+            [self presentViewController:myController animated:YES completion:NULL];
+        } else if (indexPath.row == 1) {
+            [self tellAFriend];
+        } else if (indexPath.row == 2){
+            AboutTableViewController *myController = (AboutTableViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AboutTableViewController"];
+            [self presentViewController:myController animated:YES completion:NULL];
+        }
+    }*/
 }
 
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+- (void)tellAFriend
 {
-    [controller dismissViewControllerAnimated:YES completion:NULL];
+    NSMutableArray *sharingItems = [NSMutableArray new];
+    
+    NSString *text = @"Check out Roman Nums - a Roman Numerals converter for iPhone http://cadigatt.com/romannums/ #romannumsapp";
+    if (text) {
+        [sharingItems addObject:text];
+    }
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[UIActivityTypeAirDrop,
+                                   UIActivityTypeCopyToPasteboard,
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo];
+    
+    activityController.excludedActivityTypes = excludeActivities;
+    
+    [self presentViewController:activityController animated:YES completion:nil];
 }
 
+- (IBAction)doneAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

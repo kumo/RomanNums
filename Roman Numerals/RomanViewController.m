@@ -70,13 +70,28 @@
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
     
-    [self.tabBarController.navigationItem setTitle:@"Roman Numerals"];
+    [self.tabBarController.navigationItem setTitle:@"Roman Nums"];
+}
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+
+- (void)viewDidLayoutSubviews
+{
+    if (IS_IPHONE_5) {
+        _arabicLabel.center = CGPointMake(_arabicLabel.center.x, _arabicLabel.center.y + 50);
+        _romanLabel.center = CGPointMake(_romanLabel.center.x, _romanLabel.center.y + 50);
+    }
 }
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
-    [self updateRomanString: [button currentTitle]];
+    if (button.tag == -99) {
+        [self updateRomanString: @"delete"];
+    } else {
+        [self updateRomanString: [button currentTitle]];
+    }
 }
 
 - (IBAction)handleLongPressGesture:(UIGestureRecognizer *) sender {
@@ -163,6 +178,10 @@
 - (IBAction)shareButton:(id)sender {
     // Show different text for each service, see http://www.albertopasca.it/whiletrue/2012/10/objective-c-custom-uiactivityviewcontroller-icons-text/
     RomanNumsActivityItemProvider *activityItemProvider = [[RomanNumsActivityItemProvider alloc] initWithRomanText:self.romanLabel.text arabicText:self.arabicLabel.text romanToArabic:YES];
+    
+    if ([self.romanLabel.text isEqualToString:@""]) {
+        return;
+    }
     
     NSArray *itemsToShare = @[activityItemProvider];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];

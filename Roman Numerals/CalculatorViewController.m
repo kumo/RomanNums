@@ -79,6 +79,17 @@
     [self.tabBarController.navigationItem setTitle:@"Calculator"];
 }
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+
+- (void)viewDidLayoutSubviews
+{
+    if (IS_IPHONE_5) {
+        _arabicLabel.center = CGPointMake(_arabicLabel.center.x, _arabicLabel.center.y + 30);
+        _romanLabel.center = CGPointMake(_romanLabel.center.x, _romanLabel.center.y + 30);
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -88,7 +99,11 @@
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
-    [self updateRomanString: [button currentTitle]];
+    if (button.tag == -99) {
+        [self updateRomanString: @"delete"];
+    } else {
+        [self updateRomanString: [button currentTitle]];
+    }
 }
 
 - (IBAction)handleLongPressGesture:(UIGestureRecognizer *) sender {

@@ -32,9 +32,9 @@
 	// Do any additional setup after loading the view.
 
     // Add a reveal button to show the side menu
-    [self.revealButtonItem setTarget: self.revealViewController];
+    /*[self.revealButtonItem setTarget: self.revealViewController];
     [self.revealButtonItem setAction: @selector( revealToggle: )];
-    [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];*/
     
     // Comment out the following to ignore the purchasing
     NSMutableArray *views = (NSMutableArray *)self.viewControllers;

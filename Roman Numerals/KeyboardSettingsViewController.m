@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Robert Clarke. All rights reserved.
 //
 
-#import "SettingsViewController.h"
+#import "KeyboardSettingsViewController.h"
 
-@interface SettingsViewController ()
+@interface KeyboardSettingsViewController ()
 
 @end
 
-@implementation SettingsViewController
+@implementation KeyboardSettingsViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,14 +40,7 @@
     [switchView setOn:[preferences boolForKey:kAutoCorrectKey] animated:NO];
     [switchView addTarget:self action:@selector(autoCorrectSwitchChanged:) forControlEvents:UIControlEventValueChanged];
 
-    UISwitch *autoSwitchSwitchView = [[UISwitch alloc] initWithFrame:CGRectZero];
-    self.autoSwitchCell.accessoryView = autoSwitchSwitchView;
-    [autoSwitchSwitchView setOn:[preferences boolForKey:kAutoSwitchKey] animated:NO];
-    [autoSwitchSwitchView addTarget:self action:@selector(autoSwitchSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-
     [self adjustKeyboardRows:[preferences integerForKey:kKeyboardPresentationKey]];
-
-    [self adjustLargeNumberRows:[preferences integerForKey:kLargeNumberPresentationKey]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -125,19 +118,6 @@
     }
 }
 
-- (void)adjustLargeNumberRows:(NSUInteger)largeNumberType {
-    if (largeNumberType == 0) {
-        self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryNone;
-        self.overlineNumberCell.accessoryType = UITableViewCellAccessoryNone;
-    } else if (largeNumberType == 1) {
-        self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.overlineNumberCell.accessoryType = UITableViewCellAccessoryNone;
-    } else {
-        self.archaicNumbersCell.accessoryType = UITableViewCellAccessoryNone;
-        self.overlineNumberCell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-}
-
 - (void)autoCorrectSwitchChanged:(id)sender {
     UISwitch* switchControl = sender;
     //NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
@@ -169,13 +149,6 @@
         [self adjustKeyboardRows:indexPath.row];
         
         [preferences setObject:[NSNumber numberWithInteger:indexPath.row] forKey:kKeyboardPresentationKey];
-        [preferences synchronize];
-        
-        [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    } else {
-        [self adjustLargeNumberRows:indexPath.row+1];
-        
-        [preferences setObject:[NSNumber numberWithInteger:indexPath.row+1] forKey:kLargeNumberPresentationKey];
         [preferences synchronize];
         
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
