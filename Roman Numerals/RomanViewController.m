@@ -127,18 +127,23 @@
 		[UIView beginAnimations:@"switch" context:nil];
 		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.romanLabel cache:YES];
 		[UIView setAnimationDuration:0.3f];
-		result = self.converter.calculatedRomanValue;
-		self.romanLabel.text = result;
+		NSString *convertedValue = self.converter.calculatedRomanValue;
+		self.romanLabel.text = convertedValue;
 		
 		[UIView commitAnimations];
         
         [self.arabicLabel setAccessibilityValue:self.arabicLabel.text];
-	} else {
+
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", result]);
+    } else {
 		NSString *result = self.converter.arabicResult;
 		self.arabicLabel.text = result;
 		
 		self.romanLabel.text = input;
         [self.arabicLabel setAccessibilityValue:self.arabicLabel.text];
+        
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", result]);
+
 	}
 }
 
@@ -161,6 +166,7 @@
 		NSString *newInputString = [[NSString alloc] initWithFormat:@"%@%@", romanLabelString, text];
 		[self convertYear:newInputString];
     }
+    
 }
 
 #pragma mark - UI methods
