@@ -118,12 +118,12 @@
 	return greeting;
 }
 
-- (NSString *)performConversionToRoman:(NSString *) arabic {
+- (NSString *)performSimpleConversionToRoman:(NSString *) arabic {
     int arabicLabelValue = [arabic intValue];
 	
     NSArray *romanCharacterCalculationValues = [NSArray arrayWithObjects:
-                                            @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"ⅠX", @"V", @"ⅠV", @"Ⅰ", nil];
-
+     @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"IX", @"V", @"IV", @"I", nil];
+    
     NSString *romanValue = nil;
 	
 	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
@@ -135,6 +135,52 @@
 	{
 		// Get the roman value at position i
 		romanValue = [romanCharacterCalculationValues objectAtIndex:i];
+		// along with the corresponding arabic value
+		int arabicValue = [[arabicCalculationValues objectAtIndex:i] intValue];
+		
+		// Let's div and mod the arabic string
+		int div = arabicLabelValue / arabicValue;
+		//int mod = arabicLabelValue % arabicValue;
+		
+		//debugLog(@"Checking: %i", arabicValue);
+		//debugLog(@"div: %i", div);
+		//debugLog(@"mod: %i", mod);
+		
+		if (div > 0)
+		{
+			int j = 0;
+			for (j = 0; j < div; j++)
+			{
+				//debugLog(@"Should add: %@ to string", romanValue);
+				[resultString appendString: romanValue];
+				arabicLabelValue = arabicLabelValue - arabicValue;
+			}
+			//debugLog(@"String is now: %@", resultString);
+		}
+	}
+    
+    NSString *result = [[NSString alloc] initWithFormat:@"%@", resultString];
+	
+    return result;
+}
+
+- (NSString *)performConversionToRoman:(NSString *) arabic {
+    int arabicLabelValue = [arabic intValue];
+	
+    /*NSArray *romanCharacterCalculationValues = [NSArray arrayWithObjects:
+                                            @"M", @"CM", @"D", @"CD", @"C", @"XC", @"L", @"XL", @"X", @"ⅠX", @"V", @"ⅠV", @"Ⅰ", nil];*/
+
+    NSString *romanValue = nil;
+	
+	NSMutableString *resultString = [NSMutableString stringWithCapacity:128];
+	
+	NSUInteger arrayCount = [romanCalculationValues count];
+	// We need to iterate through all of the roman values
+	int i;
+	for (i = 0; i < arrayCount; i++)
+	{
+		// Get the roman value at position i
+		romanValue = [self.romanCalculationValues objectAtIndex:i];
 		// along with the corresponding arabic value
 		int arabicValue = [[arabicCalculationValues objectAtIndex:i] intValue];
 		

@@ -96,21 +96,35 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[_datePicker date]];
     
-    NSString *day = [NSString stringWithFormat:@"%d", [components day]];
-    NSString *month = [NSString stringWithFormat:@"%d", [components month]];
-    NSString *year = [NSString stringWithFormat:@"%d", [components year]];
+    NSString *day = [NSString stringWithFormat:@"%ld", (long)[components day]];
+    NSString *month = [NSString stringWithFormat:@"%ld", (long)[components month]];
+    NSString *year = [NSString stringWithFormat:@"%ld", (long)[components year]];
     
     Converter *converter = [[Converter alloc] init];
     
-    NSString *romanDay = [converter performConversionToRoman:day];
-    NSString *romanMonth = [converter performConversionToRoman:month];
-    NSString *romanYear = [converter performConversionToRoman:year];
+    NSString *romanDay = [converter performSimpleConversionToRoman:day];
+    NSString *romanMonth = [converter performSimpleConversionToRoman:month];
+    NSString *romanYear = [converter performSimpleConversionToRoman:year];
     
     if ([locale isEqualToString:@"en_US"]) {
         [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanMonth, romanDay, romanYear]];
+        [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanMonth, romanDay, romanYear]];
     } else {
         [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanDay, romanMonth, romanYear]];
+        [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanDay, romanMonth, romanYear]];
     }
+    
+    NSMutableString* spacedResult = [_dateLabel.text mutableCopy];
+    [spacedResult enumerateSubstringsInRange:NSMakeRange(0, [spacedResult length])
+                               options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+                            usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                                if (substringRange.location > 0)
+                                    [spacedResult insertString:@". " atIndex:substringRange.location];
+                            }];
+
+    [_dateLabel setAccessibilityLabel:spacedResult];
+    
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", spacedResult]);
 }
 
 /*! User chose to change the date by changing the values inside the UIDatePicker.
