@@ -155,8 +155,16 @@
         
         NSMutableString *str = [NSMutableString stringWithString:_romanLabel.text];
         for (NSInteger i=1; i<[str length]; i+=3)
-            [str insertString:@". " atIndex:i];
-        [_romanLabel setAccessibilityValue:str];
+            [str insertString:@" " atIndex:i];
+        
+        NSString *stringToBuf =[NSString stringWithString:_romanLabel.text];
+        NSMutableArray *buffer = [NSMutableArray arrayWithCapacity:[stringToBuf length]];
+        for (int i = 0; i < [stringToBuf length]; i++) {
+            [buffer addObject:[NSString stringWithFormat:@"%C", [stringToBuf characterAtIndex:i]]];
+        }
+        NSString *finalString = [buffer componentsJoinedByString:@" "];
+        
+        [_romanLabel setAccessibilityValue:finalString];
         
         if ([str isEqualToString:@""]) {
             lockedMode = NO;
@@ -164,6 +172,51 @@
             _buttonArchaic.selected = NO;
         }
         
+        if (converter.overlineRomanResult != nil) {
+            
+            NSMutableString* spacedOverlineResult = [converter.overlineRomanResult mutableCopy];
+            /*[spacedOverlineResult enumerateSubstringsInRange:NSMakeRange(0, [spacedOverlineResult length])
+                                             options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+                                          usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                                              if (substringRange.location > 0)
+                                                  [spacedOverlineResult insertString:@", overlined. " atIndex:substringRange.location];
+                                          }];*/
+            
+            NSMutableArray *buffer = [NSMutableArray arrayWithCapacity:[spacedOverlineResult length]];
+            for (int i = 0; i < [spacedOverlineResult length]; i++) {
+                [buffer addObject:[NSString stringWithFormat:@"%C", [spacedOverlineResult characterAtIndex:i]]];
+            }
+            
+            [buffer addObject:@" "];
+
+            NSString *final_string = [buffer componentsJoinedByString:@", overlined. "];
+
+            NSMutableString* spacedNormalResult = [converter.normalRomanResult mutableCopy];
+            [spacedNormalResult enumerateSubstringsInRange:NSMakeRange(0, [spacedNormalResult length])
+                                                     options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+                                                  usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                                                      if (substringRange.location > 0)
+                                                          [spacedNormalResult insertString:@". " atIndex:substringRange.location];
+                                                  }];
+            
+            // say overline X, overline V
+            UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@ %@", final_string, spacedNormalResult]);
+            
+            [_romanLabel setAccessibilityValue:[NSString stringWithFormat:@"%@ %@", final_string, spacedNormalResult]];
+        } else {
+            NSMutableString* spacedNormalResult = [converter.normalRomanResult mutableCopy];
+            [spacedNormalResult enumerateSubstringsInRange:NSMakeRange(0, [spacedNormalResult length])
+                                                   options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+                                                usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                                                    if (substringRange.location > 0)
+                                                        [spacedNormalResult insertString:@". " atIndex:substringRange.location];
+                                                }];
+            
+            // say overline X, overline V
+            UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", spacedNormalResult]);
+
+            [_romanLabel setAccessibilityValue:[NSString stringWithFormat:@"%@", spacedNormalResult]];
+        }
 	}
 }
 

@@ -195,12 +195,60 @@
     [_converter convertToRoman:_arabicLabel.text archaic:archaicMode];
     [_romanLabel setText:_converter.romanResult];
     
+    if (_converter.overlineRomanResult != nil) {
+        
+        NSMutableString* spacedOverlineResult = [_converter.overlineRomanResult mutableCopy];
+        /*[spacedOverlineResult enumerateSubstringsInRange:NSMakeRange(0, [spacedOverlineResult length])
+         options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+         usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+         if (substringRange.location > 0)
+         [spacedOverlineResult insertString:@", overlined. " atIndex:substringRange.location];
+         }];*/
+        
+        NSMutableArray *buffer = [NSMutableArray arrayWithCapacity:[spacedOverlineResult length]];
+        for (int i = 0; i < [spacedOverlineResult length]; i++) {
+            [buffer addObject:[NSString stringWithFormat:@"%C", [spacedOverlineResult characterAtIndex:i]]];
+        }
+        
+        [buffer addObject:@" "];
+        
+        NSString *final_string = [buffer componentsJoinedByString:@", overlined. "];
+        
+        NSMutableString* spacedNormalResult = [_converter.normalRomanResult mutableCopy];
+        [spacedNormalResult enumerateSubstringsInRange:NSMakeRange(0, [spacedNormalResult length])
+                                               options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+                                            usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                                                if (substringRange.location > 0)
+                                                    [spacedNormalResult insertString:@". " atIndex:substringRange.location];
+                                            }];
+        
+        // say overline X, overline V
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@ %@", final_string, spacedNormalResult]);
+        
+        [_romanLabel setAccessibilityValue:[NSString stringWithFormat:@"%@ %@", final_string, spacedNormalResult]];
+    } else {
+        NSMutableString* spacedNormalResult = [_converter.normalRomanResult mutableCopy];
+        [spacedNormalResult enumerateSubstringsInRange:NSMakeRange(0, [spacedNormalResult length])
+                                               options:NSStringEnumerationByComposedCharacterSequences | NSStringEnumerationSubstringNotRequired
+                                            usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop){
+                                                if (substringRange.location > 0)
+                                                    [spacedNormalResult insertString:@". " atIndex:substringRange.location];
+                                            }];
+        
+        // say overline X, overline V
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", spacedNormalResult]);
+        
+        [_romanLabel setAccessibilityValue:[NSString stringWithFormat:@"%@", spacedNormalResult]];
+    }
+    
     UIButton *currentButton = (UIButton *)[self.view viewWithTag:9000+currentOperator];
     currentButton.selected = NO;
 
     formula = @"";
     shouldClearDisplay = YES;
     currentOperator = 0;
+    
+    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", resultStr]);
 }
 
 #pragma mark - Conversion methods
@@ -230,19 +278,23 @@
 		[UIView beginAnimations:@"switch" context:nil];
 		[UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.romanLabel cache:YES];
 		[UIView setAnimationDuration:0.3f];
-		result = self.converter.calculatedRomanValue;
-		self.romanLabel.text = result;
+		NSString *convertedValue = self.converter.calculatedRomanValue;
+		self.romanLabel.text = convertedValue;
 		
 		[UIView commitAnimations];
         
         [self.arabicLabel setAccessibilityValue:self.arabicLabel.text];
+        
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", result]);
 	} else {
 		NSString *result = self.converter.arabicResult;
 		self.arabicLabel.text = result;
 		
 		self.romanLabel.text = input;
         [self.arabicLabel setAccessibilityValue:self.arabicLabel.text];
-	}
+
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, [NSString stringWithFormat:@"Result: %@", result]);
+    }
 }
 
 - (void)updateRomanString:(NSString *) text  {
