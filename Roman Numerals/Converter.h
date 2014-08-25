@@ -27,6 +27,9 @@ typedef enum {
 	
 	NSArray		*arabicCalculationValues;
 	NSArray		*romanCalculationValues;
+    
+    NSString    *overlineRomanResult;
+    NSString    *normalRomanResult;
 }
 
 - (void)convertToArabic:(NSString *) roman;
@@ -45,5 +48,8 @@ typedef enum {
 @property (nonatomic, retain) NSString *calculatedArabicValue;
 @property (nonatomic, retain) NSArray *arabicCalculationValues;
 @property (nonatomic, retain) NSArray *romanCalculationValues;
+
+@property (nonatomic, retain) NSString *overlineRomanResult;
+@property (nonatomic, retain) NSString *normalRomanResult;
 
 @end

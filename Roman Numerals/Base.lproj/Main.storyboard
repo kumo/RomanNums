@@ -268,6 +268,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="Archaic numbers">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Mcj-3X-wEu" style="IBUITableViewCellStyleDefault" id="oeA-8q-06r">
                                         <rect key="frame" x="0.0" y="163" width="320" height="44"/>
@@ -285,6 +288,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" hint="Overlined numbers" label="Overlined numbers">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="e5B-im-dBM" style="IBUITableViewCellStyleDefault" id="urE-bD-86u">
                                         <rect key="frame" x="0.0" y="207" width="320" height="44"/>

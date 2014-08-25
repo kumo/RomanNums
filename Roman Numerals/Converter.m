@@ -11,7 +11,7 @@
 
 @implementation Converter
 
-@synthesize performConversionCheck, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues, conversionResult;
+@synthesize performConversionCheck, arabicResult, romanResult, calculatedRomanValue, calculatedArabicValue, romanCalculationValues, arabicCalculationValues, conversionResult, overlineRomanResult, normalRomanResult;
 
 - (id)init
 {
@@ -207,6 +207,9 @@
     
     NSString *result = [[NSString alloc] initWithFormat:@"%@", resultString];
 	
+    self.overlineRomanResult = nil;
+    self.normalRomanResult = [self performSimpleConversionToRoman:arabic];
+
     return result;
 }
 
@@ -222,6 +225,10 @@
     
     if (arabicLabelValue < 1000) {
         normalRoman = [self performConversionToRoman:arabic];
+
+        self.overlineRomanResult = nil;
+        self.normalRomanResult = [self performSimpleConversionToRoman:arabic];
+
         return normalRoman;
     } else {
         int normalArabic = arabicLabelValue % 1000;
@@ -229,6 +236,9 @@
 
         int overlineArabic = (arabicLabelValue - normalArabic) / 1000;
         overlineRoman = [self performConversionToRoman:[NSString stringWithFormat:@"%d", overlineArabic]];
+        
+        self.overlineRomanResult = [self performSimpleConversionToRoman:[NSString stringWithFormat:@"%d", overlineArabic]];
+        self.normalRomanResult = [self performSimpleConversionToRoman:[NSString stringWithFormat:@"%d", normalArabic]];
         
         // FIXME: implement a faster method or that also draws a single line
         NSString *convertedOverline = @"";
