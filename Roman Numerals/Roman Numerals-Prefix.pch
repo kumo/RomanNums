@@ -19,3 +19,8 @@
 #define kKeyboardPresentationKey        @"keyboard_type"
 #define kLargeNumberPresentationKey     @"large_number"
 #define kAutoSwitchKey                  @"switch"
+
+
+#define kDateOrderKey                   @"date_order"
+#define kDateFormatKey                  @"date_format"
+#define kYearFormatKey                  @"long_years"

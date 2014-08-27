@@ -16,6 +16,7 @@
 		BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */; };
 		BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CD1895781600DA753A /* MainMenuViewController.m */; };
 		BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69682118B2992C00B2006C /* ExtendAppViewController.m */; };
+		BF72D67E19AE839900E1E9F3 /* CalendarSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF72D67D19AE839900E1E9F3 /* CalendarSettingsViewController.m */; };
 		BF74ACF6195AD8610058E72B /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF74ACF5195AD8610058E72B /* TutorialViewController.m */; };
 		BF74ACF9195AD8B30058E72B /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF74ACF8195AD8B30058E72B /* PageContentViewController.m */; };
 		BF74ACFF195AD9030058E72B /* page1.png in Resources */ = {isa = PBXBuildFile; fileRef = BF74ACFB195AD9030058E72B /* page1.png */; };
@@ -78,6 +79,8 @@
 		BF5EF1CD1895781600DA753A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		BF69682018B2992C00B2006C /* ExtendAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendAppViewController.h; sourceTree = "<group>"; };
 		BF69682118B2992C00B2006C /* ExtendAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendAppViewController.m; sourceTree = "<group>"; };
+		BF72D67C19AE839900E1E9F3 /* CalendarSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSettingsViewController.h; sourceTree = "<group>"; };
+		BF72D67D19AE839900E1E9F3 /* CalendarSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSettingsViewController.m; sourceTree = "<group>"; };
 		BF74ACF4195AD8610058E72B /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
 		BF74ACF5195AD8610058E72B /* TutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialViewController.m; sourceTree = "<group>"; };
 		BF74ACF7195AD8B30058E72B /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				BFBD6D071893F3510097D8B5 /* Main.storyboard */,
 				BFE95D2E18964D3B005B77AD /* KeyboardSettingsViewController.h */,
 				BFE95D2F18964D3B005B77AD /* KeyboardSettingsViewController.m */,
+				BF72D67C19AE839900E1E9F3 /* CalendarSettingsViewController.h */,
+				BF72D67D19AE839900E1E9F3 /* CalendarSettingsViewController.m */,
 				BF20F90B195C4A9900A1748C /* LargeNumberSettingsViewController.h */,
 				BF20F90C195C4A9900A1748C /* LargeNumberSettingsViewController.m */,
 				BFBD6D341893F9430097D8B5 /* TabBarViewController.h */,
@@ -410,6 +415,7 @@
 				BF5EF1C51895732200DA753A /* CalculatorViewController.m in Sources */,
 				BFC42F181959E14A0011001B /* AboutTableViewController.m in Sources */,
 				BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */,
+				BF72D67E19AE839900E1E9F3 /* CalendarSettingsViewController.m in Sources */,
 				BF74ACF9195AD8B30058E72B /* PageContentViewController.m in Sources */,
 				BF20F90D195C4A9A00A1748C /* LargeNumberSettingsViewController.m in Sources */,
 				BFBD6D021893F3510097D8B5 /* main.m in Sources */,
