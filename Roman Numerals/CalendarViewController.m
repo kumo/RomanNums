@@ -92,6 +92,8 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 - (void)convertDateToRoman
 {
+    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
     
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[_datePicker date]];
@@ -100,18 +102,44 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     NSString *month = [NSString stringWithFormat:@"%ld", (long)[components month]];
     NSString *year = [NSString stringWithFormat:@"%ld", (long)[components year]];
     
+    bool yearFormat = [[preferences valueForKey:kYearFormatKey] boolValue];
+    
+    if (yearFormat == NO) {
+        year = [NSString stringWithFormat:@"%ld", (long)([components year] % 100)];
+    }
+    
     Converter *converter = [[Converter alloc] init];
     
     NSString *romanDay = [converter performSimpleConversionToRoman:day];
     NSString *romanMonth = [converter performSimpleConversionToRoman:month];
     NSString *romanYear = [converter performSimpleConversionToRoman:year];
     
-    if ([locale isEqualToString:@"en_US"]) {
-        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanMonth, romanDay, romanYear]];
-        [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanMonth, romanDay, romanYear]];
-    } else {
-        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B.\u200B%@\u200B.\u200B%@", romanDay, romanMonth, romanYear]];
+    int dateFormat = [[preferences valueForKey:kDateFormatKey] intValue];
+    
+    NSString *format = @".";
+    
+    if (dateFormat == 1) {
+        format = @"-";
+    } else if (dateFormat == 2) {
+        format = @" ";
+    }
+
+    int dateOrder = [[preferences valueForKey:kDateOrderKey] intValue];
+    
+    if (dateOrder == 0) {
+        if ([locale isEqualToString:@"en_US"]) {
+            dateOrder = 2;
+        } else {
+            dateOrder = 1;
+        }
+    }
+        
+    if (dateOrder == 1) {
+        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B%@\u200B%@\u200B%@\u200B%@", romanDay, format, romanMonth, format, romanYear]];
         [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanDay, romanMonth, romanYear]];
+    } else if (dateOrder == 2) {
+        [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B%@\u200B%@\u200B%@\u200B%@", romanMonth, format, romanDay, format, romanYear]];
+        [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanMonth, romanDay, romanYear]];
     }
     
     NSMutableString* spacedResult = [_dateLabel.text mutableCopy];
