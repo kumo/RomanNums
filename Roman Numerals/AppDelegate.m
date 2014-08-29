@@ -55,6 +55,10 @@
                                  [NSNumber numberWithInt:0], kKeyboardPresentationKey,
                                  [NSNumber numberWithInt:2], kLargeNumberPresentationKey,
                                  [NSNumber numberWithBool:YES], kAutoSwitchKey,
+                                 
+                                 [NSNumber numberWithInt:0], kDateOrderKey,
+                                 [NSNumber numberWithInt:0], kDateFormatKey,
+                                 [NSNumber numberWithBool:YES], kYearFormatKey,
                                  nil];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];

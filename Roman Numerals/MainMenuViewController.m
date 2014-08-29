@@ -10,6 +10,7 @@
 #import "ExtendAppViewController.h"
 #import "AboutTableViewController.h"
 #import "TutorialViewController.h"
+#import "RomanIAPHelper.h"
 
 @interface MainMenuViewController () {
 }
@@ -65,16 +66,20 @@
     return 3;
 }*/
 
-/*- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 2;
+        if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == YES) {
+            return 3;
+        } else {
+            return 2;
+        }
     } else if (section == 1) {
-        return 3;
-    } else {
         return 1;
+    } else {
+        return 2;
     }
-}*/
+}
 
 /*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
