@@ -33,7 +33,7 @@
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -69,7 +69,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == YES) {
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
             return 3;
         } else {
             return 2;
@@ -84,7 +84,7 @@
 /*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             [cell.textLabel setText:@"Tutorial"];
@@ -103,7 +103,7 @@
             [cell.textLabel setText:@"About"];
         }
     }
-    
+
     return cell;
 }*/
 
@@ -153,14 +153,14 @@
 - (void)tellAFriend
 {
     NSMutableArray *sharingItems = [NSMutableArray new];
-    
+
     NSString *text = @"Check out Roman Nums - a Roman Numerals converter for iPhone http://cadigatt.com/romannums/ #romannumsapp";
     if (text) {
         [sharingItems addObject:text];
     }
-    
+
     UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
-    
+
     NSArray *excludeActivities = @[UIActivityTypeAirDrop,
                                    UIActivityTypeCopyToPasteboard,
                                    UIActivityTypePrint,
@@ -169,9 +169,9 @@
                                    UIActivityTypeAddToReadingList,
                                    UIActivityTypePostToFlickr,
                                    UIActivityTypePostToVimeo];
-    
+
     activityController.excludedActivityTypes = excludeActivities;
-    
+
     [self presentViewController:activityController animated:YES completion:nil];
 }
 

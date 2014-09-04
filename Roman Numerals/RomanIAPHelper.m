@@ -15,8 +15,8 @@
     static RomanIAPHelper * sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
-                                      @"it.kumo.roman.calculator",
-                                      @"it.kumo.roman.calendar",
+                                      kCalculatorPurchaseKey,
+                                      kCalendarPurchaseKey,
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

@@ -24,3 +24,6 @@
 #define kDateOrderKey                   @"date_order"
 #define kDateFormatKey                  @"date_format"
 #define kYearFormatKey                  @"long_years"
+
+#define kCalculatorPurchaseKey          @"it.kumo.roman.calculator"
+#define kCalendarPurchaseKey            @"it.kumo.roman.calendar"
