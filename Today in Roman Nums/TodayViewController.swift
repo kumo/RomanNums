@@ -115,20 +115,16 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        NSLog(dateLabel.text!)
-        
         let date = NSDate()
         
-        dateLabel.text = date.dateInRoman()
-        completionHandler(NCUpdateResult.NewData)
+        let newDate = date.dateInRoman()
         
-        /*if (dateLabel.text == "Why hello!?") {
-        completionHandler(NCUpdateResult.NoData)
+        if (newDate == dateLabel.text) {
+            completionHandler(NCUpdateResult.NoData)
         } else {
-        dateLabel.text = "Why hello!?"
-        
-        completionHandler(NCUpdateResult.NewData)
-        }*/
+            dateLabel.text = date.dateInRoman()
+            completionHandler(NCUpdateResult.NewData)
+        }
     }
     
 }
