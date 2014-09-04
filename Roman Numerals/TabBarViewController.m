@@ -45,11 +45,11 @@
     [views removeLastObject];
     [self setViewControllers:views animated:NO];
     
-    if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calculator"] == YES) {
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
         [self addCalculatorTab];
     }
 
-    if ([[RomanIAPHelper sharedInstance] productPurchased:@"it.kumo.roman.calendar"] == YES) {
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
         [self addCalendarTab];
     }
 
@@ -83,9 +83,9 @@
 - (void)productPurchased:(NSNotification *)notification {
     NSString *productIdentifier = (NSString *)[notification.userInfo objectForKey:@"productIdentifier"];
     
-    if ([productIdentifier isEqualToString:@"it.kumo.roman.calculator"]) {
+    if ([productIdentifier isEqualToString:kCalculatorPurchaseKey]) {
         [self addCalculatorTab];
-    } else if ([productIdentifier isEqualToString:@"it.kumo.roman.calendar"]) {
+    } else if ([productIdentifier isEqualToString:kCalendarPurchaseKey]) {
         [self addCalendarTab];
     }
 
