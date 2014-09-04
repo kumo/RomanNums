@@ -50,22 +50,28 @@ extension NSDate {
         
         let locale = NSLocale.currentLocale().localeIdentifier // en_GB@currency=EUR ?!
         
-        let preferences = NSUserDefaults(suiteName: "it.kumo.roman")
+        // some defaults
+        var format = "."
+        var longYears = true
         
-        let yearFormat = preferences.valueForKey("long_years").boolValue
+        var preferences = NSUserDefaults(suiteName: "group.it.kumo.roman")
         
-        if (yearFormat == false) {
-            year = year % 100
+        if preferences.valueForKey("long_years") != nil {
+            longYears = preferences.valueForKey("long_years").boolValue
+            
+            if (longYears == false) {
+                year = year % 100
+            }
         }
         
-        let dateFormat = preferences.valueForKey("date_format").integerValue
-        
-        var format = ".";
-        
-        if (dateFormat == 1) {
-            format = "-";
-        } else if (dateFormat == 2) {
-            format = " ";
+        if preferences.valueForKey("date_format") != nil {
+            let dateFormat = preferences.valueForKey("date_format").integerValue
+            
+            if (dateFormat == 1) {
+                format = "-";
+            } else if (dateFormat == 2) {
+                format = " ";
+            }
         }
 
         if (locale == "en_US") {

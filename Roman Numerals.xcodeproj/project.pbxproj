@@ -101,6 +101,8 @@
 		BF10C30118D23F39007224D3 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		BF20F90B195C4A9900A1748C /* LargeNumberSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeNumberSettingsViewController.h; sourceTree = "<group>"; };
 		BF20F90C195C4A9900A1748C /* LargeNumberSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeNumberSettingsViewController.m; sourceTree = "<group>"; };
+		BF2A712019B859D90048305B /* Roman Numerals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Roman Numerals.entitlements"; sourceTree = "<group>"; };
+		BF2A712119B859E60048305B /* Today in Roman Nums.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Today in Roman Nums.entitlements"; sourceTree = "<group>"; };
 		BF5EF1C31895732200DA753A /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
 		BF5EF1C41895732200DA753A /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
 		BF5EF1C61895748200DA753A /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		BF8407D919B7C24B005152DE /* Today in Roman Nums */ = {
 			isa = PBXGroup;
 			children = (
+				BF2A712119B859E60048305B /* Today in Roman Nums.entitlements */,
 				BF8407DC19B7C24B005152DE /* TodayViewController.swift */,
 				BF8407DE19B7C24B005152DE /* MainInterface.storyboard */,
 				BF8407DA19B7C24B005152DE /* Supporting Files */,
@@ -267,6 +270,7 @@
 		BFBD6CFB1893F3510097D8B5 /* Roman Numerals */ = {
 			isa = PBXGroup;
 			children = (
+				BF2A712019B859D90048305B /* Roman Numerals.entitlements */,
 				BF74ACFA195AD8F10058E72B /* Tutorial */,
 				BFD2269B19128B990071D675 /* IAP */,
 				BFBD6D041893F3510097D8B5 /* AppDelegate.h */,
@@ -422,10 +426,18 @@
 					BF8407D519B7C24B005152DE = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 6E8JQ66NR8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BFBD6CF11893F3510097D8B5 = {
 						DevelopmentTeam = 6E8JQ66NR8;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -590,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Today in Roman Nums/Today in Roman Nums.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -603,6 +616,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -612,6 +626,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Today in Roman Nums/Today in Roman Nums.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -621,6 +636,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -700,6 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Roman Numerals/Roman Numerals.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -717,6 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "Roman Numerals/Roman Numerals.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -779,6 +797,7 @@
 				BF8407E619B7C24B005152DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFBD6CED1893F3510097D8B5 /* Build configuration list for PBXProject "Roman Numerals" */ = {
 			isa = XCConfigurationList;
