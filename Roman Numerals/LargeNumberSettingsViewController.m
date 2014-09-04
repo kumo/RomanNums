@@ -33,8 +33,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
-    
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     
     UISwitch *autoSwitchSwitchView = [[UISwitch alloc] initWithFrame:CGRectZero];
     self.autoSwitchCell.accessoryView = autoSwitchSwitchView;
@@ -120,7 +119,7 @@
     UISwitch* switchControl = sender;
     //NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     [preferences setBool:switchControl.on forKey:kAutoCorrectKey];
     
     [preferences synchronize];
@@ -130,7 +129,7 @@
     UISwitch* switchControl = sender;
     //NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     [preferences setBool:switchControl.on forKey:kAutoSwitchKey];
     
     [preferences synchronize];
@@ -140,7 +139,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     
     // keyboard presentation
         [self adjustLargeNumberRows:indexPath.row+1];

@@ -48,11 +48,12 @@ extension NSDate {
         let day = components.day
         var year = components.year
         
-        let locale = NSLocale.currentLocale().localeIdentifier // en_GB@currency=EUR ?!
+        var locale = NSLocale.currentLocale().localeIdentifier // en_GB@currency=EUR ?!
         
         // some defaults
         var format = "."
         var longYears = true
+        var order = 0
         
         var preferences = NSUserDefaults(suiteName: "group.it.kumo.roman")
         
@@ -71,6 +72,17 @@ extension NSDate {
                 format = "-";
             } else if (dateFormat == 2) {
                 format = " ";
+            }
+        }
+        
+        if preferences.valueForKey("date_order") != nil {
+            
+            let order = preferences.valueForKey("date_order").integerValue
+            
+            if (order == 1) {
+                locale = "en_GB"
+            } else if (order == 2) {
+                locale = "en_US"
             }
         }
 

@@ -33,7 +33,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
 
     [self adjustDateOrderRows:[preferences integerForKey:kDateOrderKey]];
 
@@ -55,7 +55,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     
     // keyboard presentation
     if (indexPath.section == 0) {
@@ -112,7 +112,8 @@
     UISwitch* switchControl = sender;
     //NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
     
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
+
     [preferences setBool:switchControl.on forKey:kYearFormatKey];
     
     [preferences synchronize];

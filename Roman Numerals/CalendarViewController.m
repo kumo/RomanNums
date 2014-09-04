@@ -92,7 +92,7 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 - (void)convertDateToRoman
 {
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
 
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
     

@@ -53,7 +53,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // set the keyboard order
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     int keyboardType = [[defaults valueForKey:kKeyboardPresentationKey] intValue];
     
     if (keyboardType == 0) {
