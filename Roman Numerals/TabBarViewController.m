@@ -49,9 +49,9 @@
         [self addCalculatorTab];
     }
 
-    //if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
         [self addCalendarTab];
-    //}
+    }
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(productPurchased:)
