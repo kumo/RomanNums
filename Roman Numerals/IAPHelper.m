@@ -88,12 +88,12 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     _productsRequest = nil;
     
     NSArray * skProducts = response.products;
-    for (SKProduct * skProduct in skProducts) {
-        /*NSLog(@"Found product: %@ %@ %0.2f",
+    /*for (SKProduct * skProduct in skProducts) {
+        NSLog(@"Found product: %@ %@ %0.2f",
               skProduct.productIdentifier,
               skProduct.localizedTitle,
-              skProduct.price.floatValue);*/
-    }
+              skProduct.price.floatValue);
+    }*/
     
     _completionHandler(YES, skProducts);
     _completionHandler = nil;
