@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1lq-Tr-XbX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1lq-Tr-XbX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
-        <!--Roman View Controller - First-->
+        <!--First-->
         <scene sceneID="W3I-pn-N6e">
             <objects>
                 <viewController title="First" id="CZ4-MO-1fc" customClass="RomanViewController" sceneMemberID="viewController">
@@ -241,7 +241,7 @@
             </objects>
             <point key="canvasLocation" x="653" y="-138"/>
         </scene>
-        <!--Large Number Settings View Controller - Large Numbers-->
+        <!--Large Numbers-->
         <scene sceneID="334-k6-QE3">
             <objects>
                 <tableViewController id="Qp6-fC-3MQ" customClass="LargeNumberSettingsViewController" sceneMemberID="viewController">
@@ -324,7 +324,7 @@
             </objects>
             <point key="canvasLocation" x="669" y="-1429"/>
         </scene>
-        <!--Extend App View Controller - Extend Roman Nums-->
+        <!--Extend Roman Nums-->
         <scene sceneID="HxH-GK-8hV">
             <objects>
                 <tableViewController id="1eC-3h-6hr" customClass="ExtendAppViewController" sceneMemberID="viewController">
@@ -393,7 +393,7 @@
             </objects>
             <point key="canvasLocation" x="223" y="-2305"/>
         </scene>
-        <!--About Table View Controller - About-->
+        <!--About-->
         <scene sceneID="9ug-Op-apk">
             <objects>
                 <tableViewController id="pF1-xI-s1F" customClass="AboutTableViewController" sceneMemberID="viewController">
@@ -561,7 +561,7 @@
             </objects>
             <point key="canvasLocation" x="1859" y="-2150"/>
         </scene>
-        <!--Whats New View Controller - What's New-->
+        <!--What's New-->
         <scene sceneID="OXB-b1-9KU">
             <objects>
                 <viewController id="No4-5T-hGd" customClass="WhatsNewViewController" sceneMemberID="viewController">
@@ -1645,7 +1645,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="2965" y="-2249"/>
         </scene>
-        <!--Whats New View Controller - Disclaimer-->
+        <!--Disclaimer-->
         <scene sceneID="qiX-8K-PXd">
             <objects>
                 <viewController id="sGe-Sw-JPv" customClass="WhatsNewViewController" sceneMemberID="viewController">
@@ -1689,7 +1689,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="2251" y="-1579"/>
         </scene>
-        <!--Calculator View Controller - First-->
+        <!--First-->
         <scene sceneID="R3a-nx-OGE">
             <objects>
                 <viewController storyboardIdentifier="CalculatorView" title="First" id="EMO-Ya-zrm" customClass="CalculatorViewController" sceneMemberID="viewController">
@@ -2027,7 +2027,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="653" y="-762"/>
         </scene>
-        <!--Arabic View Controller - Second-->
+        <!--Second-->
         <scene sceneID="ot8-2e-RuS">
             <objects>
                 <viewController title="Second" id="QUy-BD-bpt" customClass="ArabicViewController" sceneMemberID="viewController">
@@ -2372,7 +2372,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="-797" y="208"/>
         </scene>
-        <!--Main Menu View Controller - Roman Nums-->
+        <!--Roman Nums-->
         <scene sceneID="iiu-em-ieD">
             <objects>
                 <tableViewController id="ZjT-M2-UTW" customClass="MainMenuViewController" sceneMemberID="viewController">
@@ -2609,7 +2609,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="-585" y="-988"/>
         </scene>
-        <!--Tab Bar View Controller - Roman Nums-->
+        <!--Roman Nums-->
         <scene sceneID="Vex-rW-GRa">
             <objects>
                 <tabBarController id="8YX-ce-x5E" customClass="TabBarViewController" sceneMemberID="viewController">
@@ -2638,7 +2638,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="-284" y="312"/>
         </scene>
-        <!--Calendar View Controller - Calendar-->
+        <!--Calendar-->
         <scene sceneID="GmF-j7-d9l">
             <objects>
                 <viewController id="kdd-Jd-3do" customClass="CalendarViewController" sceneMemberID="viewController">
@@ -2692,7 +2692,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="968" y="1036"/>
         </scene>
-        <!--Navigation Controller - Calendar-->
+        <!--Calendar-->
         <scene sceneID="L5A-qs-Qeu">
             <objects>
                 <navigationController storyboardIdentifier="DateView" automaticallyAdjustsScrollViewInsets="NO" id="WE6-vu-ZXr" sceneMemberID="viewController">
@@ -2711,7 +2711,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="436" y="1182"/>
         </scene>
-        <!--Tutorial View Controller - Tutorial-->
+        <!--Tutorial-->
         <scene sceneID="qt5-N4-NpR">
             <objects>
                 <viewController id="cSB-io-wOB" customClass="TutorialViewController" sceneMemberID="viewController">
@@ -2801,7 +2801,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="3253" y="-84"/>
         </scene>
-        <!--Keyboard Settings View Controller - Keyboard-->
+        <!--Keyboard-->
         <scene sceneID="bsd-91-Asz">
             <objects>
                 <tableViewController id="Y5Y-sI-LBO" customClass="KeyboardSettingsViewController" sceneMemberID="viewController">
@@ -2900,7 +2900,7 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="293" y="-1707"/>
         </scene>
-        <!--Calendar Settings View Controller - Calendar-->
+        <!--Calendar-->
         <scene sceneID="0qV-5A-BYX">
             <objects>
                 <tableViewController id="7QN-YZ-TNK" customClass="CalendarSettingsViewController" sceneMemberID="viewController">
@@ -3070,6 +3070,9 @@ First version</string>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination">
+            <size key="portraitSize" width="320" height="480"/>
+            <size key="landscapeSize" width="480" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

@@ -50,7 +50,7 @@
 
 - (void)convertToRoman:(NSString *) arabic archaic:(bool) archaic {
 	if (archaic == YES) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
         
         int largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
 

@@ -82,7 +82,7 @@
 - (void)prepareLargeNumbersKey
 {
     // set the keyboard order
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     
     largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
     
@@ -225,7 +225,7 @@
 	
     NSString *arabicLabelString = string;
 	
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     BOOL autoSwitch = [defaults boolForKey:kAutoSwitchKey];
 
 	if ([text isEqualToString: @"delete"]) {
@@ -271,7 +271,7 @@
 	archaicMode = !archaicMode;
     
     // if the button is what we expect it to be then it is not locked
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     BOOL autoSwitch = [defaults boolForKey:kAutoSwitchKey];
     BOOL potentialArchaicMode = NO;
     

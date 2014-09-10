@@ -69,11 +69,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
-            return 3;
-        } else {
-            return 2;
-        }
+        return 3;
     } else if (section == 1) {
         return 1;
     } else {

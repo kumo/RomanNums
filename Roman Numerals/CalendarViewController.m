@@ -92,11 +92,11 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 - (void)convertDateToRoman
 {
-    NSUserDefaults *preferences = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
 
     NSString *locale = [[NSLocale currentLocale] localeIdentifier];
     
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[_datePicker date]];
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[_datePicker date]];
     
     NSString *day = [NSString stringWithFormat:@"%ld", (long)[components day]];
     NSString *month = [NSString stringWithFormat:@"%ld", (long)[components month]];
