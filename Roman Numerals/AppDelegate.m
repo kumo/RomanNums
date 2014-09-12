@@ -88,6 +88,8 @@
         [groupDefaults setValue:[defaults valueForKey:kCalculatorPurchaseKey] forKey:kCalculatorPurchaseKey];
         [groupDefaults setValue:[defaults valueForKey:kCalendarPurchaseKey] forKey:kCalendarPurchaseKey];
 
+        [groupDefaults synchronize];
+
         // and finally migrate
         [defaults setObject:[NSNumber numberWithBool:YES] forKey:kMigratedKey];
         [defaults synchronize];
