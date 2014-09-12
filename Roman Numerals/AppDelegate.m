@@ -59,9 +59,41 @@
                                  [NSNumber numberWithInt:0], kDateOrderKey,
                                  [NSNumber numberWithInt:0], kDateFormatKey,
                                  [NSNumber numberWithBool:YES], kYearFormatKey,
+                                 
+                                 [NSNumber numberWithBool:NO], kMigratedKey,
+                                 
+                                 [NSNumber numberWithBool:NO], kCalculatorPurchaseKey,
+                                 [NSNumber numberWithBool:NO], kCalendarPurchaseKey,
                                  nil];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    //[defaults setObject:[NSNumber numberWithBool:NO] forKey:kMigratedKey];
+    //[defaults synchronize];
+
+    if ([[defaults valueForKey:kMigratedKey] boolValue] == NO) {
+        NSUserDefaults *groupDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
+        
+        [groupDefaults setValue:[defaults valueForKey:kAutoCorrectKey] forKey:kAutoCorrectKey];
+        [groupDefaults setValue:[defaults valueForKey:kKeyboardPresentationKey] forKey:kKeyboardPresentationKey];
+        [groupDefaults setValue:[defaults valueForKey:kLargeNumberPresentationKey] forKey:kLargeNumberPresentationKey];
+        [groupDefaults setValue:[defaults valueForKey:kAutoSwitchKey] forKey:kAutoSwitchKey];
+
+        [groupDefaults setValue:[defaults valueForKey:kDateOrderKey] forKey:kDateOrderKey];
+        [groupDefaults setValue:[defaults valueForKey:kDateFormatKey] forKey:kDateFormatKey];
+        [groupDefaults setValue:[defaults valueForKey:kYearFormatKey] forKey:kYearFormatKey];
+
+        [groupDefaults setValue:[defaults valueForKey:kCalculatorPurchaseKey] forKey:kCalculatorPurchaseKey];
+        [groupDefaults setValue:[defaults valueForKey:kCalendarPurchaseKey] forKey:kCalendarPurchaseKey];
+
+        [groupDefaults synchronize];
+
+        // and finally migrate
+        [defaults setObject:[NSNumber numberWithBool:YES] forKey:kMigratedKey];
+        [defaults synchronize];
+    }
 }
 
 @end
