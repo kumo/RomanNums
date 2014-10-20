@@ -55,34 +55,35 @@ extension NSDate {
         var longYears = true
         var order = 0
         
-        var preferences = NSUserDefaults(suiteName: "group.it.kumo.roman")
+        if let preferences = NSUserDefaults(suiteName: "group.it.kumo.roman") {
         
-        if preferences.valueForKey("long_years") != nil {
-            longYears = preferences.valueForKey("long_years").boolValue
-            
-            if (longYears == false) {
-                year = year % 100
+            if let _ = preferences.valueForKey("long_years") {
+                longYears = preferences.boolForKey("long_years")
+                
+                if (longYears == false) {
+                    year = year % 100
+                }
             }
-        }
-        
-        if preferences.valueForKey("date_format") != nil {
-            let dateFormat = preferences.valueForKey("date_format").integerValue
             
-            if (dateFormat == 1) {
-                format = "-";
-            } else if (dateFormat == 2) {
-                format = " ";
+            if let _ = preferences.valueForKey("date_format") {
+                let dateFormat = preferences.integerForKey("date_format")
+                
+                if (dateFormat == 1) {
+                    format = "-";
+                } else if (dateFormat == 2) {
+                    format = " ";
+                }
             }
-        }
-        
-        if preferences.valueForKey("date_order") != nil {
             
-            let order = preferences.valueForKey("date_order").integerValue
-            
-            if (order == 1) {
-                locale = "en_GB"
-            } else if (order == 2) {
-                locale = "en_US"
+            if let _ = preferences.valueForKey("date_order") {
+                
+                let order = preferences.integerForKey("date_order")
+                
+                if (order == 1) {
+                    locale = "en_GB"
+                } else if (order == 2) {
+                    locale = "en_US"
+                }
             }
         }
 
