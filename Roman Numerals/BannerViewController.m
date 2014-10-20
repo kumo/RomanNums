@@ -47,6 +47,7 @@
  */
 
 #import "BannerViewController.h"
+#import "RomanIAPHelper.h"
 
 NSString * const BannerViewActionWillBegin = @"BannerViewActionWillBegin";
 NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
@@ -81,6 +82,18 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     [self.view addSubview:_bannerView];
     
     _contentController = self.childViewControllers[0];  // remember who our content child is
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
+        _bannerView = nil;
+    }
+    
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
+        _bannerView = nil;
+    }
 }
 
 /*- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
