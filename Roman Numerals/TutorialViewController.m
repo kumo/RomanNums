@@ -19,8 +19,8 @@
 {
     [super viewDidLoad];
 	// Create the data model
-    _pageTitles = @[@"Quickly Convert Numbers", @"Convert Large Numbers", @"Calculate Roman Sums (extra)", @"Convert Dates (extra)"];
-    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png"];
+    _pageTitles = @[@"Quickly Convert Numbers", @"Convert Large Numbers", @"Calculate Roman Sums (extra)", @"Convert Dates (extra)", @"Crossword Solver (extra)"];
+    _pageImages = @[@"page1.png", @"page2.png", @"page3.png", @"page4.png", @"page5.png"];
     
     // Create page view controller
     self.pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
