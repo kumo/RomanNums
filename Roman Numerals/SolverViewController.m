@@ -43,6 +43,12 @@
     _crosswordResults = [[NSArray alloc] init];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tabBarController.navigationItem setTitle:@"Crossword"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

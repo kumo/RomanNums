@@ -3236,10 +3236,10 @@ First version</string>
             </objects>
             <point key="canvasLocation" x="266" y="-1018"/>
         </scene>
-        <!--First-->
+        <!--Crossword-->
         <scene sceneID="zI8-aK-Tz3">
             <objects>
-                <viewController storyboardIdentifier="SolverView" title="First" id="CCj-ne-0zt" customClass="SolverViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SolverView" title="Crossword" id="CCj-ne-0zt" customClass="SolverViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SWb-5h-SQ0"/>
                         <viewControllerLayoutGuide type="bottom" id="kSp-um-IAF"/>
@@ -3483,7 +3483,7 @@ First version</string>
                             <constraint firstItem="Thc-ee-baP" firstAttribute="top" secondItem="Yt4-IW-h8d" secondAttribute="bottom" constant="1" id="wGK-cd-diU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="2002" image="Roman Converter" id="y2p-1J-ZZm"/>
+                    <tabBarItem key="tabBarItem" title="XVI" image="Crossword Solver" id="y2p-1J-ZZm"/>
                     <connections>
                         <outlet property="buttonDelete" destination="RYC-Ln-VCF" id="f44-p8-31q"/>
                         <outlet property="resultsTable" destination="EJ4-9Y-pc5" id="VJG-V2-yF2"/>
@@ -3506,6 +3506,7 @@ First version</string>
     </scenes>
     <resources>
         <image name="Arabic Converter" width="44" height="30"/>
+        <image name="Crossword Solver" width="44" height="30"/>
         <image name="DEL" width="23" height="16"/>
         <image name="DEL_Light" width="23" height="16"/>
         <image name="Roman Converter" width="44" height="30"/>
