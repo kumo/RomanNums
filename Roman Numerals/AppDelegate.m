@@ -64,6 +64,8 @@
                                  
                                  [NSNumber numberWithBool:NO], kCalculatorPurchaseKey,
                                  [NSNumber numberWithBool:NO], kCalendarPurchaseKey,
+                                 [NSNumber numberWithBool:NO], kSolverPurchaseKey,
+                                 [NSNumber numberWithBool:NO], kProPurchaseKey,
                                  nil];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
@@ -87,6 +89,8 @@
 
         [groupDefaults setValue:[defaults valueForKey:kCalculatorPurchaseKey] forKey:kCalculatorPurchaseKey];
         [groupDefaults setValue:[defaults valueForKey:kCalendarPurchaseKey] forKey:kCalendarPurchaseKey];
+        [groupDefaults setValue:[defaults valueForKey:kSolverPurchaseKey] forKey:kSolverPurchaseKey];
+        [groupDefaults setValue:[defaults valueForKey:kProPurchaseKey] forKey:kProPurchaseKey];
 
         [groupDefaults synchronize];
 

@@ -10,6 +10,7 @@
 #import "RomanIAPHelper.h"
 #import "CalculatorViewController.h"
 #import "CalendarViewController.h"
+#import "SolverViewController.h"
 
 @interface TabBarViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
@@ -44,15 +45,31 @@
     views = (NSMutableArray *)self.viewControllers;
     [views removeLastObject];
     [self setViewControllers:views animated:NO];
-    
-    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
+
+    views = (NSMutableArray *)self.viewControllers;
+    [views removeLastObject];
+    [self setViewControllers:views animated:NO];
+
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kProPurchaseKey] == YES) {
         [self addCalculatorTab];
-    }
-
-    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
         [self addCalendarTab];
-    }
+        [self addSolverTab];
+    } else {
 
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
+            [self addCalculatorTab];
+        }
+
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
+            [self addCalendarTab];
+        }
+
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+            [self addSolverTab];
+        }
+
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(productPurchased:)
                                                  name:@"ProductPurchased" object:nil];
@@ -80,6 +97,14 @@
     [self setViewControllers:views animated:NO];
 }
 
+- (void)addSolverTab {
+    SolverViewController *myController = (SolverViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SolverView"];
+    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    [views addObject:myController];
+    
+    [self setViewControllers:views animated:NO];
+}
+
 - (void)productPurchased:(NSNotification *)notification {
     NSString *productIdentifier = (NSString *)[notification.userInfo objectForKey:@"productIdentifier"];
     
@@ -87,6 +112,12 @@
         [self addCalculatorTab];
     } else if ([productIdentifier isEqualToString:kCalendarPurchaseKey]) {
         [self addCalendarTab];
+    } else if ([productIdentifier isEqualToString:kSolverPurchaseKey]) {
+        [self addSolverTab];
+    } else if ([productIdentifier isEqualToString:kProPurchaseKey]) {
+        [self addSolverTab];
+        [self addCalendarTab];
+        [self addCalculatorTab];
     }
 
 }

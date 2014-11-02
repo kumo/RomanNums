@@ -82,6 +82,10 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     [self.view addSubview:_bannerView];
     
     _contentController = self.childViewControllers[0];  // remember who our content child is
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(productPurchased:)
+                                                 name:@"ProductPurchased" object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -92,6 +96,14 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     }
     
     if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
+        _bannerView = nil;
+    }
+
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+        _bannerView = nil;
+    }
+
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kProPurchaseKey] == YES) {
         _bannerView = nil;
     }
 }
@@ -161,6 +173,20 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 - (void)bannerViewActionDidFinish:(ADBannerView *)banner
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:BannerViewActionDidFinish object:self];
+}
+
+- (void)productPurchased:(NSNotification *)notification {
+    _bannerView = nil;
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        // viewDidLayoutSubviews will handle positioning the banner view so that it is hidden.
+        // You must not call [self.view layoutSubviews] directly.  However, you can flag the view
+        // as requiring layout...
+        [self.view setNeedsLayout];
+        // ... then ask it to lay itself out immediately if it is flagged as requiring layout...
+        [self.view layoutIfNeeded];
+        // ... which has the same effect.
+    }];
 }
 
 @end
