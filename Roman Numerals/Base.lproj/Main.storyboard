@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -3247,8 +3248,11 @@ First version</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tN0-77-QnW">
-                                <rect key="frame" x="20" y="88" width="280" height="56"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tN0-77-QnW">
+                                <rect key="frame" x="20" y="85" width="280" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="hla-0O-vP9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="44"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -3421,11 +3425,11 @@ First version</string>
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-9Y-pc5">
-                                <rect key="frame" x="0.0" y="152" width="320" height="107"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-9Y-pc5">
+                                <rect key="frame" x="0.0" y="169" width="320" height="89"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Qtn-u3-RxB" detailTextLabel="X1W-E1-ABc" style="IBUITableViewCellStyleValue1" id="LxB-7T-0Jb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CrosswordCell" textLabel="Qtn-u3-RxB" style="IBUITableViewCellStyleDefault" id="LxB-7T-0Jb">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LxB-7T-0Jb" id="prh-j8-Rrw">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -3436,16 +3440,14 @@ First version</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1925" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X1W-E1-ABc">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CCj-ne-0zt" id="Byd-1k-muG"/>
+                                    <outlet property="delegate" destination="CCj-ne-0zt" id="h7V-zb-glE"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725496529999996" green="0.93725496529999996" blue="0.95686280729999995" alpha="1" colorSpace="deviceRGB"/>
@@ -3454,22 +3456,29 @@ First version</string>
                             <constraint firstItem="sRE-vR-gXu" firstAttribute="leading" secondItem="tgx-M1-OHb" secondAttribute="leading" id="2Gu-to-3KF"/>
                             <constraint firstItem="RYC-Ln-VCF" firstAttribute="top" secondItem="ZCy-3Z-s9n" secondAttribute="bottom" constant="1" id="4mm-w8-eew"/>
                             <constraint firstAttribute="bottom" secondItem="A0m-6R-5Qq" secondAttribute="bottom" constant="49" id="7N8-10-Rua"/>
+                            <constraint firstItem="sRE-vR-gXu" firstAttribute="top" secondItem="EJ4-9Y-pc5" secondAttribute="bottom" constant="8" id="8FI-mN-yzb"/>
                             <constraint firstItem="RYC-Ln-VCF" firstAttribute="leading" secondItem="A0m-6R-5Qq" secondAttribute="trailing" constant="1" id="AWn-oX-eiS"/>
                             <constraint firstAttribute="trailing" secondItem="sRE-vR-gXu" secondAttribute="trailing" id="DHu-N8-7WE"/>
                             <constraint firstAttribute="trailing" secondItem="RYC-Ln-VCF" secondAttribute="trailing" id="DMU-0a-FXa"/>
+                            <constraint firstAttribute="trailing" secondItem="EJ4-9Y-pc5" secondAttribute="trailing" id="DeT-MY-AM2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tN0-77-QnW" secondAttribute="trailing" constant="4" id="FEV-B6-aDy"/>
                             <constraint firstItem="A0m-6R-5Qq" firstAttribute="top" secondItem="72F-LZ-Ndc" secondAttribute="bottom" constant="1" id="GUf-EC-XNT"/>
+                            <constraint firstItem="EJ4-9Y-pc5" firstAttribute="top" secondItem="tN0-77-QnW" secondAttribute="bottom" constant="28" id="I2V-LH-fam"/>
                             <constraint firstItem="Yt4-IW-h8d" firstAttribute="top" secondItem="BWx-wx-jh9" secondAttribute="bottom" constant="1" id="Ob8-Bt-IjY"/>
                             <constraint firstAttribute="trailing" secondItem="KgW-cj-qhT" secondAttribute="trailing" id="Oe7-6J-ghb"/>
                             <constraint firstItem="Thc-ee-baP" firstAttribute="leading" secondItem="tgx-M1-OHb" secondAttribute="leading" id="RzE-6M-EBs"/>
                             <constraint firstItem="72F-LZ-Ndc" firstAttribute="top" secondItem="4zl-57-qSn" secondAttribute="bottom" constant="1" id="TGo-0p-irS"/>
                             <constraint firstAttribute="bottom" secondItem="RYC-Ln-VCF" secondAttribute="bottom" constant="49" id="Um2-O3-RkS"/>
                             <constraint firstAttribute="bottom" secondItem="Thc-ee-baP" secondAttribute="bottom" constant="49" id="WbM-ut-BDV"/>
+                            <constraint firstItem="tN0-77-QnW" firstAttribute="leading" secondItem="tgx-M1-OHb" secondAttribute="leadingMargin" constant="4" id="dam-ws-8Fc"/>
                             <constraint firstAttribute="trailing" secondItem="ZCy-3Z-s9n" secondAttribute="trailing" id="eFG-QD-xVl"/>
                             <constraint firstItem="72F-LZ-Ndc" firstAttribute="leading" secondItem="Yt4-IW-h8d" secondAttribute="trailing" constant="1" id="faA-rH-9zh"/>
                             <constraint firstItem="ZCy-3Z-s9n" firstAttribute="top" secondItem="KgW-cj-qhT" secondAttribute="bottom" constant="1" id="ftV-FJ-F5d"/>
                             <constraint firstItem="A0m-6R-5Qq" firstAttribute="leading" secondItem="Thc-ee-baP" secondAttribute="trailing" constant="1" id="gRm-nS-MD0"/>
                             <constraint firstItem="4zl-57-qSn" firstAttribute="leading" secondItem="BWx-wx-jh9" secondAttribute="trailing" constant="1" id="iSD-ce-NwG"/>
+                            <constraint firstItem="tN0-77-QnW" firstAttribute="top" secondItem="SWb-5h-SQ0" secondAttribute="bottom" constant="21" id="l7d-Jc-64O"/>
                             <constraint firstItem="BWx-wx-jh9" firstAttribute="leading" secondItem="tgx-M1-OHb" secondAttribute="leading" id="mhp-3T-zEI"/>
+                            <constraint firstItem="EJ4-9Y-pc5" firstAttribute="leading" secondItem="tgx-M1-OHb" secondAttribute="leading" id="oqQ-zG-J8s"/>
                             <constraint firstItem="Yt4-IW-h8d" firstAttribute="leading" secondItem="tgx-M1-OHb" secondAttribute="leading" id="s8P-SA-dQk"/>
                             <constraint firstItem="Thc-ee-baP" firstAttribute="top" secondItem="Yt4-IW-h8d" secondAttribute="bottom" constant="1" id="wGK-cd-diU"/>
                         </constraints>
@@ -3477,6 +3486,7 @@ First version</string>
                     <tabBarItem key="tabBarItem" title="2002" image="Roman Converter" id="y2p-1J-ZZm"/>
                     <connections>
                         <outlet property="buttonDelete" destination="RYC-Ln-VCF" id="f44-p8-31q"/>
+                        <outlet property="resultsTable" destination="EJ4-9Y-pc5" id="VJG-V2-yF2"/>
                         <outlet property="romanLabel" destination="tN0-77-QnW" id="ZIq-gh-fdL"/>
                         <outletCollection property="buttons" destination="A0m-6R-5Qq" id="KXr-om-Xaw"/>
                         <outletCollection property="buttons" destination="BWx-wx-jh9" id="tN5-2v-nvJ"/>

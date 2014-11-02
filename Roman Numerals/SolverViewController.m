@@ -40,6 +40,7 @@
     
     [self.buttonDelete setBackgroundImage:[UIImage imageWithLightHighlight] forState:UIControlStateHighlighted];
     
+    _crosswordResults = [[NSArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,9 +91,30 @@
 -(void)filterYear:(NSString *) text {
     _romanLabel.text = text;
 
-    NSArray *results = [self.solver search:text];
+    _crosswordResults = [self.solver search:text];
     
-    NSLog(@"Have to filter %@ (%d)", text, results.count);
+    NSLog(@"Have to filter %@ (%d)", text, _crosswordResults.count);
+    
+    [self.resultsTable reloadData];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _crosswordResults.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CrosswordCell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = _crosswordResults[indexPath.row];
+    
+    return cell;
 }
 
 @end

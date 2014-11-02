@@ -23,6 +23,8 @@
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, retain) CrosswordSolver *solver;
 
-//@property (weak, nonatomic) IBOutlet UITableView *resultsTable;
+@property (nonatomic) NSArray *crosswordResults;
+
+@property (weak, nonatomic) IBOutlet UITableView *resultsTable;
 
 @end
