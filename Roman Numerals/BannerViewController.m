@@ -92,18 +92,22 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
     [super viewDidAppear:animated];
     
     if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
+        _bannerView.delegate = nil;
         _bannerView = nil;
     }
     
     if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
+        _bannerView.delegate = nil;
         _bannerView = nil;
     }
 
     if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+        _bannerView.delegate = nil;
         _bannerView = nil;
     }
 
     if ([[RomanIAPHelper sharedInstance] productPurchased:kProPurchaseKey] == YES) {
+        _bannerView.delegate = nil;
         _bannerView = nil;
     }
 }
@@ -176,6 +180,8 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
 }
 
 - (void)productPurchased:(NSNotification *)notification {
+    [_bannerView removeFromSuperview];
+    _bannerView.delegate = nil;
     _bannerView = nil;
     
     [UIView animateWithDuration:0.25 animations:^{
