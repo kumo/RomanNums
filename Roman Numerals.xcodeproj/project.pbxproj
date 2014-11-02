@@ -15,7 +15,16 @@
 		BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1C71895748200DA753A /* IAPHelper.m */; };
 		BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */; };
 		BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CD1895781600DA753A /* MainMenuViewController.m */; };
+		BF5FE47819F3BB9200DECE01 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE47719F3BB9200DECE01 /* BannerViewController.m */; };
+		BF5FE47A19F3BBAE00DECE01 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5FE47919F3BBAE00DECE01 /* iAd.framework */; };
 		BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69682118B2992C00B2006C /* ExtendAppViewController.m */; };
+		BF6E7F231A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */; };
+		BF6E7F251A06455C00765004 /* thin-093_notebook_to_do.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */; };
+		BF6E7F271A06458600765004 /* thin-093_notebook_to_do@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */; };
+		BF6E7F291A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */; };
+		BF6E7F2B1A065D4000765004 /* page5.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F2A1A065D4000765004 /* page5.png */; };
+		BF70C2EB19F5A4BD00C8972A /* SolverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */; };
+		BF70C2ED19F5B55D00C8972A /* CrosswordSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */; };
 		BF72D67E19AE839900E1E9F3 /* CalendarSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF72D67D19AE839900E1E9F3 /* CalendarSettingsViewController.m */; };
 		BF74ACF6195AD8610058E72B /* TutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF74ACF5195AD8610058E72B /* TutorialViewController.m */; };
 		BF74ACF9195AD8B30058E72B /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF74ACF8195AD8B30058E72B /* PageContentViewController.m */; };
@@ -111,8 +120,20 @@
 		BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanIAPHelper.m; sourceTree = "<group>"; };
 		BF5EF1CC1895781600DA753A /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		BF5EF1CD1895781600DA753A /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		BF5FE47619F3BB9200DECE01 /* BannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		BF5FE47719F3BB9200DECE01 /* BannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
+		BF5FE47919F3BBAE00DECE01 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BF69682018B2992C00B2006C /* ExtendAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendAppViewController.h; sourceTree = "<group>"; };
 		BF69682118B2992C00B2006C /* ExtendAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendAppViewController.m; sourceTree = "<group>"; };
+		BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-464_bright_bulb_idea_lamp_light.png"; sourceTree = "<group>"; };
+		BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-093_notebook_to_do.png"; sourceTree = "<group>"; };
+		BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-093_notebook_to_do@2x.png"; sourceTree = "<group>"; };
+		BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-464_bright_bulb_idea_lamp_light@2x.png"; sourceTree = "<group>"; };
+		BF6E7F2A1A065D4000765004 /* page5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page5.png; sourceTree = "<group>"; };
+		BF70C2E419F5A1DE00C8972A /* Roman Numerals-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Roman Numerals-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF70C2E919F5A4BD00C8972A /* SolverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolverViewController.h; sourceTree = "<group>"; };
+		BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolverViewController.m; sourceTree = "<group>"; };
+		BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrosswordSolver.swift; sourceTree = "<group>"; };
 		BF72D67C19AE839900E1E9F3 /* CalendarSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarSettingsViewController.h; sourceTree = "<group>"; };
 		BF72D67D19AE839900E1E9F3 /* CalendarSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarSettingsViewController.m; sourceTree = "<group>"; };
 		BF74ACF4195AD8610058E72B /* TutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialViewController.h; sourceTree = "<group>"; };
@@ -179,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5FE47A19F3BBAE00DECE01 /* iAd.framework in Frameworks */,
 				BFBD6CF81893F3510097D8B5 /* CoreGraphics.framework in Frameworks */,
 				BFBD6CFA1893F3510097D8B5 /* UIKit.framework in Frameworks */,
 				BFBD6CF61893F3510097D8B5 /* Foundation.framework in Frameworks */,
@@ -210,6 +232,7 @@
 				BF74ACFC195AD9030058E72B /* page2.png */,
 				BF74ACFD195AD9030058E72B /* page3.png */,
 				BF74ACFE195AD9030058E72B /* page4.png */,
+				BF6E7F2A1A065D4000765004 /* page5.png */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -257,6 +280,7 @@
 		BFBD6CF41893F3510097D8B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF5FE47919F3BBAE00DECE01 /* iAd.framework */,
 				BFBD6D2D1893F4120097D8B5 /* StoreKit.framework */,
 				BFBD6CF51893F3510097D8B5 /* Foundation.framework */,
 				BFBD6CF71893F3510097D8B5 /* CoreGraphics.framework */,
@@ -276,6 +300,8 @@
 				BFBD6D041893F3510097D8B5 /* AppDelegate.h */,
 				BFBD6D051893F3510097D8B5 /* AppDelegate.m */,
 				BFBD6D071893F3510097D8B5 /* Main.storyboard */,
+				BF5FE47619F3BB9200DECE01 /* BannerViewController.h */,
+				BF5FE47719F3BB9200DECE01 /* BannerViewController.m */,
 				BFE95D2E18964D3B005B77AD /* KeyboardSettingsViewController.h */,
 				BFE95D2F18964D3B005B77AD /* KeyboardSettingsViewController.m */,
 				BF72D67C19AE839900E1E9F3 /* CalendarSettingsViewController.h */,
@@ -342,6 +368,10 @@
 				BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */,
 				BFD2269E19128DFA0071D675 /* thin-165_calculator.png */,
 				BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */,
+				BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */,
+				BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */,
+				BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */,
+				BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */,
 				BF5EF1C61895748200DA753A /* IAPHelper.h */,
 				BF5EF1C71895748200DA753A /* IAPHelper.m */,
 				BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */,
@@ -352,6 +382,10 @@
 				BF5EF1C41895732200DA753A /* CalculatorViewController.m */,
 				BF10C30018D23F39007224D3 /* CalendarViewController.h */,
 				BF10C30118D23F39007224D3 /* CalendarViewController.m */,
+				BF70C2E919F5A4BD00C8972A /* SolverViewController.h */,
+				BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */,
+				BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */,
+				BF70C2E419F5A1DE00C8972A /* Roman Numerals-Bridging-Header.h */,
 			);
 			name = IAP;
 			sourceTree = "<group>";
@@ -487,10 +521,15 @@
 				BF74AD01195AD9030058E72B /* page3.png in Resources */,
 				BF74ACFF195AD9030058E72B /* page1.png in Resources */,
 				BFD2269F19128DFA0071D675 /* thin-165_calculator.png in Resources */,
+				BF6E7F291A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png in Resources */,
+				BF6E7F231A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png in Resources */,
 				BFD226A319128EB60071D675 /* thin-165_calculator@2x.png in Resources */,
+				BF6E7F251A06455C00765004 /* thin-093_notebook_to_do.png in Resources */,
+				BF6E7F271A06458600765004 /* thin-093_notebook_to_do@2x.png in Resources */,
 				BF74AD00195AD9030058E72B /* page2.png in Resources */,
 				BFD226A119128E9E0071D675 /* thin-021_calendar_date@2x.png in Resources */,
 				BFD2269D19128D9D0071D675 /* thin-021_calendar_date.png in Resources */,
+				BF6E7F2B1A065D4000765004 /* page5.png in Resources */,
 				BFBD6D091893F3510097D8B5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,13 +565,16 @@
 				BFC42F21195A0E600011001B /* WhatsNewViewController.m in Sources */,
 				BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */,
 				BF0A65DD18B296830036CEB1 /* RomanNumsActivityItemProvider.m in Sources */,
+				BF5FE47819F3BB9200DECE01 /* BannerViewController.m in Sources */,
 				BFBD6D0C1893F3510097D8B5 /* RomanViewController.m in Sources */,
 				BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */,
+				BF70C2EB19F5A4BD00C8972A /* SolverViewController.m in Sources */,
 				BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */,
 				BFBD6D361893F9430097D8B5 /* TabBarViewController.m in Sources */,
 				BF10C30218D23F39007224D3 /* CalendarViewController.m in Sources */,
 				BF5EF1C51895732200DA753A /* CalculatorViewController.m in Sources */,
 				BFC42F181959E14A0011001B /* AboutTableViewController.m in Sources */,
+				BF70C2ED19F5B55D00C8972A /* CrosswordSolver.swift in Sources */,
 				BF5EF1C81895748200DA753A /* IAPHelper.m in Sources */,
 				BF72D67E19AE839900E1E9F3 /* CalendarSettingsViewController.m in Sources */,
 				BF74ACF9195AD8B30058E72B /* PageContentViewController.m in Sources */,
@@ -661,6 +703,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -678,6 +721,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = RomanNums;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -700,6 +744,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -710,6 +755,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_MODULE_NAME = RomanNums;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -720,15 +766,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Roman Numerals/Roman Numerals.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roman Numerals/Roman Numerals-Prefix.pch";
 				INFOPLIST_FILE = "Roman Numerals/Roman Numerals-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Roman Numerals/Roman Numerals-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -738,15 +789,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Roman Numerals/Roman Numerals.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roman Numerals/Roman Numerals-Prefix.pch";
 				INFOPLIST_FILE = "Roman Numerals/Roman Numerals-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Roman Numerals/Roman Numerals-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

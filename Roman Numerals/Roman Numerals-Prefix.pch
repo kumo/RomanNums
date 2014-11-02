@@ -29,3 +29,5 @@
 
 #define kCalculatorPurchaseKey          @"it.kumo.roman.calculator"
 #define kCalendarPurchaseKey            @"it.kumo.roman.calendar"
+#define kSolverPurchaseKey              @"it.kumo.roman.solver"
+#define kProPurchaseKey                 @"it.kumo.roman.pro"

@@ -72,8 +72,10 @@
         return 3;
     } else if (section == 1) {
         return 1;
-    } else {
+    } else if (section == 2) {
         return 2;
+    } else {
+        return 3;
     }
 }
 
