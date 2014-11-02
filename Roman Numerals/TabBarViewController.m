@@ -10,6 +10,7 @@
 #import "RomanIAPHelper.h"
 #import "CalculatorViewController.h"
 #import "CalendarViewController.h"
+#import "SolverViewController.h"
 
 @interface TabBarViewController ()
 @property (nonatomic) IBOutlet UIBarButtonItem* revealButtonItem;
@@ -44,7 +45,11 @@
     views = (NSMutableArray *)self.viewControllers;
     [views removeLastObject];
     [self setViewControllers:views animated:NO];
-    
+
+    views = (NSMutableArray *)self.viewControllers;
+    [views removeLastObject];
+    [self setViewControllers:views animated:NO];
+
     if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
         [self addCalculatorTab];
     }
@@ -52,6 +57,10 @@
     if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
         [self addCalendarTab];
     }
+
+    //if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+        [self addSolverTab];
+    //}
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(productPurchased:)
@@ -74,6 +83,14 @@
 
 - (void)addCalendarTab {
     CalendarViewController *myController = (CalendarViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DateView"];
+    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    [views addObject:myController];
+    
+    [self setViewControllers:views animated:NO];
+}
+
+- (void)addSolverTab {
+    SolverViewController *myController = (SolverViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SolverView"];
     NSMutableArray *views = (NSMutableArray *)self.viewControllers;
     [views addObject:myController];
     
