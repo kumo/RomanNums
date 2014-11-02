@@ -38,9 +38,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _knownProducts = @[@"Calculator", @"Calendar"];
-    _knownDescriptions = @[@"Calculate XI*IV or MM-CXV", @"Any date in Roman Numerals"];
-    _knownImages = @[[UIImage imageNamed:@"thin-165_calculator"], [UIImage imageNamed:@"thin-021_calendar_date"]];
+    _knownProducts = @[@"Calculator", @"Calendar", @"Crossword Solver", @"Pro Mode"];
+    _knownDescriptions = @[@"Calculate XI*IV or MM-CXV", @"Any date in Roman Numerals", @"Find solutions to M?X?", @"Unlock all features"];
+    _knownImages = @[[UIImage imageNamed:@"thin-165_calculator"], [UIImage imageNamed:@"thin-021_calendar_date"], [UIImage imageNamed:@"thin-093_notebook_to_do"], [UIImage imageNamed:@"thin-464_bright_bulb_idea_lamp_light"]];
 
     [self reload];
     
@@ -123,7 +123,11 @@
         
         cell.imageView.image = _knownImages[indexPath.row];
         
-        SKProduct * product = (SKProduct *) _products[indexPath.row];
+        SKProduct * product = nil;
+        
+        if (_products.count > indexPath.row) {
+            product = (SKProduct *) _products[indexPath.row];
+        }
         
         if (product != nil) {
             cell.textLabel.text = product.localizedTitle;

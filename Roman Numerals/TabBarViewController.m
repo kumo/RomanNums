@@ -50,18 +50,26 @@
     [views removeLastObject];
     [self setViewControllers:views animated:NO];
 
-    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kProPurchaseKey] == YES) {
         [self addCalculatorTab];
-    }
-
-    if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
         [self addCalendarTab];
-    }
-
-    //if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
         [self addSolverTab];
-    //}
+    } else {
 
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kCalculatorPurchaseKey] == YES) {
+            [self addCalculatorTab];
+        }
+
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kCalendarPurchaseKey] == YES) {
+            [self addCalendarTab];
+        }
+
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+            [self addSolverTab];
+        }
+
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(productPurchased:)
                                                  name:@"ProductPurchased" object:nil];
@@ -104,6 +112,12 @@
         [self addCalculatorTab];
     } else if ([productIdentifier isEqualToString:kCalendarPurchaseKey]) {
         [self addCalendarTab];
+    } else if ([productIdentifier isEqualToString:kSolverPurchaseKey]) {
+        [self addSolverTab];
+    } else if ([productIdentifier isEqualToString:kProPurchaseKey]) {
+        [self addSolverTab];
+        [self addCalendarTab];
+        [self addCalculatorTab];
     }
 
 }

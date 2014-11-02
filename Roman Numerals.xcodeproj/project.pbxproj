@@ -18,6 +18,10 @@
 		BF5FE47819F3BB9200DECE01 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE47719F3BB9200DECE01 /* BannerViewController.m */; };
 		BF5FE47A19F3BBAE00DECE01 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5FE47919F3BBAE00DECE01 /* iAd.framework */; };
 		BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69682118B2992C00B2006C /* ExtendAppViewController.m */; };
+		BF6E7F231A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */; };
+		BF6E7F251A06455C00765004 /* thin-093_notebook_to_do.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */; };
+		BF6E7F271A06458600765004 /* thin-093_notebook_to_do@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */; };
+		BF6E7F291A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */; };
 		BF70C2EB19F5A4BD00C8972A /* SolverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */; };
 		BF70C2ED19F5B55D00C8972A /* CrosswordSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */; };
 		BF72D67E19AE839900E1E9F3 /* CalendarSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF72D67D19AE839900E1E9F3 /* CalendarSettingsViewController.m */; };
@@ -120,6 +124,10 @@
 		BF5FE47919F3BBAE00DECE01 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BF69682018B2992C00B2006C /* ExtendAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendAppViewController.h; sourceTree = "<group>"; };
 		BF69682118B2992C00B2006C /* ExtendAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendAppViewController.m; sourceTree = "<group>"; };
+		BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-464_bright_bulb_idea_lamp_light.png"; sourceTree = "<group>"; };
+		BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-093_notebook_to_do.png"; sourceTree = "<group>"; };
+		BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-093_notebook_to_do@2x.png"; sourceTree = "<group>"; };
+		BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-464_bright_bulb_idea_lamp_light@2x.png"; sourceTree = "<group>"; };
 		BF70C2E419F5A1DE00C8972A /* Roman Numerals-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Roman Numerals-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF70C2E919F5A4BD00C8972A /* SolverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolverViewController.h; sourceTree = "<group>"; };
 		BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolverViewController.m; sourceTree = "<group>"; };
@@ -357,6 +365,10 @@
 				BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */,
 				BFD2269E19128DFA0071D675 /* thin-165_calculator.png */,
 				BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */,
+				BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */,
+				BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */,
+				BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */,
+				BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */,
 				BF5EF1C61895748200DA753A /* IAPHelper.h */,
 				BF5EF1C71895748200DA753A /* IAPHelper.m */,
 				BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */,
@@ -506,7 +518,11 @@
 				BF74AD01195AD9030058E72B /* page3.png in Resources */,
 				BF74ACFF195AD9030058E72B /* page1.png in Resources */,
 				BFD2269F19128DFA0071D675 /* thin-165_calculator.png in Resources */,
+				BF6E7F291A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png in Resources */,
+				BF6E7F231A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png in Resources */,
 				BFD226A319128EB60071D675 /* thin-165_calculator@2x.png in Resources */,
+				BF6E7F251A06455C00765004 /* thin-093_notebook_to_do.png in Resources */,
+				BF6E7F271A06458600765004 /* thin-093_notebook_to_do@2x.png in Resources */,
 				BF74AD00195AD9030058E72B /* page2.png in Resources */,
 				BFD226A119128E9E0071D675 /* thin-021_calendar_date@2x.png in Resources */,
 				BFD2269D19128D9D0071D675 /* thin-021_calendar_date.png in Resources */,
