@@ -155,7 +155,9 @@
                 buyButton.frame = CGRectMake(0, 0, 72, 37);
                 [buyButton setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
                 buyButton.tag = indexPath.row;
-                [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside   ];
+                if (indexPath.section == 1)
+                    buyButton.tag = _products.count;
+                [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.accessoryView = buyButton;
             }
@@ -185,11 +187,19 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 0) {
+    if ((indexPath.section == 0) || (indexPath.section == 1)) {
         if (_products != nil) {
-            SKProduct *product = _products[indexPath.row];
-        
-            [[RomanIAPHelper sharedInstance] buyProduct:product];
+            @try {
+                SKProduct *product = _products[indexPath.row];
+                
+                if (indexPath.section == 1)
+                    product = _products.lastObject;
+            
+                [[RomanIAPHelper sharedInstance] buyProduct:product];
+            }
+            @catch (NSException * e) {
+                NSLog(@"Product wasn't available to buy");
+            }
         }
     } else {
         [[RomanIAPHelper sharedInstance] restoreCompletedTransactions];
