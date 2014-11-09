@@ -17,6 +17,8 @@
         NSSet * productIdentifiers = [NSSet setWithObjects:
                                       kCalculatorPurchaseKey,
                                       kCalendarPurchaseKey,
+                                      kCrosswordPurchaseKey,
+                                      kProPurchaseKey,
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });

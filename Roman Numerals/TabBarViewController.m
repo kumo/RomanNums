@@ -64,7 +64,7 @@
             [self addCalendarTab];
         }
 
-        if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+        if ([[RomanIAPHelper sharedInstance] productPurchased:kCrosswordPurchaseKey] == YES) {
             [self addSolverTab];
         }
 
@@ -112,7 +112,7 @@
         [self addCalculatorTab];
     } else if ([productIdentifier isEqualToString:kCalendarPurchaseKey]) {
         [self addCalendarTab];
-    } else if ([productIdentifier isEqualToString:kSolverPurchaseKey]) {
+    } else if ([productIdentifier isEqualToString:kCrosswordPurchaseKey]) {
         [self addSolverTab];
     } else if ([productIdentifier isEqualToString:kProPurchaseKey]) {
         [self addSolverTab];
