@@ -99,7 +99,7 @@
 
     _crosswordResults = [self.solver search:text];
     
-    NSLog(@"Have to filter %@ (%d)", text, _crosswordResults.count);
+    //NSLog(@"Have to filter %@ (%d)", text, _crosswordResults.count);
     
     [self.resultsTable reloadData];
 }

@@ -101,7 +101,7 @@ NSString * const BannerViewActionDidFinish = @"BannerViewActionDidFinish";
         _bannerView = nil;
     }
 
-    if ([[RomanIAPHelper sharedInstance] productPurchased:kSolverPurchaseKey] == YES) {
+    if ([[RomanIAPHelper sharedInstance] productPurchased:kCrosswordPurchaseKey] == YES) {
         _bannerView.delegate = nil;
         _bannerView = nil;
     }
