@@ -156,7 +156,7 @@
                 [buyButton setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
                 buyButton.tag = indexPath.row;
                 if (indexPath.section == 1)
-                    buyButton.tag = _products.count;
+                    buyButton.tag = _products.count - 1;
                 [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.accessoryView = buyButton;
