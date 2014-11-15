@@ -38,14 +38,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _knownProducts = @[ @"Calculator", @"Calendar", @"Crossword Solver" ];
-    _knownDescriptions = @[ @"Calculate XI*IV or MM-CXV", @"Any date in Roman Numerals", @"Find solutions to X?I?" ];
-    _knownImages = @[ [UIImage imageNamed:@"thin-165_calculator"], [UIImage imageNamed:@"thin-021_calendar_date"], [UIImage imageNamed:@"thin-093_notebook_to_do"] ];
-
-    _knownProProducts = @[ @"Pro Mode" ];
-    _knownProDescriptions = @[ @"Unlock all features" ];
-    _knownProImages = @[ [UIImage imageNamed:@"thin-464_bright_bulb_idea_lamp_light"] ];
-
+    _knownInfo = @{
+                   kCalculatorPurchaseKey: @[ @"Calculator", @"Calculate XI*IV or MM-CXV", [UIImage imageNamed:@"thin-165_calculator"] ],
+                   kCalendarPurchaseKey: @[ @"Calendar", @"Any date in Roman Numerals", [UIImage imageNamed:@"thin-021_calendar_date"] ],
+                   kCrosswordPurchaseKey: @[ @"Crossword Solver", @"Find solutions to X?I?", [UIImage imageNamed:@"thin-093_notebook_to_do"] ],
+                   kProPurchaseKey:  @[ @"Pro Mode", @"Unlock all features", [UIImage imageNamed:@"thin-464_bright_bulb_idea_lamp_light"] ]
+                };
+                                                
     [self reload];
     
     _priceFormatter = [[NSNumberFormatter alloc] init];
@@ -103,13 +102,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return _knownProducts.count;
+        return _products.count;
     } else {
         return 1;
     }
@@ -119,34 +118,20 @@
 {
     UITableViewCell *cell; // = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    if ((indexPath.section == 0) || (indexPath.section == 1)) {
+    if (indexPath.section == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"PriceCell" forIndexPath:indexPath];
         
-        if (indexPath.section == 0) {
-            cell.textLabel.text = _knownProducts[indexPath.row];
-            cell.detailTextLabel.text = _knownDescriptions[indexPath.row];
-            cell.imageView.image = _knownImages[indexPath.row];
-        } else {
-            // NOTE: hard-coding value here
-            cell.textLabel.text = _knownProProducts[0];
-            cell.detailTextLabel.text = _knownProDescriptions[0];
-            cell.imageView.image = _knownProImages[0];
-        }
-        
-        SKProduct * product = nil;
-        
-        if (_products.count > indexPath.row) {
-            product = (SKProduct *) _products[indexPath.row];
-        }
-        
-        if (indexPath.section == 1) {
-            product = (SKProduct *) _products.lastObject;
-        }
+        SKProduct * product = (SKProduct *) _products[indexPath.row];
         
         if (product != nil) {
+            NSArray *productInfo = _knownInfo[product.productIdentifier];
+            
             cell.textLabel.text = product.localizedTitle;
+            cell.detailTextLabel.text = productInfo[1];
+            cell.imageView.image = productInfo[2];
+            
             [_priceFormatter setLocale:product.priceLocale];
-        
+            
             if ([[RomanIAPHelper sharedInstance] productPurchased:product.productIdentifier]) {
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
                 cell.accessoryView = nil;
@@ -156,13 +141,13 @@
                 [buyButton setTitle:[_priceFormatter stringFromNumber:product.price] forState:UIControlStateNormal];
                 buyButton.tag = indexPath.row;
                 if (indexPath.section == 1)
-                    buyButton.tag = _products.count;
+                    buyButton.tag = _products.count - 1;
                 [buyButton addTarget:self action:@selector(buyButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
                 cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.accessoryView = buyButton;
             }
         }
-    } else if (indexPath.section == 2) {
+    } else if (indexPath.section == 1) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
         
         // restore purchases
@@ -175,10 +160,14 @@
 - (void)buyButtonTapped:(id)sender {
     
     UIButton *buyButton = (UIButton *)sender;
-    SKProduct *product = _products[buyButton.tag];
+    @try {
+        SKProduct *product = _products[buyButton.tag];
     
-    [[RomanIAPHelper sharedInstance] buyProduct:product];
-    
+        [[RomanIAPHelper sharedInstance] buyProduct:product];
+    }
+    @catch (NSException * e) {
+        NSLog(@"Product wasn't available to buy");
+    }
 }
 
 #pragma mark - Table view delegate
@@ -187,14 +176,11 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if ((indexPath.section == 0) || (indexPath.section == 1)) {
+    if (indexPath.section == 0) {
         if (_products != nil) {
             @try {
                 SKProduct *product = _products[indexPath.row];
                 
-                if (indexPath.section == 1)
-                    product = _products.lastObject;
-            
                 [[RomanIAPHelper sharedInstance] buyProduct:product];
             }
             @catch (NSException * e) {
