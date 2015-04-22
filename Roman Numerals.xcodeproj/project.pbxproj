@@ -18,10 +18,6 @@
 		BF5FE47819F3BB9200DECE01 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE47719F3BB9200DECE01 /* BannerViewController.m */; };
 		BF5FE47A19F3BBAE00DECE01 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5FE47919F3BBAE00DECE01 /* iAd.framework */; };
 		BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69682118B2992C00B2006C /* ExtendAppViewController.m */; };
-		BF6E7F231A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */; };
-		BF6E7F251A06455C00765004 /* thin-093_notebook_to_do.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */; };
-		BF6E7F271A06458600765004 /* thin-093_notebook_to_do@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */; };
-		BF6E7F291A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */; };
 		BF6E7F2B1A065D4000765004 /* page5.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F2A1A065D4000765004 /* page5.png */; };
 		BF70C2EB19F5A4BD00C8972A /* SolverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */; };
 		BF70C2ED19F5B55D00C8972A /* CrosswordSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */; };
@@ -56,10 +52,6 @@
 		BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D381893FF7F0097D8B5 /* Converter.m */; };
 		BFC42F181959E14A0011001B /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC42F171959E14A0011001B /* AboutTableViewController.m */; };
 		BFC42F21195A0E600011001B /* WhatsNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC42F20195A0E600011001B /* WhatsNewViewController.m */; };
-		BFD2269D19128D9D0071D675 /* thin-021_calendar_date.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD2269C19128D9D0071D675 /* thin-021_calendar_date.png */; };
-		BFD2269F19128DFA0071D675 /* thin-165_calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD2269E19128DFA0071D675 /* thin-165_calculator.png */; };
-		BFD226A119128E9E0071D675 /* thin-021_calendar_date@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */; };
-		BFD226A319128EB60071D675 /* thin-165_calculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */; };
 		BFE95D3018964D3B005B77AD /* KeyboardSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE95D2F18964D3B005B77AD /* KeyboardSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -125,10 +117,6 @@
 		BF5FE47919F3BBAE00DECE01 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BF69682018B2992C00B2006C /* ExtendAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtendAppViewController.h; sourceTree = "<group>"; };
 		BF69682118B2992C00B2006C /* ExtendAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtendAppViewController.m; sourceTree = "<group>"; };
-		BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-464_bright_bulb_idea_lamp_light.png"; sourceTree = "<group>"; };
-		BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-093_notebook_to_do.png"; sourceTree = "<group>"; };
-		BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-093_notebook_to_do@2x.png"; sourceTree = "<group>"; };
-		BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-464_bright_bulb_idea_lamp_light@2x.png"; sourceTree = "<group>"; };
 		BF6E7F2A1A065D4000765004 /* page5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page5.png; sourceTree = "<group>"; };
 		BF70C2E419F5A1DE00C8972A /* Roman Numerals-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Roman Numerals-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF70C2E919F5A4BD00C8972A /* SolverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolverViewController.h; sourceTree = "<group>"; };
@@ -179,10 +167,6 @@
 		BFC42F171959E14A0011001B /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		BFC42F1F195A0E600011001B /* WhatsNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatsNewViewController.h; sourceTree = "<group>"; };
 		BFC42F20195A0E600011001B /* WhatsNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatsNewViewController.m; sourceTree = "<group>"; };
-		BFD2269C19128D9D0071D675 /* thin-021_calendar_date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-021_calendar_date.png"; sourceTree = "<group>"; };
-		BFD2269E19128DFA0071D675 /* thin-165_calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-165_calculator.png"; sourceTree = "<group>"; };
-		BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-021_calendar_date@2x.png"; sourceTree = "<group>"; };
-		BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thin-165_calculator@2x.png"; sourceTree = "<group>"; };
 		BFE95D2E18964D3B005B77AD /* KeyboardSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardSettingsViewController.h; sourceTree = "<group>"; };
 		BFE95D2F18964D3B005B77AD /* KeyboardSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -364,14 +348,6 @@
 		BFD2269B19128B990071D675 /* IAP */ = {
 			isa = PBXGroup;
 			children = (
-				BFD2269C19128D9D0071D675 /* thin-021_calendar_date.png */,
-				BFD226A019128E9E0071D675 /* thin-021_calendar_date@2x.png */,
-				BFD2269E19128DFA0071D675 /* thin-165_calculator.png */,
-				BFD226A219128EB60071D675 /* thin-165_calculator@2x.png */,
-				BF6E7F221A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png */,
-				BF6E7F281A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png */,
-				BF6E7F241A06455C00765004 /* thin-093_notebook_to_do.png */,
-				BF6E7F261A06458600765004 /* thin-093_notebook_to_do@2x.png */,
 				BF5EF1C61895748200DA753A /* IAPHelper.h */,
 				BF5EF1C71895748200DA753A /* IAPHelper.m */,
 				BF5EF1C91895778A00DA753A /* RomanIAPHelper.h */,
@@ -520,15 +496,7 @@
 				BFBD6D001893F3510097D8B5 /* InfoPlist.strings in Resources */,
 				BF74AD01195AD9030058E72B /* page3.png in Resources */,
 				BF74ACFF195AD9030058E72B /* page1.png in Resources */,
-				BFD2269F19128DFA0071D675 /* thin-165_calculator.png in Resources */,
-				BF6E7F291A06459B00765004 /* thin-464_bright_bulb_idea_lamp_light@2x.png in Resources */,
-				BF6E7F231A0643FC00765004 /* thin-464_bright_bulb_idea_lamp_light.png in Resources */,
-				BFD226A319128EB60071D675 /* thin-165_calculator@2x.png in Resources */,
-				BF6E7F251A06455C00765004 /* thin-093_notebook_to_do.png in Resources */,
-				BF6E7F271A06458600765004 /* thin-093_notebook_to_do@2x.png in Resources */,
 				BF74AD00195AD9030058E72B /* page2.png in Resources */,
-				BFD226A119128E9E0071D675 /* thin-021_calendar_date@2x.png in Resources */,
-				BFD2269D19128D9D0071D675 /* thin-021_calendar_date.png in Resources */,
 				BF6E7F2B1A065D4000765004 /* page5.png in Resources */,
 				BFBD6D091893F3510097D8B5 /* Main.storyboard in Resources */,
 			);
