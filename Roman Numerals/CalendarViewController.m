@@ -77,6 +77,8 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareButton:)];
     
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];

@@ -39,10 +39,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     _knownInfo = @{
-                   kCalculatorPurchaseKey: @[ @"Calculator", @"Calculate XI*IV or MM-CXV", [UIImage imageNamed:@"thin-165_calculator"] ],
-                   kCalendarPurchaseKey: @[ @"Calendar", @"Any date in Roman Numerals", [UIImage imageNamed:@"thin-021_calendar_date"] ],
-                   kCrosswordPurchaseKey: @[ @"Crossword Solver", @"Find solutions to X?I?", [UIImage imageNamed:@"thin-093_notebook_to_do"] ],
-                   kProPurchaseKey:  @[ @"Pro Mode", @"Unlock all features", [UIImage imageNamed:@"thin-464_bright_bulb_idea_lamp_light"] ]
+                   kCalculatorPurchaseKey: @[ @"Calculator", @"Calculate XI*IV or MM-CXV", [UIImage imageNamed:@"Calculator Icon"] ],
+                   kCalendarPurchaseKey: @[ @"Calendar", @"Any date in Roman Numerals", [UIImage imageNamed:@"Calendar Icon"] ],
+                   kCrosswordPurchaseKey: @[ @"Crossword Solver", @"Find solutions to X?I?", [UIImage imageNamed:@"Notepad Icon"] ],
+                   kProPurchaseKey:  @[ @"Pro Mode", @"Unlock all features", [UIImage imageNamed:@"Lightbulb Icon"] ]
                 };
                                                 
     [self reload];

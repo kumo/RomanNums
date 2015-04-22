@@ -50,6 +50,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+
     // set the keyboard order
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     int keyboardType = [[defaults valueForKey:kKeyboardPresentationKey] intValue];
@@ -259,18 +261,15 @@
 	//debugLog(@"conversion result is %d", converter.conversionResult);
 	if (self.converter.conversionResult == Ignored)
 	{
-		[UIView beginAnimations:@"movement" context:nil];
-		[UIView setAnimationDuration:0.1f];
-		[UIView setAnimationRepeatCount:3];
-		CGPoint center = self.romanLabel.center;
-		
-		center.x += 10;
-		self.romanLabel.center = center;
-		
-		center.x -= 10;
-		self.romanLabel.center = center;
-		
-		[UIView commitAnimations];
+        CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+        animation.keyPath = @"position.x";
+        animation.values = @[ @0, @10, @-10, @10, @0 ];
+        animation.keyTimes = @[ @0, @(1 / 6.0), @(3 / 6.0), @(5 / 6.0), @1 ];
+        animation.duration = 0.4;
+        
+        animation.additive = YES;
+        
+        [self.romanLabel.layer addAnimation:animation forKey:@"shake"];
 	} else if (self.converter.conversionResult == Converted) {
 		NSString *result = self.converter.arabicResult;
 		self.arabicLabel.text = result;

@@ -78,7 +78,7 @@
     
     NSString *arabicLabelString = string;
     
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
+    //NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
     
     if ([text isEqualToString: @"delete"]) {
         if ([arabicLabelString length] > 0) {

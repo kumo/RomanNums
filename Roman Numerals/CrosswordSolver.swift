@@ -49,13 +49,13 @@ import Foundation
     func search(string: String) -> NSArray {
         let predicate = NSPredicate(format: "SELF LIKE[cd] %@", string)
         
-        switch string.utf16Count {
-        case 1: return (self.lists1 as NSArray).filteredArrayUsingPredicate(predicate!).sorted() { ($0 as String) < ($1 as String) }
-        case 2: return (self.lists2 as NSArray).filteredArrayUsingPredicate(predicate!).sorted() { ($0 as String) < ($1 as String) }
-        case 3: return (self.lists3 as NSArray).filteredArrayUsingPredicate(predicate!).sorted() { ($0 as String) < ($1 as String) }
-        case 4: return (self.lists4 as NSArray).filteredArrayUsingPredicate(predicate!).sorted() { ($0 as String) < ($1 as String) }
-        case 5: return (self.lists5 as NSArray).filteredArrayUsingPredicate(predicate!).sorted() { ($0 as String) < ($1 as String) }
-        case 6: return (self.lists6 as NSArray).filteredArrayUsingPredicate(predicate!).sorted() { ($0 as String) < ($1 as String) }
+        switch count(string) {
+        case 1: return (self.lists1 as NSArray).filteredArrayUsingPredicate(predicate).sorted() { ($0 as! String) < ($1 as! String) }
+        case 2: return (self.lists2 as NSArray).filteredArrayUsingPredicate(predicate).sorted() { ($0 as! String) < ($1 as! String) }
+        case 3: return (self.lists3 as NSArray).filteredArrayUsingPredicate(predicate).sorted() { ($0 as! String) < ($1 as! String) }
+        case 4: return (self.lists4 as NSArray).filteredArrayUsingPredicate(predicate).sorted() { ($0 as! String) < ($1 as! String) }
+        case 5: return (self.lists5 as NSArray).filteredArrayUsingPredicate(predicate).sorted() { ($0 as! String) < ($1 as! String) }
+        case 6: return (self.lists6 as NSArray).filteredArrayUsingPredicate(predicate).sorted() { ($0 as! String) < ($1 as! String) }
         default: return []
         }
         
