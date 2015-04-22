@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1lq-Tr-XbX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="1lq-Tr-XbX">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -224,7 +224,7 @@
                             <constraint firstAttribute="trailing" secondItem="bdq-7Q-uaM" secondAttribute="trailing" id="xxA-WV-DtF"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="2002" image="Roman Converter" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="2002" image="Roman Converter Tab" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="arabicLabel" destination="PAU-c1-3pR" id="7kK-tX-SS3"/>
                         <outlet property="buttonDelete" destination="I9J-q7-yZG" id="fA0-Tb-PSx"/>
@@ -2212,7 +2212,7 @@ First version</string>
                             <constraint firstItem="Tp8-7e-xxx" firstAttribute="leading" secondItem="5Dk-1J-K1f" secondAttribute="trailing" constant="1" id="xZm-oL-PrA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calculator" image="thin-165_calculator.png" id="9h1-Fb-8pe"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Calculator Tab" id="9h1-Fb-8pe"/>
                     <connections>
                         <outlet property="arabicLabel" destination="FrT-Mw-y8R" id="dcG-0u-La1"/>
                         <outlet property="buttonDelete" destination="O4z-ve-WoS" id="Ceq-UA-zdN"/>
@@ -2543,7 +2543,7 @@ First version</string>
                             <constraint firstItem="9H6-fJ-GFM" firstAttribute="leading" secondItem="ceQ-51-x0B" secondAttribute="trailing" constant="1" id="y5X-0S-TKd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MMII" image="Arabic Converter" id="Z7h-1E-pvt"/>
+                    <tabBarItem key="tabBarItem" title="MMII" image="Arabic Converter Tab" id="Z7h-1E-pvt"/>
                     <connections>
                         <outlet property="arabicLabel" destination="VKi-Go-WeG" id="8Wz-DG-XZL"/>
                         <outlet property="buttonArchaic" destination="fT1-Ii-eoD" id="TUR-Nz-y9H"/>
@@ -2922,7 +2922,7 @@ First version</string>
         <scene sceneID="L5A-qs-Qeu">
             <objects>
                 <navigationController storyboardIdentifier="DateView" automaticallyAdjustsScrollViewInsets="NO" id="WE6-vu-ZXr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="thin-021_calendar_date.png" id="9a8-6D-uca"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="Calendar Tab" id="9a8-6D-uca"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q6A-3c-3lY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3530,7 +3530,7 @@ First version</string>
                             <constraint firstItem="Thc-ee-baP" firstAttribute="top" secondItem="Yt4-IW-h8d" secondAttribute="bottom" constant="1" id="wGK-cd-diU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="XVI" image="Crossword Solver" id="y2p-1J-ZZm"/>
+                    <tabBarItem key="tabBarItem" title="XVI" image="Crossword Solver Tab" id="y2p-1J-ZZm"/>
                     <connections>
                         <outlet property="buttonDelete" destination="RYC-Ln-VCF" id="f44-p8-31q"/>
                         <outlet property="resultsTable" destination="EJ4-9Y-pc5" id="VJG-V2-yF2"/>
@@ -3552,14 +3552,14 @@ First version</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Arabic Converter" width="44" height="30"/>
-        <image name="Crossword Solver" width="44" height="30"/>
+        <image name="Arabic Converter Tab" width="44" height="30"/>
+        <image name="Calculator Tab" width="44" height="30"/>
+        <image name="Calendar Tab" width="44" height="30"/>
+        <image name="Crossword Solver Tab" width="44" height="30"/>
         <image name="DEL" width="23" height="16"/>
         <image name="DEL_Light" width="23" height="16"/>
-        <image name="Roman Converter" width="44" height="30"/>
+        <image name="Roman Converter Tab" width="44" height="30"/>
         <image name="Settings Icon" width="24" height="24"/>
-        <image name="thin-021_calendar_date.png" width="32" height="32"/>
-        <image name="thin-165_calculator.png" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
