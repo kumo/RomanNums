@@ -15,12 +15,20 @@
     static RomanIAPHelper * sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
+                                      kTip1Key,
+                                      kTip2Key,
+                                      kTip5Key,
+                                      nil];
+        NSSet * previousIdentifiers = [NSSet setWithObjects:
+                                      kTip1Key,
+                                      kTip2Key,
+                                      kTip5Key,
                                       kCalculatorPurchaseKey,
                                       kCalendarPurchaseKey,
                                       kCrosswordPurchaseKey,
                                       kProPurchaseKey,
                                       nil];
-        sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
+        sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers andPreviousIdentifiers:previousIdentifiers];
     });
     return sharedInstance;
 }

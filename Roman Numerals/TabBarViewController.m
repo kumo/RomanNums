@@ -38,7 +38,7 @@
     [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];*/
     
     // Comment out the following to ignore the purchasing
-    NSMutableArray *views = (NSMutableArray *)self.viewControllers;
+    /*NSMutableArray *views = (NSMutableArray *)self.viewControllers;
     [views removeLastObject];
     [self setViewControllers:views animated:NO];
 
@@ -72,7 +72,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(productPurchased:)
-                                                 name:@"ProductPurchased" object:nil];
+                                                 name:@"ProductPurchased" object:nil];*/
 }
 
 - (void)didReceiveMemoryWarning

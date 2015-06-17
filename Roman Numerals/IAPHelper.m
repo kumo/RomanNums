@@ -25,7 +25,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
     NSMutableSet * _purchasedProductIdentifiers;
 }
 
-- (id)initWithProductIdentifiers:(NSSet *)productIdentifiers {
+- (id)initWithProductIdentifiers:(NSSet *)productIdentifiers andPreviousIdentifiers:(NSSet *)previousIdentifiers {
     
     if ((self = [super init])) {
         
@@ -34,7 +34,7 @@ NSString *const IAPHelperProductPurchasedNotification = @"IAPHelperProductPurcha
         
         // Check for previously purchased products
         _purchasedProductIdentifiers = [NSMutableSet set];
-        for (NSString * productIdentifier in _productIdentifiers) {
+        for (NSString * productIdentifier in previousIdentifiers) {
             NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
 
             BOOL productPurchased = [defaults boolForKey:productIdentifier];

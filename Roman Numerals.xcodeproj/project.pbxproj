@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF0114A118B0CC0300EC909D /* UIImage+Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0114A018B0CC0300EC909D /* UIImage+Colours.m */; };
+		BF02D18D1B320383008EA56E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF02D18C1B320383008EA56E /* SettingsViewController.m */; };
 		BF0A65DD18B296830036CEB1 /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */; };
 		BF10C30218D23F39007224D3 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10C30118D23F39007224D3 /* CalendarViewController.m */; };
 		BF20F90D195C4A9A00A1748C /* LargeNumberSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20F90C195C4A9900A1748C /* LargeNumberSettingsViewController.m */; };
@@ -96,6 +97,8 @@
 /* Begin PBXFileReference section */
 		BF01149F18B0CC0300EC909D /* UIImage+Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Colours.h"; sourceTree = "<group>"; };
 		BF0114A018B0CC0300EC909D /* UIImage+Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Colours.m"; sourceTree = "<group>"; };
+		BF02D18B1B320383008EA56E /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		BF02D18C1B320383008EA56E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		BF0A65DB18B296830036CEB1 /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
 		BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
 		BF10C30018D23F39007224D3 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 				BFBD6D351893F9430097D8B5 /* TabBarViewController.m */,
 				BF5EF1CC1895781600DA753A /* MainMenuViewController.h */,
 				BF5EF1CD1895781600DA753A /* MainMenuViewController.m */,
+				BF02D18B1B320383008EA56E /* SettingsViewController.h */,
+				BF02D18C1B320383008EA56E /* SettingsViewController.m */,
 				BFBD6D0A1893F3510097D8B5 /* RomanViewController.h */,
 				BFBD6D0B1893F3510097D8B5 /* RomanViewController.m */,
 				BFBD6D0D1893F3510097D8B5 /* ArabicViewController.h */,
@@ -547,6 +552,7 @@
 				BF72D67E19AE839900E1E9F3 /* CalendarSettingsViewController.m in Sources */,
 				BF74ACF9195AD8B30058E72B /* PageContentViewController.m in Sources */,
 				BF20F90D195C4A9A00A1748C /* LargeNumberSettingsViewController.m in Sources */,
+				BF02D18D1B320383008EA56E /* SettingsViewController.m in Sources */,
 				BFBD6D021893F3510097D8B5 /* main.m in Sources */,
 				BF74ACF6195AD8610058E72B /* TutorialViewController.m in Sources */,
 			);
