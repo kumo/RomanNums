@@ -31,3 +31,7 @@
 #define kCalendarPurchaseKey            @"it.kumo.roman.calendar"
 #define kCrosswordPurchaseKey           @"it.kumo.roman.crossword"
 #define kProPurchaseKey                 @"it.kumo.roman.zpro"
+
+#define kTip1Key                        @"it.kumo.roman.tip1"
+#define kTip2Key                        @"it.kumo.roman.tip2"
+#define kTip5Key                        @"it.kumo.roman.tip5"

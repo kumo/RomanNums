@@ -14,7 +14,7 @@ typedef void (^RequestProductsCompletionHandler)(BOOL success, NSArray * product
 
 @interface IAPHelper : NSObject
 
-- (id)initWithProductIdentifiers:(NSSet *)productIdentifiers;
+- (id)initWithProductIdentifiers:(NSSet *)productIdentifiers andPreviousIdentifiers:(NSSet *)previousIdentifiers;
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler;
 - (void)buyProduct:(SKProduct *)product;
 - (BOOL)productPurchased:(NSString *)productIdentifier;

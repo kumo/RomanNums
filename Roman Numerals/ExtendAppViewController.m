@@ -38,13 +38,19 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    _knownInfo = @{
+    /*_knownInfo = @{
                    kCalculatorPurchaseKey: @[ @"Calculator", @"Calculate XI*IV or MM-CXV", [UIImage imageNamed:@"Calculator Icon"] ],
                    kCalendarPurchaseKey: @[ @"Calendar", @"Any date in Roman Numerals", [UIImage imageNamed:@"Calendar Icon"] ],
                    kCrosswordPurchaseKey: @[ @"Crossword Solver", @"Find solutions to X?I?", [UIImage imageNamed:@"Notepad Icon"] ],
                    kProPurchaseKey:  @[ @"Pro Mode", @"Unlock all features", [UIImage imageNamed:@"Lightbulb Icon"] ]
-                };
-                                                
+                };*/
+
+    _knownInfo = @{
+                   kTip1Key: @[ @"A Nice Tip", @"Calculate XI*IV or MM-CXV", [UIImage imageNamed:@"Calculator Icon"] ],
+                   kTip2Key: @[ @"A Great Tip", @"Any date in Roman Numerals", [UIImage imageNamed:@"Calendar Icon"] ],
+                   kTip5Key: @[ @"A Smashing Tip", @"Find solutions to X?I?", [UIImage imageNamed:@"Notepad Icon"] ]
+     };
+
     [self reload];
     
     _priceFormatter = [[NSNumberFormatter alloc] init];
@@ -102,7 +108,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -128,7 +134,7 @@
             
             cell.textLabel.text = product.localizedTitle;
             cell.detailTextLabel.text = productInfo[1];
-            cell.imageView.image = productInfo[2];
+            //cell.imageView.image = productInfo[2];
             
             [_priceFormatter setLocale:product.priceLocale];
             
@@ -194,5 +200,9 @@
 
 - (IBAction)doneAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    return @"Roman Nums relies on your support to continue its development. If you have found this app useful, please consider supporting us by leaving a tip.";
 }
 @end
