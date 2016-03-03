@@ -23,7 +23,7 @@ extension Int {
         
         
         for (romanChar, arabicValue) in values {
-            var count = number / arabicValue
+            let count = number / arabicValue
             
             if count == 0 { continue }
             
@@ -42,7 +42,7 @@ extension NSDate {
     func dateInRoman() -> String? {
         
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitYear | .CalendarUnitMonth | .CalendarUnitDay, fromDate: self)
+        let components = calendar.components([.Year, .Month, .Day], fromDate: self)
         
         let month = components.month
         let day = components.day
@@ -109,7 +109,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
         // If an error is encoutered, use NCUpdateResult.Failed
