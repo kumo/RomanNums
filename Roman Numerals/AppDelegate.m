@@ -8,11 +8,16 @@
 
 #import "AppDelegate.h"
 #import "RomanIAPHelper.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [Fabric with:@[[Crashlytics class]]];
+
     [RomanIAPHelper sharedInstance];
     [self loadSettings];
 

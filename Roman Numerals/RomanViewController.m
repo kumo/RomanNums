@@ -10,6 +10,9 @@
 #import "Converter.h"
 #import "UIImage+Colours.h"
 #import "RomanNumsActivityItemProvider.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface RomanViewController ()
 
@@ -73,6 +76,8 @@
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
     
     [self.tabBarController.navigationItem setTitle:@"Roman Nums"];
+    
+    userDidSomething = NO;
 }
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
@@ -88,6 +93,12 @@
 
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
+    
+    if (userDidSomething == NO) {
+        [Answers logContentViewWithName:@"Roman to Arabic" contentType:nil contentId:nil customAttributes:nil];
+
+        userDidSomething = YES;
+    }
     
     if (button.tag == -99) {
         [self updateRomanString: @"delete"];
@@ -191,6 +202,16 @@
     NSArray *itemsToShare = @[activityItemProvider];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    
+    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        //NSLog(@"completed: %@", activityType);
+        
+        if (completed) {
+            [Answers logShareWithMethod:@"Roman to Arabic" contentName:activityType contentType:nil contentId:nil customAttributes:nil];
+        }
+        //Present another VC
+    }];
+    
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 

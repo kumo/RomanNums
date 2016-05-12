@@ -10,6 +10,9 @@
 #import "Converter.h"
 #import "UIImage+Colours.h"
 #import "RomanNumsActivityItemProvider.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface ArabicViewController ()
 
@@ -69,6 +72,8 @@
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 
     [self.tabBarController.navigationItem setTitle:@"Roman Nums"];
+    
+    userDidSomething = NO;
 }
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
@@ -115,6 +120,18 @@
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
+    if (userDidSomething == NO) {
+        NSString *mode = @"None";
+        
+        if (largeNumberMode == 1) {
+            mode = @"Archaic";
+        } else if (largeNumberMode == 2) {
+            mode = @"Overline";
+        }
+        
+        [Answers logContentViewWithName:@"Arabic to Roman" contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
+        userDidSomething = YES;
+    }
     //NSLog(@"tapped %@", [button currentTitle]);
     
     //NSLog(@"Before conversion, roman: %@, arabic: %@", _romanLabel.text, _arabicLabel.text);
@@ -322,6 +339,25 @@
     NSArray *itemsToShare = @[activityItemProvider];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    
+    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        //NSLog(@"completed: %@", activityType);
+        
+        if (completed) {
+            
+            NSString *mode = @"None";
+            
+            if (largeNumberMode == 1) {
+                mode = @"Archaic";
+            } else if (largeNumberMode == 2) {
+                mode = @"Overline";
+            }
+            
+            [Answers logShareWithMethod:@"Arabic to Roman" contentName:activityType contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
+        }
+        //Present another VC
+    }];
+
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 

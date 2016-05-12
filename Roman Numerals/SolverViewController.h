@@ -12,6 +12,8 @@
 
 @interface SolverViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     CrosswordSolver *solver;
+    
+    bool userDidSomething;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *romanLabel;

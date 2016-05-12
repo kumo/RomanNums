@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalendarViewController : UIViewController
+@interface CalendarViewController : UIViewController {
+    bool userDidSomething;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 
 @end

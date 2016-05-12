@@ -53,6 +53,8 @@
 		BFBD6D391893FF7F0097D8B5 /* Converter.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBD6D381893FF7F0097D8B5 /* Converter.m */; };
 		BFC42F181959E14A0011001B /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC42F171959E14A0011001B /* AboutTableViewController.m */; };
 		BFC42F21195A0E600011001B /* WhatsNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC42F20195A0E600011001B /* WhatsNewViewController.m */; };
+		BFCDD2E51CE12B6A002098B5 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCDD2E31CE12B6A002098B5 /* Fabric.framework */; };
+		BFCDD2E61CE12B6B002098B5 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCDD2E41CE12B6A002098B5 /* Crashlytics.framework */; };
 		BFE95D3018964D3B005B77AD /* KeyboardSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE95D2F18964D3B005B77AD /* KeyboardSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -170,6 +172,8 @@
 		BFC42F171959E14A0011001B /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		BFC42F1F195A0E600011001B /* WhatsNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhatsNewViewController.h; sourceTree = "<group>"; };
 		BFC42F20195A0E600011001B /* WhatsNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhatsNewViewController.m; sourceTree = "<group>"; };
+		BFCDD2E31CE12B6A002098B5 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		BFCDD2E41CE12B6A002098B5 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		BFE95D2E18964D3B005B77AD /* KeyboardSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardSettingsViewController.h; sourceTree = "<group>"; };
 		BFE95D2F18964D3B005B77AD /* KeyboardSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +196,8 @@
 				BFBD6CFA1893F3510097D8B5 /* UIKit.framework in Frameworks */,
 				BFBD6CF61893F3510097D8B5 /* Foundation.framework in Frameworks */,
 				BFBD6D2E1893F4120097D8B5 /* StoreKit.framework in Frameworks */,
+				BFCDD2E51CE12B6A002098B5 /* Fabric.framework in Frameworks */,
+				BFCDD2E61CE12B6B002098B5 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +257,8 @@
 				BF8407D919B7C24B005152DE /* Today in Roman Nums */,
 				BFBD6CF41893F3510097D8B5 /* Frameworks */,
 				BFBD6CF31893F3510097D8B5 /* Products */,
+				BFCDD2E31CE12B6A002098B5 /* Fabric.framework */,
+				BFCDD2E41CE12B6A002098B5 /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,6 +407,7 @@
 				BFBD6CEF1893F3510097D8B5 /* Frameworks */,
 				BFBD6CF01893F3510097D8B5 /* Resources */,
 				BF8407E819B7C24B005152DE /* Embed App Extensions */,
+				BFCDD2E21CE12B41002098B5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -518,6 +527,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BFCDD2E21CE12B41002098B5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 7c0bffcaffb7d0dd11684758abb6e61d2e2266f7 b2be05cfa930714c4428aa0e05d3009b88face24726e56a05a0e07ead4d6c242";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF8407D219B7C24B005152DE /* Sources */ = {
@@ -747,6 +772,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roman Numerals/Roman Numerals-Prefix.pch";
 				INFOPLIST_FILE = "Roman Numerals/Roman Numerals-Info.plist";
@@ -770,6 +799,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Roman Numerals/Roman Numerals-Prefix.pch";
 				INFOPLIST_FILE = "Roman Numerals/Roman Numerals-Info.plist";
