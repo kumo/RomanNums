@@ -16,6 +16,8 @@
 	bool archaicMode;
     bool lockedMode;
     int largeNumberMode;
+    
+    bool userDidSomething;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *romanLabel;

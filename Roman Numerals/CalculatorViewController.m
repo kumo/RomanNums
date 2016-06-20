@@ -10,6 +10,8 @@
 #import "Converter.h"
 #import "UIImage+Colours.h"
 #import "RomanNumsActivityItemProvider.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface CalculatorViewController ()
 
@@ -79,6 +81,8 @@
     [self.tabBarController.navigationItem setRightBarButtonItem:shareButton];
 
     [self.tabBarController.navigationItem setTitle:@"Calculator"];
+    
+    userDidSomething = NO;
 }
 
 #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
@@ -101,6 +105,11 @@
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
+    if (userDidSomething == NO) {
+        [Answers logContentViewWithName:@"Calculator" contentType:nil contentId:nil customAttributes:nil];
+        userDidSomething = YES;
+    }
+    
     if (button.tag == -99) {
         [self updateRomanString: @"delete"];
     } else {
@@ -117,6 +126,11 @@
 - (IBAction)operatorAction:(id)sender {
     NSUInteger nextOperator = ((UIButton *)sender).tag - 9000;
     
+    if (userDidSomething == NO) {
+        [Answers logContentViewWithName:@"Calculator" contentType:nil contentId:nil customAttributes:nil];
+        userDidSomething = YES;
+    }
+
     if (currentOperator == 1)
         formula = [NSString stringWithFormat:@"%@+",formula];
     else if (currentOperator == 2)
@@ -143,6 +157,11 @@
 }
 
 - (IBAction)equalsAction:(id)sender {
+    if (userDidSomething == NO) {
+        [Answers logContentViewWithName:@"Calculator" contentType:nil contentId:nil customAttributes:nil];
+        userDidSomething = YES;
+    }
+
     if (currentOperator == 1)
         formula = [NSString stringWithFormat:@"%@+",formula];
     else if (currentOperator == 2)
@@ -365,6 +384,30 @@
     NSArray *itemsToShare = @[activityItemProvider];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
+    
+    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+        //NSLog(@"completed: %@", activityType);
+        
+        if (completed) {
+            
+            NSString *mode = @"None";
+            
+            if (archaicMode == YES) {
+                NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
+                
+                int largeNumberMode = [[defaults valueForKey:kLargeNumberPresentationKey] intValue];
+
+                if (largeNumberMode == 1) {
+                    mode = @"Archaic";
+                } else if (largeNumberMode == 2) {
+                    mode = @"Overline";
+                }
+            }
+            
+            [Answers logShareWithMethod:@"Calculator" contentName:activityType contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
+        }
+        //Present another VC
+    }];
     [self presentViewController:activityVC animated:YES completion:nil];
 }
 

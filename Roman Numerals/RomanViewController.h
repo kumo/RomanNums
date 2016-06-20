@@ -18,6 +18,8 @@
     
 	BOOL isTouchingDelete;
 	NSTimer *deleteTimer;
+    
+    bool userDidSomething;
 }
 
 

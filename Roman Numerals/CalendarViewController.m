@@ -9,6 +9,9 @@
 #import "CalendarViewController.h"
 #import "RomanNumsActivityItemProvider.h"
 #import "Converter.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 #define kPickerAnimationDuration    0.40   // duration for the animation to slide the date picker into view
 #define kDatePickerTag              99     // view tag identifiying the date picker view
@@ -86,18 +89,36 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     [self.tabBarController.navigationItem setTitle:@"Calendar"];
     
     [self convertDateToRoman];
+
+    userDidSomething = NO;
 }
 
 #pragma mark - Locale
 
 #pragma mark - Actions
 
+- (BOOL)showDayFirst {
+    NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
+    
+    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
+    
+    int dateOrder = [[preferences valueForKey:kDateOrderKey] intValue];
+    
+    if (dateOrder == 0) {
+        if ([locale isEqualToString:@"en_US"]) {
+            dateOrder = 2;
+        } else {
+            dateOrder = 1;
+        }
+    }
+
+    return dateOrder == 1;
+}
+
 - (void)convertDateToRoman
 {
     NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"group.it.kumo.roman"];
 
-    NSString *locale = [[NSLocale currentLocale] localeIdentifier];
-    
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[_datePicker date]];
     
     NSString *day = [NSString stringWithFormat:@"%ld", (long)[components day]];
@@ -125,21 +146,13 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
     } else if (dateFormat == 2) {
         format = @" ";
     }
-
-    int dateOrder = [[preferences valueForKey:kDateOrderKey] intValue];
     
-    if (dateOrder == 0) {
-        if ([locale isEqualToString:@"en_US"]) {
-            dateOrder = 2;
-        } else {
-            dateOrder = 1;
-        }
-    }
+    BOOL dayFirst = [self showDayFirst];
         
-    if (dateOrder == 1) {
+    if (dayFirst == YES) {
         [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B%@\u200B%@\u200B%@\u200B%@", romanDay, format, romanMonth, format, romanYear]];
         [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanDay, romanMonth, romanYear]];
-    } else if (dateOrder == 2) {
+    } else if (dayFirst == NO) {
         [_dateLabel setText:[NSString stringWithFormat:@"%@\u200B%@\u200B%@\u200B%@\u200B%@", romanMonth, format, romanDay, format, romanYear]];
         [_dateLabel setAccessibilityLabel:[NSString stringWithFormat:@"%@ - %@ - %@", romanMonth, romanDay, romanYear]];
     }
@@ -163,6 +176,12 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
  */
 - (IBAction)dateAction:(id)sender
 {
+    if (userDidSomething == NO) {
+        BOOL showDayFirst = [self showDayFirst];
+        [Answers logContentViewWithName:@"Calendar" contentType:nil contentId:nil customAttributes:@{@"Day First" : [NSNumber numberWithBool:showDayFirst]}];
+        userDidSomething = YES;
+    }
+    
     [self convertDateToRoman];
 }
 

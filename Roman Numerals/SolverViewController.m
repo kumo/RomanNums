@@ -9,6 +9,9 @@
 #import "SolverViewController.h"
 #import "RomanNums-Swift.h"
 #import "UIImage+Colours.h"
+#import <Crashlytics/Crashlytics.h> // If using Answers with Crashlytics
+//#import <Answers/Answers.h> // If using Answers without Crashlytics
+
 
 @interface SolverViewController ()
 
@@ -47,6 +50,8 @@
     [super viewWillAppear:animated];
     
     [self.tabBarController.navigationItem setTitle:@"Crossword"];
+    
+    userDidSomething = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +62,10 @@
 - (IBAction)handleTapGesture:(UIGestureRecognizer *) sender {
     UIButton *button = (UIButton *)sender.view;
     
+    if (userDidSomething == NO) {
+        [Answers logContentViewWithName:@"CrosswordSolver" contentType:nil contentId:nil customAttributes:nil];
+        userDidSomething = YES;
+    }
     //NSLog(@"tapped %@", [button currentTitle]);
     
     //NSLog(@"Before conversion, roman: %@, arabic: %@", _romanLabel.text, _arabicLabel.text);

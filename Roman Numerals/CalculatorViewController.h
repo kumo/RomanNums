@@ -16,6 +16,8 @@
     NSString *formula;
     BOOL shouldClearDisplay;
 	bool archaicMode;
+    
+    bool userDidSomething;
 }
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
