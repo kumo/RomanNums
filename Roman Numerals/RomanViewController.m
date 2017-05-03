@@ -203,7 +203,7 @@
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
     //activityVC.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]; //or whichever you don't need
     
-    [activityVC setCompletionHandler:^(NSString *activityType, BOOL completed) {
+    [activityVC setCompletionWithItemsHandler:^(NSString *activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
         //NSLog(@"completed: %@", activityType);
         
         if (completed) {
