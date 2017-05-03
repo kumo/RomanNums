@@ -42,20 +42,20 @@ import Foundation
         print("hello");
     }
     
-    func search2(string: String) -> String {
+    func search2(_ string: String) -> String {
         return string;
     }
     
-    func search(string: String) -> NSArray {
+    func search(_ string: String) -> NSArray {
         let predicate = NSPredicate(format: "SELF LIKE[cd] %@", string)
         
         switch string.characters.count {
-        case 1: return (self.lists1 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 2: return (self.lists2 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 3: return (self.lists3 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 4: return (self.lists4 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 5: return (self.lists5 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 6: return (self.lists6 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
+        case 1: return (self.lists1 as NSArray).filtered(using: predicate).sorted() { ($0 as! String) < ($1 as! String) } as NSArray
+        case 2: return (self.lists2 as NSArray).filtered(using: predicate).sorted() { ($0 as! String) < ($1 as! String) } as NSArray
+        case 3: return (self.lists3 as NSArray).filtered(using: predicate).sorted() { ($0 as! String) < ($1 as! String) } as NSArray
+        case 4: return (self.lists4 as NSArray).filtered(using: predicate).sorted() { ($0 as! String) < ($1 as! String) } as NSArray
+        case 5: return (self.lists5 as NSArray).filtered(using: predicate).sorted() { ($0 as! String) < ($1 as! String) } as NSArray
+        case 6: return (self.lists6 as NSArray).filtered(using: predicate).sorted() { ($0 as! String) < ($1 as! String) } as NSArray
         default: return []
         }
         
