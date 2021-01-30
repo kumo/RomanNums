@@ -4634,7 +4634,7 @@ First version</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-g1-3XW">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="dRC-g1-3XW">
                                 <rect key="frame" x="0.0" y="651" width="320" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Kqs-my-IWm"/>
