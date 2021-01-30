@@ -9,7 +9,7 @@
 #import "SolverViewController.h"
 #import "RomanNums-Swift.h"
 #import "UIImage+Colours.h"
-#import <Crashlytics/Crashlytics.h> // If using Answers with Crashlytics
+//#import <Crashlytics/Crashlytics.h>  // If using Answers without Crashlytics
 //#import <Answers/Answers.h> // If using Answers without Crashlytics
 
 
@@ -63,7 +63,7 @@
     UIButton *button = (UIButton *)sender.view;
     
     if (userDidSomething == NO) {
-        [Answers logContentViewWithName:@"CrosswordSolver" contentType:nil contentId:nil customAttributes:nil];
+//        [Answers logContentViewWithName:@"CrosswordSolver" contentType:nil contentId:nil customAttributes:nil];
         userDidSomething = YES;
     }
     //NSLog(@"tapped %@", [button currentTitle]);

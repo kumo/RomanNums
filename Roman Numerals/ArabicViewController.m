@@ -10,8 +10,8 @@
 #import "Converter.h"
 #import "UIImage+Colours.h"
 #import "RomanNumsActivityItemProvider.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Fabric/Fabric.h>
+//#import <Crashlytics/Crashlytics.h>
 
 
 @interface ArabicViewController ()
@@ -129,7 +129,7 @@
             mode = @"Overline";
         }
         
-        [Answers logContentViewWithName:@"Arabic to Roman" contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
+//        [Answers logContentViewWithName:@"Arabic to Roman" contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
         userDidSomething = YES;
     }
     //NSLog(@"tapped %@", [button currentTitle]);
@@ -353,7 +353,7 @@
                 mode = @"Overline";
             }
             
-            [Answers logShareWithMethod:@"Arabic to Roman" contentName:activityType contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
+//            [Answers logShareWithMethod:@"Arabic to Roman" contentName:activityType contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
         }
         //Present another VC
     }];
