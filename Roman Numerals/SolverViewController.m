@@ -106,7 +106,9 @@
 -(void)filterYear:(NSString *) text {
     _romanLabel.text = text;
 
-    _crosswordResults = [self.solver search:text];
+    _crosswordResults = [solver searchWithString:text];
+    
+    _crosswordResults = [_crosswordResults sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     //NSLog(@"Have to filter %@ (%d)", text, _crosswordResults.count);
     

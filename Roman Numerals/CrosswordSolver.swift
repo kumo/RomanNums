@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc class CrosswordSolver : NSObject {
+@objc public class CrosswordSolver : NSObject {
     let lists1 = ["I", "V", "X", "L", "C", "D", "M"]
     let lists2 = ["II", "IV", "VI", "IX", "XI", "XV", "XX", "XL", "LI", "LV", "LX", "XC", "CI", "CV", "CX", "CL", "CC", "CD", "DI", "DV", "DX", "DL", "DC", "CM", "MI", "MV", "MX", "ML", "MC", "MD", "MM"]
     
@@ -42,20 +42,20 @@ import Foundation
         print("hello");
     }
     
-    func search2(string: String) -> String {
+    @objc public func search2(string: String) -> String {
         return string;
     }
     
-    func search(string: String) -> NSArray {
+    @objc public func search(string: String) -> NSArray {
         let predicate = NSPredicate(format: "SELF LIKE[cd] %@", string)
         
         switch string.characters.count {
-        case 1: return (self.lists1 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 2: return (self.lists2 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 3: return (self.lists3 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 4: return (self.lists4 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 5: return (self.lists5 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
-        case 6: return (self.lists6 as NSArray).filteredArrayUsingPredicate(predicate).sort() { ($0 as! String) < ($1 as! String) }
+        case 1: return (self.lists1 as NSArray).filtered(using: predicate) as NSArray
+        case 2: return (self.lists2 as NSArray).filtered(using: predicate) as NSArray
+        case 3: return (self.lists3 as NSArray).filtered(using: predicate) as NSArray
+        case 4: return (self.lists4 as NSArray).filtered(using: predicate) as NSArray
+        case 5: return (self.lists5 as NSArray).filtered(using: predicate) as NSArray
+        case 6: return (self.lists6 as NSArray).filtered(using: predicate) as NSArray
         default: return []
         }
         

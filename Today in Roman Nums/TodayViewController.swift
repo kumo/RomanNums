@@ -41,32 +41,32 @@ extension Int {
 extension NSDate {
     func dateInRoman() -> String? {
         
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Year, .Month, .Day], fromDate: self)
+        let calendar = NSCalendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: self as Date)
         
         let month = components.month
         let day = components.day
         var year = components.year
         
-        var locale = NSLocale.currentLocale().localeIdentifier // en_GB@currency=EUR ?!
+        var locale = NSLocale.current.identifier // en_GB@currency=EUR ?!
         
         // some defaults
         var format = "."
         var longYears = true
         var order = 0
         
-        if let preferences = NSUserDefaults(suiteName: "group.it.kumo.roman") {
+        if let preferences = UserDefaults(suiteName: "group.it.kumo.roman") {
         
-            if let _ = preferences.valueForKey("long_years") {
-                longYears = preferences.boolForKey("long_years")
+            if let _ = preferences.value(forKey: "long_years") {
+                longYears = preferences.bool(forKey: "long_years")
                 
                 if (longYears == false) {
-                    year = year % 100
+                    year = year! % 100
                 }
             }
             
-            if let _ = preferences.valueForKey("date_format") {
-                let dateFormat = preferences.integerForKey("date_format")
+            if let _ = preferences.value(forKey: "date_format") {
+                let dateFormat = preferences.integer(forKey: "date_format")
                 
                 if (dateFormat == 1) {
                     format = "-";
@@ -75,9 +75,9 @@ extension NSDate {
                 }
             }
             
-            if let _ = preferences.valueForKey("date_order") {
+            if let _ = preferences.value(forKey: "date_order") {
                 
-                let order = preferences.integerForKey("date_order")
+                let order = preferences.integer(forKey: "date_order")
                 
                 if (order == 1) {
                     locale = "en_GB"
@@ -88,9 +88,9 @@ extension NSDate {
         }
 
         if (locale == "en_US") {
-            return month.toRoman()! + format + day.toRoman()! + format + year.toRoman()!
+            return month!.toRoman()! + format + day!.toRoman()! + format + year!.toRoman()!
         } else {
-            return day.toRoman()! + format + month.toRoman()! + format + year.toRoman()!
+            return day!.toRoman()! + format + month!.toRoman()! + format + year!.toRoman()!
         }
     }
 }
@@ -121,10 +121,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         let newDate = date.dateInRoman()
         
         if (newDate == dateLabel.text) {
-            completionHandler(NCUpdateResult.NoData)
+            completionHandler(NCUpdateResult.noData)
         } else {
             dateLabel.text = date.dateInRoman()
-            completionHandler(NCUpdateResult.NewData)
+            completionHandler(NCUpdateResult.newData)
         }
     }
     
