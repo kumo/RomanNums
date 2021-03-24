@@ -12,8 +12,7 @@ class CrosswordSolverData: ObservableObject {
     @Published var results: [String] = []
     @Published var input = " " {
         didSet {
-            let solver = CrosswordSolver()
-            results = solver.searchNew(string: input)
+            results = CrosswordSolver.searchNew(string: input)
         }
     }
 }
@@ -44,7 +43,7 @@ struct CrosswordSolverView: View {
             
             Spacer()
             
-            KeyPad(string: $data.input)
+            CrosswordKeyPad(string: $data.input)
         }
     }
 }
