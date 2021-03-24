@@ -10,7 +10,7 @@
 		BF0114A118B0CC0300EC909D /* UIImage+Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0114A018B0CC0300EC909D /* UIImage+Colours.m */; };
 		BF02D18D1B320383008EA56E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF02D18C1B320383008EA56E /* SettingsViewController.m */; };
 		BF0A65DD18B296830036CEB1 /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */; };
-		BF0F5FA7260B16E8000DAEF9 /* SwiftUIViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FA6260B16E8000DAEF9 /* SwiftUIViewHostingController.swift */; };
+		BF0F5FA7260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FA6260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift */; };
 		BF0F5FA9260B170F000DAEF9 /* CrosswordSolverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */; };
 		BF0F5FC4260B4AC9000DAEF9 /* KeyPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */; };
 		BF0F5FC5260B4AC9000DAEF9 /* KeyPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */; };
@@ -103,7 +103,7 @@
 		BF02D18C1B320383008EA56E /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		BF0A65DB18B296830036CEB1 /* RomanNumsActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RomanNumsActivityItemProvider.h; sourceTree = "<group>"; };
 		BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
-		BF0F5FA6260B16E8000DAEF9 /* SwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewHostingController.swift; sourceTree = "<group>"; };
+		BF0F5FA6260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordSwiftUIViewHostingController.swift; sourceTree = "<group>"; };
 		BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordSolverView.swift; sourceTree = "<group>"; };
 		BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadButton.swift; sourceTree = "<group>"; };
 		BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPad.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 				BFC42F171959E14A0011001B /* AboutTableViewController.m */,
 				BFC42F1F195A0E600011001B /* WhatsNewViewController.h */,
 				BFC42F20195A0E600011001B /* WhatsNewViewController.m */,
-				BF0F5FA6260B16E8000DAEF9 /* SwiftUIViewHostingController.swift */,
+				BF0F5FA6260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift */,
 				BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */,
 				BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */,
 				BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */,
@@ -554,7 +554,7 @@
 				BF5FE47819F3BB9200DECE01 /* BannerViewController.m in Sources */,
 				BFBD6D0C1893F3510097D8B5 /* RomanViewController.m in Sources */,
 				BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */,
-				BF0F5FA7260B16E8000DAEF9 /* SwiftUIViewHostingController.swift in Sources */,
+				BF0F5FA7260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift in Sources */,
 				BF70C2EB19F5A4BD00C8972A /* SolverViewController.m in Sources */,
 				BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */,
 				BFBD6D361893F9430097D8B5 /* TabBarViewController.m in Sources */,

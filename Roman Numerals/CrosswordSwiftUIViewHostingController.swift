@@ -11,7 +11,7 @@ import SwiftUI
 
 //Create a UIHostingController class that hosts your SwiftUI view
 @available(iOS 14.0, *)
-class SwiftUIViewHostingController: UIHostingController<CrosswordSolverView> {
+class CrosswordSwiftUIViewHostingController: UIHostingController<CrosswordSolverView> {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder, rootView: CrosswordSolverView())
     }
