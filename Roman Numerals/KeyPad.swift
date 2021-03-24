@@ -19,17 +19,16 @@ struct KeyPadRow: View {
     }
 }
 
-struct KeyPad: View {
+struct CrosswordKeyPad: View {
     @Binding var string: String
     
     var body: some View {
         VStack(spacing: 1) {
-            KeyPadRow(keys: ["M", "C", "V"])
-            KeyPadRow(keys: ["?", "5", "6"])
-            KeyPadRow(keys: ["7", "8", "9"])
-            KeyPadRow(keys: ["", "0", "⌫"])
+            KeyPadRow(keys: ["C", "D", "I"])
+            KeyPadRow(keys: ["L", "M", "V"])
+            KeyPadRow(keys: ["?", "X", "⌫"])
         }.environment(\.keyPadButtonAction, self.keyWasPressed(_:))
-        .background(Color.clear)
+        .background(Color(UIColor.systemGray3))
         .padding(0)
     }
     
@@ -44,11 +43,11 @@ struct KeyPad: View {
     }
 }
 
-struct KeyPad_Previews : PreviewProvider {
-    @State static var string = "1234"
+struct CrosswordKeyPad_Previews : PreviewProvider {
+    @State static var string = "M???"
     static var previews: some View {
         Group {
-            KeyPad(string: $string)
+            CrosswordKeyPad(string: $string)
         }
     }
 }

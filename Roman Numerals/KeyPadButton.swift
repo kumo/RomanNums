@@ -14,10 +14,10 @@ struct KeyPadButton: View {
         GeometryReader { geometry in
             Button(action: { self.action(self.key) }) {
                 Text(key)
-                    .font(.largeTitle)
+                    .font(.title)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .background(Color.gray)
-                    .foregroundColor(Color.white)
+                    .background(Color(UIColor.systemGray5))
+                    .foregroundColor(nil)
             }
             .buttonStyle(PlainButtonStyle())
         }
