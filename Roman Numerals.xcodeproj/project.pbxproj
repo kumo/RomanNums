@@ -12,6 +12,8 @@
 		BF0A65DD18B296830036CEB1 /* RomanNumsActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */; };
 		BF0F5FA7260B16E8000DAEF9 /* SwiftUIViewHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FA6260B16E8000DAEF9 /* SwiftUIViewHostingController.swift */; };
 		BF0F5FA9260B170F000DAEF9 /* CrosswordSolverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */; };
+		BF0F5FC4260B4AC9000DAEF9 /* KeyPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */; };
+		BF0F5FC5260B4AC9000DAEF9 /* KeyPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */; };
 		BF10C30218D23F39007224D3 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10C30118D23F39007224D3 /* CalendarViewController.m */; };
 		BF20F90D195C4A9A00A1748C /* LargeNumberSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF20F90C195C4A9900A1748C /* LargeNumberSettingsViewController.m */; };
 		BF3EB995260A9FEE0012EF65 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3EB994260A9FEE0012EF65 /* Launch Screen.storyboard */; };
@@ -103,6 +105,8 @@
 		BF0A65DC18B296830036CEB1 /* RomanNumsActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RomanNumsActivityItemProvider.m; sourceTree = "<group>"; };
 		BF0F5FA6260B16E8000DAEF9 /* SwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewHostingController.swift; sourceTree = "<group>"; };
 		BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordSolverView.swift; sourceTree = "<group>"; };
+		BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadButton.swift; sourceTree = "<group>"; };
+		BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPad.swift; sourceTree = "<group>"; };
 		BF10C30018D23F39007224D3 /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		BF10C30118D23F39007224D3 /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		BF20F90B195C4A9900A1748C /* LargeNumberSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeNumberSettingsViewController.h; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				BFC42F1F195A0E600011001B /* WhatsNewViewController.h */,
 				BFC42F20195A0E600011001B /* WhatsNewViewController.m */,
 				BF0F5FA6260B16E8000DAEF9 /* SwiftUIViewHostingController.swift */,
+				BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */,
+				BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */,
 				BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */,
 			);
 			path = "Roman Numerals";
@@ -537,6 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBD6D0F1893F3510097D8B5 /* ArabicViewController.m in Sources */,
+				BF0F5FC5260B4AC9000DAEF9 /* KeyPad.swift in Sources */,
 				BFBD6D061893F3510097D8B5 /* AppDelegate.m in Sources */,
 				BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */,
 				BFE95D3018964D3B005B77AD /* KeyboardSettingsViewController.m in Sources */,
@@ -563,6 +570,7 @@
 				BF0F5FA9260B170F000DAEF9 /* CrosswordSolverView.swift in Sources */,
 				BFBD6D021893F3510097D8B5 /* main.m in Sources */,
 				BF74ACF6195AD8610058E72B /* TutorialViewController.m in Sources */,
+				BF0F5FC4260B4AC9000DAEF9 /* KeyPadButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

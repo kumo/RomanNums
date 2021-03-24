@@ -60,4 +60,31 @@ import Foundation
         }
         
     }
+    
+    @objc public func searchNew(string: String) -> [String] {
+        let predicate = NSPredicate(format: "SELF LIKE[cd] %@", string)
+        
+        print(predicate)
+        
+        switch string.count {
+        case 1: return (self.lists1 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 2: return (self.lists2 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 3: return (self.lists3 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 4: return (self.lists4 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 5: return (self.lists5 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 6: return (self.lists6 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 7: return (self.lists7 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 8: return (self.lists8 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 9: return (self.lists9 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 10: return (self.lists10 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 11: return (self.lists11 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 12: return (self.lists12 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 14: return (self.lists14 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 15: return (self.lists15 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        case 16: return (self.lists16 as NSArray).filtered(using: predicate).compactMap { String(describing: $0) }.sorted()
+        default: return []
+        }
+        
+    }
+
 }
