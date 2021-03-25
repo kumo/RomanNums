@@ -4615,7 +4615,6 @@ First version</string>
                         <segue destination="QUy-BD-bpt" kind="relationship" relationship="viewControllers" id="M8t-EP-wfW"/>
                         <segue destination="EMO-Ya-zrm" kind="relationship" relationship="viewControllers" id="1up-SL-72J"/>
                         <segue destination="WE6-vu-ZXr" kind="relationship" relationship="viewControllers" id="AJ5-xd-Utm"/>
-                        <segue destination="CCj-ne-0zt" kind="relationship" relationship="viewControllers" id="z9i-NX-v35"/>
                         <segue destination="i6u-kx-kuj" kind="relationship" relationship="viewControllers" id="V9b-8W-siL"/>
                     </connections>
                 </tabBarController>
