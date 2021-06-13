@@ -250,6 +250,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BF8D58A126769606002C9256 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */,
+				BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */,
+				BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */,
+				BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */,
+				BF0F5FA6260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		BFBD6CE91893F3510097D8B5 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +301,7 @@
 		BFBD6CFB1893F3510097D8B5 /* Roman Numerals */ = {
 			isa = PBXGroup;
 			children = (
+				BF8D58A126769606002C9256 /* SwiftUI */,
 				BF2A712019B859D90048305B /* Roman Numerals.entitlements */,
 				BF74ACFA195AD8F10058E72B /* Tutorial */,
 				BFD2269B19128B990071D675 /* IAP */,
@@ -323,10 +336,6 @@
 				BFC42F171959E14A0011001B /* AboutTableViewController.m */,
 				BFC42F1F195A0E600011001B /* WhatsNewViewController.h */,
 				BFC42F20195A0E600011001B /* WhatsNewViewController.m */,
-				BF0F5FA6260B16E8000DAEF9 /* CrosswordSwiftUIViewHostingController.swift */,
-				BF0F5FC3260B4AC9000DAEF9 /* KeyPad.swift */,
-				BF0F5FC2260B4AC9000DAEF9 /* KeyPadButton.swift */,
-				BF0F5FA8260B170F000DAEF9 /* CrosswordSolverView.swift */,
 			);
 			path = "Roman Numerals";
 			sourceTree = "<group>";
@@ -377,7 +386,6 @@
 				BF10C30118D23F39007224D3 /* CalendarViewController.m */,
 				BF70C2E919F5A4BD00C8972A /* SolverViewController.h */,
 				BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */,
-				BF70C2EC19F5B55D00C8972A /* CrosswordSolver.swift */,
 				BF70C2E419F5A1DE00C8972A /* Roman Numerals-Bridging-Header.h */,
 			);
 			name = IAP;
