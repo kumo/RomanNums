@@ -10,8 +10,6 @@
 #import "Converter.h"
 #import "UIImage+Colours.h"
 #import "RomanNumsActivityItemProvider.h"
-//#import <Fabric/Fabric.h>
-//#import <Crashlytics/Crashlytics.h>
 
 
 @interface RomanViewController ()
@@ -95,7 +93,6 @@
     UIButton *button = (UIButton *)sender.view;
     
     if (userDidSomething == NO) {
-//        [Answers logContentViewWithName:@"Roman to Arabic" contentType:nil contentId:nil customAttributes:nil];
 
         userDidSomething = YES;
     }
@@ -207,7 +204,6 @@
         //NSLog(@"completed: %@", activityType);
         
         if (completed) {
-//            [Answers logShareWithMethod:@"Roman to Arabic" contentName:activityType contentType:nil contentId:nil customAttributes:nil];
         }
         //Present another VC
     }];

@@ -9,8 +9,6 @@
 #import "CalendarViewController.h"
 #import "RomanNumsActivityItemProvider.h"
 #import "Converter.h"
-//#import <Fabric/Fabric.h>
-//#import <Crashlytics/Crashlytics.h>
 
 
 #define kPickerAnimationDuration    0.40   // duration for the animation to slide the date picker into view
@@ -178,7 +176,6 @@ static NSString *kOtherCell = @"otherCell";     // the remaining cells at the en
 {
     if (userDidSomething == NO) {
         BOOL showDayFirst = [self showDayFirst];
-//        [Answers logContentViewWithName:@"Calendar" contentType:nil contentId:nil customAttributes:@{@"Day First" : [NSNumber numberWithBool:showDayFirst]}];
         userDidSomething = YES;
     }
     

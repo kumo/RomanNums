@@ -10,8 +10,6 @@
 #import "Converter.h"
 #import "UIImage+Colours.h"
 #import "RomanNumsActivityItemProvider.h"
-//#import <Fabric/Fabric.h>
-//#import <Crashlytics/Crashlytics.h>
 
 @interface CalculatorViewController ()
 
@@ -106,7 +104,6 @@
     UIButton *button = (UIButton *)sender.view;
     
     if (userDidSomething == NO) {
-//        [Answers logContentViewWithName:@"Calculator" contentType:nil contentId:nil customAttributes:nil];
         userDidSomething = YES;
     }
     
@@ -127,7 +124,6 @@
     NSUInteger nextOperator = ((UIButton *)sender).tag - 9000;
     
     if (userDidSomething == NO) {
-//        [Answers logContentViewWithName:@"Calculator" contentType:nil contentId:nil customAttributes:nil];
         userDidSomething = YES;
     }
 
@@ -158,7 +154,6 @@
 
 - (IBAction)equalsAction:(id)sender {
     if (userDidSomething == NO) {
-//        [Answers logContentViewWithName:@"Calculator" contentType:nil contentId:nil customAttributes:nil];
         userDidSomething = YES;
     }
 
@@ -404,7 +399,6 @@
                 }
             }
             
-//            [Answers logShareWithMethod:@"Calculator" contentName:activityType contentType:nil contentId:nil customAttributes:@{@"Large Numbers": mode}];
         }
         //Present another VC
     }];
