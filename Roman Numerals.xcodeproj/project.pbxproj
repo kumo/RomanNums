@@ -22,7 +22,6 @@
 		BF5EF1CB1895778A00DA753A /* RomanIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CA1895778A00DA753A /* RomanIAPHelper.m */; };
 		BF5EF1CE1895781600DA753A /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5EF1CD1895781600DA753A /* MainMenuViewController.m */; };
 		BF5FE47819F3BB9200DECE01 /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF5FE47719F3BB9200DECE01 /* BannerViewController.m */; };
-		BF5FE47A19F3BBAE00DECE01 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5FE47919F3BBAE00DECE01 /* iAd.framework */; };
 		BF69682218B2992C00B2006C /* ExtendAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF69682118B2992C00B2006C /* ExtendAppViewController.m */; };
 		BF6E7F2B1A065D4000765004 /* page5.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6E7F2A1A065D4000765004 /* page5.png */; };
 		BF70C2EB19F5A4BD00C8972A /* SolverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF70C2EA19F5A4BD00C8972A /* SolverViewController.m */; };
@@ -41,6 +40,7 @@
 		BF8D58A526769A57002C9256 /* RomanConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D58A426769A57002C9256 /* RomanConverterView.swift */; };
 		BF8D58A726769B19002C9256 /* RomanKeyPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D58A626769B19002C9256 /* RomanKeyPad.swift */; };
 		BF8D58A926769C8C002C9256 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8D58A826769C8C002C9256 /* Converter.swift */; };
+		BFAD362326775B0A00AD410D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFAD3620267759EE00AD410D /* MainInterface.storyboard */; };
 		BFBD6CF61893F3510097D8B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBD6CF51893F3510097D8B5 /* Foundation.framework */; };
 		BFBD6CF81893F3510097D8B5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBD6CF71893F3510097D8B5 /* CoreGraphics.framework */; };
 		BFBD6CFA1893F3510097D8B5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFBD6CF91893F3510097D8B5 /* UIKit.framework */; };
@@ -166,11 +166,12 @@
 		BF8407D719B7C24B005152DE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		BF8407DB19B7C24B005152DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF8407DC19B7C24B005152DE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		BF8407DE19B7C24B005152DE /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		BF8D58A226769A3A002C9256 /* RomanSwiftUIViewHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanSwiftUIViewHostingController.swift; sourceTree = "<group>"; };
 		BF8D58A426769A57002C9256 /* RomanConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanConverterView.swift; sourceTree = "<group>"; };
 		BF8D58A626769B19002C9256 /* RomanKeyPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanKeyPad.swift; sourceTree = "<group>"; };
 		BF8D58A826769C8C002C9256 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		BFAD361F267759EE00AD410D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		BFAD362226775A9F00AD410D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		BFBD6CF21893F3510097D8B5 /* Roman Numerals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roman Numerals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBD6CF51893F3510097D8B5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFBD6CF71893F3510097D8B5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -226,7 +227,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5FE47A19F3BBAE00DECE01 /* iAd.framework in Frameworks */,
 				BFBD6CF81893F3510097D8B5 /* CoreGraphics.framework in Frameworks */,
 				BFBD6CFA1893F3510097D8B5 /* UIKit.framework in Frameworks */,
 				BFBD6CF61893F3510097D8B5 /* Foundation.framework in Frameworks */,
@@ -276,8 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				BF2A712119B859E60048305B /* Today in Roman Nums.entitlements */,
+				BFAD3620267759EE00AD410D /* MainInterface.storyboard */,
 				BF8407DC19B7C24B005152DE /* TodayViewController.swift */,
-				BF8407DE19B7C24B005152DE /* MainInterface.storyboard */,
 				BF8407DA19B7C24B005152DE /* Supporting Files */,
 			);
 			path = "Today in Roman Nums";
@@ -595,6 +595,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFAD362326775B0A00AD410D /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +725,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BFAD3620267759EE00AD410D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFAD361F267759EE00AD410D /* Base */,
+				BFAD362226775A9F00AD410D /* en */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		BFBD6CFE1893F3510097D8B5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1048,6 +1058,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = it.kumo.roman.RomanNumsWidget;
+				PRODUCT_MODULE_NAME = RomanNumsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1085,6 +1096,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = it.kumo.roman.RomanNumsWidget;
+				PRODUCT_MODULE_NAME = RomanNumsWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
