@@ -36,13 +36,13 @@
       "size" : "40x40"
     },
     {
-      "filename" : "iPhone App Icon@2x.png",
+      "filename" : "iPhone App Icon Copy@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "iPhone App Icon@3x.png",
+      "filename" : "iPhone App Icon Copy@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -78,23 +78,25 @@
       "size" : "40x40"
     },
     {
-      "filename" : "iPad App Icon@1x.png",
+      "filename" : "iPad App Icon Copy@1x-1.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "iPad App Icon@2x.png",
+      "filename" : "iPad App Icon Copy@2x-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
+      "filename" : "iPhone App Icon Copy@3x copy.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "iTunesArtwork Copy 3@2x.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
