@@ -97,9 +97,11 @@
     [[RomanIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             _products = products;
-            [self.tableView reloadData];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+                [self.refreshControl endRefreshing];
+                   });
         }
-        [self.refreshControl endRefreshing];
     }];
 }
 
