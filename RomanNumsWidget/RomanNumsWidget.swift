@@ -12,7 +12,7 @@ import SwiftUI
 struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         let date = Date()
-        return SimpleEntry(date: Date(), romanDate: "MMXXV")
+        return SimpleEntry(date: date, romanDate: "MMXXV")
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -27,8 +27,9 @@ struct Provider: TimelineProvider {
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
+        let startOfDay = Calendar.current.startOfDay(for: currentDate)
+        for dayOffset in 0 ..< 2 {
+            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: startOfDay)!
             let romanDate = entryDate.dateInRoman()
             let entry = SimpleEntry(date: entryDate, romanDate: romanDate ?? "Error converting date")
             entries.append(entry)
